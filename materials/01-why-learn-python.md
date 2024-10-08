@@ -82,25 +82,25 @@ While Python is a widely used and popular programming language, it does have som
 
 **Performance Limitations**
 
-Slower Execution Speed: Python is an interpreted language, which generally makes it slower than compiled languages like C or C++. This can be a concern for CPU-intensive tasks or applications requiring high-performance computing.
+- Python is an interpreted language, which generally makes it slower than compiled languages like C or C++. This can be a concern for CPU-intensive tasks or applications requiring high-performance computing.
 Global Interpreter Lock (GIL): In CPython (the standard implementation of Python), the GIL allows only one thread to execute at a time, which can be a bottleneck for multi-threaded programs.
 
 **Memory Consumption**
 
-Higher Memory Usage: Python tends to use more memory than some other languages due to its data types and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.
+- Python tends to use more memory than some other languages due to its data types and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.
 
 
 **Errors as a result of flexibility**
 
-While dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug.The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.
+- While dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug.The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.
 
 **Limited Packages for Certain use cases**
 
-Niche Libraries: While Python has many packages and modles, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.
+- While Python has many packages and modles, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.
 
 **Package Dependency Management**
 
-Managing dependencies in Python can be tricky, particularly with conflicting library versions. Tools like pip and virtual environments e.g. using conda help, but issues still arise in complex projects.
+- Managing dependencies in Python can be tricky, particularly with conflicting library versions. Tools like pip and virtual environments e.g. using conda help, but issues still arise in complex projects.
 
 ## Summary
 
@@ -125,5 +125,8 @@ You might choose to use python to train a neural network for image recognition, 
 
 #### Key Points
 
-- Last section of the page is a bulleted summary of the key points
+- Python is defined by the syntax, and is an easy to use high level language commonly used in data science
+- Python has many packages and modules for data science and AI
+- There are both advantages and disadvantages to programming in python, so choose a programming language suited to the task
+
 :::
