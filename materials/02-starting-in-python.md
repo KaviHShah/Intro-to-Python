@@ -96,6 +96,7 @@ function(a, b)
 ```
 function(a, type = b)
 ```
+
 - variable inputs into functions can defined globally
 ```
 b = number
@@ -104,7 +105,7 @@ function(a, type = b)
 - Functions can have default inputs if none specified
 
 - functions can be nested although this can make code less readable
-```{python}
+```
 function_two(function_one(a))
 ```
 ::: {.callout-exercise}
