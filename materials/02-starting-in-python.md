@@ -194,6 +194,7 @@ Select Save and Checkpoint or press Ctrl + S (Windows) or Cmd + S (Mac).
 
 ## Summary
 You should now be able to call in built functions in python and be set up to use Jupyter Notebook
+
 ::: {.callout-tip}
 
 #### Key Points
