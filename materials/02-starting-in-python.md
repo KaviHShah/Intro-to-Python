@@ -1,25 +1,204 @@
 ---
-title: Template Page
+title: Starting in Python
 ---
 
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Bulleted list of learning objectives
+- Identify basic Python Syntax
+- understand a markdown and the Jupyter notebook syntax
+- be able to define variables and call functions
+- identify the type of a variable
+
 :::
 
 
-## Section
+## Basic Python Syntax
 
-Headings for material sections start at level 2. 
+**Comments and new lines**
 
-More guidelines for content available here: https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html
+Commenting your code and using lines liberally is key for others to understand your code.
 
+- A **#** (Hash) is used for single line comments 
+
+- A **"""** (triple quotes) is used around multiline comments or strings
+
+- A **\** (backslash) is used to explicitly break a line
+
+- Lines can be implicitly continues in some cases, for example when in brackets. We will see this later. 
+
+<br>
+
+**Assigning variables**
+
+In Python initialising variables is easy 
+- Variables are assigned using the = sign
+- Case sesitive
+- No need to declare the type explicitly (dynamic typing)
+
+```{python}
+# Initialising my_height in cm 
+my_height = 176
+my_name = "Kavi"
+
+```
+<br>
+
+**Variable Naming Conventions in Python**
+
+When naming variables, it's important to follow Python's guidelines for consistency and readability. Here are some key rules to remember:
+
+* Case-sensitive: weight and Weight are different variables.
+
+* Use lowercase: Separate words with underscores, e.g., weight_kg.
+
+* Don't start with numbers: Variable names cannot begin with a digit.
+
+* Stick to letters: Use only letters, underscores, and digits (when needed).
+
+* Be descriptive: Choose clear, meaningful names (e.g., asdjks is not helpful).
+
+* Avoid overly long names: this_is_my_height_in_cm is too long.
+
+* Don't use keywords: Avoid using Python function names, class names, or data types as variable names.
+
+For more detailed guidelines, refer to PEP 8 or the Google Python Style Guide.
+
+<br>
+
+**Indentation**
+
+In python indentation is used to define code blocks. We will see more of this later when we get to conditional statements and loops. 
+- Unexpected indents will result in errors.
+- indents are 4 spaces according to PEP 8 standards, however commonly also two spaces on web interfaces. Be consistent.
+- Using spaces is preferable to using tabs
+
+```{python}
+# Initialising my_height in cm 
+my_height = 176
+ my_name = "Kavi"
+ 
+```
+The above would produce an error
+
+## Calling a function
+
+Functions are chunks of code which produce an output. They can (but do not have to) take user defined inputs. 
+Python ships with many in built functions. See: https://docs.python.org/3/library/functions.html
+
+To call a function, simply use the function name followed by parentheses. If the function takes parameters, provide the arguments inside the parentheses.
+- functions may take arguments in an order separated by a comma: 
+```{python}
+function(a, b) 
+```
+
+- alternatively functions may use assignment for inputs:
+```{python}
+function(a, type = b)
+```
+- variable inputs into functions can defined globally
+```{python}
+b = number
+function(a, type = b)
+```
+- Functions can have default inputs if none specified
+
+- functions can be nested although this can make code less readable
+```{python}
+function_two(function_one(a))
+```
+::: {.callout-exercise}
+#### Print 'Hello World"
+{{< level 1 >}}
+
+Open the python console in command line. Use variable assignment and the print() function assign "Hello World!" to the **message** variable and print it in standard output
+
+::: {.callout-answer}
+```{python}
+message = "Hello World!"
+print(message)
+```
+:::
+:::
+
+## Using the type() function
+
+As mentioned python uses dynamic typing. The type() function can output the datatype assigned to a variable
+
+::: {.callout-exercise}
+#### Find the data type
+{{< level 1 >}}
+
+What is the data type of the **message** variable? Print it to Standard output
+
+::: {.callout-answer}
+```{python}
+print(type(message))
+```
+output:
+```{python}
+<class 'str'>
+```
+It is a string
+:::
+:::
+
+## Using Jupyter Notebooks
+
+
+Python programs (.py files) are essential in data analysis and structured software development. In this course, we will primarily use Jupyter Notebooks for coding.
+Jupyter Notebooks enable literate programming by merging natural language (like English) with source code in a single document. 
+Instead of separate text documents and .py files, Jupyter Notebooks integrate both functionalities, making analyses and code reproducible. 
+This is important for FAIR (Findable, Accessible, Interoperable, and Reproducible) research standards.
+
+The name "Jupyter" derives from its core languages: Julia, Python, and R, with its logo inspired by Galileo’s discovery of Jupiter's moons.
+Each coding language has its own kernel for executing code cells. For Python, the kernel is IPython. 
+Jupyter Notebook files have a .ipynb extension, indicating their connection to IPython.
+
+The Jupyter Notebook file, kernel, and web browser interact via the Jupyter Notebook Server, enabling a seamless user experience.
+
+For a more indepth look at jupyter notebooks, refer to the MCB course:
+https://ac812.github.io/mcb-python/jupyter.html
+
+::: {.callout-exercise}
+#### Create a Jupyter Notebook 
+{{< level 1 >}}
+
+You should have already installed jupyter notebook. 
+launch a jupyter notebook from the terminal:
+
+```{bash}
+jupyter notebook
+```
+Create a new python file and print "Hello World!" in a code chunk.
+Add a text chunk and describe what you have done. Save the file.
+
+::: {.callout-answer}
+
+In the Jupyter Notebook interface, you willl see a list of files and folders in the current directory.
+1. Click on the New button on the right side of the interface.
+2. From the dropdown menu, select Python 3 (or whichever version you have installed). This will create a new notebook.
+3. You will see a new notebook open up with a cell where you can write Python code. 
+Add:
+```{python}
+print("Hello, World!")
+```
+4. Run the Code by clicking on the cell containing the code.
+Press Shift + Enter on your keyboard, or click the Run button in the toolbar.
+5.  Save Your Notebook by clicking on the File menu at the top left.
+Select Save and Checkpoint or press Ctrl + S (Windows) or Cmd + S (Mac).
+
+:::
+:::
 
 ## Summary
-
+You should now be able to call in built functions in python and be set up to use Jupyter Notebook
 ::: {.callout-tip}
 #### Key Points
 
-- Last section of the page is a bulleted summary of the key points
+- python uses # for comments
+- in python variables are assigned with =
+- in python there is no need to define the variable type explicitly
+- indentation is used in python to identify code chunks
+- Jupyter notebooks enable literate programming in python, combining code chunks and markdown text
 :::

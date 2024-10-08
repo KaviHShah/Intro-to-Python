@@ -3,4 +3,4 @@ book:
     - part: "Session-1"
       chapters:
         - materials/01-why-learn-python.md
-        - materials/02-session-name.md
+        - materials/02-starting-in-python.md
