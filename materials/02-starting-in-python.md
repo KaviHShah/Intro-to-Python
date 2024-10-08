@@ -36,7 +36,7 @@ In Python initialising variables is easy
 - Case sesitive
 - No need to declare the type explicitly (dynamic typing)
 
-```{python}
+```
 # Initialising my_height in cm 
 my_height = 176
 my_name = "Kavi"
@@ -73,7 +73,7 @@ In python indentation is used to define code blocks. We will see more of this la
 - indents are 4 spaces according to PEP 8 standards, however commonly also two spaces on web interfaces. Be consistent.
 - Using spaces is preferable to using tabs
 
-```{python}
+```
 # Initialising my_height in cm 
 my_height = 176
  my_name = "Kavi"
@@ -88,16 +88,16 @@ Python ships with many in built functions. See: https://docs.python.org/3/librar
 
 To call a function, simply use the function name followed by parentheses. If the function takes parameters, provide the arguments inside the parentheses.
 - functions may take arguments in an order separated by a comma: 
-```{python}
+```
 function(a, b) 
 ```
 
 - alternatively functions may use assignment for inputs:
-```{python}
+```
 function(a, type = b)
 ```
 - variable inputs into functions can defined globally
-```{python}
+```
 b = number
 function(a, type = b)
 ```
@@ -114,7 +114,7 @@ function_two(function_one(a))
 Open the python console in command line. Use variable assignment and the print() function assign "Hello World!" to the **message** variable and print it in standard output
 
 ::: {.callout-answer}
-```{python}
+```
 message = "Hello World!"
 print(message)
 ```
@@ -132,11 +132,11 @@ As mentioned python uses dynamic typing. The type() function can output the data
 What is the data type of the **message** variable? Print it to Standard output
 
 ::: {.callout-answer}
-```{python}
+```
 print(type(message))
 ```
 output:
-```{python}
+```
 <class 'str'>
 ```
 It is a string
@@ -167,7 +167,7 @@ https://ac812.github.io/mcb-python/jupyter.html
 You should have already installed jupyter notebook. 
 launch a jupyter notebook from the terminal:
 
-```{bash}
+```
 jupyter notebook
 ```
 Create a new python file and print "Hello World!" in a code chunk.
@@ -180,7 +180,7 @@ In the Jupyter Notebook interface, you willl see a list of files and folders in 
 2. From the dropdown menu, select Python 3 (or whichever version you have installed). This will create a new notebook.
 3. You will see a new notebook open up with a cell where you can write Python code. 
 Add:
-```{python}
+```
 print("Hello, World!")
 ```
 4. Run the Code by clicking on the cell containing the code.
@@ -194,6 +194,7 @@ Select Save and Checkpoint or press Ctrl + S (Windows) or Cmd + S (Mac).
 ## Summary
 You should now be able to call in built functions in python and be set up to use Jupyter Notebook
 ::: {.callout-tip}
+
 #### Key Points
 
 - python uses # for comments
