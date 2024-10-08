@@ -1,0 +1,6 @@
+book:
+  chapters:
+    - part: "Session-1"
+      chapters:
+        - materials/01-intro-and-course-objectives.md
+        - materials/02-why-learn-python.md
