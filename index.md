@@ -7,21 +7,22 @@ number-sections: false
 
 ## Overview 
 
-Include a one-paragraph summary of the course here. 
+This course aims to bring everyone in the Part III Systems Biology course up to speed in python which will be used as a programming language in different subsequent parts of the course. This course assumes no prior python experience, but some limited coding experience.This course may also be a good more general course for those looking to learn python for use in data science - particularly for those interested in using python with biological data 
 
 ::: {.callout-tip}
 ### Learning Objectives
 
-- List course learning objectives here.
-- These describe concepts the learners should grasp and techniques they should be able to use by the end of the course.
-- You can think of these as completing the phrase "after this course, the participant should be able to..."
-- They are not supposed to be as detailed as the learning objectives of each section, but more high-level.
+- Present participants with the key features of python and some of the pros and cons of using python in data science
+- Familiarise participants with python syntax and data types
+- Introduce and explore core python programming concepts including difining functions and coding loops and conditionals
+- Introduce participants to manipulating and plotting biological data in python utilising common packages
 :::
 
 
 ### Target Audience
 
-Brief description of target audience here.
+This is targeted at Part III Systems Biology students. All of these students should have some basic programming experience, however may not have used python.
+Some participants may have taken the MCB undergraduate introduction to python course. This course will refresh and extend slightly the concepts taught in that course. 
 
 
 ### Prerequisites
