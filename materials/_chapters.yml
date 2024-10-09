@@ -4,3 +4,4 @@ book:
       chapters:
         - materials/01-why-learn-python.md
         - materials/02-starting-in-python.md
+        - materials/03-data-types-in-python.md
