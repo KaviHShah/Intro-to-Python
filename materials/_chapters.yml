@@ -6,3 +6,4 @@ book:
         - materials/02-starting-in-python.md
         - materials/03-data-types-in-python.md
         - materials/04-python-operators.md
+        - materials/05-working-with-numerical-data-types-and-strings.md
