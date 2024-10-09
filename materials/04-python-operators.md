@@ -31,7 +31,7 @@ Good resources for python operators can be found at the following:
 https://www.w3schools.com/python/python_operators.asp
 https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 
-## 1. Arithmetic Operators
+## Arithmetic Operators
 
 These operators perform basic arithmetic operations.
 
@@ -45,7 +45,7 @@ These operators perform basic arithmetic operations.
 | **       | Exponentiation          | a ** b   | int, float                                                  |
 | //       | Floor Division          | a // b   | int, float                                                  |
 
-## 2. Comparison (Relational) Operators
+## Comparison (Relational) Operators
 
 These operators compare two values and return a boolean (True or False).
 
@@ -58,7 +58,7 @@ These operators compare two values and return a boolean (True or False).
 | >=       | Greater than or equal to    | a >= b   | int, float, str, range                                     |
 | <=       | Less than or equal to       | a <= b   | int, float, str, range                                     |
 
-## 3. Logical Operators
+## Logical Operators
 
 Used to combine conditional statements.
 
@@ -68,7 +68,7 @@ Used to combine conditional statements.
 | or       | Logical OR (either can be true)   | a or b       | bool, int                                |
 | not      | Logical NOT (negates boolean)     | not a        | bool, int                                |
 
-## 4. Assignment Operators
+## Assignment Operators
 
 Used to assign values to variables, sometimes with an operation included.
 
@@ -83,7 +83,7 @@ Used to assign values to variables, sometimes with an operation included.
 | **=      | Exponentiate and assign | a **= 5  | int, float                                  |
 | //=      | Floor-divide and assign | a //= 5  | int, float                                  |
 
-## 5. Bitwise Operators
+## Bitwise Operators
 
 Perform operations at the bit level.
 
@@ -96,7 +96,7 @@ Perform operations at the bit level.
 | <<       | Left shift       | a << 2   | int, byte, bytearray        |
 | >>       | Right shift      | a >> 2   | int, byte, bytearray        |
 
-## 6. Membership Operators
+## Membership Operators
 
 Used to check membership within sequences (like strings, lists, tuples).
 
@@ -105,7 +105,7 @@ Used to check membership within sequences (like strings, lists, tuples).
 | in       | True if value is present     | 'a' in 'apple'  | str, list, tuple, set, frozenset, dict, range   |
 | not in   | True if value is not present | 'b' not in 'apple' | str, list, tuple, set, frozenset, dict, range   |
 
-## 7. Identity Operators
+## Identity Operators
 
 Used to compare memory locations of two objects.
 
@@ -114,7 +114,7 @@ Used to compare memory locations of two objects.
 | is       | True if both refer to same object    | a is b     | All types                       |
 | is not   | True if not same object              | a is not b | All types                       |
 
-## 8. Unary Operators
+## Unary Operators
 
 Operate on a single operand.
 
@@ -124,7 +124,7 @@ Operate on a single operand.
 | +        | Unary plus                 | +a       | int, float, complex            |
 | not      | Logical NOT                | not a    | bool, int                      |
 
-## 9. Set Operators
+## Set Operators
 
 Set-specific operators.
 
@@ -139,8 +139,6 @@ Set-specific operators.
 Operators are ordered in precedence in code (think BODMAS)
 
 Use the table below to see the order: 
-
-# Operator Precedence in Python
 
 | Precedence Level | Operator(s)             | Description                                       | Example                   |
 |------------------|-------------------------|---------------------------------------------------|---------------------------|

@@ -96,7 +96,7 @@ Examples of converting between data types:
 
 
 
-1. Converting int to float
+**1. Converting int to float**
 ```
 x = 5  # integer
 y = float(x)  # converting to float
@@ -107,7 +107,7 @@ Output:
 5.0
 ```
 
-2. Converting float to int
+**2. Converting float to int**
 ```
 x = 3.23  # float
 y = int(x)  # converting to int
@@ -118,8 +118,8 @@ Output:
 3
 ```
 
-3. Converting int to str
-``
+**3. Converting int to str**
+```
 x = 10  # integer
 y = str(x)  # converting to string
 print(y)
@@ -129,7 +129,7 @@ Output:
 '10'
 ```
 
-4. Converting str to int
+**4. Converting str to int**
 ```
 x = "123"  # string
 y = int(x)  # converting to int
@@ -140,7 +140,7 @@ Output:
 123
 ```
 
-5. Converting str to float
+**5. Converting str to float**
 ```
 x = "45.67"  # string
 y = float(x)  # converting to float
@@ -151,7 +151,7 @@ Output:
 45.67
 ```
 
-6. Converting list to tuple
+**6. Converting list to tuple**
 ```
 my_list = [1, 2, 3]  # list
 my_tuple = tuple(my_list)  # converting to tuple
@@ -162,7 +162,7 @@ Output:
 (1, 2, 3)
 ```
 
-7. Converting tuple to list
+**7. Converting tuple to list**
 ```
 my_tuple2 = (4, 5, 6)  # tuple
 my_list2 = list(my_tuple2)  # converting to list
@@ -173,7 +173,7 @@ Output:
 [4, 5, 6]
 ```
 
-8. Converting int to bool
+**8. Converting int to bool**
 ```
 num_bool = 0  # integer
 bool_value = bool(num_bool)  # converting to boolean
