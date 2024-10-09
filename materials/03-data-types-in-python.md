@@ -199,6 +199,7 @@ print(int(3.7))
 The output to both is `3`. Note that the python round() function rounds the float a to the nearest integer.
 However with this function, if the decimal is exactly 0.5, it rounds to the nearest even number (Python's default behavior).
 The alternative is to use a library, for example the decimal library.
+
 :::
 :::
 
@@ -217,6 +218,7 @@ and
 ```
 dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
 ```
+
 :::
 :::
 
