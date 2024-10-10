@@ -1,0 +1,497 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro-to-Python",
+    "section": "",
+    "text": "Overview\nThis course aims to bring everyone in the Part III Systems Biology course up to speed in python which will be used as a programming language in different subsequent parts of the course. This course assumes no prior python experience, but some limited coding experience.This course may also be a good more general course for those looking to learn python for use in data science - particularly for those interested in using python with biological data",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Intro-to-Python",
+    "section": "",
+    "text": "Learning Objectives\n\n\n\n\nPresent participants with the key features of python and some of the pros and cons of using python in data science\nFamiliarise participants with python syntax and data types\nIntroduce and explore core python programming concepts including difining functions and coding loops and conditionals\nIntroduce participants to manipulating and plotting biological data in python utilising common packages\n\n\n\n\nTarget Audience\nThis is targeted at Part III Systems Biology students. All of these students should have some basic programming experience, however may not have used python. Some participants may have taken the MCB undergraduate introduction to python course. This course will refresh and extend slightly the concepts taught in that course.\n\n\nPrerequisites\nDetail any prerequisite skills needed to attend this course, with links to other relevant materials/courses if possible.\n\n\n\nExercises\nExercises in these materials are labelled according to their level of difficulty:\n\n\n\n\n\n\n\nLevel\nDescription\n\n\n\n\n  \nExercises in level 1 are simpler and designed to get you familiar with the concepts and syntax covered in the course.\n\n\n  \nExercises in level 2 combine different concepts together and apply it to a given task.\n\n\n  \nExercises in level 3 require going beyond the concepts and syntax introduced to solve new problems.",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#citation-authors",
+    "href": "index.html#citation-authors",
+    "title": "Intro-to-Python",
+    "section": "Citation & Authors",
+    "text": "Citation & Authors\nPlease cite these materials if:\n\nYou adapted or used any of them in your own teaching.\nThese materials were useful for your research work. For example, you can cite us in the methods section of your paper: “We carried our analyses based on the recommendations in YourReferenceHere”.\n\n\nYou can cite these materials as:\n\nShah, K., X, X., , . (2024). Course Development Guidelines. https://kavihshah.github.io/Intro-to-Python/\n\nOr in BibTeX format:\n@misc{YourReferenceHere,\n  author = {Shah, Kavi and X, X and , },\n  month = {10},\n  title = {Course Development Guidelines},\n  url = {https://kavihshah.github.io/Intro-to-Python/},\n  year = {2024}\n}\nAbout the authors:\nKavi Shah  \nAffiliation: Department of Genetics, University of Cambridge Roles: writing - original draft; conceptualisation; software\n\nX X  \nAffiliation:  Roles: writing - review & editing; conceptualisation; software\n\n   \nAffiliation:  Roles: conceptualisation",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Intro-to-Python",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\n\nList any other sources of materials that were used.\nOr other people that may have advised during the material development (but are not authors).",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Data & Setup",
+    "section": "",
+    "text": "Data\nThe data used in these materials is provided as a zip file. Download and unzip the folder to your Desktop to follow along with the materials.\nDownload",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data & Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Data & Setup",
+    "section": "Software",
+    "text": "Software\n\nQuarto\nTo develop and render the course materials website, you will need to install Quarto:\n\nDownload and install Quarto (available for all major OS).\nIf you are developing materials using executable .qmd documents, it is recommended that you also install the extensions for your favourite IDE (e.g. RStudio, VS Code).\nIf you are developing materials using JupyterLab or Jupyter Notebooks, please install Jupytext.\n\nUse the paired notebook feature to have synchronised .ipynb/.qmd files. Only .qmd files should be pushed to the repository (.ipynb files have been added to .gitignore).",
+    "crumbs": [
+      "Welcome",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data & Setup</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-why-learn-python.html",
+    "href": "materials/01-why-learn-python.html",
+    "title": "3  Why Learn Python",
+    "section": "",
+    "text": "3.1 What is Python?\nHigh-Level, General-Purpose Language:\nPython is a versatile programming language created in the late 1980s by Guido van Rossum, emphasizing code readability and simplicity. It’s widely used for tasks like web development, machine learning, and automation.\nNamed After: “Monty Python’s Flying Circus” (not the reptile).\nKey Features:\nCPython is the default implementation of python, jupyter notebooks - iPython (interactive) We won’t go into more detail, but for further reading:\nhttps://onlinelibrary.wiley.com/doi/full/10.1002/spe.3267\nhttps://www.geeksforgeeks.org/difference-various-implementations-python/\nhttps://ipython.org/",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Learn Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-why-learn-python.html#what-is-python",
+    "href": "materials/01-why-learn-python.html#what-is-python",
+    "title": "3  Why Learn Python",
+    "section": "",
+    "text": "Interpreted Language: Python executes code line-by-line, making debugging easier compared to compiled languages.\nObject-Oriented Programming (OOP): Supports structured, reusable code for larger projects.\nVery High-Level Language (VHLL): Allows complex operations to be expressed in simple, single statements.\n\n\n\n\n\n\nmain thing to note that most packages and modules will work across implementations (at least those in C), but sometimes it will make a difference",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Learn Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-why-learn-python.html#why-python-is-great-for-data-science",
+    "href": "materials/01-why-learn-python.html#why-python-is-great-for-data-science",
+    "title": "3  Why Learn Python",
+    "section": "3.2 Why Python is Great for Data Science",
+    "text": "3.2 Why Python is Great for Data Science\nSimple Syntax and Readability:\n\nIts easy-to-understand syntax helps data scientists focus on solving problems rather than dealing with complex code, making it accessible for both beginners and experts.\n\nLarge Ecosystem of Libraries:\n\nNumPy: For numerical computations and array handling.\nPandas: For data manipulation and analysis.\nMatplotlib & Seaborn: Data visualization tools.\n**Scikit-learn: Machine learning algorithms.*\n**TensorFlow & PyTorch: For deep learning and neural networks.*\nnot covered in this intro course*\n\nActive Community and Support:\n\nPython has a large, supportive community offering tutorials, open-source contributions, and plenty of resources.\n\nIntegration with Other Tools:\n\nPython works seamlessly with databases, web scraping tools, and big data technologies like Hadoop and Apache Spark.\n\nIdeal for Prototyping and Interactive Experimentation:\n\nIts flexibility allows for quick algorithm testing and experimentation, which is essential for refining data models. It is not a compiled language making debugging and modifying code easier.\n\nScalability:\n\nPython can handle both small and large-scale applications, especially when combined with performance-boosting libraries or extensions written in languages like C or C++.\n\nDominant in Machine Learning and AI:\n\nPython’s libraries like Scikit-learn, TensorFlow, PyTorch and Keras simplify complex machine learning and AI tasks.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Learn Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-why-learn-python.html#what-are-the-disadvantages-of-python",
+    "href": "materials/01-why-learn-python.html#what-are-the-disadvantages-of-python",
+    "title": "3  Why Learn Python",
+    "section": "3.3 What are the disadvantages of python",
+    "text": "3.3 What are the disadvantages of python\nWhile Python is a widely used and popular programming language, it does have some disadvantages. Here are some of them:\nPerformance Limitations\n\nPython is an interpreted language, which generally makes it slower than compiled languages like C or C++. This can be a concern for CPU-intensive tasks or applications requiring high-performance computing. Global Interpreter Lock (GIL): In CPython (the standard implementation of Python), the GIL allows only one thread to execute at a time, which can be a bottleneck for multi-threaded programs.\n\nMemory Consumption\n\nPython tends to use more memory than some other languages due to its data types and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.\n\nErrors as a result of flexibility\n\nWhile dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug.The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.\n\nLimited Packages for Certain use cases\n\nWhile Python has many packages and modles, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.\n\nPackage Dependency Management\n\nManaging dependencies in Python can be tricky, particularly with conflicting library versions. Tools like pip and virtual environments e.g. using conda help, but issues still arise in complex projects.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Learn Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-why-learn-python.html#summary",
+    "href": "materials/01-why-learn-python.html#summary",
+    "title": "3  Why Learn Python",
+    "section": "3.4 Summary",
+    "text": "3.4 Summary\nPython’s ease of use, broad library support, and strong community make it a top choice for data science. It simplifies data analysis, machine learning, and visualization, allowing data scientists to work efficiently and effectively. there are downsides to using python. Overall using a programming language is a mixture of how good it is at addressing the task and how familiar you are with the language.\n\n\n\n\n\n\nExercise 1 - Discussion 1: Deciding to use Python\n\n\n\n\n\n\nWhat are some examples of when you would use python and why? What are examples of when you wouldn’t use python and why?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nAt the moment you may not use python for very much unless you are already familiar with it.\nYou might choose to use python to train a neural network for image recognition, but not for programming a microcontroller where you might use C++ even though circuitpython is available\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKey Points\n\n\n\n\nPython is defined by the syntax, and is an easy to use high level language commonly used in data science\nPython has many packages and modules for data science and AI\nThere are both advantages and disadvantages to programming in python, so choose a programming language suited to the task",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Learn Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html",
+    "href": "materials/02-starting-in-python.html",
+    "title": "4  Starting in Python",
+    "section": "",
+    "text": "4.1 Basic Python Syntax\nComments and new lines\nCommenting your code and using lines liberally is key for others to understand your code.\nAssigning variables\nIn Python initialising variables is easy - Variables are assigned using the = sign - Case sesitive - No need to declare the type explicitly (dynamic typing)\nVariable Naming Conventions in Python\nWhen naming variables, it’s important to follow Python’s guidelines for consistency and readability. Here are some key rules to remember:\nFor more detailed guidelines, refer to PEP 8 or the Google Python Style Guide.\nIndentation\nIn python indentation is used to define code blocks. We will see more of this later when we get to conditional statements and loops. - Unexpected indents will result in errors. - indents are 4 spaces according to PEP 8 standards, however commonly also two spaces on web interfaces. Be consistent. - Using spaces is preferable to using tabs\nThe above would produce an error",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html#basic-python-syntax",
+    "href": "materials/02-starting-in-python.html#basic-python-syntax",
+    "title": "4  Starting in Python",
+    "section": "",
+    "text": "A # (Hash) is used for single line comments\nA “““ (triple quotes) is used around multiline comments or strings\nA **** (backslash) is used to explicitly break a line\nLines can be implicitly continues in some cases, for example when in brackets. We will see this later.\n\n\n\n\n# Initialising my_height in cm \nmy_height = 176\nmy_name = \"Kavi\"\n\n\n\n\n\nCase-sensitive: weight and Weight are different variables.\nUse lowercase: Separate words with underscores, e.g., weight_kg.\nDon’t start with numbers: Variable names cannot begin with a digit.\nStick to letters: Use only letters, underscores, and digits (when needed).\nBe descriptive: Choose clear, meaningful names (e.g., asdjks is not helpful).\nAvoid overly long names: this_is_my_height_in_cm is too long.\nDon’t use keywords: Avoid using Python function names, class names, or data types as variable names.\n\n\n\n\n\n# Initialising my_height in cm \nmy_height = 176\n my_name = \"Kavi\"",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html#calling-a-function",
+    "href": "materials/02-starting-in-python.html#calling-a-function",
+    "title": "4  Starting in Python",
+    "section": "4.2 Calling a function",
+    "text": "4.2 Calling a function\nFunctions are chunks of code which produce an output. They can (but do not have to) take user defined inputs. Python ships with many in built functions. See: https://docs.python.org/3/library/functions.html\nTo call a function, simply use the function name followed by parentheses. If the function takes parameters, provide the arguments inside the parentheses. - functions may take arguments in an order separated by a comma:\nfunction(a, b) \n\nalternatively functions may use assignment for inputs:\n\nfunction(a, type = b)\n\nvariable inputs into functions can defined globally\n\nb = number\nfunction(a, type = b)\n\nFunctions can have default inputs if none specified\nfunctions can be nested although this can make code less readable\n\nfunction_two(function_one(a))\n\n\n\n\n\n\nExercise 1 - Print ’Hello World”\n\n\n\n\n\n\nLevel: \nOpen the python console in command line. Use variable assignment and the print() function assign “Hello World!” to the message variable and print it in standard output\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nmessage = \"Hello World!\"\nprint(message)",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html#using-the-type-function",
+    "href": "materials/02-starting-in-python.html#using-the-type-function",
+    "title": "4  Starting in Python",
+    "section": "4.3 Using the type() function",
+    "text": "4.3 Using the type() function\nAs mentioned python uses dynamic typing. The type() function can output the datatype assigned to a variable\n\n\n\n\n\n\nExercise 2 - Find the data type\n\n\n\n\n\n\nLevel: \nWhat is the data type of the message variable? Print it to Standard output\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nprint(type(message))\noutput:\n&lt;class 'str'&gt;\nIt is a string",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html#using-jupyter-notebooks",
+    "href": "materials/02-starting-in-python.html#using-jupyter-notebooks",
+    "title": "4  Starting in Python",
+    "section": "4.4 Using Jupyter Notebooks",
+    "text": "4.4 Using Jupyter Notebooks\nPython programs (.py files) are essential in data analysis and structured software development. In this course, we will primarily use Jupyter Notebooks for coding. Jupyter Notebooks enable literate programming by merging natural language (like English) with source code in a single document. Instead of separate text documents and .py files, Jupyter Notebooks integrate both functionalities, making analyses and code reproducible. This is important for FAIR (Findable, Accessible, Interoperable, and Reproducible) research standards.\nThe name “Jupyter” derives from its core languages: Julia, Python, and R, with its logo inspired by Galileo’s discovery of Jupiter’s moons. Each coding language has its own kernel for executing code cells. For Python, the kernel is IPython. Jupyter Notebook files have a .ipynb extension, indicating their connection to IPython.\nThe Jupyter Notebook file, kernel, and web browser interact via the Jupyter Notebook Server, enabling a seamless user experience.\nFor a more indepth look at jupyter notebooks, refer to the MCB course: https://ac812.github.io/mcb-python/jupyter.html\n\n\n\n\n\n\nExercise 3 - Create a Jupyter Notebook\n\n\n\n\n\n\nLevel: \nYou should have already installed jupyter notebook. launch a jupyter notebook from the terminal:\njupyter notebook\nCreate a new python file and print “Hello World!” in a code chunk. Add a text chunk and describe what you have done. Save the file.\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nIn the Jupyter Notebook interface, you willl see a list of files and folders in the current directory. 1. Click on the New button on the right side of the interface. 2. From the dropdown menu, select Python 3 (or whichever version you have installed). This will create a new notebook. 3. You will see a new notebook open up with a cell where you can write Python code. Add:\nprint(\"Hello, World!\")\n\nRun the Code by clicking on the cell containing the code. Press Shift + Enter on your keyboard, or click the Run button in the toolbar.\nSave Your Notebook by clicking on the File menu at the top left. Select Save and Checkpoint or press Ctrl + S (Windows) or Cmd + S (Mac).",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/02-starting-in-python.html#summary",
+    "href": "materials/02-starting-in-python.html#summary",
+    "title": "4  Starting in Python",
+    "section": "4.5 Summary",
+    "text": "4.5 Summary\nYou should now be able to call in built functions in python and be set up to use Jupyter Notebook\n\n\n\n\n\n\nKey Points\n\n\n\n\npython uses # for comments\nin python variables are assigned with =\nin python there is no need to define the variable type explicitly\nindentation is used in python to identify code chunks\nJupyter notebooks enable literate programming in python, combining code chunks and markdown text",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Starting in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/03-data-types-in-python.html",
+    "href": "materials/03-data-types-in-python.html",
+    "title": "5  Data Types in Python",
+    "section": "",
+    "text": "5.1 Inbuilt Data Types\nIn programming, data type is an important concept. Variables can store data of different types, and different types can do different things.\nPython has the following data types built-in without needing any other libraries:\nSimple/primitive data types:\nComposite Datatypes / data structures\nWe will also look at the numpy arrays and pandas dataframes, you can also use the decimal module for correctly rounded arithmetic\nIn Python, each data type has specific use cases and trade-offs. Let’s look at each category and examine when it might be used, along with its benefits and disadvantages:\nCustom Data types",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Types in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/03-data-types-in-python.html#inbuilt-data-types",
+    "href": "materials/03-data-types-in-python.html#inbuilt-data-types",
+    "title": "5  Data Types in Python",
+    "section": "",
+    "text": "None Type: NoneType\nBoolean Type: bool\nText Type: str\nNumeric Types: int, float, complex\nBinary Types: bytes\n\n\n\n\nSequence Types: list, tuple, range\nSet Types: set, frozenset\nMapping Type: dict\nBinary composite type: bytearray, memoryview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCategory\nType\nCommon Use Case\nBenefits\nDisadvantages\n\n\n\n\nNone Type\nNoneType\nRepresents absence of value\nUseful for optional values and placeholders\nCan cause errors if operations expect a value\n\n\n\n\n\n\n\n\n\nBoolean\nbool\nRepresents True or False\nSimple and efficient for control flow\nLimited to two states (True/False)\n\n\n\n\n\n\n\n\n\nText\nstr\nText representation\nImmutable, Unicode support- multilingual, rich manipulation methods\nInefficient for heavy modifications\n\n\n\n\n\n\n\n\n\nNumeric\nint\nRepresents whole numbers\nNo precision issues\nLimited to integers\n\n\n\nfloat\nRepresents decimal numbers\nSupports real numbers\nPrecision issues due to storage\n\n\n\ncomplex\nRepresents complex numbers\nDirect support for complex arithmetic\nRarely needed in general programming\n\n\n\n\n\n\n\n\n\nSequence\nlist\nMutable sequence of items\nFlexible, dynamic size, rich methods\nSlower resizing operations\n\n\n\ntuple\nImmutable sequence of items\nMemory-efficient, safe\nCannot change values once set\n\n\n\nrange\nSequence of numbers\nMemory-efficient\nLess flexible than lists\n\n\n\n\n\n\n\n\n\nMapping\ndict\nKey-value pairs\nFast lookups, flexible types\nHigher memory usage due to hashing\n\n\n\n\n\n\n\n\n\nSet\nset\nUnordered collection of unique items\nFast membership testing;\nUnordered in the Python specification; no indexing\n\n\n\nfrozenset\nImmutable set\nHashable, can be used as dictionary keys\nCannot modify after creation\n\n\n\n\n\n\n\n\n\nBinary\nbytes\nImmutable binary data\nEfficient, compact for binary data\nNot human-readable, cumbersome for some operations\n\n\n\nbytearray\nMutable binary data\nAllows modification of binary data\nConsumes more memory than bytes\n\n\n\nmemoryview\nEfficient access to binary data without copying\nNo data duplication\nMore complex to use\n\n\n\n\n\nIn python it is possible to define custom data types with custom syntax and behaviours, many of the common desired data types have already been made for you by others.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Types in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/03-data-types-in-python.html#initialising-and-converting-between-data-types",
+    "href": "materials/03-data-types-in-python.html#initialising-and-converting-between-data-types",
+    "title": "5  Data Types in Python",
+    "section": "5.2 Initialising and converting between data types",
+    "text": "5.2 Initialising and converting between data types\nDifferent data types have different syntax. You will notice that all inbuilt data types in python have inbuilt functions which can be used to convert to that data type or specify as that data type.\nIt is not possible to convert between all data types, and some require more information and input to convert between\nResources about data types can be found in the python documentation: https://docs.python.org/3/library/functions.html https://docs.python.org/3/library/stdtypes.html\nExamples of converting between data types:\n1. Converting int to float\nx = 5  # integer\ny = float(x)  # converting to float\nprint(y)  \nOutput:\n5.0\n2. Converting float to int\nx = 3.23  # float\ny = int(x)  # converting to int\nprint(b)\nOutput:\n3\n3. Converting int to str\nx = 10  # integer\ny = str(x)  # converting to string\nprint(y)\nOutput:\n'10'\n4. Converting str to int\nx = \"123\"  # string\ny = int(x)  # converting to int\nprint(y)\nOutput:\n123\n5. Converting str to float\nx = \"45.67\"  # string\ny = float(x)  # converting to float\nprint(x)  \nOutput:\n45.67\n6. Converting list to tuple\nmy_list = [1, 2, 3]  # list\nmy_tuple = tuple(my_list)  # converting to tuple\nprint(my_tuple)\nOutput:\n(1, 2, 3)\n7. Converting tuple to list\nmy_tuple2 = (4, 5, 6)  # tuple\nmy_list2 = list(my_tuple2)  # converting to list\nprint(my_list2)  \nOutput:\n[4, 5, 6]\n8. Converting int to bool\nnum_bool = 0  # integer\nbool_value = bool(num_bool)  # converting to boolean\nprint(bool_value)  \nOutput:\nFalse\n\n\n\n\n\n\nExercise 1 - floats to integers: what could go wrong?\n\n\n\n\n\n\nLevel: \nWhat happens when I convert 3.5 to an integer\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nThe integer displayed is output is 3. Rounding does not occur correctly\nprint(int(3.5))\nprint(int(3.7))\nThe output to both is 3. Note that the python round() function rounds the float a to the nearest integer. However with this function, if the decimal is exactly 0.5, it rounds to the nearest even number (Python’s default behavior). The alternative is to use a library, for example the decimal library.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 - Dictionary syntax\n\n\n\n\n\n\nLevel: \nUse the python documentation to find the syntax of a dictionary\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nThe syntax is with curly brackets and colons. See examples from the docs:\ndictionary = {'language': \"Python\", \"number\": 2}\nand\ndishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 - Dictionary syntax\n\n\n\n\n\n\nLevel: \nFill in the blanks with the correct data type:\n\nYou want to store a sequence of names that may change (e.g., adding or removing names).\n\nBest data type: __________ 2. You need to check if certain items (e.g., unique user IDs) exist in a collection and don’t care about the order.\nBest data type: __________ 3. You need to store an unchanging sequence of geographic coordinates (latitude, longitude).\nBest data type: __________ 4. You are counting the number of items in stock in an inventory system (whole numbers only).\nBest data type: __________ 5. You are dealing with financial calculations and need precise decimal values for prices and quantities.\nBest data type: __________ 6. You need to store data about a person (e.g., name, age, occupation) and retrieve the data by key.\nBest data type: __________ 7. You are processing binary data from an image file and need to modify the data.\nBest data type: __________ 8. You want to represent a logical condition (True or False) to check user login status.\nBest data type: __________ 9. You want to ensure a set of elements stays constant and cannot be modified after creation.\nBest data type: __________ 10. A function you are writing returns nothing (i.e., no meaningful value to return).\nBest data type: __________ 11. You need to handle a collection of scientific data points with floating-point precision (e.g., temperature readings).\nBest data type: __________ 12. You are working with a string of text that may need to be split, joined, or manipulated.\nBest data type: __________\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\n\nlist — Ordered and mutable collection of names.\nset — For fast membership tests with unique elements, order is irrelevant.\ntuple — Immutable sequence, perfect for storing fixed data like geographic coordinates.\nint — Used for counting and working with whole numbers.\nfloat — If precision is required, consider decimal.Decimal, but float for most cases.\ndict — For key-value pairs (e.g., storing data about a person).\nbytearray — Mutable sequence of bytes, useful for modifying binary data.\nbool — Represents binary conditions (True or False).\nfrozenset — Immutable version of a set.\nNone — Represents the absence of a value, useful for functions that don’t return anything.\nfloat — Floating-point numbers are used for measurements and continuous values.\nstr — For handling textual data with built-in manipulation methods.\n\nWhich data type you use effects memory useage and speed of computations which may be important in larger programs. For further reading you can investigate why sets are generally faster to find unordered elements (membership tests) than lists or tuples",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Types in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/03-data-types-in-python.html#summary",
+    "href": "materials/03-data-types-in-python.html#summary",
+    "title": "5  Data Types in Python",
+    "section": "5.3 Summary",
+    "text": "5.3 Summary\nThere are many inbuilt data types in python. We will explore them further in the next few sections. It is inportant to use the correct data type for your use case\n\n\n\n\n\n\nKey Points\n\n\n\n\nUse the table to remember the key information about data types\nCheck the python documentation for further information on data types and inbuilt functions\nIt is important to use the correct data types for your use case rather than the same data type all the time.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Types in Python</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html",
+    "href": "materials/04-python-operators.html",
+    "title": "6  Python Operators",
+    "section": "",
+    "text": "6.1 What are Operators?\nIn computer science, operators are symbols or keywords used to perform operations on data and variables (operands), like calculations or comparisons. They are essential for building expressions in programming.\nOperators are classified by the type of operation:\nPython has a rich set of operators that are classified into multiple categories\nGood resources for python operators can be found at the following:\nhttps://www.w3schools.com/python/python_operators.asp https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#what-are-operators",
+    "href": "materials/04-python-operators.html#what-are-operators",
+    "title": "6  Python Operators",
+    "section": "",
+    "text": "Arithmetic Operators: Basic math operations (+, -, *, /).\nLogical Operators: Return True or False (AND, OR, NOT).\nRelational Operators: Compare values, returning boolean results (&gt;, &lt;, ==).\nAssignment Operators: Assign values to variables (=, +=).\nBitwise Operators: Operate on bits (&, |, ^).\nUnary/Binary Operators: Work with one or two operands respectively.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#arithmetic-operators",
+    "href": "materials/04-python-operators.html#arithmetic-operators",
+    "title": "6  Python Operators",
+    "section": "6.2 Arithmetic Operators",
+    "text": "6.2 Arithmetic Operators\nThese operators perform basic arithmetic operations.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n+\nAddition\na + b\nint, float, complex, str, list, tuple, byte, bytearray\n\n\n-\nSubtraction\na - b\nint, float, complex\n\n\n*\nMultiplication\na * b\nint, float, complex, str, list, tuple, bytearray\n\n\n/\nDivision\na / b\nint, float, complex\n\n\n%\nModulus (remainder)\na % b\nint, float\n\n\n**\nExponentiation\na ** b\nint, float\n\n\n//\nFloor Division\na // b\nint, float",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#comparison-relational-operators",
+    "href": "materials/04-python-operators.html#comparison-relational-operators",
+    "title": "6  Python Operators",
+    "section": "6.3 Comparison (Relational) Operators",
+    "text": "6.3 Comparison (Relational) Operators\nThese operators compare two values and return a boolean (True or False).\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n==\nEqual to\na == b\nint, float, str, list, tuple, set, frozenset, dict, range\n\n\n!=\nNot equal to\na != b\nint, float, str, list, tuple, set, frozenset, dict, range\n\n\n&gt;\nGreater than\na &gt; b\nint, float, str, range\n\n\n&lt;\nLess than\na &lt; b\nint, float, str, range\n\n\n&gt;=\nGreater than or equal to\na &gt;= b\nint, float, str, range\n\n\n&lt;=\nLess than or equal to\na &lt;= b\nint, float, str, range",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#logical-operators",
+    "href": "materials/04-python-operators.html#logical-operators",
+    "title": "6  Python Operators",
+    "section": "6.4 Logical Operators",
+    "text": "6.4 Logical Operators\nUsed to combine conditional statements.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\nand\nLogical AND (both must be true)\na and b\nbool, int\n\n\nor\nLogical OR (either can be true)\na or b\nbool, int\n\n\nnot\nLogical NOT (negates boolean)\nnot a\nbool, int",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#assignment-operators",
+    "href": "materials/04-python-operators.html#assignment-operators",
+    "title": "6  Python Operators",
+    "section": "6.5 Assignment Operators",
+    "text": "6.5 Assignment Operators\nUsed to assign values to variables, sometimes with an operation included.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n=\nAssign\na = 5\nAll types\n\n\n+=\nAdd and assign\na += 5\nint, float, str, list, tuple, bytearray\n\n\n-=\nSubtract and assign\na -= 5\nint, float\n\n\n*=\nMultiply and assign\na *= 5\nint, float, str, list, tuple, bytearray\n\n\n/=\nDivide and assign\na /= 5\nint, float\n\n\n%=\nModulus and assign\na %= 5\nint, float\n\n\n**=\nExponentiate and assign\na **= 5\nint, float\n\n\n//=\nFloor-divide and assign\na //= 5\nint, float",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#bitwise-operators",
+    "href": "materials/04-python-operators.html#bitwise-operators",
+    "title": "6  Python Operators",
+    "section": "6.6 Bitwise Operators",
+    "text": "6.6 Bitwise Operators\nPerform operations at the bit level.\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n&\nBitwise AND\na & b\nint, byte, bytearray\n\n\n|\nBitwise OR\na | b\nint, byte, bytearray\n\n\n^\nBitwise XOR\na ^ b\nint, byte, bytearray\n\n\n~\nBitwise NOT\n~a\nint, byte, bytearray\n\n\n&lt;&lt;\nLeft shift\na &lt;&lt; 2\nint, byte, bytearray\n\n\n&gt;&gt;\nRight shift\na &gt;&gt; 2\nint, byte, bytearray",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#membership-operators",
+    "href": "materials/04-python-operators.html#membership-operators",
+    "title": "6  Python Operators",
+    "section": "6.7 Membership Operators",
+    "text": "6.7 Membership Operators\nUsed to check membership within sequences (like strings, lists, tuples).\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\nin\nTrue if value is present\n‘a’ in ‘apple’\nstr, list, tuple, set, frozenset, dict, range\n\n\nnot in\nTrue if value is not present\n‘b’ not in ‘apple’\nstr, list, tuple, set, frozenset, dict, range",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#identity-operators",
+    "href": "materials/04-python-operators.html#identity-operators",
+    "title": "6  Python Operators",
+    "section": "6.8 Identity Operators",
+    "text": "6.8 Identity Operators\nUsed to compare memory locations of two objects.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\nis\nTrue if both refer to same object\na is b\nAll types\n\n\nis not\nTrue if not same object\na is not b\nAll types",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#unary-operators",
+    "href": "materials/04-python-operators.html#unary-operators",
+    "title": "6  Python Operators",
+    "section": "6.9 Unary Operators",
+    "text": "6.9 Unary Operators\nOperate on a single operand.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n-\nNegation (unary minus)\n-a\nint, float, complex\n\n\n+\nUnary plus\n+a\nint, float, complex\n\n\nnot\nLogical NOT\nnot a\nbool, int",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#set-operators",
+    "href": "materials/04-python-operators.html#set-operators",
+    "title": "6  Python Operators",
+    "section": "6.10 Set Operators",
+    "text": "6.10 Set Operators\nSet-specific operators.\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nApplicable Data Types\n\n\n\n\n|\nUnion (combine sets)\na | b\nset, frozenset\n\n\n&\nIntersection (common)\na & b\nset, frozenset\n\n\n-\nDifference (in a not in b)\na - b\nset, frozenset\n\n\n^\nSymmetric difference\na ^ b\nset, frozenset",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#order-of-precedence-for-operators",
+    "href": "materials/04-python-operators.html#order-of-precedence-for-operators",
+    "title": "6  Python Operators",
+    "section": "6.11 Order of Precedence for operators",
+    "text": "6.11 Order of Precedence for operators\nOperators are ordered in precedence in code (think BODMAS)\nUse the table below to see the order:\n\n\n\n\n\n\n\n\n\nPrecedence Level\nOperator(s)\nDescription\nExample\n\n\n\n\n1 (Highest)\n()\nParentheses (brackets) for grouping expressions\n(a + b) * c\n\n\n2\n**\nExponentiation\na ** b\n\n\n3\n+x, -x, ~x\nUnary plus, unary minus, bitwise NOT\n+a, -a, ~a\n\n\n4\n*, /, //, %\nMultiplication, division, floor division, modulus\na * b, a / b\n\n\n5\n+, -\nAddition, subtraction\na + b, a - b\n\n\n6\n&lt;&lt;, &gt;&gt;\nBitwise left shift, right shift\na &lt;&lt; b, a &gt;&gt; b\n\n\n7\n&\nBitwise AND\na & b\n\n\n8\n^\nBitwise XOR\na ^ b\n\n\n9\n|\nBitwise OR\na | b\n\n\n10\nin, not in\nMembership operators\n'a' in 'apple'\n\n\n11\n&lt;, &gt;, &lt;=, &gt;=, ==, !=\nComparison operators\na &lt; b, a == b\n\n\n12\nis, is not\nIdentity operators\na is b\n\n\n13\nnot\nLogical NOT\nnot a\n\n\n14\nand\nLogical AND\na and b\n\n\n15\nor\nLogical OR\na or b\n\n\n16 (Lowest)\n=, +=, -=, *=, /=,      | Assignment operators                              |a = 5,\n\n\n\n\n\n//=, %=, **=, &=, ^=,\n\na += 5| |                  | \\|=, &lt;&lt;=, &gt;&gt;=",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/04-python-operators.html#summary",
+    "href": "materials/04-python-operators.html#summary",
+    "title": "6  Python Operators",
+    "section": "6.12 Summary",
+    "text": "6.12 Summary\nUse the above tables to find operators you can use in python - they can make code more concise and readable, and can be intuitive to those not familiar with python functions. However operators can make the code less readable and understandable in some situations, can be less precise and cannot generally be passed as arguments into higher order functions.\n\n\n\n\n\n\nKey Points\n\n\n\n\nThere are many operators that can be used in python\nOperators can behave differently when used with different data types and structures as we will see in the next sections",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Python Operators</span>"
+    ]
+  },
+  {
+    "objectID": "materials/05-working-with-numerical-data-types-and-strings.html",
+    "href": "materials/05-working-with-numerical-data-types-and-strings.html",
+    "title": "7  Working with Numerical Data Types and Strings",
+    "section": "",
+    "text": "7.1 Working with Numerical Data Types\nUse the exercises below to test your familiarity with operators and working with numerical data types. Here we will use the sys module that ships with python. All we need to do is add the following at the start of our Jupyter notebook:\nWe will be using the sys.getsizeof() function:",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Numerical Data Types and Strings</span>"
+    ]
+  },
+  {
+    "objectID": "materials/05-working-with-numerical-data-types-and-strings.html#working-with-numerical-data-types",
+    "href": "materials/05-working-with-numerical-data-types-and-strings.html#working-with-numerical-data-types",
+    "title": "7  Working with Numerical Data Types and Strings",
+    "section": "",
+    "text": "import sys\n\nvariable = 3\nsys.getsizeof(variable)\n\n\n\n\n\n\nExercise 1 - Assigning variables\n\n\n\n\n\n\nLevel: \na = 10\nb = 200.5\nc = 5 + 8j\nd = 3\ne = 4.0\nf = 0\ng = 100\nWhat are the data types of each variable and what is the size of each variable in memory. What are your observations?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nimport sys\nprint(\"a:\")\na = 10\nprint(type(a))\nprint(sys.getsizeof(a))\n\nprint(\"b:\") \nb  = 200.5\nprint(type(b))\nprint(sys.getsizeof(b))\n\nprint(\"c:\")\nc = 5 + 8j\nprint(type(c))\nprint(sys.getsizeof(c))\n\nprint(\"d:\")\nd = 3\nprint(type(d))\nprint(sys.getsizeof(d))\n\nprint(\"e:\")\ne = 4.0\nprint(type(e))\nprint(sys.getsizeof(e))\n\nprint(\"f:\")\nf = 0\nprint(type(f))\nprint(sys.getsizeof(f))\n\nprint(\"g:\")\ng = 100\nprint(type(g))\nprint(sys.getsizeof(g))\nOutput:\na:\n&lt;class 'int'&gt;\n28\nb:\n&lt;class 'float'&gt;\n24\nc:\n&lt;class 'complex'&gt;\n32\nd:\n&lt;class 'int'&gt;\n28\ne:\n&lt;class 'float'&gt;\n24\nf:\n&lt;class 'int'&gt;\n24\ng:\n&lt;class 'int'&gt;\n28\nKey points are that integers vary in how large they are and are generally larger than floats which are always 24 bytes. Complex numbers are not used commonly, but in this case it is 32 bytes. You can look up more information about this if you are interested.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 - Arithmetic Operations on Given Variables\n\n\n\n\n\n\nLevel: \n\n7.1.1 Arithmetic Operations on Given Variables\nGiven the variables, what will be the results of the following arithmetic operations?\n\nWhat is the result of adding the integer values a and d?\nWhat is the product of b and e?\nWhat is the combined result of adding a, b, and e?\nWhat is the difference when subtracting c from b?\nWhat is the exponentiation of d raised to the power of e?\n\nIn each case print the type and size\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nans_1 = a + d\ntype_ans_1 = type(ans_1)\nsize_ans_1 = sys.getsizeof(ans_1)\nans_2 = b * e\ntype_ans_2 = type(ans_2)\nsize_ans_2 = sys.getsizeof(ans_2)\nans_3 = a + b + e\ntype_ans_3 = type(ans_3)\nsize_ans_3 = sys.getsizeof(ans_3)\nans_4 = b - c\ntype_ans_4 = type(ans_4)\nsize_ans_4 = sys.getsizeof(ans_4)\nans_5 = d ** e\ntype_ans_5 = type(ans_5)\nsize_ans_5 = sys.getsizeof(ans_5)\n\nprint('ans_1:', ans_1, type_ans_1, size_ans_1)\nprint('ans_2:', ans_2, type_ans_2, size_ans_2)\nprint('ans_3:', ans_3, type_ans_3, size_ans_3)\nprint('ans_4:', ans_4, type_ans_4, size_ans_4)\nprint('ans_5:', ans_5, type_ans_5, size_ans_5)\noutput:\nans_1: 13 &lt;class 'int'&gt; 28\nans_2: 802.0 &lt;class 'float'&gt; 24\nans_3: 214.5 &lt;class 'float'&gt; 24\nans_4: (195.5-8j) &lt;class 'complex'&gt; 32\nans_5: 81.0 &lt;class 'float'&gt; 24\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 - Relational Operations on Given Variables\n\n\n\n\n\n\nLevel: \nUsing relational operators, determine the following comparisons:\n\nIs a equal to the sum of d and e?\nIs b greater than a multiplied by d?\nIs e less than b but greater than d?\nDoes the absolute value of c equal 10?\nIs d less than or equal to the average of a and b?\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nans_1 = a == d + e\nans_2 = b &gt; a * d\nans_3 = e &lt; b and e &gt; d\nans_4 = abs(c) == 10\nans_5 = d &lt;= ((a + b) / 2)\nprint('ans_1:', ans_1)\nprint('ans_2:', ans_2)\nprint('ans_3:', ans_3)\nprint('ans_4:', ans_4)\nprint('ans_5:', ans_5)\noutput:\nans_1: False\nans_2: True\nans_3: True\nans_4: False\nans_5: True\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 - Logical Operations on Given Variables\n\n\n\n\n\n\nLevel: \nUse logical operators to evaluate the following conditions:\n\nIs a less than b and d less than e?\nIs it false that b is equal to 20.5?\nIs either a less than d or c equal to 5 + 7j?\nIs b greater than a, and is d equal to 3?\nIs it true that either e is equal to 4, or c is equal to 5 + 7j?\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nans_1 = a &lt; b and d &lt; e\nans_2 = not (b == 20.5)\nans_3 = a &lt; d or c == 5 + 7j\nans_4 = b &gt; a and d == 3\nans_5 = (e == 4) or (c == 5 + 7j)\n\nprint('ans_1:', ans_1)\nprint('ans_2:', ans_2)\nprint('ans_3:', ans_3)\nprint('ans_4:', ans_4)\nprint('ans_5:', ans_5)\nOutput:\nans_1: True\nans_2: True\nans_3: False\nans_4: True\nans_5: True\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 - Assignment Operations on Variable a\n\n\n\n\n\n\nLevel: \nUse assignment operators to modify the value of a, and then find the new results:\n\nIncrement a by d.\nSubtract e from the new a.\nMultiply the new a by b.\nDivide the new a by d.\nRaise the new a to the power of e.\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\na += d\nprint('ans_1:', a)\na -= e\nprint('ans_2:', a)\na *= b\nprint('ans_3:', a)\na /= d\nprint('ans_4:', a)\na **= e\nprint('ans_5:', a)\n\nsize_a = sys.getsizeof(a)\ntype_a = type(a)\nprint(size_a)\nprint(type_a)\nOutput:\nans_1: 13\nans_2: 9.0\nans_3: 1804.5\nans_4: 601.5\nans_5: 130900868105.0625\n24\n&lt;class 'float'&gt;",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Numerical Data Types and Strings</span>"
+    ]
+  },
+  {
+    "objectID": "materials/05-working-with-numerical-data-types-and-strings.html#string-exercises",
+    "href": "materials/05-working-with-numerical-data-types-and-strings.html#string-exercises",
+    "title": "7  Working with Numerical Data Types and Strings",
+    "section": "7.2 String Exercises",
+    "text": "7.2 String Exercises\n\nStrings are immutable, meaning once created they cannot be changed.\nStrings are also indexed, allowing access to individual characters and sections (slicing). Indexing with python starts with 0.\nStrings can be concatenated and repeated using operators\nEscape character \\ can be used to include characters like quotation marks\nPython has functions known as string methods inbuilt for string manipulation\nf-strings allow you to embed expressions inside string literals using {} brackets.\n\nFind Examples below: Using indexing to extract Characters\ndna_sequence = \"ACGTAG\"\nprint(dna_sequence[1])\nOutput:\nC\nSlicing Sections\ndna_sequence = \"ACGTAG\"\nprint(dna_sequence[0:4])\nOutput:\nACGT\nConcatenation\nfragment1 = \"AGCT\"\nfragment2 = \"TGCA\"\ncombined_sequence = fragment1 + fragment2\nprint(combined_sequence)\nOutput:\nAGCTTGCA\nRepetition\nrepeated_sequence = \"A\" * 5\nprint(repeated_sequence)\nOutput:\nAAAAA\nEscape Characters\ndna_info = \"The sequence is: \\\"ACGTAG\\\"\"\nprint(dna_info)\nOutput:\nThe sequence is: \"ACGTAG\"\nString Methods\ndna_sequence = \"atcggta\"\nprint(dna_sequence.upper())\nOutput:\nATCGGTA\nOther mathods can be found at: https://www.w3schools.com/python/python_ref_string.asp\nf-strings\nrganism = \"E. coli\"\ngene_count = 4000\ninfo = f\"The organism {organism} has approximately {gene_count} genes.\"\nprint(info)\nOutput:\nThe organism E. coli had approximately 4000 genes\nOther mathods can be found at: https://www.w3schools.com/python/python_ref_string.asp\n\n\n\n\n\n\nExercise 6 - String Exercise: DNA Sequence Manipulation\n\n\n\n\n\n\nLevel: \n\nCreate a DNA Sequence: Start by creating a string that represents a DNA sequence. For this exercise, use the sequence atcgtagc.\nAccess Specific Bases: Retrieve the first and third bases of the DNA sequence using indexing.\nSlice the Sequence: Slice the DNA sequence to get the first five bases.\nConcatenate a New Fragment: Create a new fragment ggcta and concatenate it to the original DNA sequence.\nRepeat a Base: Create a string that consists of the base a repeated 10 times.\nCombine with Repeated Base: Add the repeated base to the combined sequence to produce a final_sequence.\nConvert to Uppercase: Ensure the final_sequence is in uppercase.\nFormat the Output: Use an f-string to create a descriptive output that includes the original sequence, the sliced part, the combined sequence, the repeated base, and the final sequence.\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\n# Step 1: Create a DNA sequence\ndna_sequence = \"atcgtagc\"\n\n# Step 2: Access specific bases\nfirst_base = dna_sequence[0]   # a\nthird_base = dna_sequence[2]    # c\n\n# Step 3: Slice the sequence\nsliced_sequence = dna_sequence[0:5]  # atcgt\n\n# Step 4: Concatenate a new fragment\nnew_fragment = \"ggcta\"\ncombined_sequence = dna_sequence + new_fragment  # atcgtagcggcta\n\n# Step 5: Repeat a base\nrepeated_base = \"a\" * 10  # aaaaaaaaaa\n\n# Step 6: Combine with repeated base\nfinal_sequence = combined_sequence + repeated_base  # atcgtagcggctaaaaaaaaaa\n\n# Step 7: Convert to uppercase\nupper_final_sequence = final_sequence.upper()  # ATCGTAGCGGCTAAAAAAAAAA\n\n# Step 8: Format the output\noutput = (f\"Original DNA Sequence: {dna_sequence}\\n\"\n          f\"First Base: {first_base}\\n\"\n          f\"Third Base: {third_base}\\n\"\n          f\"Sliced Sequence (first 5 bases): {sliced_sequence}\\n\"\n          f\"Combined Sequence: {combined_sequence}\\n\"\n          f\"Repeated Base (a): {repeated_base}\\n\"\n          f\"Final Sequence (in uppercase): {upper_final_sequence}\")\n\n# Print the output\nprint(output)\nOutput:\nOriginal DNA Sequence: atcgtagc\nFirst Base: a\nThird Base: c\nSliced Sequence (first 5 bases): atcgt\nCombined Sequence: atcgtagcggcta\nRepeated Base (a): aaaaaaaaaa\nFinal Sequence (in uppercase): ATCGTAGCGGCTAAAAAAAAAAA",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Numerical Data Types and Strings</span>"
+    ]
+  },
+  {
+    "objectID": "materials/05-working-with-numerical-data-types-and-strings.html#summary",
+    "href": "materials/05-working-with-numerical-data-types-and-strings.html#summary",
+    "title": "7  Working with Numerical Data Types and Strings",
+    "section": "7.3 Summary",
+    "text": "7.3 Summary\nAfter these exercises you should be able to work with numerical data and strings in Python!\n\n\n\n\n\n\nKey Points\n\n\n\n\nIt is easy to use operators and functions to work both with strings and numbers in python\nTracking memory usage and data type can be important",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Numerical Data Types and Strings</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html",
+    "href": "materials/06--working-with-composite-data-types.html",
+    "title": "8  Working with Composite Data Types",
+    "section": "",
+    "text": "8.1 Overview of Composite data types\nIn Python, composite data types allow you to store multiple values in a single variable. They can hold a collection of items, which can be of different data types. The main composite data types in Python are:\nLists - Definition: Ordered, mutable collections that allow duplicate items. - Syntax: Defined using square brackets [].\nTuples - Definition: Ordered, immutable collections that can also contain duplicates. - Syntax: Defined using parentheses ().\nDictionaries - Definition: Unordered collections of key-value pairs, where each key is unique and must be immutable. - Syntax: Defined using curly braces {} and use a colon : to separate keys from values.\nSets - Definition: Unordered collections of unique items. - Syntax: Defined using curly braces {} or the set() function.\nExample Initialization and Differences:\nLet’s initialize one of each composite data type with a list of 10 animals, and then demonstrate some of the main differences.\nRemember the key differences:\nMutability - Lists: Mutable - items can be changed or updated. - Tuples: Immutable - once defined, items cannot be changed. - Dictionaries: Mutable - keys and values can be added or updated. - Sets: Mutable - can add or remove items, but cannot contain duplicates.\nOrder - Lists and Tuples: Ordered collections (the order of elements matters). - Dictionaries: Maintains insertion order as of Python 3.7. - Sets: Unordered - no guaranteed order of elements\nDuplicates - Lists and Tuples: Allow duplicates. - Dictionaries: Keys must be unique, but values can be duplicated. - Sets: Do not allow duplicates.\nComposite Data types and Memory Management\nThe way memory is managed is important. When coding we both want to minimise memory use, by not making needless duplications.\nUnderstanding the behavior of objects and how they are copied is crucial for managing memory and ensuring that your programs behave as expected. This is even more crucial when working with composite data types.\nWe will use the id() function and lists to demonstrate this.\nThe id() function returns the unique identifier (memory address) of an object. This is an integer guaranteed to be unique and constant for the object during its lifetime.\nPython Object Behavior: Objects and References\nIn Python, variables are references to objects. When you assign a variable to another variable, you’re copying the reference, not the actual object.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#overview-of-composite-data-types",
+    "href": "materials/06--working-with-composite-data-types.html#overview-of-composite-data-types",
+    "title": "8  Working with Composite Data Types",
+    "section": "",
+    "text": "# Initialize a list of animals\nanimal_list = [\"Dog\", \"Cat\", \"Elephant\", \"Lion\", \"Tiger\", \"Giraffe\", \"Zebra\", \"Monkey\", \"Snake\", \"Rabbit\"]\n\n# Initialize a tuple of animals\nanimal_tuple = (\"Dog\", \"Cat\", \"Elephant\", \"Lion\", \"Tiger\", \"Giraffe\", \"Zebra\", \"Monkey\", \"Snake\", \"Rabbit\")\n\n# Initialize a dictionary of animals with their classifications\nanimal_dict = {\n    \"Dog\": \"Mammal\",\n    \"Cat\": \"Mammal\",\n    \"Elephant\": \"Mammal\",\n    \"Lion\": \"Mammal\",\n    \"Tiger\": \"Mammal\",\n    \"Giraffe\": \"Mammal\",\n    \"Zebra\": \"Mammal\",\n    \"Monkey\": \"Mammal\",\n    \"Snake\": \"Reptile\",\n    \"Rabbit\": \"Mammal\"\n}\n\n# Initialize a set of animals\nanimal_set = {\"Dog\", \"Cat\", \"Elephant\", \"Lion\", \"Tiger\", \"Giraffe\", \"Zebra\", \"Monkey\", \"Bear\", \"Rabbit\"}\n\n# Show differences between data types\nprint(\"Original List:\", animal_list)\nprint(\"Original Tuple:\", animal_tuple)\nprint(\"Original Dictionary:\", animal_dict)\nprint(\"Original Set:\", animal_set)\n\n# Mutability Demonstration\n# Modifying the list (mutable)\nanimal_list[0] = \"Wolf\"  # Change \"Dog\" to \"Wolf\"\nprint(\"Modified List:\", animal_list)\n\n# Attempting to modify the tuple (immutable)\nanimal_tuple[0] = \"Wolf\"  \n# This will raise an error\n\n# Adding a new key-value pair to the dictionary (mutable)\nanimal_dict[\"Fox\"] = \"Mammal\"\nprint(\"Modified Dictionary:\", animal_dict)\n\n# Attempting to add a duplicate to the set (will be ignored)\nanimal_set.add(\"Dog\")  # This will not change the set\nprint(\"Modified Set (after trying to add 'Dog'):\", animal_set)\n\n\n\n\n\n\n\n\n\nIn the next sections we will work with different composite data types and investigate deep and shallow copies.\n\n\n\n\n\n\n\n\n\nExercise 1 - Equal Variables\n\n\n\n\n\n\nLevel: \nWhen you assign the value of one variable to another, what happens? i.e.\na = 10\nb = a\nwhat are the unique memory identifiers returned for a and b?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nid(a)\nid(b)\nAs you can see if you run the above code, the two variable names point to the same object in memory. Therefore change in a will also change the value of b.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#working-with-lists-in-python",
+    "href": "materials/06--working-with-composite-data-types.html#working-with-lists-in-python",
+    "title": "8  Working with Composite Data Types",
+    "section": "8.2 Working with Lists in Python",
+    "text": "8.2 Working with Lists in Python\nLists in Python are versatile and support various operations that allow you to manipulate and interact with the data they contain. Below are some common operations you can perform on lists.\nAccessing Elements\nYou can access list elements using indexing (zero-based).\nfirst_element = my_list[0]  # 1\nlast_element = my_list[-1]   # 5\nSlicing a List\nYou can retrieve a portion of a list using slicing.\nsub_list = my_list[1:4]  # [2, 3, 4]\nAdding Elements\nAppend: Add an element to the end of the list.\nmy_list.append(6)  # [1, 2, 3, 4, 5, 6]\nInsert: Insert an element at a specific index.\nmy_list.insert(2, 2.5)  # [1, 2, 2.5, 3, 4, 5, 6]\nRemoving Elements\nRemove: Remove the first occurrence of a specified value.\nmy_list.remove(2.5)  # [1, 2, 3, 4, 5, 6]\nPop: Remove and return an element at a specified index (default is the last element).\nlast_item = my_list.pop()  # list is now [1, 2, 3, 4, 5]\nModifying Elements\nYou can change the value of an element using its index.\nmy_list[1] = 20  # [1, 20, 3, 4, 5]\nExtending a List\nYou can add multiple elements to the end of the list using extend().\nmy_list.extend([6, 7, 8])  # [1, 20, 3, 4, 5, 6, 7, 8]\nSorting a List\nSort the list in ascending order.\nmy_list.sort()  # [1, 3, 4, 5, 6, 7, 8, 20]\nReversing a List\nYou can reverse the order of elements in a list.\nmy_list.reverse()  # [20, 8, 7, 6, 5, 4, 3, 1]\nFinding the Length\nGet the number of elements in the list.\nlength = len(my_list)  # 8\nNumeric operators e.g. Append multiple repeats\nmy_list * 2  # [20, 8, 7, 6, 5, 4, 3, 1, 20, 8, 7, 6, 5, 4, 3, 1]\nConclusion\nLists are a fundamental data structure in Python that allow for a variety of operations. By understanding these operations, you can effectively manage and manipulate data in your programs.\n\n\n\n\n\n\nExercise 2 - List Exercise: part 1\n\n\n\n\n\n\nLevel: \n\nCreate a list with 5 letters a-e, named letters\nInvestigate the unique identifiers of the list and the members of the list.\nAssign letter2 to letters (letters2 = letters)\nChange the 3rd letter in letters to f and sort the letters alphabetically\nWhat happens to letters2?\nuse slicing to take the middle three letters to the variable letters_subset\nWhat do you notice about the unique identifiers of letters_subset and the members of the list?\nUse the inbuilt list copy function to create a copy of letters named letters_copy letters_copy = letters.copy()\nWhat are the identifiers now?\nIf I modified a variable in letters_copy would letters change?\nDo you think letters_copy is a shallow or deep copy and why?\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\n\n# 1. Create a list with 5 letters a-e, named letters\nletters = ['a', 'b', 'c', 'd', 'e']\n\n# 2. Investigate the unique identifiers of the list and the members of the list.\nid_letters = id(letters)  # Get the ID of the list\nid_member_1 = id(letters[0])  # ID of 'a'\nid_member_2 = id(letters[1])  # ID of 'b'\nid_member_3 = id(letters[2])  # ID of 'c'\nid_member_4 = id(letters[3])  # ID of 'd'\nid_member_5 = id(letters[4])  # ID of 'e'\n\nprint(f'ID of letters:{id_letters}')\nprint(f'IDs of members: {id_member_1}, {id_member_2}, {id_member_3}, {id_member_4}, {id_member_5}')\n# each member has a unique identifier and is an object as is the list\n\n# 3. Assign letter2 to letters (letters2 = letters)\nletters2 = letters  # Assign letters to letters2\n\n# 4. Change the 3rd letter in letters to `f` and sort the letters alphabetically\nletters[2] = 'f'  # Change the 3rd letter\nletters.sort()    # Sort the letters\nprint(letters)    # Output: ['a', 'b', 'd', 'e', 'f']\n\n# 5. What happens to letters2?\n# letters2 will reflect the changes made to letters because both reference the same list object.\nprint(f'letters2 after modification: {letters2}')  # Output: ['a', 'b', 'd', 'e', 'f']\n\n# 6. Use slicing to take the middle three letters to the variable letters_subset\nletters_subset = letters[1:4]  # This will take letters at index 1, 2, and 3\nprint(letters_subset)  # Output: ['b', 'd', 'e']\n\n# 7. What do you notice about the unique identifiers of letters_subset and the members of the list?\n# letters_subset has a different identifier than letters, but its members share identifiers with the corresponding members in letters.\n\n# 8. Use the inbuilt list copy function to create a copy of letters named letters_copy\nletters_copy = letters.copy()  # Create a copy of letters\n\n# 9. What are the identifiers now?\nid_letters_copy = id(letters_copy)  # Get the ID of the copied list\nid_member_copy_1 = id(letters_copy[0])  # ID of 'a'\nid_member_copy_2 = id(letters_copy[1])  # ID of 'b'\nid_member_copy_3 = id(letters_copy[2])  # ID of 'd'\nid_member_copy_4 = id(letters_copy[3])  # ID of 'e'\nid_member_copy_5 = id(letters_copy[4])  # ID of 'f'\n\nprint(f\"ID of letters_copy: {id_letters_copy}\")\nprint(f\"IDs of members in letters_copy: {id_member_copy_1}, {id_member_copy_2}, {id_member_copy_3}, {id_member_copy_4}, {id_member_copy_5}\")\n\n# 10. If I modified a variable in letters_copy would letters change?\n# No, modifying letters_copy will not affect letters because letters_copy is a separate list.\n\n# 11. Do you think letters_copy is a shallow or deep copy and why?\n# letters_copy is a shallow copy because it copies the references to the objects in the original list rather than the objects themselves.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 - List Exercise: Part 2\n\n\n\n\n\n\nLevel: \n\nTry changing the second element of the letters list to the list [‘n’ , ‘w’] to create a nested list. Look at the identifiers\nmake a copy called newletters_copy.\nBefore doing any computing - what do you think would happen if I changed letters_copy[1][1] to \"s\" ?\nTry it and see what happens. Think about what it means in terms of deep and shallow copies. How would you create a deep copy?\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\n# Original letters list\nletters = ['a', 'b', 'c', 'd', 'e']\n\n# 1 Change the second element of the letters list to a nested list\nletters[1] = ['n', 'w']  # Now letters is ['a', ['n', 'w'], 'c', 'd', 'e']\n\n# Check the identifiers of the modified letters list and its elements\nid_letters = id(letters)  # Get the ID of the outer list\nid_second_element = id(letters[1])  # ID of the nested list ['n', 'w']\nprint(f'id_letters{id_letters}')\nprint(\"second element id\", id_second_element)\n#All the other ID's stay the same\n\n#could also see:\n#id_first_nested_element = id(letters[1][0])  # ID of 'n'\n#id_second_nested_element = id(letters[1][1])  # ID of 'w'\nprint(f'ID of the first element in the nested list: {id_first_nested_element}')\nprint(f'ID of the second element in the nested list: {id_second_nested_element}')\n\n# 2. Make a copy of letters called newletters_copy\nnewletters_copy = letters.copy()  \n\n3. Predict what will happen if we change newletters_copy[1][1] to “s” Since newletters_copy[1] will be a reference to the same nested list as letters[1], changing newletters_copy[1][1] will also change letters[1][1]. You can check this is the case by looking at the identifiers\n# 4 Perform the change\nnewletters_copy[1][1] = \"s\"\n\n# Check the modified lists\nprint(f\"Modified letters: {letters}\")  # Expect: ['a', ['n', 's'], 'c', 'd', 'e']\nprint(f\"Modified newletters_copy: {newletters_copy}\")  # Expect: ['a', ['n', 's'], 'c', 'd', 'e']\n\nExplanation This shows that when you change a nested element in a shallow copy, it affects the original list because both lists reference the same nested object.",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#shallow-copy-verses-deep-copy",
+    "href": "materials/06--working-with-composite-data-types.html#shallow-copy-verses-deep-copy",
+    "title": "8  Working with Composite Data Types",
+    "section": "8.3 Shallow Copy verses Deep Copy",
+    "text": "8.3 Shallow Copy verses Deep Copy\nShallow Copy A shallow copy creates a new object but inserts references into it to the objects found in the original. This means that if the original object contains other mutable objects (like lists or dictionaries), those nested objects are not copied; they are shared between the original and the copied object.\nDeep Copy A deep copy creates a new object and recursively adds copies of nested objects found in the original. This means that all levels of the object hierarchy are duplicated, and changes made to the copied object do not affect the original.\nYou can create a deep copy using the copy module:\nimport copy\n\noriginal = [1, 2, [3, 4]]\ndeep_copied = copy.deepcopy(original)\nMemory Usage\nShallow Copy: Uses less memory as it only copies references.\nDeep Copy: Uses more memory because it creates full copies of all objects.\nPerformance\nShallow Copy: Faster due to less overhead in copying.\nDeep Copy: Slower because of the recursive copying of all elements.\nOverview\nUnderstanding shallow and deep copies is essential for effective memory management and to avoid unintended side effects when working with mutable objects in Python. Choose the appropriate type of copy based on whether you need to maintain shared references to nested objects or require complete independence between copies.\n##Working with Dictionaries Dictionaries are efficient ways to manage and access data. Keys must be immutable, but values can be anything.\nExamples are presented below:\ngene_info = {\n    \"gene\": \"BRCA1\",\n    \"sequence\": \"ATCGGCCGTAAGCTAGCTAGCTAGC\",\n    \"function\": \"DNA repair\",\n    \"organism\": \"Homo sapiens\"\n}\nAccessing Values\nYou can access a value by referring to its key.\nprint(\"Gene Name:\", gene_info[\"gene\"])  # Output: Gene Name: BRCA1\nAdding a New Key-Value Pair\nYou can add new key-value pairs to a dictionary.\ngene_info[\"chromosome\"] = \"17\"\nprint(\"Updated gene info dictionary:\", gene_info)\nModifying Existing Values\nYou can change the value of an existing key.\ngene_info[\"function\"] = \"DNA repair and regulation\"\nprint(\"Updated function:\", gene_info[\"function\"])  # Output: Updated function: DNA repair and regulation\nRemoving a Key-Value Pair\nUse the del statement to remove a key-value pair.\ndel gene_info[\"organism\"]\nprint(\"After removing organism:\", gene_info)\nUsing get() Method\nUse the get() method to avoid KeyError if the key does not exist.\nchromosome = gene_info.get(\"chromosome\", \"Not available\")\nprint(\"Chromosome:\", chromosome)  # Output: Chromosome: 17",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#benchmarking",
+    "href": "materials/06--working-with-composite-data-types.html#benchmarking",
+    "title": "8  Working with Composite Data Types",
+    "section": "8.4 Benchmarking",
+    "text": "8.4 Benchmarking\nAs there are often different methods to implement code. It is important to test the performance of different code through Benchmarking.\nMemory use and how fast your code runs are two things that can be optimised.\n\ncprofiler and timeit are both modules that can be used. Here we will use timeit to compare the dictionaries and lists.\nimport timeit\n\ngene_info_list = [\"BRCA1\", \"ATCGGCCGTAAGCTAGCTAGCTAGC\", \"DNA repair\", \"Homo sapiens\", \"17\"]\ngene_info_dictionary = {\n    \"gene\": \"BRCA1\",\n    \"sequence\": \"ATCGGCCGTAAGCTAGCTAGCTAGC\",\n    \"function\": \"DNA repair\",\n    \"organism\": \"Homo sapiens\",\n    \"chromosome\": \"17\"\n}\n\n# Define functions to access list and dictionary elements - we will go over this later\n\ndef access_list_element():\n    gene_info_list[1]  # Accessing element using lists\n\ndef access_dictionary_element():\n    gene_info_dictionary[\"sequence\"]  # Accessing element using dictionaries\n\n# Measure execution time\nexecution_time_list = timeit.timeit(access_list_element, number=100000)\nexecution_time_dictionary = timeit.timeit(access_dictionary_element, number=100000)\n\nprint(\"execution time list\", execution_time_list)\nprint(\"execution time dictionary\", execution_time_dictionary)\n\nOutput\nexecution time list 0.013154594002116937\nexecution time dictionary 0.009285816002375213\nTry it yourself!",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#sets-and-tuples",
+    "href": "materials/06--working-with-composite-data-types.html#sets-and-tuples",
+    "title": "8  Working with Composite Data Types",
+    "section": "8.5 Sets and tuples",
+    "text": "8.5 Sets and tuples\nAlthough we won’t go through sets and tuples in detail, information can be found here:\n\nhttps://www.w3schools.com/python/python_sets.asp\nhttps://www.w3schools.com/python/python_tuples.asp",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  },
+  {
+    "objectID": "materials/06--working-with-composite-data-types.html#summary",
+    "href": "materials/06--working-with-composite-data-types.html#summary",
+    "title": "8  Working with Composite Data Types",
+    "section": "8.6 Summary",
+    "text": "8.6 Summary\nComposite data types are data structures that group multiple elements, potentially of different types, into a single unit. Examples include arrays, lists, tuples, and records (like structs or objects). They allow for more complex data organization by storing and managing collections of related information. There are multiple ways to implement things and as we have seen benchmarking can be an effective way to choose the best method.\n\n\n\n\n\n\nKey Points\n\n\n\n\ndifferent composite data types have different properties -Benchmarking and understanding the differnces in properties can be used to choose the best approach",
+    "crumbs": [
+      "Session-1",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Composite Data Types</span>"
+    ]
+  }
+]
