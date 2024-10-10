@@ -355,7 +355,7 @@ This shows that when you change a nested element in a shallow copy, it affects t
 :::
 :::
 
-##Shallow Copy verses Deep Copy 
+## Shallow Copy verses Deep Copy 
 
 **Shallow Copy**
 A shallow copy creates a new object but inserts references into it to the objects found in the original. This means that if the original object contains other mutable objects (like lists or dictionaries), those nested objects are not copied; they are shared between the original and the copied object.
@@ -495,6 +495,7 @@ Although we won't go through sets and tuples in detail, information can be found
 Composite data types are data structures that group multiple elements, potentially of different types, into a single unit. Examples include arrays, lists, tuples, and records (like structs or objects). 
 They allow for more complex data organization by storing and managing collections of related information.
 There are multiple ways to implement things and as we have seen benchmarking can be an effective way to choose the best method.
+
 ::: {.callout-tip}
 
 #### Key Points
