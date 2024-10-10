@@ -7,3 +7,4 @@ book:
         - materials/03-data-types-in-python.md
         - materials/04-python-operators.md
         - materials/05-working-with-numerical-data-types-and-strings.md
+        - materials/06--working-with-composite-data-types.md
