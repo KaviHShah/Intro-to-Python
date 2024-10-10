@@ -70,7 +70,7 @@ In Python, each data type has specific use cases and trade-offs. Let's look at e
 |                |              |                                                   |                                                   |                                                       |
 | **Mapping**    | dict         | Key-value pairs                                   | Fast lookups, flexible types                       | Higher memory usage due to hashing                     |
 |                |              |                                                   |                                                   |                                                       |
-| **Set**        | set          | Unordered collection of unique items              | Fast membership testing; generally ordered in CPython (3.7+) | Unordered in the Python specification; no indexing     |
+| **Set**        | set          | Unordered collection of unique items              | Fast membership testing;                           | Unordered in the Python specification; no indexing     |
 |                | frozenset    | Immutable set                                     | Hashable, can be used as dictionary keys          | Cannot modify after creation                           |
 |                |              |                                                   |                                                   |                                                       |
 | **Binary**     | bytes        | Immutable binary data                             | Efficient, compact for binary data                 | Not human-readable, cumbersome for some operations     |
@@ -267,7 +267,7 @@ Best data type: __________
 
 ::: {.callout-answer}
 1. list — Ordered and mutable collection of names.
-2. set — For fast membership tests with unique elements, order is irrelevant (unordered but generally ordered in CPython since Python 3.7).
+2. set — For fast membership tests with unique elements, order is irrelevant.
 3. tuple — Immutable sequence, perfect for storing fixed data like geographic coordinates.
 4. int — Used for counting and working with whole numbers.
 5. float — If precision is required, consider decimal.Decimal, but float for most cases.
