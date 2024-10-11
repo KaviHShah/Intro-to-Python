@@ -482,6 +482,7 @@ execution time list 0.013154594002116937
 execution time dictionary 0.009285816002375213
 ```
 Try it yourself!
+*For extra reading you can read about optimising compilers, how they apply to python and other coding languages, and what they can and cannot do.
 
 ## Sets and tuples
 
