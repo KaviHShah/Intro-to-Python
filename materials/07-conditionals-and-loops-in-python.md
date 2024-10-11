@@ -117,7 +117,7 @@ In Python, `try` and `except` blocks are used for handling exceptions, which are
 **`else` Block:**
 - You can add an `else` block after the `except` block. This block runs if the `try` block executes without raising an exception.
 
-`finally` Block:
+**`finally` Block:**
 - The `finally` block runs regardless of whether an exception was raised or not. It is often used for cleanup actions, like closing files or releasing resources.
 
 **Example**
@@ -146,16 +146,20 @@ finally:
 *Explanation of the Example:*
 
 `try`:
+
 - Attempts to divide `numerator` by `denominator`. Since `denominator` is zero, this raises a `ZeroDivisionError`.
 
 `except`:
+
 - The first `except` catches the `ZeroDivisionError` and prints an error message.
 - The second `except` would catch any other unexpected exceptions, but it won't run in this case because the first `except` handles the error.
 
 `else`:
+
 - If there were no exceptions, the `else` block would print the result.
 
 `finally`:
+
 - This block runs at the end of the `try/except` structure, regardless of whether an exception occurred or not. It's useful for cleanup actions.
 
 In this case I might not use the `else` or `finally`
@@ -280,6 +284,7 @@ dna_sequence = "ATCGATCGATCGATCG"
 
 ::: {.callout-answer}
 
+```
 # Given DNA sequence
 dna_sequence = "ATCGATCGATCGATCG"
 
