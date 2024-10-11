@@ -319,18 +319,448 @@ What exceptions might be generated?
 
 :::
 
-## Section
+::: {.callout-exercise}
+#### Make your own for loop
+{{< level 2 >}}
+
+Exercise: Create your own for loop example with a dictionary, using the `enumerate()` function, `try` and `except` and if statements. Explain what your code does?
+Discuss in groups how you might improve eachothers code?
+
+::: {.callout-answer}
+Example answer:
+
+```
+# Define a dictionary of animals and their respective speeds in km/h
+animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40
+}
+
+# Loop through the dictionary using enumerate
+for index, (animal, speed) in enumerate(animal_speeds.items()):
+    try:
+        # Check if speed is numeric, and if the animal is faster than 50 km/h
+        if speed > 50:
+            print(f"{index + 1}. {animal} is fast with a maximum speed of {speed} km/h!")
+        else:
+            print(f"{index + 1}. {animal} is slow with a maximum speed of {speed} km/h.")
+    except TypeError:
+        # Handle the case where speed is not a numeric value
+        print(f"{index + 1}. {animal} has an invalid speed value: {speed}")
+```
+For this code some improvements are:
+
+```
+animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+}
+
+for index, (animal, speed) in enumerate(animal_speeds.items(), start=1):
+    try:
+        # Check if speed is numeric, and if the animal is faster than 50 km/h
+        if speed > 50:
+            print(f"{index}. {animal} is fast with a maximum speed of {speed} km/h!")
+        else:
+            print(f"{index}. {animal} is slow with a maximum speed of {speed} km/h.")
+    except TypeError:
+        # Handle the case where speed is not a numeric value
+        print(f"{index}. {animal} has an invalid speed value: {speed}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+```
+output:
+```
+
+1. Cheetah is fast with a maximum speed of 120 km/h!
+2. Tortoise is slow with a maximum speed of 0.3 km/h.
+3. Falcon has an invalid speed value: fast
+4. Horse is fast with a maximum speed of 88 km/h!
+5. Elephant is slow with a maximum speed of 40 km/h.
+
+```
+
+:::
+:::
+
+::: {.callout-exercise}
+#### Edge Cases
+{{< level 2 >}}
+
+How would you deal with the following edge case?
+
+```
+animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+    (20,3): 0.5
+}
+```
+
+This would run as if there is no problem in the code.
 
 
-Headings for material sections start at level 2. 
+::: {.callout-answer}
 
-More guidelines for content available here: https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html
+maybe add a if Statement?
 
+:::
+:::
+
+## `match` Statements
+
+### A newer way of working with conditionals!
+
+Match statements (Python 3.10 onwards) allow for structural pattern matching, which is a more powerful and flexible version of if-elif chains. With match, you can compare variables to patterns and handle complex matching scenarios in a clear, concise way, and also directly deconstruct variables!
+
+| Feature                      | if Statements                          | match Statements                                      |
+|------------------------------|-----------------------------------------|-------------------------------------------------------|
+| Simplicity for Basic Cases    | Easy for simple comparisons             | Similar simplicity for simple matches                 |
+| Handling Complex Structures   | Requires manual decomposition           | Can match directly on structures                      |
+| Deconstruction                | Requires explicit unpacking             | Automatically deconstructs data structures            |
+| Type Matching                 | Needs `isinstance()` checks             | Can match types directly                              |
+| Readability                   | Becomes verbose with complex logic      | More concise for complex scenarios                    |
+| Flexibility                   | Can use `if-elif-else` chains for conditions | Can handle advanced pattern matching with custom conditions |
+
+
+Example:
+```
+filtered_sequences = []
+dna_sequences = [
+    "ATCGTAGCTAGCTAGCTAGCTA",
+    "ATCG",
+    "ATGCGTAGCTAGCTAGCTAGCTAGCTAG",
+    12345,
+    "ATCGTAGCTAGCTAGCTAGCTAGC"
+]
+
+for sequence in dna_sequences:
+    match sequence:
+        case str():
+          print(f' reported DNA is {sequence}')
+          filtered_sequences.append(sequence)
+        case int():
+          print(f'{sequence} is not DNA')
+        case _:
+          print(f'{sequence} is not DNA')
+
+print(filtered_sequences)
+
+```
+Output:
+
+```
+ reported DNA is ATCGTAGCTAGCTAGCTAGCTA
+ reported DNA is ATCG
+ reported DNA is ATGCGTAGCTAGCTAGCTAGCTAGCTAG
+12345 is not DNA
+ reported DNA is ATCGTAGCTAGCTAGCTAGCTAGC
+['ATCGTAGCTAGCTAGCTAGCTA', 'ATCG', 'ATGCGTAGCTAGCTAGCTAGCTAGCTAG', 'ATCGTAGCTAGCTAGCTAGCTAGC']
+
+```
+::: {.callout-exercise}
+#### Short Description
+{{< level 1 >}}
+
+How would you do this if you had to use if statements?
+
+:::
+
+::: {.callout-exercise}
+#### Short Description
+{{< level 2 >}}
+
+Use the animal_speeds dictionary in the previous exercise and write a match statement which would give the desired output
+
+::: {.callout-answer}
+
+animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+}
+
+for index, (animal, speed) in enumerate(animal_speeds.items(), start=1):
+    match (animal, speed):
+        case (str(), int()|float()):
+            if s > 50:
+                print(f"{index}. {animal} is fast with a maximum speed of {speed} km/h!")
+            else:
+                print(f"{index}. {animal} is slow with a maximum speed of {speed} km/h.")
+        case (animal,int()|float()):
+            print(f"{index}. Invalid animal name: {animal}")
+        case (str(),speed):
+            print(f"{index}. {animal} has an invalid speed value: {speed}")
+        case _:
+            print("Unknown error")
+
+:::
+:::
+
+::: {.callout-exercise}
+#### Short Description
+{{< level 2 >}}
+
+Discussion: Can match statements replace try except?
+
+::: {.callout-answer}
+
+NO! - match statements can reduce the errors and deal with edge casees, but errors can arise within the cases that cannot be handled.
+
+- Edge cases can be different to errors - the code runs without throwing errors but the output does not behave as expected
+
+- You should always inspect data first and check things make sense.
+
+:::
+:::
+
+**Automatic Unpacking with match statements:**
+
+```
+dna_data = {
+    "sequence": "AGCTAGCCTAAGT",
+    "length": 12,
+    "type": "coding"
+}
+
+# Match statement to unpack DNA information
+match dna_data:
+    case {"sequence": sequence, "length": length, "type": type}:
+        print(f"The DNA sequence is {sequence}, it has a length of {length} bases, and it is of type '{type}'.")
+    case {"sequence": sequence, "length": length}:
+        print(f"The DNA sequence is {sequence} and has a length of {length} bases, but type information is missing.")
+    case {"sequence": sequence}:
+        print(f"The DNA sequence is {sequence}, but length and type information are missing.")
+    case _:
+        print("Unknown DNA data.")
+```
+Output:
+```
+The DNA sequence is AGCTAGCCTAAGT, it has a length of 12 bases, and it is of type 'coding'.
+```
+
+**This Can be incredibly useful when writing functions which we will get on to shortly**
+
+## List Comprehensions
+
+List comprehensions in python enable you to write shorter and sometimes faster code than standard loops. A simple example to demonstrate the syntax is:
+
+[expression for item in iterable if condition]
+
+Similar tools occur for dictionaries (Dictionary comprehension)
+
+::: {.callout-exercise}
+#### Use list Comprehensions
+{{< level 1 >}}
+
+print the animals list in upper case using list comprehensions
+
+
+::: {.callout-answer}
+
+Answer:
+```
+animals = ["dog", "cat", "rabbit", "elephant"]
+print([animal.upper() for animal in animals])
+```
+output:
+```
+['DOG', 'CAT', 'RABBIT', 'ELEPHANT']
+```
+
+:::
+:::
+
+## Explanation of While Loops in Python
+
+A `while` loop in Python is a control flow statement that allows code to be executed repeatedly based on a boolean condition. The loop continues to execute as long as the condition remains `True`. Here's a breakdown of how `while` loops work:
+
+**Key Components**
+
+1. **Condition:** The loop starts with a condition that is evaluated before each iteration. If the condition is `True`, the code block within the loop is executed.
+
+2. **Code Block:** The statements inside the loop are indented, and these will run repeatedly as long as the condition remains `True`.
+
+3. **Increment/Decrement:** It's crucial to modify the variable used in the condition within the loop; otherwise, you may create an infinite loop.
+
+4. **Exit:** Once the condition evaluates to `False`, the loop stops, and the program continues with the next line of code following the loop.
+
+**Syntax**
+
+```
+while condition:
+    # Code block to execute
+    # Update condition variable
+```
+**Example**
+
+Here's a simple example to illustrate how a while loop works:
+
+```
+count = 0
+
+while count < 5:
+    print("Count is:", count)
+    count += 1  # Increment count
+```
+**Explanation of the Example**
+
+- **Initialization:** The variable `count` is initialized to `0`.
+  
+- **Condition:** The `while` loop checks if `count` is less than `5`.
+  
+- **Code Execution:** If the condition is `True`, it prints the current value of `count`.
+  
+- **Increment:** The line `count += 1` increments the value of `count` by `1` after each iteration.
+  
+- **Termination:** Once `count` reaches `5`, the condition becomes `False`, and the loop exits.
+
+This can be incredibly useful in simulations. Or when interacting in the environment. Here the number of iterations is not known beforehand and depend on a certain condition being met. They provide a way to repeat actions and process data dynamically within a program.
+
+**However**
+
+- **Infinite Loops:** Ensure the condition will eventually evaluate to `False` to avoid infinite loops.
+  
+- **Break Statement:** You can use the `break` statement to exit a loop prematurely if needed.
+  
+- **Continue Statement:** The `continue` statement can skip the current iteration and proceed to the next one based on a condition.
+
+An example is:
+
+```
+import random
+
+population = 1000
+infected = 1
+days = 0
+infection_rate = 1.5
+max_days = 30
+
+while infected < population:
+    days += 1
+
+    if random.random() > 0.9:
+        print(f"Day {days}: Lockdown in effect, no new infections today.")
+        continue
+    
+    new_infections = int(infected * infection_rate)
+
+    if new_infections + infected > population:
+        new_infections = population - infected
+    
+    infected += new_infections
+
+    print(f"Day {days}: {infected} infected.")
+
+    if infected >= population:
+        print(f"Day {days}: The entire population is infected.")
+        break
+
+    if random.random() > 0.8:
+        print(f"Day {days}: Health measures implemented, slowing infection.")
+        infection_rate -= 0.3
+    
+    if infection_rate <= 0.1:
+        print(f"Day {days}: The infection has nearly stopped spreading.")
+        break
+    
+    if days >= max_days:
+        print("The simulation has reached its time limit.")
+        break
+
+```
+
+::: {.callout-exercise}
+#### Code Legiblity
+{{< level 2 >}}
+
+Discussion:
+What does the above code do?
+Is it legibly written?
+What can be done to improve this?
+
+::: {.callout-answer}
+
+# Commenting the code appropriately i important!
+import random
+
+# Parameters of the simulation
+population = 1000       # Total population
+infected = 1            # Initially 1 person is infected
+days = 0                # Start at day 0
+infection_rate = 1.5    # Rate of infection: how many people one infected person can infect per day
+max_days = 30           # Maximum number of days to simulate
+
+while infected < population:
+    days += 1
+
+    # Simulate random events like lockdown or vaccines
+    if random.random() > 0.9:  # 10% chance of stopping the spread for the day
+        print(f"Day {days}: Lockdown in effect, no new infections today.")
+        continue  # Skip the infection calculation for this day and move to the next
+
+    # Simulate daily infections
+    new_infections = int(infected * infection_rate)
+
+    # If new infections exceed the remaining healthy population, adjust them
+    if new_infections + infected > population:
+        new_infections = population - infected
+
+    infected += new_infections
+
+    # Display day-by-day status
+    print(f"Day {days}: {infected} infected.")
+
+    # Continue if there are still people to infect
+    if infected >= population:
+        print(f"Day {days}: The entire population is infected.")
+        break
+
+    # Random chance to reduce the infection rate due to interventions
+    if random.random() > 0.8:  # 20% chance to reduce infection rate
+        print(f"Day {days}: Health measures implemented, slowing infection.")
+        infection_rate -= 0.3  # Decrease the infection rate
+
+    # If the infection rate gets too low, break out of the loop (end of epidemic)
+    if infection_rate <= 0.1:
+        print(f"Day {days}: The infection has nearly stopped spreading.")
+        break
+
+    # Stop the simulation after a max number of days to avoid infinite loops
+    if days >= max_days:
+        print("The simulation has reached its time limit.")
+        break
+
+:::
+
+:::
 
 ## Summary
+
+Python has many ways to work with conditions.
+It is key for these to be written concisely, while catching exceptions and edge cases and dealing with errors.
 
 ::: {.callout-tip}
 #### Key Points
 
-- Last section of the page is a bulleted summary of the key points
+By this point you should be:
+- comfortable with `if`, `elif`, `else`
+- `match` statements
+- `for` loops with `range() len() enumerate()
+- working with different composite data types
+- `try` `except`
+- while loops
+
 :::
