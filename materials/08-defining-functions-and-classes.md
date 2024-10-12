@@ -80,21 +80,21 @@ Output:
 You can set default values for parameters so that a function can be called with fewer arguments than defined.
 
 ```
-def greet_person(name="Guest"):
-    print(f"Hello, {name}!")
+def welcome_person(name="Guest"):
+    print(f"Hello {name}, nice to meet you!")
 
 ```
 Calling the function with and without the parameter:
 ```
 
-greet_person("Tom")  # Uses the provided argument
-greet_person()         # Uses the default value
+welcome_person("Tom")  # Uses the provided argument
+welcome_person()         # Uses the default value
 
 ```
 output
 ```
-Hello, Tom!
-Hello, Guest!
+Hello Tom, nice to meet you!
+Hello Guest, nice to meet you!
 ```
 
 **Example 5: Function with Multiple Outputs**
@@ -108,11 +108,11 @@ def calculate(a, b):
     return sum_val, product_val
 ```
 
-Calling the function and unpacking the values:
+Calling the function and unpacking values:
 
 ```
-sum_result, product_result = calculate(3, 4)
-print(sum_result, product_result)
+sum_1, product_1 = calculate(3, 4)
+print(sum_1, product_1)
 ```
 Output:
 ```
