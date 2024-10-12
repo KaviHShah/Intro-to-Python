@@ -1,5 +1,5 @@
 ---
-title: Intro and Recap Exercise
+title: Recap Exercise
 ---
 
 ::: {.callout-tip}
@@ -13,23 +13,13 @@ title: Intro and Recap Exercise
 :::
 
 
-## Intro
+## Overview
 
-**Today we have a range of topics to cover including:**
-
-- python memory management and garbage collection
-- Installing packages
-- Pandas and numpy
-- Working with files
-- Plotting with matplolib and seaborn
-- running things from the command line
-
-The style of teaching will be a little different from the first day. 
+Today we have a range of exciting topics to cover however the style of teaching will be a little different from the first day. 
 There will be fewer notes and you will use the documentation pages and other resources more to help you. There will be much more self-learning involved.
 This is a little closer to how things will be when you are undertaking projects on your own. 
 
 Before we go on to the new parts have a try at this exercise to test how familiar you are with the content from the last session:
-
 
 Answers will be uploaded after the session
 
@@ -109,9 +99,12 @@ Answers to be added here shortly
 
 ## Summary
 
+Hopefully that was a fun exercise to go over everything we have done so far! Let's now move on to today's topics.
+
 ::: {.callout-tip}
 #### Key Points
 
 - By completing the above exercise, you should be able to independently apply the concepts covered yesterday
+- If there is anything you found difficult, go back to the sections and recap the material
 
 :::
