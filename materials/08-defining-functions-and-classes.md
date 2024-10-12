@@ -29,15 +29,12 @@ def function_name(parameters):
 - **`parameters`**: Optional. Values that the function accepts as inputs. If there are multiple, they are separated by commas.
 - **`return`**: Optional. The function can return a value using the `return` statement.
 
-<br>
-
 **Example 1: Function with No Parameters**
 
 ```
 def welcome():
     print("Hello, World!")
 ```
-<br>
 
 **Example 2: Function with Parameters**
 
@@ -57,7 +54,6 @@ Output:
 ```
 Hello, Kavi!
 ```
-<br>
 
 **Example 3: Function with Multiple Parameters and a Return Value**
 
@@ -78,7 +74,6 @@ Output:
 ```
 15
 ```
-<br>
 
 **Example 4: Function with Default Parameters**
 
@@ -101,7 +96,6 @@ output
 Hello, Tom!
 Hello, Guest!
 ```
-<br>
 
 **Example 5: Function with Multiple Outputs**
 
@@ -247,15 +241,15 @@ How `super()` Works in This Case:
 - This lets **Gene** use the existing logic of `point_mutate` defined in **BioComponent** for sequence mutation, without having to reimplement it.
 
 ::: {.callout-exercise}
-#### Short Description
+#### Add class function and inherited class
 {{< level 2 >}}
 
-Exercise add your own function to the biocomponent class. Add protein to the biocomponent class and decide if you want to overide the functions
+Exercise add your own function to the biocomponent class. Add protein as a class inherited from the biocomponent class and decide if you want to overide the functions
 
 :::
 
 ::: {.callout-exercise}
-#### Short Description
+#### Discussion
 {{< level 2 >}}
 
 What have I not added in many of these examples including the syntax note that I should have?
@@ -268,7 +262,7 @@ try run the `help()` function on MyClass and function_name()
 
 ::: {.callout-answer}
 
-Docstring comments
+Docstring comments. While this may not be super important here, when you start using your own written functions as modules they are important!
 
 ```
 
