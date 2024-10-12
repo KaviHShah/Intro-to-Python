@@ -10,3 +10,7 @@ book:
         - materials/06--working-with-composite-data-types.md
         - materials/07-conditionals-and-loops-in-python.md
         - materials/08-defining-functions-and-classes.md
+
+    - part: "Session-2"
+      chapters:
+        - materials/09-session-1-recap-and-exercises.md
