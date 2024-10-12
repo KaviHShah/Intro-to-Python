@@ -266,9 +266,12 @@ class Gene:
 #gene1.add_protein_seq()  # Convert to protein sequence
 #gene1.modify_sequence(3, 'A')  # Modify a base
 #gene1.print_attributes()  # Print the attributes of the gene
+
 ```
 
 now generate the dictionary of gene_name gene_sequence pairs
+
+```
 
 import random
 
