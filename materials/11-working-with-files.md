@@ -14,7 +14,7 @@ title: Working with Files in Python
 Working with files is simple in python. Many packages have their own built in file reading and writing functions including for example pandas which we will look at next.
 Here we use the built-in `open` function.   
 
-##Working directory
+## Working Directory
 
 A **working directory** is the directory within the file system where your program will use as a default to look for and read files or output files. It easier than always defining absolute file paths and can allow code to be transferred.
 
