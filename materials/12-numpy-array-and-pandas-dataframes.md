@@ -103,27 +103,123 @@ Preparing data for is crucial for building effective machine leaarning models. E
 The numpy and pandas documentation is very good and they are very widely used!
 For this reason it is somewhat pointless for me to take examples and write them here. When you start coding more, you must use the resources and documentation to solve your own challenges.
 
-Numpy Documentation:
+**Numpy Documentation:**
 
 https://numpy.org/doc/
 
 
-Pandas Documentation:
+**Pandas Documentation:**
 
 https://pandas.pydata.org/docs/
+
 https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
-## Section
+::: {.callout-exercise}
+#### Uses of pandas and numpy
 
-Headings for material sections start at level 2. 
+Look through the docs and discuss the functions of pandas and numpy.
 
-More guidelines for content available here: https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html
+Give two biological examples of types of data analysis when you would use numpy arrays and two when you would use pandas dataframes.
+
+For your use cases what would the most important functions be?
+
+:::
+
+::: {.callout-exercise}
+#### Encoding and memory usage
+
+Create the same pandas dataframe and numpy array shown in the above example
+
+Implement encoding for the numpy array and pandas dataframe.
+
+Compare the deep size of the arrays and dataframes using functions found in the docs.
+
+::: {.callout-answer}
+
+```
+# Find the size (memory usage) of the DataFrame
+df_memory = df.memory_usage(deep=True).sum()  # deep=True gives a more accurate estimate
+print(f"Size of Pandas DataFrame: {df_memory} bytes")
+
+# Find the size (memory usage) of the NumPy array
+numpy_memory = numpy_array.nbytes
+```
+
+:::
+:::
+
+::: {.callout-exercise}
+#### Numpy Array Task
+
+Load the two DNA sequences in the dataset named numpy_dnaseq.txt into python.
+
+Implement the dot plot in a numpy array. i.e. place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.
+
+Find the number of non-overlapping matching sequences on sequence1 where there are more than 5 bases matching sequence2 in a row. 
+
+Write a function that has two sequences and the minimum matching length (e.g. 5 in the last example) as inputs. It should output the number of matching regions that meet this criteria in the two sequences. 
+
+::: {.callout-answer}
+
+Answers will be provided after you complete the exercise
+
+:::
+:::
+
+::: {.callout-exercise}
+#### Working with data in Pandas
+
+Find the dataset of human genes I generated from the humanmine database `humanmine_results_2024.tsv` . 
+
+In reality you should almost ALWAYS plot your dataset to see what it looks like before doing any analysis. In the next section we will explore plotting, however for this exercise:
+
+* Load in the data in the CSV into a pandas dataframe
+
+* What does the dataset show?
+
+* Inspect the data - what might you need to do to clean up the data?
+
+* Clean up the data
+
+* What is the average gene length?
+
+* What is the standard deviation around the mean?
+
+* What is the most common ontology term name?
+
+* How many unique genes are there?
+
+* Make a list ordered by gene size
+
+* How many cytoplasmic genes are there?
+
+* How many nuclear genes are there?
+
+* How many genes are both nuclear and cytoplasmic?
+
+* How many membrane proteins are there?
+
+Extra task: 
+I have made this dataset a bit closer to what you might see in real life. Now try to work with it.
+
+::: {.callout-answer}
+
+Answers will be provided after the session
+
+:::
+:::
 
 
 ## Summary
 
+Numpy and pandas are both useful packages for working with different types of biological data.
+Now you should be able to choose which to use and be comfortable attempting to manipulate data with them
+
 ::: {.callout-tip}
 #### Key Points
 
-- Last section of the page is a bulleted summary of the key points
+- Pandas is better for data manipulation and analysis where data is in multiple types. 
+- Numpy is better for numerical and array operations and is generally quicker.
+- The documentation is a good tool to use to learn Pandas and Numpy
+
 :::
