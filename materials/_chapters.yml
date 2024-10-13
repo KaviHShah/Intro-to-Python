@@ -17,3 +17,5 @@ book:
         - materials/09-session-1-recap-and-exercises-wa.md
         - materials/10-Installing-Python-packages.md
         - materials/11-working-with-files.md
+        - materials/12-numpy-array-and-pandas-dataframes.md
+
