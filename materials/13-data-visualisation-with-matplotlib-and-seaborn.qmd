@@ -20,41 +20,43 @@ title: Data Visualisation data with `matplotlib` and `seaborn`
 **Import Required Libraries**  
  
 `!pip install seaborn`
-```
+```{python}
 import matplotlib.pyplot as plt 
 import seaborn as sns 
+import numpy as np
+import pandas as pd
 ``` 
 
 **Example Dataset**  
 
 For the example: 
 
-```
-np.random.seed(42)`  
-data = {`  
+```{python}
+np.random.seed(42)  
+data = {  
        'height': np.random.normal(160, 10, 100),  # Normal distribution (mean=160, std=10)  
        'weight': np.random.normal(65, 15, 100)    # Normal distribution (mean=65, std=15)  
        } 
 
-   df = pd.DataFrame(data)
+df = pd.DataFrame(data)
 ```
 
 **Scatter Plot**  
 Create a scatter plot to visualize the relationship between height and weight.
 
-```
+```{python}
 plt.figure(figsize=(8, 5))  
 plt.scatter(df['height'], df['weight'], color='blue', alpha=0.6) 
 plt.title('Scatter Plot of Height vs. Weight')  
 plt.xlabel('Height (cm)')  
 plt.ylabel('Weight (kg)')  
-plt.grid()`  
+plt.grid()  
 plt.show()
 ```
 **Histogram**  
 Create a histogram to show the distribution of weights.
 
-```
+```{python}
 plt.figure(figsize=(8, 5)) 
 plt.hist(df['weight'], bins=15, color='green', edgecolor='black', alpha=0.7)  
 plt.title('Histogram of Weights')  
@@ -67,7 +69,7 @@ plt.show()
 **Boxplot with Seaborn**  
 Use Seaborn to create a boxplot to visualize the distribution of heights.
 
-```
+```{python}
 plt.figure(figsize=(8, 5))  
 sns.boxplot(y=df['height'], color='orange')  
 plt.title('Boxplot of Heights')  
