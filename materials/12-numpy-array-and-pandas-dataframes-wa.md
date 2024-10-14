@@ -151,7 +151,7 @@ numpy_memory = numpy_array.nbytes
 ::: {.callout-exercise}
 #### Numpy Array Task
 
-Load the two DNA sequences in the dataset named numpy_dnaseq.txt into python.
+Load the two DNA sequences in the dataset named DNA-seq.txt into python.
 
 Implement the dot plot in a numpy array. i.e. place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.
 
@@ -210,6 +210,7 @@ def count_matching_regions(seq1, seq2, min_length):
     dot_plot = create_dot_plot(seq1, seq2)
 
 # I have purposely not commented this code very well - try to figure out what I am doing - the prints commented out may help you
+# Try and simplify and coment this code add a docstring to document
     try:
 
       for i in range(len(seq1)):
