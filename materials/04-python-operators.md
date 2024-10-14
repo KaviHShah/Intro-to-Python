@@ -142,7 +142,7 @@ Use the table below to see the order:
 
 | Precedence Level | Operator(s)             | Description                                       | Example                   |
 |------------------|-------------------------|---------------------------------------------------|---------------------------|
-| 1 (Highest)      | `()`                     | Parentheses (brackets) for grouping expressions    | `(a + b) * c`             |
+| 1 (Highest)      | `()`                     | Parentheses (brackets) for grouping expressions   | `(a + b) * c`             |
 | 2                | `**`                     | Exponentiation                                    | `a ** b`                  |
 | 3                | `+x, -x, ~x`             | Unary plus, unary minus, bitwise NOT              | `+a, -a, ~a`              |
 | 4                | `*, /, //, %`            | Multiplication, division, floor division, modulus | `a * b, a / b`            |
@@ -157,9 +157,9 @@ Use the table below to see the order:
 | 13               | `not`                    | Logical NOT                                       | `not a`                   |
 | 14               | `and`                    | Logical AND                                       | `a and b`                 |
 | 15               | `or`                     | Logical OR                                        | `a or b`                  |
-| 16 (Lowest)      | `=, +=, -=, *=, /=,      | Assignment operators                              | `a = 5,                   |
-|                  | //=, %=, **=, &=, ^=,    |                                                   | a += 5`                   |
-|                  | \|=, <<=, >>=`           |                                                   |                           |
+| 16 (Lowest)      | `=, +=, -=, *=, /=,`     | Assignment operators                              | `a = 5`                   |
+|                  | `//=, %=, **=, &=, ^=,`  |                                                   | `a += 5`                  |
+|                  | `\|=, <<=, >>=`          |                                                   |                           |
 
 
 

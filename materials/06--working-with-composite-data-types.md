@@ -16,19 +16,27 @@ title: Working with Composite Data Types
 In Python, composite data types allow you to store multiple values in a single variable. They can hold a collection of items, which can be of different data types. The main composite data types in Python are:
 
 **Lists**
+
 - **Definition**: Ordered, mutable collections that allow duplicate items.
+
 - **Syntax**: Defined using square brackets `[]`.
 
 **Tuples**
+
 - **Definition**: Ordered, immutable collections that can also contain duplicates.
+
 - **Syntax**: Defined using parentheses `()`.
 
 **Dictionaries**
+
 - **Definition**: Unordered collections of key-value pairs, where each key is unique and must be immutable.
+
 - **Syntax**: Defined using curly braces `{}` and use a colon `:` to separate keys from values.
 
 **Sets**
+
 - **Definition**: Unordered collections of unique items.
+
 - **Syntax**: Defined using curly braces `{}` or the `set()` function.
 
 **Example Initialization and Differences:**
@@ -86,19 +94,29 @@ print("Modified Set (after trying to add 'Dog'):", animal_set)
 Remember the key differences:
 
 **Mutability**
+
 - **Lists**: Mutable - items can be changed or updated.
+
 - **Tuples**: Immutable - once defined, items cannot be changed.
+
 - **Dictionaries**: Mutable - keys and values can be added or updated.
+
 - **Sets**: Mutable - can add or remove items, but cannot contain duplicates.
 
 **Order**
+
 - **Lists** and **Tuples**: Ordered collections (the order of elements matters).
+
 - **Dictionaries**: Maintains insertion order as of Python 3.7.
+
 - **Sets**: Unordered - no guaranteed order of elements
 
 **Duplicates**
+
 - **Lists** and **Tuples**: Allow duplicates.
+
 - **Dictionaries**: Keys must be unique, but values can be duplicated.
+
 - **Sets**: Do not allow duplicates.
 
 **Composite Data types and Memory Management**
@@ -107,8 +125,6 @@ The way memory is managed is important.
 When coding we both want to minimise memory use, by not making needless duplications. 
 
 Understanding the behavior of objects and how they are copied is crucial for managing memory and ensuring that your programs behave as expected. This is even more crucial when working with composite data types. 
-
-<br>
 
 - In the next sections we will work with different composite data types and investigate deep and shallow copies.
 
