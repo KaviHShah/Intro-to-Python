@@ -157,7 +157,8 @@ Implement the dot plot in a numpy array. i.e. place one sequence along the top o
 
 Find the number of non-overlapping matching sequences on sequence1 where there are more than 5 bases matching sequence2 in a row.
 
-Write a function that has two sequences and the minimum matching length (e.g. 5 in the last example) as inputs. It should output the number of matching regions that meet this criteria in the two sequences. 
+Find the number of independent matching sequences where there are more than 5 bases matching in a row.
+i.e. if seq1(i) = seq2(j) and seq1(i+1) = seq2(j+1) then it is part of the same matching sequence. Please ask if this is unclear.
 
 ::: {.callout-answer}
 
