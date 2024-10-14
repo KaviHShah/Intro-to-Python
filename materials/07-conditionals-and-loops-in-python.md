@@ -323,7 +323,7 @@ What exceptions might be generated?
 #### Make your own for loop
 {{< level 2 >}}
 
-Exercise: Create your own for loop example with a dictionary, using the `enumerate()` function, `try` and `except` and if statements. Explain what your code does?
+Exercise: Create your own `for` loop example with a dictionary, using the `enumerate()` function, `try` and `except`, and `if` statements. Explain what your code does?
 Discuss in groups how you might improve eachothers code?
 
 ::: {.callout-answer}
@@ -484,6 +484,7 @@ Use the animal_speeds dictionary in the previous exercise and write a match stat
 
 ::: {.callout-answer}
 
+```
 animal_speeds = {
     "Cheetah": 120,
     "Tortoise": 0.3,
@@ -505,6 +506,8 @@ for index, (animal, speed) in enumerate(animal_speeds.items(), start=1):
             print(f"{index}. {animal} has an invalid speed value: {speed}")
         case _:
             print("Unknown error")
+
+```
 
 :::
 :::
@@ -693,6 +696,8 @@ What can be done to improve this?
 
 ::: {.callout-answer}
 
+```
+
 # Commenting the code appropriately i important!
 import random
 
@@ -742,6 +747,7 @@ while infected < population:
     if days >= max_days:
         print("The simulation has reached its time limit.")
         break
+```
 
 :::
 

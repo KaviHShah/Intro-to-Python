@@ -119,7 +119,7 @@ Remember the key differences:
 
 - **Sets**: Do not allow duplicates.
 
-**Composite Data types and Memory Management**
+## Composite Data types and Memory Management
 
 The way memory is managed is important. 
 When coding we both want to minimise memory use, by not making needless duplications. 
@@ -404,7 +404,8 @@ Deep Copy: Slower because of the recursive copying of all elements.
 
 Understanding shallow and deep copies is essential for effective memory management and to avoid unintended side effects when working with mutable objects in Python. Choose the appropriate type of copy based on whether you need to maintain shared references to nested objects or require complete independence between copies.
 
-##Working with Dictionaries
+## Working with Dictionaries
+
 Dictionaries are efficient ways to manage and access data. Keys must be immutable, but values can be anything. 
 
 Examples are presented below:
@@ -505,6 +506,7 @@ Try it yourself!
 Although we won't go through sets and tuples in detail, information can be found here:
 
 - https://www.w3schools.com/python/python_sets.asp
+
 - https://www.w3schools.com/python/python_tuples.asp
 
 ## Summary

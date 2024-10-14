@@ -220,15 +220,18 @@ gene.point_mutate(2, "X")
 **Explanation:**
 
 BioComponent Class:
+
 - The `__init__` method initializes the `name`, `id`, `sequence`, `length` (calculated automatically), and `function` of the component.
 - The `pad` method adds user-inputted strings (`left_pad`, `right_pad`) on either side of the sequence and updates the sequence's length accordingly.
 - The `point_mutate` method allows any character to replace one at a specific position in the sequence, updating the sequence accordingly.
 
 Gene Class:
+
 - Inherits from `BioComponent` and overrides the `point_mutate` method to ensure that only valid DNA bases (A, T, C, G) can be used for mutation.
 - Calls the parent class's `point_mutate` method if the mutation is valid.
 
 Example Usage:
+
 - A **BioComponent** (e.g., a protein) can be padded and mutated freely with any character.
 - A **Gene** restricts mutations to valid DNA bases and throws an error if any invalid base is provided.
 - The `super().point_mutate(position, new_char)` call in the **Gene** class refers to invoking the `point_mutate` method from its parent class (**BioComponent**). The `super()` function is used to give access to methods of the parent class from within a child class.
@@ -462,13 +465,12 @@ print(obj2.value)           # 20
 
 ```
 
-#### Summary:
-
-**Summary:**
+**Summary of variables:**
 
 - **Local variables** are declared inside a function and only exist within that function.
 
 - **Global variables** are declared outside of functions and can be accessed anywhere in the script unless shadowed by a local variable.
+
 - The `__name__ == "__main__"` construct is used to determine if a script is being run directly or imported, allowing control over code execution in different contexts.
 
 - **Instance attributes** are tied to specific objects of a class.
