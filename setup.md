@@ -17,17 +17,35 @@ If you are attending one of our workshops, we will provide a training environmen
 If you want to setup your own computer to run the analysis demonstrated on this course, you can follow the instructions below.
 :::
 
+
+
 ## Data
 
-The data used in these materials is provided as a zip file. 
-Download and unzip the folder to your Desktop to follow along with the materials.
+The data used in these materials is provided [Here](download-directory.github.io?url=https://github.com/KaviHShah/Intro-to-Python/tree/main/course_files/data)
+Download and the folder to your Desktop to follow along with the materials.
+
+
+
 
 <!-- Note for Training Developers: add the link to 'href' -->
+<!--
 <a href="">
   <button class="btn"><i class="fa fa-download"></i> Download</button>
 </a>
 
+-->
+
+## Interactive Google Colab
+
+So that we can all look at code I've created a temporary shared google colab here:
+
+https://colab.research.google.com/drive/11__SW1RVnigZUkJaTCE_EypVUwxObMNN?usp=sharing
+
+Use your Cambridge email to access it.
+
 ## Software
+
+<!--
 
 ### Quarto
 
@@ -38,7 +56,7 @@ To develop and render the course materials website, you will need to install _Qu
 - If you are developing materials using **JupyterLab** or **Jupyter Notebooks**, please install [Jupytext](https://jupytext.readthedocs.io/en/latest/install.html).
   - Use the [paired notebook](https://jupytext.readthedocs.io/en/latest/paired-notebooks.html) feature to have synchronised `.ipynb`/`.qmd` files. Only `.qmd` files should be pushed to the repository (`.ipynb` files have been added to `.gitignore`).
 
-<!--
+
 ### R and RStudio
 
 ::: {.tabset group="os"}
@@ -66,8 +84,8 @@ Download and install all these using default options:
 :::
 -->
 
-
 <!--
+
 ### Conda
 
 Open a terminal and run:
@@ -179,3 +197,49 @@ You may also want to configure the Windows terminal to automatically open _WSL2_
 - Click on "<i class="fa-solid fa-gear"></i> Settings".
 - Under "Default Profile" select "<i class="fa-brands fa-linux"></i> Ubuntu". 
 -->
+
+# Python
+
+We recommend using the package manager Mamba to manage your Python installation and environments. 
+Our recommendation is to create separate environments for each project or type of analysis, to avoid package version conflicts. 
+In this page we give an example of creating an environment for our Python introduction course, which includes Jupyter Lab and some essential packages for data analysis. 
+
+:::{.callout-important}
+#### First install Mamba
+
+Follow the instructions on the [mamba installation page](https://cambiotraining.github.io/software-installation/materials/mamba.html). 
+Then return to this page.
+:::
+
+* Open a terminal (macOS and Linux) or the Miniforge prompt (Windows)
+  * Ensure that the shell starts with the word `(base)`, indicating Mamba is correctly installed.
+* Create a new environment, which we will call `pycourse` (you may give your environment a name of your choice):
+
+    ```bash
+    mamba create -n pycourse
+    ```
+
+* Install JupyterLab (for notebook interface):
+
+    ```bash
+    mamba install -y -n pycourse jupyterlab
+    ```
+
+* The installation should complete with the following message: 
+
+    ```
+    Downloading and Extracting Packages
+
+    Preparing transaction: done
+    Verifying transaction: done
+    Executing transaction: done
+    ```
+
+* Once installed, you can start JupyterLab by activating your environment and running the command to launch it:
+
+    ```bash
+    mamba activate pycourse
+    jupyter lab
+    ```
+
+* JupyterLab should open in your browser automatically. If it doesn't, you can click the link that appears on the message printed on the screen:
