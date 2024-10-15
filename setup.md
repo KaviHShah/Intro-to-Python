@@ -21,8 +21,10 @@ If you want to setup your own computer to run the analysis demonstrated on this 
 
 ## Data
 
-The data used in these materials is provided [Here](download-directory.github.io?url=https://github.com/KaviHShah/Intro-to-Python/tree/main/course_files/data)
-Download and the folder to your Desktop to follow along with the materials.
+The data used in these materials is provided:
+[numpy exercise](https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/data/DNA-seq.txt)
+[pandas dataset](https://github.com/KaviHShah/Intro-to-Python/blob/main/course_files/data/humanmine_results_2024.tsv)
+[pandas dataset test](https:/raw.githubusercontent.com/KaviHShah/Intro-to-Python/blob/main/course_files/data/humanmine_results_2024.tsv)
 
 
 
