@@ -21,21 +21,29 @@ If you want to setup your own computer to run the analysis demonstrated on this 
 
 ## Data
 
-The data used in these materials is provided:
-[numpy exercise](https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/data/DNA-seq.txt)
-[pandas dataset](https://github.com/KaviHShah/Intro-to-Python/blob/main/course_files/data/humanmine_results_2024.tsv)
-[pandas dataset test](https:/raw.githubusercontent.com/KaviHShah/Intro-to-Python/blob/main/course_files/data/humanmine_results_2024.tsv)
+The data used in these materials is provided here:
 
-
-
+<!--
+```(is R script)
+#| echo: false
+download_link(
+  link = "https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/data.zip",
+  button_label = "Download ZIP file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+-->
 
 <!-- Note for Training Developers: add the link to 'href' -->
-<!--
-<a href="">
+
+<a href="https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/data.zip">
   <button class="btn"><i class="fa fa-download"></i> Download</button>
 </a>
 
--->
+
 
 ## Interactive Google Colab
 
