@@ -332,7 +332,7 @@ In reality you should almost ALWAYS plot your dataset to see what it looks like 
 * How many membrane proteins are there?
 
 Extra task: 
-I have made this dataset a bit closer to what you might see in real life. Now try to work with it.
+Mess up this dataset to make it a bit closer to what you might see in real life. Now try to work with it in python.
 
 ::: {.callout-answer}
 
