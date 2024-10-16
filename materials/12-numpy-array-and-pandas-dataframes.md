@@ -151,7 +151,7 @@ numpy_memory = numpy_array.nbytes
 ::: {.callout-exercise}
 #### Numpy Array Task
 
-Load the two DNA sequences in the dataset named numpy_dnaseq.txt into python.
+Load the two DNA sequences in the dataset named DNA-seq.txt into python.
 
 Implement the dot plot in a numpy array. i.e. place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.
 
