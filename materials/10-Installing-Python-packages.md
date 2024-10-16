@@ -87,8 +87,24 @@ conda deactivate
 - **Limited packages**: Although conda has its own package repository, it doesn't have access to all Python packages in PyPI. Sometimes, you might need to fall back on `pip`.
 - **Slower**: Conda can be slower and heavier than pip, especially when solving complex package dependencies.
 - **Larger installation**: The Anaconda distribution is large, as it comes with many pre-installed libraries. This might be unnecessary if you only need specific packages.
+- **Multiple environments use more space**: Having multiple different environments with different software versions can take up a lot of space (though unfortunately itis often necessary)
 
----
+Overview of using conda:
+
+| **Feature**                  | **Description**                                                                                       |
+|------------------------------|-------------------------------------------------------------------------------------------------------|
+| **Isolation**                | Each environment has its own packages and dependencies, avoiding conflicts between projects           |
+| **Reproducibility**           | Environments can be exported to `environment.yml` files, ensuring consistent setups across systems    |
+| **Package Management**        | Conda manages not just Python packages, but also dependencies for languages like R, C++, etc          |
+| **Multiple Environments**     | Supports creating and switching between environments for different projects with different setups     |
+| **Creating an Environment**   | `conda create --name myenv python=3.9` – Creates a new environment with a specific Python version      |
+| **Activating an Environment** | `conda activate myenv` – Activates the environment for use                                            |
+| **Installing Packages**       | `conda install numpy pandas` – Installs packages into the active environment                          |
+| **Listing Environments**      | `conda env list` – Lists all environments                                                             |
+| **Exporting an Environment**  | `conda env export > environment.yml` – Exports environment setup to a file                            |
+| **Creating from yml File**    | `conda env create -f environment.yml` – Recreates environment from a `.yml` file                      |
+| **Removing an Environment**   | `conda env remove --name myenv` – Deletes an environment                                              |
+
 
 ## Combining `pip` and `conda`
 
