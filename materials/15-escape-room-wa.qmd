@@ -659,11 +659,11 @@ None
 
 ## Congratulations
 
-Congratulations if you successfully figured out my diagnosis! You may now leave the room. I must hurry and get treated bfore symptoms start to occur!
+Congratulations if you successfully figured out my diagnosis! You may now leave the room. I must hurry and get treated before symptoms start to occur!
 
 ::: {.callout-answer}
 
-Ah yes - that makes sense - as I was bitten by a dog on my tropical holiday I may have rabies. I must quickly go and get the shot's required! Thank goodness you are here as my mad doctor dissapeared witohut telling me!
+Ah yes - that makes sense - as I was bitten by a dog on my tropical holiday! I may have rabies. I must quickly go and get the shot's required! Thank goodness you are here, as my mad doctor dissapeared without telling me!
 
 :::
 
