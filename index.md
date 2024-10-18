@@ -7,10 +7,10 @@ number-sections: false
 
 ## Overview 
 
-This course is designed to equip all members of the Part III Systems Biology cohort at the University of Cambridge with a foundational understanding of Python, which will be utilized in various subsequent sections of the program. While no prior knowledge of Python is required, a basic familiarity with coding is assumed. Additionally, this course may serve as a valuable introduction for those interested in learning Python for data science, particularly for those working with biological data. 
+This course is designed to equip all members of the Part III Systems Biology cohort at the University of Cambridge with a foundational understanding of Python, which will be utilised in various subsequent sections of the programme. While no prior knowledge of Python is required, a basic familiarity with coding is assumed. Additionally, this course may serve as a valuable introduction for those interested in learning Python for data science, particularly for those working with biological data. 
 
 ::: {.callout-tip}
-### Learning Objectives
+### Aims
 
 - Introduce participants to the core features of Python, emphasising its strengths and limitations in data science applications.
 - Provide a comprehensive overview of Python syntax, data types, and operators.
@@ -24,7 +24,7 @@ This course is designed to equip all members of the Part III Systems Biology coh
 
 ### Target Audience
 
-This is targeted at Part III Systems Biology students at the university of Cambridge. All of these students should have some basic programming experience, however may not have used python.
+This course is targeted at Part III Systems Biology students at the university of Cambridge. All students attending should have some basic programming experience, however may not have used python.
 
 Some participants may have completed the introductory Python practical in the Part II Mathematical and Computational Biology module of the Natural Sciences Tripos. This course will refresh and extend further the concepts introduced there. 
 
@@ -32,7 +32,8 @@ Some participants may have completed the introductory Python practical in the Pa
 ### Prerequisites
 
 - Have some prior experience in coding whether in Python or another programming language.
-- Have followed the instructions on Data and Setup pages to install python, mamba/conda, and jupyterlab.
+- Have followed the instructions on the [Data and Setup](https://kavihshah.github.io/Intro-to-Python/setup.html) page to install python, mamba/conda, and jupyterlab.
+- An understanding of biological terms (GCSE level Biology) would be beneficial.
 
 
 

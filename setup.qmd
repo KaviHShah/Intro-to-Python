@@ -53,14 +53,6 @@ Data for Session 3 Escape Room:
 
 
 
-## Interactive Google Colab
-
-So that we can all look at code I've created a temporary shared google colab here:
-
-https://colab.research.google.com/drive/11__SW1RVnigZUkJaTCE_EypVUwxObMNN?usp=sharing
-
-Use your Cambridge email to access it.
-
 ## Software
 
 <!--
@@ -177,8 +169,8 @@ rm singularity.deb
 :::
  -->
 
-<!-- 
-## WSL2
+
+## WSL2 (Microsoft Windows machines)
 
 There are detailed instructions on how to install WSL on the [Microsoft documentation page](https://learn.microsoft.com/en-us/windows/wsl/install). 
 But briefly:
@@ -214,13 +206,13 @@ You may also want to configure the Windows terminal to automatically open _WSL2_
 - Click on the downward arrow <i class="fa-solid fa-chevron-down"></i> in the toolbar.
 - Click on "<i class="fa-solid fa-gear"></i> Settings".
 - Under "Default Profile" select "<i class="fa-brands fa-linux"></i> Ubuntu". 
--->
 
-# Python
+
+## Python
 
 We recommend using the package manager Mamba to manage your Python installation and environments. 
 Our recommendation is to create separate environments for each project or type of analysis, to avoid package version conflicts. 
-In this page we give an example of creating an environment for our Python introduction course, which includes Jupyter Lab and some essential packages for data analysis. 
+In this page we give an example of creating an environment for our Python introduction course, which includes Jupyter Lab and some essential packages for data analysis. You will need python version 3.11 or later for this course. 
 
 :::{.callout-important}
 #### First install Mamba
@@ -234,7 +226,7 @@ Then return to this page.
 * Create a new environment, which we will call `pycourse` (you may give your environment a name of your choice):
 
     ```bash
-    mamba create -n pycourse
+    mamba create -n pycourse python=3.11
     ```
 
 * Install JupyterLab (for notebook interface):
