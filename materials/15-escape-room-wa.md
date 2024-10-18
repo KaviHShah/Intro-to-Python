@@ -1,0 +1,676 @@
+---
+title: Answers for Escape Room - You are locked in!
+---
+
+::: {.callout-warning}
+I am a rich billionaire. I have kidnapped you budding bioinformatitions on the systems biology Part III course (with the help of your course organisers) because my mad doctor has run away before telling me my diagnosis.  
+
+I have locked this room! Until you can figure out what it is using the clues my mad doctor has left behind, and can tell me how to treat it, I will not let you out!
+
+**If I die before you can figure it out unfortunately you will be trapped in this room forever....**
+
+The mad doctor told me in an email left to me after he escaped, that the expertise you all have from the introduction to python course, should allow you to follow the clues he has provided in the instructions below and in the encrypted files. 
+
+I was advised to get you to compete in three to four teams. A different person must type in each of the tasks with others only being allowed to talk - not type. There will be extra reward clues on offer for the most elegant solutions.
+
+:::
+
+::: {.callout-exercise}
+#### Mad Doctor's Instructionsa
+
+First install the `cryptography` module.
+
+Then import the `decryptor` module provided in `decryptor.py` to your python script.
+
+Only then will you be able to investigate the secret files.
+
+```
+#decryptor.py should be in your working directory (the same folder as the Jupyterlab notebook where you are running the code)
+!pip install cryptography
+import decryptor
+from decryptor import decrypt
+```
+
+
+1. The clue to generate the password to open the first secret file is a message encoded:
+```
+[84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110]
+```
+
+:::{.callout-hint}
+Hint(s) here.
+:::
+Extra clue is that the list can also be represented as the following:
+\x54\x68\x65\x20\x79\x65\x61\x72\x20\x74\x68\x61\x74\x20\x44\x4e\x41\x20\x77\x61\x73\x20\x64\x69\x73\x63\x6f\x76\x65\x72\x65\x64\x20\x69\x6e
+
+:::
+
+::: {.callout-answer}
+#### Note that the answers for this section are not Documented in detail. Try to understand what is being done, and comment up the code yourself! - There are multiple ways to get to the answer.
+
+```
+bytearray([84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110])
+```
+
+output:
+
+```
+bytearray(b'The year that DNA was discovered in')
+```
+
+
+:::{.callout-hint}
+Discovered nuclein
+:::
+
+
+Password: "1869"
+
+in 1869, a 25-year-old Swiss biochemist called Friedrich Miescher discovered a new substance in cells, which he named nuclein.
+
+:::
+
+
+2. To find the clue in the secret_file_1.txt, load this sequence and pull the characters at the fibonacci numbers. 
+The password to open secret_file_2.tsv is all lowercase:
+(third-word-in-clue) + (first word in the clue) + (6th letter in the 5th word) + (the last word backwards)
+
+::: {.callout-answer}
+
+```
+
+decrypt('secret_file_1.txt.enc', '1869', 'secret_file_1.txt')
+
+def fibonacci(length_file):
+    """Generate Fibonacci numbers up to the length of the file"""
+    fib_sequence = [0,1]
+    value = 1
+
+    while value < (length_file):
+        fib_sequence.append(value)
+        value = fib_sequence[-1] + fib_sequence[-2]
+    return fib_sequence
+
+def get_clue_1(file_path):
+    """Extract characters from a file at Fibonacci positions."""
+    with open(file_path, 'r') as file:
+        encoded_clue = file.read()  # Read the entire content of the file
+
+    # Get Fibonacci positions within the range of the content length
+    clue_positions = fibonacci(len(encoded_clue))
+
+    # Extract characters at Fibonacci positions
+    clue_characters = [encoded_clue[i] for i in clue_positions if i < len(encoded_clue)]
+
+    return ''.join(clue_characters)
+
+# Example usage
+file_path = 'secret_file_1.txt'  # Replace with your actual file path
+result = get_clue_1(file_path)
+print(result)
+
+```
+
+output: 
+
+```
+Unlocked file created: unlocked_data
+IllnessUsuallyFatalOnceSymptomsAppear
+
+```
+
+Password = "fatalillnessoraeppa"
+
+:::
+
+3. To find the clue in the second file, read the secret_file_2.csv
+
+Multiply the animal_weight by 4, and log transform the madness_index using the natural log.
+
+Plot the output as a scatter plot.
+
+The password to open secret_file_3.txt is the first 5 letters of the cell type represented - all in Upper case
+
+::: {.callout-answer}
+
+```
+
+decrypt('secret_file_2.csv.enc', 'fatalillnessoraeppa', 'secret_file_2.csv')
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Step 1: Import the CSV file
+# Replace 'your_file.csv' with the actual file name/path
+secret2_df = pd.read_csv('secret_file_2.csv')
+
+print(secret2_df.head())
+
+#secret2_df = pd.read_csv('secret_file_2.csv', header=1 ,  names=['animal_weight', 'madness_index'])
+
+#print(secret2_df.head())
+
+secret2_df.dropna(inplace=True)  # This will remove any row with NaN values
+
+#secret2_df = secret2_df.drop([0], axis=1)
+
+print(secret2_df.head())
+
+secret2_df = secret2_df.apply(pd.to_numeric, errors='coerce').dropna()
+
+print('df-floats', secret2_df.head())
+
+print(secret2_df.dtypes)
+#secret2_df['animal_weight'] = secret2_df['animal_weight'].astype(float)
+# Step 2: Multiply animal_weight by 4
+
+secret2_df['animal_weight'] = secret2_df['animal_weight'] * 4
+
+print('df-floats-animal-weights*4', secret2_df.head())
+
+secret2_df = secret2_df[(secret2_df != 0).all(axis=1)]
+
+
+# Step 3: Log transform the madness_index using the natural log
+secret2_df = secret2_df[secret2_df['madness_index'] > 0]  # Remove rows with negative madness_index
+secret2_df['madness_index'] = np.log(secret2_df['madness_index'])
+
+# Step 4: Plot the output as a scatter plot
+plt.figure(figsize=(4, 4))
+plt.scatter(secret2_df['animal_weight'], secret2_df['madness_index'], color='blue')
+plt.title('Scatter Plot of Animal Weight vs. Log Transformed Madness Index')
+plt.xlabel('Animal Weight (multiplied by 4)')
+plt.ylabel('Log Transformed Madness Index')
+plt.grid(True)
+plt.show()
+
+secret2_df = secret2_df[secret2_df['animal_weight'] < 1000]  # Remove outlier
+
+plt.figure(figsize=(4, 4))
+plt.scatter(secret2_df['animal_weight'], secret2_df['madness_index'], color='blue', s=0.01)
+plt.title('Scatter Plot of Animal Weight vs. Log Transformed Madness Index')
+plt.xlabel('Animal Weight (multiplied by 4)')
+plt.ylabel('Log Transformed Madness Index')
+plt.grid(True)
+plt.show()
+```
+
+Will add image
+
+:::{.callout-hint}
+
+begins in N
+(extra hint at this step to the best team so far - this disease is not cancer/nor is it normally curable)
+:::
+
+
+Password = "NEURO"
+Cell type is neurone
+
+:::
+
+4. Plot the equations in secret_file_3.txt 
+
+This will show you the clue. The password to open secret_file_4.tsv is an animal all upper case.
+
+::: {.callout-answer}
+```
+
+decrypt('secret_file_3.txt.enc', 'NEURO', 'secret_file_3.txt')
+with open('secret_file_3.txt', 'r') as file:
+        encoded_clue = file.read()  # Read the entire content of the file
+        print(encoded_clue)
+
+```
+output
+
+```
+
+Unlocked file created: unlocked_data
+The animal encoded in the equations below has been associated with a type of this illness. The animal all lowercase is also the clue for the next secret file
+( x^2 = y^3 - 2y + 2 ), between ( y = -2 ) and ( y = 1 )
+( y = x^2 ), between ( x = -2.5 ) and ( x = 2.5 )
+( (x - 0.7)^2 + (y + 0.4)^2 = 0.05 )
+( (x + 0.7)^2 + (y + 0.4)^2 = 0.05 )
+( y = -0.5x^2 - 3 ), between ( x = -1.82 ) and ( x = 1.82 )
+( y = -(0.4x - 2)^2 - 3 ), between ( x = 0 ) and ( x = 7 )
+( y = -(0.4x + 2)^2 - 3 ), between ( x = -7 ) and ( x = 0 )
+( y = (0.4x - 3)^2 + 2 ), between ( x = 2 ) and ( x = 12.2 )
+( y = (0.4x + 3)^2 + 2 ), between ( x = -12.2 ) and ( x = -2 )
+( x = (0.5y + 3)^2 + 5 ), between ( y = -3.5 ) and ( y = 1 )
+( -x = (0.5y + 3)^2 + 5 ), between ( y = -3.5 ) and ( y = 1 )
+( y = (0.3x - 6)^2 ), between ( x = 12 ) and ( x = 17 )
+( y = (0.3x + 6)^2 ), between ( x = -17 ) and ( x = -12 )
+
+```
+Then plot the equations:
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a figure and axis
+fig, ax = plt.subplots(figsize=(10, 10))
+
+# 1. Plot: x^2 = y^3 - 2y + 2, between y = -2 and y = 1
+y1 = np.linspace(-2, 1, 400)
+x1 = np.sqrt(y1**3 - 2*y1 + 2)
+ax.plot(x1, y1, color='black')
+ax.plot(-x1, y1, color='black')
+
+# 2. Plot: y = x^2, between x = -2.5 and x = 2.5
+x2 = np.linspace(-2.5, 2.5, 400)
+y2 = x2**2
+ax.plot(x2, y2, color='black')
+
+# 3. Plot: (x - 0.7)^2 + (y + 0.4)^2 = 0.05
+theta = np.linspace(0, 2*np.pi, 400)
+x3 = 0.7 + np.sqrt(0.05) * np.cos(theta)
+y3 = -0.4 + np.sqrt(0.05) * np.sin(theta)
+ax.plot(x3, y3, color='black')
+
+# 4. Plot: (x + 0.7)^2 + (y + 0.4)^2 = 0.05
+x4 = -0.7 + np.sqrt(0.05) * np.cos(theta)
+y4 = -0.4 + np.sqrt(0.05) * np.sin(theta)
+ax.plot(x4, y4, color='black')
+
+# 5. Plot: y = -0.5x^2 - 3, between x = -1.82 and x = 1.82
+x5 = np.linspace(-1.82, 1.82, 400)
+y5 = -0.5 * x5**2 - 3
+ax.plot(x5, y5, color='black')
+
+# 6. Plot: y = -(0.4x - 2)^2 - 3, between x = 0 and x = 7
+x6 = np.linspace(0, 7, 400)
+y6 = -(0.4*x6 - 2)**2 - 3
+ax.plot(x6, y6, color='black')
+
+# 7. Plot: y = -(0.4x + 2)^2 - 3, between x = -7 and x = 0
+x7 = np.linspace(-7, 0, 400)
+y7 = -(0.4*x7 + 2)**2 - 3
+ax.plot(x7, y7, color='black')
+
+# 8. Plot: y = (0.4x - 3)^2 + 2, between x = 2 and x = 12.2
+x8 = np.linspace(2, 12.2, 400)
+y8 = (0.4*x8 - 3)**2 + 2
+ax.plot(x8, y8, color='black')
+
+# 9. Plot: y = (0.4x + 3)^2 + 2, between x = -12.2 and x = -2
+x9 = np.linspace(-12.2, -2, 400)
+y9 = (0.4*x9 + 3)**2 + 2
+ax.plot(x9, y9, color='black')
+
+# 10. Plot: x = (0.5y + 3)^2 + 5, between y = -3.5 and y = 1
+y10 = np.linspace(-3.5, 1, 400)
+x10 = (0.5*y10 + 3)**2 + 5
+ax.plot(x10, y10, color='black')
+
+# 11. Plot: -x = (0.5y + 3)^2 + 5, between y = -3.5 and y = 1
+y11 = np.linspace(-3.5, 1, 400)
+x11 = -(0.5*y10 + 3)**2 - 5
+ax.plot(x11, y10, color='black')
+
+# 12. Plot: y = (0.3x - 6)^2, between x = 12 and 17
+x12 = np.linspace(12, 17, 400)
+y12 = (0.3*x12 - 6)**2
+ax.plot(x12, y12, color='black')
+
+# 13. Plot: y = (0.3x + 6)^2, between x = -17 and -12
+x13 = np.linspace(-17, -12, 400)
+y13 = (0.3*x13 + 6)**2
+ax.plot(x13, y13, color='black')
+
+# Remove labels, legend, and keep the grid
+ax.set_xlabel('')
+ax.set_ylabel('')
+ax.grid(True)
+
+# Set equal aspect ratio
+ax.set_aspect('equal', adjustable='datalim')
+
+
+# Set axis limits to range from -20 to +20
+ax.set_xlim([-20, 20])
+ax.set_ylim([-20, 20])
+
+# Show the plot
+plt.show()
+
+```
+Look at the plots for the animal (add image)
+Password = "BAT"
+
+
+:::
+
+5. Write code to pull out and print the unexpected values in the data to find the clue in secret_file_4.tsv
+
+The password for secret_file_5.txt is in the clue. The password is all lower case.
+
+
+::: {.callout-answer}
+
+```
+
+decrypt('secret_file_4.tsv.enc', 'BAT', 'secret_file_4.tsv')
+
+secfile4_df = pd.read_csv('secret_file_4.tsv')
+print(secfile4_df.head())
+
+secfile4_df = pd.read_csv('secret_file_4.tsv', sep='\t', skiprows=1)
+print(secfile4_df.head())
+
+print('checking for non-strings in country')
+
+for index, row in secfile4_df.iterrows():
+  if row['Risk level'] == "High risk":
+    continue
+  elif row['Risk level'] == "Low risk":
+    continue
+  elif row['Risk level'] == "No risk":
+    continue
+  elif row['Risk level'] == "Risk level":
+    continue
+  elif pd.isnull(row['Risk level']):
+    continue
+  elif "Low risk" in row['Risk level']:
+    continue
+  else:
+    print([index,row['Risk level']])
+
+
+
+print('checking for letters in not alphabetical order in the country column')
+
+for index, row in secfile4_df.iterrows():
+  value = row['Country']
+  if value == 'Country':
+    continue
+  elif pd.isnull(value):
+    continue
+  elif 1 < index < (len(secfile4_df) -1):
+    if isinstance(row['Country'],str):
+      first_letter = value[0]
+
+      previous = secfile4_df.iloc[index-1,0]
+      if isinstance(previous,str):
+        first_letter_of_previous = previous[0]
+
+      next = secfile4_df.iloc[index+1,0]
+      if isinstance(next,str):
+        first_letter_of_next = next[0]
+
+      if first_letter != first_letter_of_previous and first_letter != first_letter_of_next:
+        if len(first_letter) > 1:
+          print(index, row['Country'])
+
+  else:
+    continue
+
+```
+this outputs:
+
+```
+Unlocked file created: unlocked_data
+  Risk of this disease in terestrial animals other than bats  \
+0                                Country\tRisk level           
+1                             Afghanistan\tHigh risk           
+2                                 Albania\tHigh risk           
+3                                 Algeria\tHigh risk           
+4                            American Samoa\tNo risk           
+
+  primates and rodents\t  
+0                    NaN  
+1                    NaN  
+2                    NaN  
+3                    NaN  
+4                    NaN  
+          Country Risk level
+0     Afghanistan  High risk
+1         Albania  High risk
+2         Algeria  High risk
+3  American Samoa    No risk
+4             The        NaN
+checking for non-strings in country
+[13, 'Clue']
+[81, 'Password']
+[108, 'The next section']
+[173, 'Is']
+[298, 'Contact RIgS']
+[310, 'virus']
+checking for letters in not alphabetical order in the country column
+
+```
+
+Password = "virus"
+
+
+:::
+
+
+6. Open secret_file_5.txt 
+
+Put the amino acid sequence contents into a numpy array. Each letter should be in a new element in the array and each line forms a new row. Order the amino acids in alphabetical order. Convert the array to numeric encoding, with A being represented by '0' and the last amino acid by '19'. Plot a heatmap of your matrix.
+
+
+The family name of the animal species in the heatmap (all lower case) is the clue to open the next file, secret_file_6.txt 
+
+::: {.callout-answer}
+Answer here.
+
+```
+decrypt('secret_file_5.txt.enc', 'virus', 'secret_file_5.txt')
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the 20 amino acids in alphabetical order
+amino_acids = "ACDEFGHIKLMNPQRSTVWY"
+
+# Create a dictionary to map amino acid letters to numeric values
+# A is mapped to 0, C to 1, ..., Y to 19
+amino_acid_to_value = {amino_acid: index for index, amino_acid in enumerate(amino_acids)}
+
+def text_file_to_numpy_array(file_path):
+    # Read the text file and convert it into a numpy array
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+
+    # Remove newline characters and convert to numpy array of letters
+    amino_acid_rows = [list(line.strip()) for line in lines]
+    #print(amino_acid_rows[0])
+    #print(amino_acid_rows[1])
+    #print(amino_acid_rows[2])
+
+    # Create a numpy array from the list of rows
+    amino_acid_array = np.array(amino_acid_rows)
+
+    # Convert the amino acid letters to numbers using the dictionary
+    number_array = np.vectorize(amino_acid_to_value.get)(amino_acid_array)
+
+    return number_array
+
+def plot_heatmap(number_array):
+    # Plot the heatmap using matplotlib
+    plt.imshow(number_array, cmap='hot', interpolation='nearest')
+    plt.colorbar(label='Amino Acid Intensity (A = 0 to Y = 19)')
+    plt.title('Amino Acid Heatmap')
+    plt.show()
+
+# Example usage
+file_path = 'secret_file_5.txt'  # Replace with your text file path
+amino_acid_array = text_file_to_numpy_array(file_path)
+plot_heatmap(amino_acid_array)
+
+```
+
+Make an image of the output
+
+Password = "canidae"
+heatmap shows a dog
+
+
+:::
+
+The message clue in secret_file_6.txt is encoded as triangular numbers where 'a' = 1 and therefore the first triangular number and 'z' = 26, and therefore the 26th triangular number. 
+
+Write code to retrieve the message
+
+The last two words without gaps (all lower case) is the password for the final clue. 
+
+::: {.callout-answer}
+
+```
+
+decrypt('secret_file_6.txt.enc', 'canidae', 'secret_file_6.txt')
+with open('secret_file_6.txt', 'r') as file:
+        encoded_clue = file.read()  # Read the entire content of the file
+        print(encoded_clue)
+
+# need to remove space and gaps from numbers - is a single line
+numbers = {}
+
+for index,char in enumerate(encoded_clue):
+  try:
+    int(char)
+    numbers[index] = char
+
+  except Exception as e:
+    print("not a number")
+
+print(numbers)
+
+list_of_numbers = []
+
+for i in range(len(encoded_clue)):
+  if i in numbers:
+    stringnum = ''
+    while i in numbers:
+      stringnum += numbers[i]
+      del numbers[i]
+      i += 1
+
+
+    list_of_numbers.append(stringnum)
+
+print(list_of_numbers)
+
+
+triang_dict = {}
+
+list_of_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+for index,letter in enumerate(list_of_letters, start=1):
+  num = int(index*(index+1)/2)
+  triang_dict[num] = letter
+
+print(triang_dict)
+
+message = ''
+
+for numbers in list_of_numbers:
+  message += triang_dict[int(numbers)]
+
+
+
+print(f'message is {message}')
+
+```
+End of output:
+
+```
+not a number
+not a number
+not a number
+not a number
+not a number
+not a number
+{0: '2', 1: '1', 2: '0', 4: '3', 5: '6', 7: '1', 8: '5', 10: '9', 11: '1', 13: '1', 14: '2', 15: '0', 20: '1', 21: '9', 22: '0', 24: '2', 25: '1', 26: '0', 29: '6', 31: '1', 32: '2', 33: '0', 36: '9', 37: '1', 39: '9', 40: '1', 42: '1', 43: '2', 44: '0', 46: '1', 47: '0', 48: '5', 50: '9', 51: '1', 53: '1', 54: '2', 55: '0', 57: '1', 58: '0', 60: '1', 61: '5', 63: '1', 64: '2', 65: '0', 67: '2', 68: '1', 70: '2', 71: '1', 72: '0', 74: '1', 75: '7', 76: '1', 78: '1', 80: '1', 81: '0', 82: '5', 85: '1', 86: '9', 87: '0', 89: '9', 90: '1', 92: '4', 93: '5', 95: '1', 96: '9', 97: '0', 99: '1', 100: '9', 101: '0', 103: '4', 104: '5', 106: '1', 107: '2', 108: '0', 110: '1', 111: '0', 112: '5', 114: '1', 116: '1', 117: '9', 118: '0', 120: '1', 121: '9', 122: '0', 126: '1', 127: '2', 128: '0', 130: '6', 132: '4', 133: '5', 135: '1', 137: '2', 138: '1', 139: '0', 141: '1', 142: '5', 144: '1', 145: '0', 147: '2', 148: '7', 149: '6', 151: '4', 152: '5', 154: '2', 155: '1', 156: '0', 158: '3', 159: '6', 161: '2', 162: '1', 163: '0', 165: '3', 166: '6', 168: '4', 169: '5', 171: '1', 172: '9', 173: '0', 175: '1', 176: '0', 178: '4', 179: '5', 181: '1', 182: '9', 183: '0', 185: '1', 186: '5', 188: '1', 190: '1', 191: '9', 192: '0', 194: '1', 195: '5', 197: '4', 198: '5', 200: '1', 201: '9', 202: '0', 206: '2', 207: '1', 208: '0', 210: '3', 211: '6', 213: '1', 214: '7', 215: '1', 219: '1', 220: '2', 221: '0', 223: '2', 224: '3', 225: '1', 227: '2', 228: '8', 230: '3', 231: '6', 233: '3', 235: '4', 236: '5', 238: '2', 239: '1', 240: '0', 242: '1', 243: '5', 245: '1', 246: '9', 247: '0'}
+['210', '36', '15', '91', '120', '190', '210', '6', '120', '91', '91', '120', '105', '91', '120', '10', '15', '120', '21', '210', '171', '1', '105', '190', '91', '45', '190', '190', '45', '120', '105', '1', '190', '190', '120', '6', '45', '1', '210', '15', '10', '276', '45', '210', '36', '210', '36', '45', '190', '10', '45', '190', '15', '1', '190', '15', '45', '190', '210', '36', '171', '120', '231', '28', '36', '3', '45', '210', '15', '190']
+{1: 'a', 3: 'b', 6: 'c', 10: 'd', 15: 'e', 21: 'f', 28: 'g', 36: 'h', 45: 'i', 55: 'j', 66: 'k', 78: 'l', 91: 'm', 105: 'n', 120: 'o', 136: 'p', 153: 'q', 171: 'r', 190: 's', 210: 't', 231: 'u', 253: 'v', 276: 'w', 300: 'x', 325: 'y', 351: 'z'}
+message is themostcommonmodeoftransmissionassociatedwiththisdiseaseisthroughbites
+
+```
+
+
+Password = "throughbites"
+
+:::
+
+For the last clue, load the dictionary in the secret file. The next word in the clue can be retrieved by using the current word's "value". The first word in the clue is "if"
+
+::: {.callout-answer}
+
+```
+decrypt('secret_file_7.txt.enc', 'throughbites', 'secret_file_7.txt')
+with open('secret_file_7.txt', 'r') as file:
+        encoded_clue = file.read()  # Read the entire content of the file
+        print(encoded_clue)
+
+secret7_dict = eval(encoded_clue)
+print(secret7_dict)
+
+start = 'If'
+message = ['If']
+
+while start != 'end':
+  try:
+    start = secret7_dict[start]
+    message.append(start)
+  except Exception as e:
+    print(e)
+    start = 'end'
+
+print(message)
+
+```
+
+output:
+
+```
+Unlocked file created: unlocked_data
+{'banana': 'yellow', 'disease': 'get', 'apple': 'banana', 'chair': 'table', 'dog': 'cat', 'pencil': 'paper', 'sun': 'moon', 'car': 'bus', 'computer': 'keyboard', 'ocean': 'river', 'mountain': 'valley', 'book': 'library', 'window': 'door', 'tree': 'leaf', 'water': 'fire', 'bread': 'butter', 'train': 'station', 'bird': 'sky', 'shoe': 'sock', 'house': 'building', 'glass': 'cup', 'road': 'path', 'river': 'stream', 'rain': 'cloud', 'phone': 'message', 'flower': 'garden', 'light': 'darkness', 'fish': 'pond', 'plane': 'airport', 'sand': 'beach', 'candle': 'flame', 'coffee': 'cup', 'horse': 'saddle', 'forest': 'tree', 'butterfly': 'flower', 'clock': 'time', 'shirt': 'button', 'blanket': 'pillow', 'camera': 'picture', 'pencil': 'eraser', 'guitar': 'music', 'keyboard': 'mouse', 'salt': 'pepper', 'ice': 'snow', 'star': 'planet', 'kitchen': 'cook', 'street': 'avenue', 'castle': 'king', 'flower': 'vase', 'puzzle': 'piece', 'key': 'lock', 'pen': 'notebook', 'chocolate': 'cake', 'bread': 'jam', 'piano': 'melody', 'bicycle': 'wheel', 'lamp': 'light', 'shoe': 'lace', 'basket': 'fruit', 'bottle': 'water', 'suitcase': 'travel', 'carpet': 'floor', 'spoon': 'fork', 'honey': 'bee', 'clock': 'alarm', 'sail': 'boat', 'map': 'destination', 'coat': 'hat', 'puzzle': 'solution', 'window': 'view', 'engine': 'fuel', 'fruit': 'vegetable', 'cloud': 'sky', 'piano': 'key', 'ship': 'sail', 'mirror': 'reflection', 'curtain': 'window', 'floor': 'tile', 'stove': 'oven', 'letter': 'envelope', 'pillow': 'sleep', 'ring': 'finger', 'notebook': 'pen', 'bucket': 'water', 'cookie': 'jar', 'plate': 'dish', 'towel': 'bath', 'feather': 'bird', 'door': 'handle', 'balloon': 'air', 'clock': 'hour', 'couch': 'cushion', 'paint': 'canvas', 'tent': 'camping', 'hammer': 'nail', 'hat': 'scarf', 'soap': 'shower', 'cookie': 'chocolate', 'wheel': 'tire', 'backpack': 'school', 'song': 'lyrics', 'brush': 'paint', 'glove': 'hand', 'book': 'author', 'frame': 'picture', 'sunset': 'horizon', 'bicycle': 'helmet', 'train': 'track', 'the': 'appropriate', 'you': 'think', 'moon': 'night', 'car': 'vehicle', 'is': 'a', 'shots': 'quickly!', 'appropriate': 'shots', 'apple': 'fruit', 'tree': 'leaf', 'think': 'there', 'there': 'is', 'get': 'the', 'key': 'value', 'of': 'this', 'night': 'moon', 'risk': 'of', 'a': 'risk', 'python': 'code', 'If': 'you', 'this': 'disease', 'quickly!': None, 'dog': 'animal'}
+
+{'banana': 'yellow', 'disease': 'get', 'apple': 'fruit', 'chair': 'table', 'dog': 'animal', 'pencil': 'eraser', 'sun': 'moon', 'car': 'vehicle', 'computer': 'keyboard', 'ocean': 'river', 'mountain': 'valley', 'book': 'author', 'window': 'view', 'tree': 'leaf', 'water': 'fire', 'bread': 'jam', 'train': 'track', 'bird': 'sky', 'shoe': 'lace', 'house': 'building', 'glass': 'cup', 'road': 'path', 'river': 'stream', 'rain': 'cloud', 'phone': 'message', 'flower': 'vase', 'light': 'darkness', 'fish': 'pond', 'plane': 'airport', 'sand': 'beach', 'candle': 'flame', 'coffee': 'cup', 'horse': 'saddle', 'forest': 'tree', 'butterfly': 'flower', 'clock': 'hour', 'shirt': 'button', 'blanket': 'pillow', 'camera': 'picture', 'guitar': 'music', 'keyboard': 'mouse', 'salt': 'pepper', 'ice': 'snow', 'star': 'planet', 'kitchen': 'cook', 'street': 'avenue', 'castle': 'king', 'puzzle': 'solution', 'key': 'value', 'pen': 'notebook', 'chocolate': 'cake', 'piano': 'key', 'bicycle': 'helmet', 'lamp': 'light', 'basket': 'fruit', 'bottle': 'water', 'suitcase': 'travel', 'carpet': 'floor', 'spoon': 'fork', 'honey': 'bee', 'sail': 'boat', 'map': 'destination', 'coat': 'hat', 'engine': 'fuel', 'fruit': 'vegetable', 'cloud': 'sky', 'ship': 'sail', 'mirror': 'reflection', 'curtain': 'window', 'floor': 'tile', 'stove': 'oven', 'letter': 'envelope', 'pillow': 'sleep', 'ring': 'finger', 'notebook': 'pen', 'bucket': 'water', 'cookie': 'chocolate', 'plate': 'dish', 'towel': 'bath', 'feather': 'bird', 'door': 'handle', 'balloon': 'air', 'couch': 'cushion', 'paint': 'canvas', 'tent': 'camping', 'hammer': 'nail', 'hat': 'scarf', 'soap': 'shower', 'wheel': 'tire', 'backpack': 'school', 'song': 'lyrics', 'brush': 'paint', 'glove': 'hand', 'frame': 'picture', 'sunset': 'horizon', 'the': 'appropriate', 'you': 'think', 'moon': 'night', 'is': 'a', 'shots': 'quickly!', 'appropriate': 'shots', 'think': 'there', 'there': 'is', 'get': 'the', 'of': 'this', 'night': 'moon', 'risk': 'of', 'a': 'risk', 'python': 'code', 'If': 'you', 'this': 'disease', 'quickly!': None}
+None
+['If', 'you', 'think', 'there', 'is', 'a', 'risk', 'of', 'this', 'disease', 'get', 'the', 'appropriate', 'shots', 'quickly!', None]
+
+```
+
+:::
+
+:::
+
+## Congratulations
+
+Congratulations if you successfully figured out my diagnosis! You may now leave the room. I must hurry and get treated bfore symptoms start to occur!
+
+::: {.callout-answer}
+
+Ah yes - that makes sense - as I was bitten by a dog on my tropical holiday I may have rabies. I must quickly go and get the shot's required! Thank goodness you are here as my mad doctor dissapeared witohut telling me!
+
+:::
+
+
+## Conclusion and Summary
+
+Hopefully that was a fun exercise! Please see the key takeaways from this course
+
+::: {.callout-tip}
+#### Key Points
+
+- Python is defined by the syntax, and is an easy to use high level language commonly used in data science
+- Python has many packages and modules for data science and AI
+- There are both advantages and disadvantages to programming in python, so choose a programming language suited to the task
+- choosing the best data types and operators is key good concise and fast code
+- Understanding the basics of depp and shallow copies and how objects are stored in memory can help prevent errors in code
+- Memory management and and speed of code can be important so benchmarking is useful
+- Using conditionals, match statements, for loops and while loops enable one to build more complex programs
+- functions and classes in python help structure code and reflect the object oriented programming approach
+- Package and environment managers like conda are helpful to manage software dependencies
+- Packages like pandas, numpy, matplotlib and seaborn, enable data analysis and are well documented
+- And most importantly always document your code!
+
+:::
+

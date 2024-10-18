@@ -105,6 +105,8 @@ Overview of using conda:
 | **Creating from yml File**    | `conda env create -f environment.yml` – Recreates environment from a `.yml` file                      |
 | **Removing an Environment**   | `conda env remove --name myenv` – Deletes an environment                                              |
 
+**Note that conda and other environment and package managers DO NOT isolate files on the filesystem.**
+You can access and work with files irrespective of the conda environment it was created or worked with in.
 
 ## Combining `pip` and `conda`
 

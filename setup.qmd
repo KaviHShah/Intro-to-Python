@@ -39,7 +39,15 @@ download_link(
 
 <!-- Note for Training Developers: add the link to 'href' -->
 
+Data for Session 1 and 2:
+
 <a href="https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/data.zip">
+  <button class="btn"><i class="fa fa-download"></i> Download</button>
+</a>
+
+Data for Session 3 Escape Room:
+
+<a href="https://raw.githubusercontent.com/KaviHShah/Intro-to-Python/refs/heads/main/course_files/encrypted_data_escape_room.zip">
   <button class="btn"><i class="fa fa-download"></i> Download</button>
 </a>
 
