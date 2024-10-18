@@ -23,6 +23,7 @@ book:
 
     - part: "Session-2"
       chapters:
+        - materials/14-apis-and-biopython.md
         - materials/15-escape-room.md
         #- materials/15-escape-room-wa.md
 

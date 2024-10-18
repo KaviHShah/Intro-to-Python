@@ -28,6 +28,9 @@ Only then will you be able to investigate the secret files.
 ```
 [84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110]
 ```
+
+Use the password and the `decrypt()` function to open the file `secret_file_1.txt.enc`. This will decrypt the secret file and return a decrpted copy in your working directory. Use the `help()` function to investigate use of the module and function.
+
 <!--
 :::{.callout-hint}
 Hint(s) here.
@@ -49,8 +52,9 @@ Discovered nuclein
 Password: "1869"
 -->
 
-2. To find the clue in the secret_file_1.txt, load this sequence and pull the characters at the fibonacci numbers. 
-The password to open secret_file_2.tsv is all lowercase:
+2. To find the clue in the `secret_file_1.txt`, load this sequence and pull the characters at the fibonacci numbers. 
+
+The password to decrypt `secret_file_2.tsv.enc` is all lowercase:
 (third-word-in-clue) + (first word in the clue) + (6th letter in the 5th word) + (the last word backwards)
 
 <!--
@@ -58,13 +62,9 @@ Password = "fatalillnessoraeppa"
 -->
 
 
-3. To find the clue in the second file, read the secret_file_2.csv
+3. To find the clue in the second file, read the `secret_file_2.csv`. Multiply the animal_weight by 4, and log transform the madness_index using the natural log. Plot the output as a scatter plot.
 
-Multiply the animal_weight by 4, and log transform the madness_index using the natural log.
-
-Plot the output as a scatter plot.
-
-The password to open secret_file_3.txt is the first 5 letters of the cell type represented - all in Upper case
+The password to decrypt `secret_file_3.txt.enc` is the first 5 letters of the cell type represented - all in Upper case
 
 <!--
 :::{.callout-hint}
@@ -79,9 +79,9 @@ begins in N
 Password = "NEURO"
 -->
 
-4. Plot the equations in secret_file_3.txt 
+4. Plot the equations in `secret_file_3.txt`. This will show you the clue. 
 
-This will show you the clue. The password to open secret_file_4.tsv is an animal all upper case.
+The password to decrypt `secret_file_4.tsv.enc` is an animal all upper case.
 
 <!--
 Password = "BAT"
@@ -89,34 +89,30 @@ Password = "BAT"
 
 5. Write code to pull out and print the unexpected values in the data to find the clue in secret_file_4.tsv
 
-The password for secret_file_5.txt is in the clue. The password is all lower case.
+The password for `secret_file_5.txt.enc` is in the clue. The password is all lower case.
 
 <!--
 Password = "virus"
 -->
 
-6. Open secret_file_5.txt 
-
-Put the amino acid sequence contents into a numpy array. Each letter should be in a new element in the array and each line forms a new row. Order the amino acids in alphabetical order. Convert the array to numeric encoding, with A being represented by '0' and the last amino acid by '19'. Plot a heatmap of your matrix.
+6. Open `secret_file_5.txt`. Put the amino acid sequence contents into a numpy array. Each letter should be in a new element in the array and each line forms a new row. Order the amino acids in alphabetical order. Convert the array to numeric encoding, with A being represented by '0' and the last amino acid by '19'. Plot a heatmap of your matrix.
 
 
-The family name of the animal species in the heatmap (all lower case) is the clue to open the next file, secret_file_6.txt 
+The family name of the animal species in the heatmap (all lower case) is the clue to decrypt the next file, `secret_file_6.txt.enc`. 
 
 <!--
 Password = "canidae"
 -->
 
-7. The message clue in secret_file_6.txt is encoded as triangular numbers where 'a' = 1 and therefore the first triangular number and 'z' = 26, and therefore the 26th triangular number. 
+7. The message clue in `secret_file_6.txt` is encoded as triangular numbers where 'a' = 1 and therefore the first triangular number and 'z' = 26, and therefore the 26th triangular number. Write code to retrieve the message.
 
-Write code to retrieve the message
-
-The last two words without gaps (all lower case) is the password for the final clue. 
+The last two words without gaps (all lower case) is the password for the final clue in `secret_file_7.txt.enc`. 
 
 <!--
 "throughbites"
 -->
 
-For the last clue, load the dictionary in the secret file. The next word in the clue can be retrieved by using the current word's "value". The first word in the clue is "If"
+For the last clue, load the dictionary in `secret_file_7.txt`. The next word in the clue can be retrieved by using the "key" which equals the current word's "value". The first word in the clue is "If"
 
 :::
 
