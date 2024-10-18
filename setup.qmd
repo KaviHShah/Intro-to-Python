@@ -11,15 +11,13 @@ Note that we use tabsets to provide instructions for all three major operating s
 -->
 
 ::: {.callout-tip level=2}
-## Workshop Attendees
-
-If you are attending one of our workshops, we will provide a training environment with all of the required software and data.  
-If you want to setup your own computer to run the analysis demonstrated on this course, you can follow the instructions below.
+## Attendees
+Please follow the instructions below to install python before the course. For Microsoft Windows machines, utilising WSL2 (Windows Subsystem for Linux 2) is advised.
 :::
 
 
 
-## Data
+# Data
 
 The data used in these materials is provided here:
 
@@ -53,7 +51,7 @@ Data for Session 3 Escape Room:
 
 
 
-## Software
+# Software
 
 <!--
 
