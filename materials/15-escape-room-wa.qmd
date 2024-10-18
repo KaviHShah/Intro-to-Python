@@ -3,13 +3,13 @@ title: Answers for Escape Room - You are locked in!
 ---
 
 ::: {.callout-warning}
-I am a rich billionaire. I have kidnapped you budding bioinformatitions on the systems biology Part III course (with the help of your course organisers) because my mad doctor has run away before telling me my diagnosis.  
+I am a rich billionaire. I have kidnapped you budding bioinformaticians studying Part III Systems Biology (with the help of your course organisers), because my mad doctor has run away before telling me my diagnosis.  
 
-I have locked this room! Until you can figure out what it is using the clues my mad doctor has left behind, and can tell me how to treat it, I will not let you out!
+I have locked this room! Until you can determine my diagnosis using the clues the mad doctor has left behind, and can tell me how to treat it, I will not let you out!
 
 **If I die before you can figure it out unfortunately you will be trapped in this room forever....**
 
-The mad doctor told me in an email left to me after he escaped, that the expertise you all have from the introduction to python course, should allow you to follow the clues he has provided in the instructions below and in the encrypted files. 
+The mad doctor sent me an email after his escape, stating that the skills you acquired in the Introduction to Python course should help you follow the clues he provided in the instructions below and in the encrypted files.
 
 I was advised to get you to compete in three to four teams. A different person must type in each of the tasks with others only being allowed to talk - not type. There will be extra reward clues on offer for the most elegant solutions.
 

@@ -5,9 +5,9 @@ title: Why Learn Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Get an overview of python
-- Look at the benefits of python as a programming language used for datascience
-- See some examples of where python is commonly used
+- Obtain a broad introduction to Python.  
+- Explore the advantages and disadvantages of Python as a programming language for data science.  
+- Examine various examples of Python's common applications and evaluate when to use python.
 :::
 
 
@@ -116,7 +116,7 @@ What are examples of when you wouldn't use python and why?
 
 At the moment you may not use python for very much unless you are already familiar with it.
 
-You might choose to use python to train a neural network for image recognition, but not for programming a microcontroller where you might use C++ even though circuitpython is available
+You might choose to use python to train a neural network for image recognition, but not for programming a microcontroller where you might use C++, even though circuitpython is available.
 
 :::
 :::

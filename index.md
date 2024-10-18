@@ -7,27 +7,33 @@ number-sections: false
 
 ## Overview 
 
-This course aims to bring everyone in the Part III Systems Biology course up to speed in python which will be used as a programming language in different subsequent parts of the course. This course assumes no prior python experience, but some limited coding experience.This course may also be a good more general course for those looking to learn python for use in data science - particularly for those interested in using python with biological data 
+This course is designed to equip all members of the Part III Systems Biology cohort at the University of Cambridge with a foundational understanding of Python, which will be utilized in various subsequent sections of the program. While no prior knowledge of Python is required, a basic familiarity with coding is assumed. Additionally, this course may serve as a valuable introduction for those interested in learning Python for data science, particularly for those working with biological data. 
 
 ::: {.callout-tip}
 ### Learning Objectives
 
-- Present participants with the key features of python and some of the pros and cons of using python in data science
-- Familiarise participants with python syntax and data types
-- Introduce and explore core python programming concepts including difining functions and coding loops and conditionals
-- Introduce participants to manipulating and plotting biological data in python utilising common packages
+- Introduce participants to the core features of Python, emphasising its strengths and limitations in data science applications.
+- Provide a comprehensive overview of Python syntax, data types, and operators.
+- Cover key programming concepts in Python, including loops, conditionals, functions, and classes; alongside an introduction to the object-oriented programming paradigm.
+- Discuss error handling, edge case management, memory management, code optimisation, and benchmarking.
+- Introduce package installation and management, as well as environment management using pip and conda.
+- Guide participants in the manipulation and visualisation of biological data using widely-used Python packages, including NumPy, pandas, Matplotlib, and Seaborn.
+
 :::
 
 
 ### Target Audience
 
-This is targeted at Part III Systems Biology students. All of these students should have some basic programming experience, however may not have used python.
-Some participants may have taken the MCB undergraduate introduction to python course. This course will refresh and extend slightly the concepts taught in that course. 
+This is targeted at Part III Systems Biology students at the university of Cambridge. All of these students should have some basic programming experience, however may not have used python.
+
+Some participants may have completed the introductory Python practical in the Part II Mathematical and Computational Biology module of the Natural Sciences Tripos. This course will refresh and extend further the concepts introduced there. 
 
 
 ### Prerequisites
 
-Detail any prerequisite skills needed to attend this course, with links to other relevant materials/courses if possible.
+- Have some prior experience in coding whether in Python or another programming language.
+- Have followed the instructions on Data and Setup pages to install python, mamba/conda, and jupyterlab.
+
 
 
 <!-- Training Developer note: comment the following section out if you did not assign levels to your exercises -->
@@ -63,3 +69,4 @@ If you think you should be added as an author, please get in touch with us.
 
 - List any other sources of materials that were used.
 - Or other people that may have advised during the material development (but are not authors).
+- To be added
