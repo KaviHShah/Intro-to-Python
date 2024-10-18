@@ -38,15 +38,17 @@ from decryptor import decrypt
 ```
 
 :::{.callout-hint}
-Hint(s) here.
-:::
+
 Extra clue is that the list can also be represented as the following:
+
+```
 \x54\x68\x65\x20\x79\x65\x61\x72\x20\x74\x68\x61\x74\x20\x44\x4e\x41\x20\x77\x61\x73\x20\x64\x69\x73\x63\x6f\x76\x65\x72\x65\x64\x20\x69\x6e
+```
 
 :::
 
 ::: {.callout-answer}
-#### Note that the answers for this section are not Documented in detail. Try to understand what is being done, and comment up the code yourself! - There are multiple ways to get to the answer.
+**Note that the answers for this section are not Documented in detail. Try to understand what is being done, and comment up the code yourself! - There are multiple ways to get to the answer.**
 
 ```
 bytearray([84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110])
