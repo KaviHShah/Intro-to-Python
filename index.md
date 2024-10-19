@@ -24,7 +24,7 @@ This course is designed to equip all members of the Part III Systems Biology coh
 
 ### Target Audience
 
-This course is targeted at Part III Systems Biology students at the university of Cambridge. All students attending should have some basic programming experience, however may not have used python.
+This course is targeted at Part III Systems Biology students at the university of Cambridge. All students attending should have some basic programming experience, however may not have used Python.
 
 Some participants may have completed the introductory Python practical in the Part II Mathematical and Computational Biology module of the Natural Sciences Tripos. This course will refresh and extend further the concepts introduced there. 
 

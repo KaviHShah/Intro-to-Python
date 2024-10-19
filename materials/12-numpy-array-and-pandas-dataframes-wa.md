@@ -157,7 +157,7 @@ Implement the dot plot in a numpy array. i.e. place one sequence along the top o
 
 Find the number of non-overlapping matching sequences on sequence1 where there are more than 5 bases matching sequence2 in a row.
 
-Find the number of independent matching sequences where there are more than 5 bases matching in a row.
+Find the number of independent matching sequences where there are more than 10 bases matching in a row. What about more than 20?
 i.e. if seq1(i) = seq2(j) and seq1(i+1) = seq2(j+1) then it is part of the same matching sequence. Please ask if this is unclear.
 
 ::: {.callout-answer}
@@ -200,8 +200,8 @@ def create_dot_plot(seq1, seq2):
 
 dot_plot = create_dot_plot(seq1, seq2)
 print(dot_plot)
-plt.imshow(dot_plot)
-plt.show()
+#plt.imshow(dot_plot)
+#plt.show()
 
 
 def count_matching_regions(seq1, seq2, min_length):
@@ -210,7 +210,6 @@ def count_matching_regions(seq1, seq2, min_length):
     dot_plot = create_dot_plot(seq1, seq2)
 
 # I have purposely not commented this code very well - try to figure out what I am doing - the prints commented out may help you
-# Try and simplify and coment this code add a docstring to document
     try:
 
       for i in range(len(seq1)):
@@ -222,12 +221,12 @@ def count_matching_regions(seq1, seq2, min_length):
                   match_length += 1
                   i += 1
                   j += 1
-                else: 
+                else:
                   i += 1
                   j += 1
 
                 # Check if we are at the end of the sequences or next characters don't match
-                  if (match_length > 0) and (seq1[i] != seq2[j] or i == len(seq1) or j == len(seq2)):
+                  if (match_length > 0) or i == len(seq1) or j == len(seq2):
                       if match_length >= min_length:
                           count += 1
                           #print(count)
@@ -243,12 +242,12 @@ def count_matching_regions(seq1, seq2, min_length):
                   match_length += 1
                   i += 1
                   j += 1
-                else: 
+                else:
                   i += 1
                   j += 1
 
                 # Check if we are at the end of the sequences or next characters don't match
-                  if (match_length > 0) and (seq1[i] != seq2[j] or i == len(seq1) or j == len(seq2)):
+                  if (match_length > 0) or i == len(seq1) or j == len(seq2):
                       if match_length >= min_length:
                           count += 1
                           #print(count)
@@ -289,11 +288,60 @@ AGCTGCGTAGCTGACGGACGTCGCTTAGGGTGCGACGTAGTCGGACTTCGCTAGGACTTCGGTCGACCGGACGTGCTGAC
  [0 0 1 ... 0 1 0]
  [0 0 0 ... 0 0 0]
  [0 0 0 ... 0 0 1]]
-
-Number of matching regions with length >= 20: 3
-Number of matching regions with length >= 10: 760
+Number of matching regions with length >= 20: 0
+Number of matching regions with length >= 10: 62
 
 ```
+
+alternatively another possibly better approach is:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+with open('DNA-seq.txt', 'r') as file:
+    sequences = file.readlines()
+    # The first two lines are the sequences
+seq1 = sequences[0].strip()
+seq2 = sequences[1].strip()
+
+def count_matching_regions_2(seq1, seq2, min_length):
+  try: 
+    rows = len(seq1)
+    cols = len(seq2)
+    dot_plot = np.zeros((rows, cols), dtype=int)
+
+    #Make the dot plot
+    for i in range(rows):
+        for j in range(cols):
+            if seq1[i] == seq2[j]:
+                dot_plot[i][j] = 1
+
+    unique_strings_plot = dot_plot.copy()
+    #print(unique_strings_plot)
+
+    for i in range(1,rows):
+        for j in range(1,cols):
+          if unique_strings_plot[i][j] == 1:
+            unique_strings_plot[i][j] = 1 + unique_strings_plot[i-1][j-1]
+          else:
+            continue
+
+    count = np.sum(unique_strings_plot == min_length)
+
+    return dot_plot, count
+
+  except Exception as e:
+        print(f"An error occurred: {e}")
+        return None, None
+
+dot_plot, count_20 = count_matching_regions_2(seq1, seq2, 20)
+dot_plot, count_10 = count_matching_regions_2(seq1, seq2, 10)
+dot_plot, count_5 = count_matching_regions_2(seq1, seq2, 5)
+
+print(f"Number of matching regions with length >= 20: {count_20}")
+print(f"Number of matching regions with length >= 10: {count_10}")
+```
+This should output the same answer
+
 
 :::
 :::

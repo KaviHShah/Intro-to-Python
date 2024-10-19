@@ -78,7 +78,7 @@ plt.grid()
 plt.show()
 ```
 ::: {.callout-exercise}
-#### Visualising-humanmine-data
+#### Visualising humanmine data
 
 Use matplotlib and seaborn to plot the humanmine data. Decide what analysis and plots you would like to use.
 
@@ -86,11 +86,6 @@ Additional exercise is to plot the memory usage of different datatypes as they i
 Similarly plot the speed of retrieving variables against the size of composite data types.
 What do you notice?
 
-::: {.callout-answer}
-
-Will be added here after the session!
-
-:::
 :::
 
 Use matplotlib and seaborn to plot your data. decide what analysis and plots you would like to use.
