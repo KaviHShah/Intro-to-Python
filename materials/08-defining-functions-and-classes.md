@@ -6,7 +6,7 @@ title: Defining Functions and Classes
 #### Learning Objectives
 
 - Be able to define your own functions and classes
-- Briefly introduce the object oriented programming paradigm
+- Be aware of the object oriented programming paradigm
 - Understand local and global variables
 :::
 
@@ -489,11 +489,11 @@ Imagine living in a world without being able to define and call functions in pyt
 ::: {.callout-tip}
 #### Key Points
  
-- **Functions**: Reusable blocks of code that perform a specific task. They help you concisely repeat different kinds of tasks
+- **Functions**: Reusable blocks of code that perform a specific task. They help you concisely repeat different kinds of tasks.
   
 - **Classes**: Blueprints for creating objects (instances) that bundle data (attributes) and behavior (methods). They are part of the Object-Oriented Programming paradigm.
 Both are useful for improving code structure, making it more modular, maintainable, and easier to debug.
 
-- **Variables**: Local and global variables, and instance and class attributes are important to manage. Being explicit with input and output variables in functions is often better
+- **Variables**: Local and global variables, and instance and class attributes are important to manage. Being explicit with input and output variables in functions is often better.
 
 :::

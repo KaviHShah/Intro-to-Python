@@ -5,9 +5,9 @@ title: Why Learn Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Obtain a broad introduction to Python.  
-- Explore the advantages and disadvantages of Python as a programming language for data science.  
-- Examine various examples of Python's common applications and evaluate when to use python.
+- Obtain a broad introduction to Python  
+- Explore the advantages and disadvantages of Python as a programming language for data science  
+- Examine various examples of Python's common applications and evaluate when to use python
 :::
 
 
@@ -50,11 +50,11 @@ https://ipython.org/
 
 - Matplotlib & Seaborn: Data visualization tools.
 
-- **Scikit-learn: Machine learning algorithms.*
+- *Scikit-learn: Machine learning algorithms.
 
-- **TensorFlow & PyTorch: For deep learning and neural networks.*
+- *TensorFlow & PyTorch: For deep learning and neural networks.
 
-- not covered in this intro course*
+*not covered in this intro course
 
 **Active Community and Support:**
 
@@ -83,7 +83,6 @@ While Python is a widely used and popular programming language, it does have som
 **Performance Limitations**
 
 - Python is an interpreted language, which generally makes it slower than compiled languages like C or C++. This can be a concern for CPU-intensive tasks or applications requiring high-performance computing.
-Global Interpreter Lock (GIL): In CPython (the standard implementation of Python), the GIL allows only one thread to execute at a time, which can be a bottleneck for multi-threaded programs.
 
 **Memory Consumption**
 

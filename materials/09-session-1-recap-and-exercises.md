@@ -3,13 +3,13 @@ title: Recap Exercise
 ---
 
 ::: {.callout-tip}
-#### Learning Objectives
+#### Aims
 
-- refresh the topics covered yesterday
-- data types
-- conditionals and loops
-- errors and edge cases
-- defining functions and classes
+Refresh the topics covered yesterday including:
+- Data types
+- Conditionals and loops
+- Errors and edge cases
+- Defining functions and classes
 :::
 
 
@@ -97,7 +97,7 @@ Answers to be added here shortly
 :::
 :::
 
-## Summary
+## Conclusion
 
 Hopefully that was a fun exercise to go over everything we have done so far! Let's now move on to today's topics.
 
@@ -105,6 +105,6 @@ Hopefully that was a fun exercise to go over everything we have done so far! Let
 #### Key Points
 
 - By completing the above exercise, you should be able to independently apply the concepts covered yesterday
-- If there is anything you found difficult, go back to the sections and recap the material
+- If there is anything you found difficult, go back to the relevant sections and recap the material
 
 :::

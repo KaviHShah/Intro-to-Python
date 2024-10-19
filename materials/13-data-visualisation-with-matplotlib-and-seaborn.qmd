@@ -5,8 +5,8 @@ title: Data Visualisation data with `matplotlib` and `seaborn`
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Learn to visualise data
-- Create a plots using matplotlib and seaborn
+- Be able to visualise biological data using Python
+- Create a plots using 'matplotlib' and 'seaborn'
 - Customize the plots with titles, labels, and legends
 :::
 
@@ -80,7 +80,7 @@ plt.show()
 ::: {.callout-exercise}
 #### Visualising humanmine data
 
-Use matplotlib and seaborn to plot the humanmine data. Decide what analysis and plots you would like to use.
+Use 'matplotlib' and 'seaborn' to plot the humanmine data. Decide what analysis and plots you would like to use.
 
 Additional exercise is to plot the memory usage of different datatypes as they increase in size exponentially.
 Similarly plot the speed of retrieving variables against the size of composite data types.
@@ -88,17 +88,18 @@ What do you notice?
 
 :::
 
-Use matplotlib and seaborn to plot your data. decide what analysis and plots you would like to use.
 
 ## Documentation
 
-See the documentation for seaborn here:
+See the documentation for 'seaborn' here:
 
 https://seaborn.pydata.org/
 
 Waskom, M. L., (2021). seaborn: statistical data visualization. Journal of Open Source Software, 6(60), 3021, https://doi.org/10.21105/joss.03021.
 
 J. D. Hunter, "Matplotlib: A 2D Graphics Environment", Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, 2007.
+
+See the documentation for 'matplotlib' here:
 
 https://matplotlib.org/stable/index.html
 
@@ -114,5 +115,6 @@ Tomorrow we will use all you have learnt so far
 #### Key Points
 
 - Plotting and visualisation is key to undestanding and working with data
+- 'matplotlib' and 'seaborn' can be used to plot your data in Python
 
 :::

@@ -5,8 +5,8 @@ title: Working with Numerical Data Types and Strings
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Become familiar with manipulating numerical data types and strings
-- Look at the size of objects in memory and effects of changes in data type
+- Be able to manipulate numerical data types and strings
+- Be able to look at the size of objects in memory, and effects of changes in data type on memory usage
 :::
 
 
@@ -108,7 +108,7 @@ g:
 28
 ```
 
-Key points are that integers vary in how large they are and are generally larger than floats which are always 24 bytes. Complex numbers are not used commonly, but in this case it is 32 bytes. You can look up more information about this if you are interested. 
+A key point is that integers vary in size, and can be larger than floats which are always 24 bytes. (Try finding the size of a very very large integer and the corresponding float). Complex numbers are not used commonly, but in this case it is 32 bytes. You can look up more information about this if you are interested. 
 
 :::
 :::

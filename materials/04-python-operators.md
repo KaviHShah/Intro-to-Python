@@ -5,9 +5,8 @@ title: Python Operators
 ::: {.callout-tip}
 #### Learning Objectives
 
-- to get aquick overview of the python operators 
-- To know the different classes of operators
-- To understand that operators can be used beyond numerical data
+- Know the different classes of operators and their hierarchy
+- Understand that operators can be used beyond numerical data
 :::
 
 
@@ -136,7 +135,7 @@ Set-specific operators.
 | ^        | Symmetric difference       | a ^ b       | set, frozenset                 |
 
 ## Order of Precedence for operators
-Operators are ordered in precedence in code (think BODMAS)
+Operators are ordered in precedence in code (think BODMAS). Using parentheses can add clarity to code.
 
 Use the table below to see the order: 
 
@@ -164,13 +163,15 @@ Use the table below to see the order:
 
 
 ## Summary
-Use the above tables to find operators you can use in python - they can make code more concise and readable, and can be intuitive to those not familiar with python functions.
-However operators can make the code less readable and understandable in some situations, can be less precise and cannot generally be passed as arguments into higher order functions.
+Use the above tables to find operators you can use in python. Operators can make code more concise and readable, and can be intuitive to those not familiar with python functions.
+On the other hand operators can make code less readable and understandable in some situations when compared to utilising functions. Operators also cannot generally be passed as arguments into higher order functions.
+Operators behave differently on different data types. Try using the `*` operator to multiply two integers, and to multiply a string by an integer. We will use operators more in the next sections.
 
 ::: {.callout-tip}
 #### Key Points
 
-- There are many operators that can be used in python
-- Operators can behave differently when used with different data types and structures as we will see in the next sections
+- Python is rich in operators
+- Operators can behave differently when used with different data types and structures
+- Operators are ordered in precedence in code in the same way as in mathematics
 
 :::

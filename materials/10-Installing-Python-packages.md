@@ -5,7 +5,8 @@ title: Installing Python Packages
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Be able to install the packages and modules needed
+- Be able to install packages and modules needed
+- Understand what is meant by software environments and dependencies
 
 :::
 
@@ -192,6 +193,7 @@ They can be used to create specific setups for each project without interference
 ::: {.callout-tip}
 #### Key Points
 
+Package and environment managers like Conda enable:
 - Easy Installation: Quickly install software with simple commands instead of downloading and configuring manually.
 - Dependency Management: Automatically handle and install any additional software that your main software needs to run (dependencies).
 - Version Control: Manage different versions of packages to ensure compatibility and avoid conflicts.

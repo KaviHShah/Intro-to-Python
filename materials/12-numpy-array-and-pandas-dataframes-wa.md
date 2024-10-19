@@ -1,21 +1,21 @@
 ---
-title: Numpy Arrays and Pandas Dataframes
+title: 'NumPy' Arrays and 'pandas' Dataframes
 ---
 
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Work with pandas dataframes and numpy arrays
+- Be able to work with 'pandas' dataframes and 'NumPy' arrays
 - Start to be independent learners
 :::
 
 
-Pandas dataframes and numpy arrays are widely used in data science in python. The documentation for both and reseources available are very good. Rather than explaining every single feature, what I will do is compare the two modules and whhen to use them. Then I will ask you to explore the docs and find out how to do some common operations in pandas and numpy, with some test data.
+'pandas' dataframes and 'NumPy' arrays are widely used in data science in python. The documentation for both modules and online resources available are very good. Rather than explaining every single feature, I will instead compare the two modules and when to use them. You will then explore the documentation and find out how to do some common operations in 'pandas' and 'NumPy', with some test data.
 
-## Comparison of NumPy and Pandas
+## Comparison of 'NumPy' and 'pandas'
 
 
-| Feature                       | **Pandas**                               | **NumPy**                                 |
+| Feature                       | **pandas**                               | **NumPy**                                 |
 |-------------------------------|------------------------------------------|-------------------------------------------|
 | **Data Structure**            | DataFrame (2D, labeled) and Series (1D) | ndarray (N-dimensional array)             |
 | **Data Types**                | Supports mixed data types in columns     | Homogeneous data types in columns                |
@@ -30,13 +30,13 @@ Pandas dataframes and numpy arrays are widely used in data science in python. Th
 | **Overhead Changes**          | Increased overhead with more features (e.g., complex indexing and groupby operations) | Focus on minimizing overhead while maintaining performance |
 | **Chunking Data**            | Supports chunking with functions like `pd.read_csv()` for large datasets | Requires manual implementation; typically works with whole arrays |
 
-Generally speaking numpy arrays and pandas datframes are used for very different things, but there is cross functionality. Ultimately it depends on the data and what kinds of operations you wantto use it for. 
+Generally speaking 'NumPy' arrays and 'pandas' dataframes are used for very different things, but there is cross functionality. Ultimately it depends on the data and what kinds of operations you want to use it for. 
 
-## The Same Data in Pandas and Numpy
+## The Same Data in 'pandas' and 'NumPy'
 
 **Gene Sequence Length Data (Different Data Types)**
 
-**Using Pandas**
+**Using 'pandas'**
 
 ```
 import pandas as pd
@@ -53,7 +53,7 @@ print("Pandas DataFrame:")
 print(df_genes)
 ```
 
-**Using Numpy Structured array**
+**Using 'NumPy' Structured Array**
 
 ```
 
@@ -82,14 +82,14 @@ print(np_genes)
 
 Why might you want to convert all the data to the same data type?
 
-How would you encode all the above in a single data type so that it can be held as a standard numpy array?
+How would you encode all the above in a single data type so that it can be held as a standard 'NumPy' array?
 
 :::
 
 
 **e.g. machine learning**:
 
-Preparing data for is crucial for building effective machine leaarning models. Encoding is when you convert categorical and other data into numerical formats, which algorithms can easily interpret. Common encoding techniques include:
+Preparing data for is crucial for building effective machine learning models. Encoding is when you convert categorical and other data into numerical formats, which algorithms can easily interpret. Common encoding techniques include:
 
 **One-Hot Encoding:** Converts categorical variables into a binary matrix representation, where each category is represented by a unique binary vector.
 
@@ -98,10 +98,10 @@ Preparing data for is crucial for building effective machine leaarning models. E
 **Changing Data Types** involves converting data into formats that are more suitable for analysis.
 
 
-## Numpy and Pandas Documentation
+## 'NumPy' and 'pandas' Documentation
 
-The numpy and pandas documentation is very good and they are very widely used!
-For this reason it is somewhat pointless for me to take examples and write them here. When you start coding more, you must use the resources and documentation to solve your own challenges.
+The 'NumPy' and 'pandas' documentation is very good and both modules are very widely used!
+For this reason I have not given any more examples here. When you start coding more, you must use the resources and documentation to solve your own challenges.
 
 **Numpy Documentation:**
 
@@ -117,9 +117,9 @@ https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 ::: {.callout-exercise}
 #### Uses of pandas and numpy
 
-Look through the docs and discuss the functions of pandas and numpy.
+Look through the docs and discuss the functions of 'pandas' and 'NumPy'.
 
-Give two biological examples of types of data analysis when you would use numpy arrays and two when you would use pandas dataframes.
+Give two biological examples of types of data analysis when you would use 'NumPy' arrays and two when you would use 'pandas' dataframes.
 
 For your use cases what would the most important functions be?
 
@@ -128,11 +128,11 @@ For your use cases what would the most important functions be?
 ::: {.callout-exercise}
 #### Encoding and memory usage
 
-Create the same pandas dataframe and numpy array shown in the above example
+Create the 'pandas' dataframe and 'NumPy' array shown in the above example
 
-Implement encoding for the numpy array and pandas dataframe.
+Implement encoding for the 'NumPy' array and 'pandas' dataframe.
 
-Compare the deep size of the arrays and dataframes using functions found in the docs.
+Compare the deep size of the arrays and dataframes using functions found in the documentation.
 
 ::: {.callout-answer}
 
@@ -153,7 +153,7 @@ numpy_memory = numpy_array.nbytes
 
 Load the two DNA sequences in the dataset named DNA-seq.txt into python.
 
-Implement the dot plot in a numpy array. i.e. place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.
+Implement the dot plot in a 'NumPy' array. i.e. place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.
 
 Find the number of non-overlapping matching sequences on sequence1 where there are more than 5 bases matching sequence2 in a row.
 
@@ -348,13 +348,13 @@ This should output the same answer
 :::
 
 ::: {.callout-exercise}
-#### Working with data in Pandas
+#### Working with data in 'pandas'
 
 Find the dataset of human genes I generated from the humanmine database `humanmine_results_2024.tsv` . 
 
 In reality you should almost ALWAYS plot your dataset to see what it looks like before doing any analysis. In the next section we will explore plotting, however for this exercise:
 
-* Load in the data in the CSV into a pandas dataframe
+* Load in the data in the CSV into a 'pandas' dataframe
 
 * What does the dataset show?
 
@@ -574,14 +574,14 @@ Number of membrane proteins: 9445
 
 ## Summary
 
-Numpy and pandas are both useful packages for working with different types of biological data.
+'NumPy' and 'pandas' are both useful packages for working with different types of biological data.
 Now you should be able to choose which to use and be comfortable attempting to manipulate data with them
 
 ::: {.callout-tip}
 #### Key Points
 
-- Pandas is better for data manipulation and analysis where data is in multiple types. 
-- Numpy is better for numerical and array operations and is generally quicker.
-- The documentation is a good tool to use to learn Pandas and Numpy
+- 'pandasp is better for data manipulation and analysis where data is in multiple types. 
+- 'NumPy' is better for numerical and array operations and is generally quicker.
+- The documentation is a good tool to use to learn 'pandas' and 'NumPy'
 
 :::

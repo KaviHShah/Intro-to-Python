@@ -5,9 +5,9 @@ title: Working with Files in Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Read and write files in Python
-- Use the `with` method and context manager
-- Introduce Garbage Collection in python
+- Be able to read and write files in Python
+- Understand how to use the `with` method and a context manager to work with files
+- Introduce 'garbage collection' in python
 
 :::
 
@@ -240,7 +240,7 @@ See the following file types and modules to work with them:
 #### Key Points
 
 - It is essential to be able to work with different file types
-- you can use the `with` method when working with files
-- many modules can be used to work with files
+- It is better to use the `with` method when working with files to handle opening and closing files
+- Many modules can be used to work with different fily types
  
 :::

@@ -5,9 +5,10 @@ title: Working with Composite Data Types
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Start working with lists, disctionaries sets and tuples
+- Be able to work with lists, disctionaries, sets, and tuples
 - Understand shallow and deep copies 
-- Introduce benchmarking code
+- Understand the importance of benchmarking code
+
 :::
 
 
@@ -519,6 +520,7 @@ There are multiple ways to implement things and as we have seen benchmarking can
 
 #### Key Points
 
-- different composite data types have different properties
--Benchmarking and understanding the differnces in properties can be used to choose the best approach 
+- Different composite data types have different properties
+- Benchmarking and understanding the different properties of the data types can be used to choose the best approach 
+
 :::

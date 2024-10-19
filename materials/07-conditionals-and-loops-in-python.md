@@ -5,9 +5,10 @@ title: Conditionals and Loops in Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Work with conditional statments and loops in python 
-- Handle errors (exceptions) and edge cases in programs
-- Compare different methods 
+- Be able to code conditional statments and loops in Python 
+- Understand how to handle errors (exceptions) and edge cases in programs
+- Compare different Python methods and their pros and cons
+
 :::
 
 ## Conditionals
@@ -755,18 +756,18 @@ while infected < population:
 
 ## Summary
 
-Python has many ways to work with conditions.
-It is key for these to be written concisely, while catching exceptions and edge cases and dealing with errors.
+Python has many ways to work with conditions and loops.
+It is key for these statements to be written concisely, while catching edge cases and dealing with errors.
 
 ::: {.callout-tip}
 #### Key Points
 
-By this point you should be:
-- comfortable with `if`, `elif`, `else`
-- `match` statements
+By this point you should be comfortable with:
+- `if`, `elif`, `else` statements
+- `match` , `case` statements
 - `for` loops with `range() len() enumerate()
-- working with different composite data types
-- `try` `except`
-- while loops
+- Working with different composite data types
+- `try` and `except` for error handling
+- `while` loops
 
 :::

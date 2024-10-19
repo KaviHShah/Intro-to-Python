@@ -240,7 +240,7 @@ Best data type: __________
 4. You are counting the number of items in stock in an inventory system (whole numbers only).
 
 Best data type: __________
-5. You are dealing with financial calculations and need precise decimal values for prices and quantities.
+5. You are dealing with financial calculations and need decimal values for prices and quantities.
 
 Best data type: __________
 6. You need to store data about a person (e.g., name, age, occupation) and retrieve the data by key.
@@ -258,10 +258,10 @@ Best data type: __________
 10. A function you are writing returns nothing (i.e., no meaningful value to return).
 
 Best data type: __________
-11. You need to handle a collection of scientific data points with floating-point precision (e.g., temperature readings).
+11. You need to handle a collection of scientific data points with floating-point precision (e.g. temperature readings).
 
 Best data type: __________
-12. You are working with a string of text that may need to be split, joined, or manipulated.
+12. You are working with text that may need to be split, joined, or manipulated.
 
 Best data type: __________
 
@@ -294,6 +294,6 @@ It is inportant to use the correct data type for your use case
 
 - Use the table to remember the key information about data types
 - Check the python documentation for further information on data types and inbuilt functions
-- It is important to use the correct data types for your use case rather than the same data type all the time.
+- It is important to use the correct data types for your use case rather than the same data type all the time
 
 :::

@@ -6,9 +6,9 @@ title: Starting in Python
 #### Learning Objectives
 
 - Identify basic Python Syntax
-- understand a markdown and the Jupyter notebook syntax
-- be able to define variables and call functions
-- identify the type of a variable
+- Understand markdown and the Jupyter notebook syntax
+- Be able to define variables and call functions
+- Identify the type of a variable
 
 :::
 
@@ -199,9 +199,10 @@ You should now be able to call in built functions in python and be set up to use
 
 #### Key Points
 
-- python uses # for comments
-- in python variables are assigned with =
-- in python there is no need to define the variable type explicitly
-- indentation is used in python to identify code chunks
+- Python uses # for comments
+- Variables are assigned with `=`
+- There is no need to define the variable type explicitly
+- Indentation is used in python to identify code chunks
 - Jupyter notebooks enable literate programming in python, combining code chunks and markdown text
+
 :::
