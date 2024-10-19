@@ -7,7 +7,7 @@ project:
   type: book
   output-dir: _site
   render:
-    - index.md
+    - index.qmd
     - setup.qmd
     - materials.md
     - materials/*
@@ -61,7 +61,7 @@ book:
     - part: "Welcome"
       chapters:
         - text: "Overview"
-          href: index.md
+          href: index.qmd
         - text: "Data & Setup"
           href: setup.qmd
     
