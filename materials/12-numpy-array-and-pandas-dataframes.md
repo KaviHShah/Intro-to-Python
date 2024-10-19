@@ -1,5 +1,5 @@
 ---
-title: 'NumPy' Arrays and 'pandas' Dataframes
+title: NumPy Arrays and pandas Dataframes
 ---
 
 ::: {.callout-tip}

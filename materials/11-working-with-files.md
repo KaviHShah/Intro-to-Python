@@ -11,7 +11,7 @@ title: Working with Files in Python
 
 :::
 
-Working with files is simple in python. Many packages have their own built in file reading and writing functions including for example pandas which we will look at next.
+Working with files is simple in python. Many packages have their own built in file reading and writing functions including for example 'pandas' which we will look at next.
 Here we use the built-in `open` function.   
 
 ## Working Directory
