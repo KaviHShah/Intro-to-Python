@@ -150,12 +150,12 @@ AAAAAAACCACCGCTACCAGCGGTGGTTTGTTTGCCGGATCAAGAGCTACCAACTCTTTTTCCGAGGTAACTGGCTTCAG
 
 ## Summary
 
-Bioinformatitions have built a range of tools to aid bioinformatics analysis in Python. This active community and support is one of the great benefitis of working with python!
+Bioinformaticians have built a range of tools to aid bioinformatics analysis in Python. This active community and support is one of the great benefitis of working with python!
 
 ::: {.callout-tip}
 #### Key Points
 
-- API's can be used to interface softwares with python, and can be used to access common biological databases.
+- API's can be used to interface softwares with Python, and can be used to access common biological databases.
 - Biopython is a commonly used package to work wiht biological data
 
 :::

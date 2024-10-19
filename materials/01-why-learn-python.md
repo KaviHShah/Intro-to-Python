@@ -15,7 +15,7 @@ title: Why Learn Python
 
 **High-Level, General-Purpose Language:** 
 
-Python is a versatile programming language created in the late 1980s by Guido van Rossum, emphasizing code readability and simplicity. It’s widely used for tasks like web development, machine learning, and automation.
+Python is a versatile programming language created in the late 1980s by Guido van Rossum, emphasising code readability and simplicity. It’s widely used for tasks like web development, machine learning, and automation.
 
 **Named After:** “Monty Python’s Flying Circus” (not the reptile).
 
@@ -25,7 +25,7 @@ Python is a versatile programming language created in the late 1980s by Guido va
 2. **Object-Oriented Programming (OOP):** Supports structured, reusable code for larger projects.
 3. **Very High-Level Language (VHLL):** Allows complex operations to be expressed in simple, single statements.
 
-CPython is the default implementation of python, jupyter notebooks - iPython (interactive)
+CPython is the default implementation of Python, however Jupyter Notebooks use IPython (Interactive Python) which is an implementation which is built on top of CPython and adds an interactive shell. There are also Jython, the implementation of Python in Java, and others.
 We won't go into more detail, but for further reading:
 
 https://onlinelibrary.wiley.com/doi/full/10.1002/spe.3267
@@ -34,7 +34,7 @@ https://www.geeksforgeeks.org/difference-various-implementations-python/
 
 https://ipython.org/
 
-- main thing to note that most packages and modules will work across implementations (at least those in C), but sometimes it will make a difference
+- The main thing to note that most packages and modules will work across implementations (at least those in C), but sometimes it will make a difference, which implementation you are using.
 
 ## Why Python is Great for Data Science
 
@@ -76,7 +76,7 @@ https://ipython.org/
 
 - Python’s libraries like Scikit-learn, TensorFlow, PyTorch and Keras simplify complex machine learning and AI tasks.
 
-## What are the disadvantages of python
+## What are the disadvantages of Python
 
 While Python is a widely used and popular programming language, it does have some disadvantages. Here are some of them:
 
@@ -108,14 +108,14 @@ Python's ease of use, broad library support, and strong community make it a top 
 ::: {.callout-exercise}
 #### Discussion 1: Deciding to use Python
 
-What are some examples of when you would use python and why?
-What are examples of when you wouldn't use python and why?
+What are some examples of when you would use Python and why?
+What are examples of when you wouldn't use Python and why?
 
 ::: {.callout-answer}
 
-At the moment you may not use python for very much unless you are already familiar with it.
+At the moment you may not use Python for very much unless you are already familiar with it.
 
-You might choose to use python to train a neural network for image recognition, but not for programming a microcontroller where you might use C++, even though circuitpython is available.
+You might choose to use Python to train a neural network for image recognition, but not for programming a microcontroller where you might use C++, even though CircuitPython is available.
 
 :::
 :::
