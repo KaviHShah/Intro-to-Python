@@ -215,7 +215,7 @@ def count_matching_regions(seq1, seq2, min_length):
       for i in range(len(seq1)):
         j = 0
         #print(i)
-        while j < (len(seq2)-1) and i < (len(seq1)-1):
+        while j <= (len(seq2)-1) and i <= (len(seq1)-1):
                 #print(i,j)
                 if dot_plot[i,j] == 1:
                   match_length += 1
@@ -236,7 +236,7 @@ def count_matching_regions(seq1, seq2, min_length):
 
       for j in range(1,len(seq2)):
         i = 0
-        while j < (len(seq2)-1) and i < (len(seq1)-1):
+        while j <= (len(seq2)-1) and i <= (len(seq1)-1):
                 #print(i,j)
                 if dot_plot[i,j] == 1:
                   match_length += 1
@@ -340,6 +340,7 @@ dot_plot, count_5 = count_matching_regions_2(seq1, seq2, 5)
 print(f"Number of matching regions with length >= 20: {count_20}")
 print(f"Number of matching regions with length >= 10: {count_10}")
 ```
+
 This should output the same answer
 
 
