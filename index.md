@@ -1,5 +1,6 @@
 ---
 title: "Intro to Python <br> Part III Systems Biology, <br> University of Cambridge"
+<h1 style="text-align: center;">Intro to Python <br> Part III Systems Biology, <br> University of Cambridge</h1>
 author: "Kavi Shah"
 date: 2024-10-08
 number-sections: false
