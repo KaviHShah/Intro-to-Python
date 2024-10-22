@@ -25,7 +25,7 @@ Commenting your code and using lines liberally is key for others to understand y
 
 - A **```\```** (backslash) is used to explicitly break a line
 
-- Lines can be implicitly continues in some cases, for example when in brackets. We will see this later. 
+- Lines can be implicitly continued in some cases, for example when in brackets. We will see this later. 
 
 <br>
 
