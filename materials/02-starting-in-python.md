@@ -19,11 +19,11 @@ title: Starting in Python
 
 Commenting your code and using lines liberally is key for others to understand your code.
 
-- A **#** (Hash) is used for single line comments 
+- A **```#```** (Hash) is used for single line comments 
 
-- A **"""** (triple quotes) is used around multiline comments or strings
+- A **```"""```** (triple quotes) is used around multiline comments or strings
 
-- A **\** (backslash) is used to explicitly break a line
+- A **```\```** (backslash) is used to explicitly break a line
 
 - Lines can be implicitly continues in some cases, for example when in brackets. We will see this later. 
 
@@ -31,9 +31,12 @@ Commenting your code and using lines liberally is key for others to understand y
 
 **Assigning variables**
 
-In Python initialising variables is easy 
+In Python initialising variables is easy:
+
 - Variables are assigned using the = sign
+
 - Case sesitive
+
 - No need to declare the type explicitly (dynamic typing)
 
 ```
