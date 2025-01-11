@@ -5,10 +5,10 @@ title: Conditionals and Loops in Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Be able to code conditional statments and loops in Python 
+- Be able to code conditional statements and loops in Python 
 - Understand how to handle errors (exceptions) and edge cases in programs
 - Compare different Python methods and their pros and cons
-
+When coding we want to minimise memory use, including by not making needless duplications.
 :::
 
 ## Conditionals

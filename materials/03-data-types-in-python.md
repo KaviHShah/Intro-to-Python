@@ -22,27 +22,27 @@ Python has the following data types built-in without needing any other libraries
 
 **Simple/primitive data types:**
 
-- None Type:    NoneType
+- None Type:    `NoneType`
 
-- Boolean Type:    bool
+- Boolean Type:    `bool`
 
-- Text Type:    str
+- Text Type:    `str`
 
-- Numeric Types:    int, float, complex
+- Numeric Types:    `int`, `float`, `complex`
 
-- Binary Types:    bytes
+- Binary Types:    `bytes`
 
 <br>
 
 **Composite Datatypes / data structures**
 
-- Sequence Types:    list, tuple, range
+- Sequence Types:    `list`, `tuple`, `range`
 
-- Set Types:    set, frozenset
+- Set Types:    `set`, `frozenset`
 
-- Mapping Type:    dict
+- Mapping Type:    `dict`
 
-- Binary composite type: bytearray, memoryview
+- Binary composite type: `bytearray`, `memoryview`
 
 <br>
 
@@ -80,13 +80,13 @@ In Python, each data type has specific use cases and trade-offs. Let's look at e
 
 **Custom Data types**
 
-- In python it is possible to define custom data types with custom syntax and behaviours, many of the common desired data types have already been made for you by others.
+- In python it is possible to define custom data types with custom syntax and behaviours. Many of the common desired data types have already been made for you by others.
 
 ## Initialising and converting between data types
 
 Different data types have different syntax. You will notice that all inbuilt data types in python have inbuilt functions which can be used to convert to that data type or specify as that data type. 
 
-It is not possible to convert between all data types, and some require more information and input to convert between
+It is not possible to convert between all data types; some conversions require additional information and input.
 
 Resources about data types can be found in the python documentation: 
 https://docs.python.org/3/library/functions.html
@@ -286,14 +286,14 @@ For further reading you can investigate why sets are generally faster to find un
 
 ## Summary
 
-There are many inbuilt data types in python. We will explore them further in the next few sections.
-It is inportant to use the correct data type for your use case 
+There are many in-built data types in python. We will explore them further in the next few sections.
+It is important to use the correct data type for your use case 
 
 ::: {.callout-tip}
 #### Key Points
 
 - Use the table to remember the key information about data types
-- Check the python documentation for further information on data types and inbuilt functions
+- Check the python documentation for further information on data types and in-built functions
 - It is important to use the correct data types for your use case rather than the same data type all the time
 
 :::

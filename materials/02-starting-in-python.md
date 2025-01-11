@@ -157,19 +157,19 @@ This is important for FAIR (Findable, Accessible, Interoperable, and Reproducibl
 
 The name "Jupyter" derives from its core languages: Julia, Python, and R, with its logo inspired by Galileo’s discovery of Jupiter's moons.
 Each coding language has its own kernel for executing code cells. For Python, the kernel is IPython. 
-Jupyter Notebook files have a .ipynb extension, indicating their connection to IPython.
+Jupyter Notebook files have a '.ipynb' extension, indicating their connection to IPython.
 
 The Jupyter Notebook file, kernel, and web browser interact via the Jupyter Notebook Server, enabling a seamless user experience.
 
-For a more indepth look at jupyter notebooks, refer to the MCB course:
+For a more in-depth look at Jupyter Notebooks, refer to the MCB course:
 https://ac812.github.io/mcb-python/jupyter.html
 
 ::: {.callout-exercise}
 #### Create a Jupyter Notebook 
 {{< level 1 >}}
 
-You should have already installed jupyter notebook. 
-launch a jupyter notebook from the terminal:
+You should have already installed Jupyter Notebook. 
+Launch a Jupyter Notebook from the terminal:
 
 ```
 jupyter notebook
@@ -196,7 +196,7 @@ Select Save and Checkpoint or press Ctrl + S (Windows) or Cmd + S (Mac).
 :::
 
 ## Summary
-You should now be able to call in built functions in python and be set up to use Jupyter Notebook
+You should now be able to call in-built functions in python and be set up to use Jupyter Notebooks.
 
 ::: {.callout-tip}
 
@@ -206,6 +206,6 @@ You should now be able to call in built functions in python and be set up to use
 - Variables are assigned with `=`
 - There is no need to define the variable type explicitly
 - Indentation is used in python to identify code chunks
-- Jupyter notebooks enable literate programming in python, combining code chunks and markdown text
+- Jupyter Notebooks enable literate programming in python, combining code chunks and markdown text
 
 :::

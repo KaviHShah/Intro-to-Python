@@ -5,7 +5,7 @@ title: Working with Composite Data Types
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Be able to work with lists, disctionaries, sets, and tuples
+- Be able to work with lists, dictionaries, sets, and tuples
 - Understand shallow and deep copies 
 - Understand the importance of benchmarking code
 
@@ -123,9 +123,9 @@ Remember the key differences:
 ## Composite Data types and Memory Management
 
 The way memory is managed is important. 
-When coding we both want to minimise memory use, by not making needless duplications. 
+When coding we want to minimise memory use. One way of doing this is by not making needless duplications. 
 
-Understanding the behavior of objects and how they are copied is crucial for managing memory and ensuring that your programs behave as expected. This is even more crucial when working with composite data types. 
+Understanding the behaviour of objects and how they are copied is crucial for managing memory and ensuring that your programs behave as expected. This is even more crucial when working with composite data types. 
 
 - In the next sections we will work with different composite data types and investigate deep and shallow copies.
 
