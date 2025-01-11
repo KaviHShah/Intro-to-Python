@@ -5,7 +5,7 @@ title: Why Learn Python
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Obtain a broad introduction to Python  
+- Gain a broad introduction to Python  
 - Explore the advantages and disadvantages of Python as a programming language for data science  
 - Examine various examples of Python's common applications and evaluate when to use python
 :::
@@ -15,18 +15,19 @@ title: Why Learn Python
 
 **High-Level, General-Purpose Language:** 
 
-Python is a versatile programming language created in the late 1980s by Guido van Rossum, emphasising code readability and simplicity. It’s widely used for tasks like web development, machine learning, and automation.
+Python is a versatile programming language created in the late 1980s by Guido van Rossum, emphasising code readability and simplicity. It is widely used for tasks like web development, machine learning, and automation.
 
 **Named After:** “Monty Python’s Flying Circus” (not the reptile).
 
 **Key Features:**
 
-1. **Interpreted Language:** Python executes code line-by-line, making debugging easier compared to compiled languages.
-2. **Object-Oriented Programming (OOP):** Supports structured, reusable code for larger projects.
+1. **Interpreted Language:** Executes code line-by-line, making debugging easier compared to compiled languages.
+2. **Object-Oriented Programming (OOP):** Supports the OOP paradigm through classes and objects, enabling structured, reusable, and scalable code for larger projects.
 3. **Very High-Level Language (VHLL):** Allows complex operations to be expressed in simple, single statements.
 
-CPython is the default implementation of Python, however Jupyter Notebooks use IPython (Interactive Python) which is an implementation which is built on top of CPython and adds an interactive shell. There are also Jython, the implementation of Python in Java, and others.
-We won't go into more detail, but for further reading:
+CPython is the most widely used implementation of Python. Jupyter Notebooks use IPython (Interactive Python), which is an enhanced interactive shell built on top of CPython. Other implementations of Python include Jython, which is written in Java, among others.
+
+We won't go into further detail here, but for more information, see:
 
 https://onlinelibrary.wiley.com/doi/full/10.1002/spe.3267
 
@@ -34,13 +35,11 @@ https://www.geeksforgeeks.org/difference-various-implementations-python/
 
 https://ipython.org/
 
-- The main thing to note that most packages and modules will work across implementations (at least those in C), but sometimes it will make a difference, which implementation you are using.
-
 ## Why Python is Great for Data Science
 
 **Simple Syntax and Readability:**
 
-- Its easy-to-understand syntax helps data scientists focus on solving problems rather than dealing with complex code, making it accessible for both beginners and experts.
+- Python's easy-to-understand syntax helps data scientists focus on solving problems rather than dealing with complex code, making it accessible for both beginners and experts.
 
 **Large Ecosystem of Libraries:**
 
@@ -58,7 +57,7 @@ https://ipython.org/
 
 **Active Community and Support:**
 
-- Python has a large, supportive community offering tutorials, open-source contributions, and plenty of resources.
+- Python has a large supportive community, offering tutorials, open-source contributions, and plenty of resources.
 
 **Integration with Other Tools:**
 
@@ -66,7 +65,7 @@ https://ipython.org/
 
 **Ideal for Prototyping and Interactive Experimentation:**
 
-- Its flexibility allows for quick algorithm testing and experimentation, which is essential for refining data models. It is not a compiled language making debugging and modifying code easier.
+- Python's flexibility allows for quick algorithm testing and experimentation, which is essential for refining data models. It is not a compiled language making debugging and modifying code easier.
 
 **Scalability:**
 
@@ -86,24 +85,24 @@ While Python is a widely used and popular programming language, it does have som
 
 **Memory Consumption**
 
-- Python tends to use more memory than some other languages due to its data types and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.
+- Python tends to use more memory than some other languages due to its data types, and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.
 
 
 **Errors as a result of flexibility**
 
-- While dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug.The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.
+- While dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug. The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.
 
 **Limited Packages for Certain use cases**
 
-- While Python has many packages and modles, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.
+- While Python has many packages and modules, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.
 
 **Package Dependency Management**
 
-- Managing dependencies in Python can be tricky, particularly with conflicting library versions. Tools like pip and virtual environments e.g. using conda help, but issues still arise in complex projects.
+- Managing dependencies in Python can be tricky, particularly with conflicting library versions. Tools like package managers and virtual environments are helpful, but issues still arise in complex projects.
 
 ## Summary
 
-Python's ease of use, broad library support, and strong community make it a top choice for data science. It simplifies data analysis, machine learning, and visualization, allowing data scientists to work efficiently and effectively. there are downsides to using python. Overall using a programming language is a mixture of how good it is at addressing the task and how familiar you are with the language. 
+Python's ease of use, broad library support, and strong community, make it a top choice for data science. Python is ideal for data analysis, machine learning, and visualization, allowing data scientists to work efficiently and effectively. However, there are downsides to using python as mentioned above. Overall, choosing a specific programming language for a computational task is a mixture of how good it is at addressing the task, and how familiar you are with the language. 
 
 ::: {.callout-exercise}
 #### Discussion 1: Deciding to use Python
@@ -124,7 +123,7 @@ You might choose to use Python to train a neural network for image recognition, 
 
 #### Key Points
 
-- Python is defined by the syntax, and is an easy to use high level language commonly used in data science
+- Python is defined by its syntax, and is an easy to use high level language commonly used in data science
 - Python has many packages and modules for data science and AI
 - There are both advantages and disadvantages to programming in python, so choose a programming language suited to the task
 

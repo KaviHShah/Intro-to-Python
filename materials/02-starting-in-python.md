@@ -17,7 +17,7 @@ title: Starting in Python
 
 **Comments and new lines**
 
-Commenting your code and using lines liberally is key for others to understand your code.
+Commenting your code, and using lines liberally, are key to making your code easily understandable for others.
 
 - A **```#```** (Hash) is used for single line comments 
 
@@ -35,7 +35,7 @@ In Python initialising variables is easy:
 
 - Variables are assigned using the = sign
 
-- Case sesitive
+- Case sensitive
 
 - No need to declare the type explicitly (dynamic typing)
 
@@ -51,19 +51,19 @@ my_name = "Kavi"
 
 When naming variables, it's important to follow Python's guidelines for consistency and readability. Here are some key rules to remember:
 
-* Case-sensitive: weight and Weight are different variables.
+* **Case-sensitive:** weight and Weight are different variables.
 
-* Use lowercase: Separate words with underscores, e.g., weight_kg.
+* **Use lowercase:** Separate words with underscores, e.g., weight_kg.
 
-* Don't start with numbers: Variable names cannot begin with a digit.
+* **Don't start with numbers:** Variable names cannot begin with a digit.
 
-* Stick to letters: Use only letters, underscores, and digits (when needed).
+* **Stick to letters:** Use only letters, underscores, and digits (when needed).
 
-* Be descriptive: Choose clear, meaningful names (e.g., asdjks is not helpful).
+* **Be descriptive:** Choose clear, meaningful names (e.g., asdjks is not helpful).
 
-* Avoid overly long names: this_is_my_height_in_cm is too long.
+* **Avoid overly long names:** For example 'this_is_my_height_in_cm' is too long.
 
-* Don't use keywords: Avoid using Python function names, class names, or data types as variable names.
+* **Don't use keywords:** Avoid using Python function names, class names, or data types as variable names.
 
 For more detailed guidelines, refer to PEP 8 or the Google Python Style Guide.
 

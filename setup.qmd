@@ -201,7 +201,7 @@ ln -s $(wslpath $(powershell.exe '[environment]::getfolderpath("downloads")')) ~
 You may also want to configure the Windows terminal to automatically open _WSL2_ (instead of the default Windows Command Prompt or Powershell):
 
 - Search for and open the "<i class="fa-solid fa-terminal"></i> Terminal" application.
-- Click on the downward arrow <i class="fa-solid fa-chevron-down"></i> in the toolbar.
+- Click on the downward arrow "<i class="fa-solid fa-chevron-down"></i>" in the toolbar.
 - Click on "<i class="fa-solid fa-gear"></i> Settings".
 - Under "Default Profile" select "<i class="fa-brands fa-linux"></i> Ubuntu". 
 
