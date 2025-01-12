@@ -1,5 +1,5 @@
 ---
-title: Data Visualisation data with `matplotlib` and `seaborn`
+title: Data Visualisation with `matplotlib` and `seaborn`
 ---
 
 ::: {.callout-tip}
