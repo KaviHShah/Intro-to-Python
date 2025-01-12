@@ -5,7 +5,7 @@ title: Installing Python Packages
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Be able to install packages and modules needed
+- Be able to install packages and modules
 - Understand what is meant by software environments and dependencies
 
 :::
@@ -39,7 +39,7 @@ To update a package to the latest version:
 **Cons of Using `pip`**
 
 - **Dependency management**: Pip doesn't handle package dependencies as robustly as `conda`. This can result in conflicts or missing dependencies.
-- **Python-only**: Pip is designed for Python packages. If a package has non-Python dependencies (e.g., compiled libraries), you may have to install them manually.
+- **Python-only**: Pip is mainly designed for Python packages. If a package has non-Python dependencies, you may have to install them manually.
 
 
 ## Installing Packages with `conda`
@@ -66,7 +66,7 @@ To update an installed package to the latest version:
 
 `conda update package_name`
 
-Generally you would create a environment specific maybe to python projects with the packages you need etc. 
+Generally, you would create an specific environment for example to python projects, with the packages you need:
 ```
 conda create --name env_name
 conda env list
@@ -78,17 +78,17 @@ conda deactivate
 
 **Pros of Using `conda`**
 
-- **Cross-language package management**: `Conda` can install packages and libraries that are written in Python, C, C++, R, or other languages.
-- **Handles non-Python dependencies**: Unlike `pip`, conda can install non-Python dependencies such as `libc`, `OpenBLAS`, or other compiled libraries.
-- **Robust dependency resolution**: Conda provides more sophisticated dependency resolution, reducing the risk of package conflicts.
-- **Environment management**: Conda simplifies creating isolated environments, allowing you to manage multiple versions of Python or other libraries on the same system easily.
+- **Cross-language package management**: `conda` can install packages, libraries, and software, that are written in Python, C, C++, R, or other languages.
+- **Handles non-Python dependencies**: Unlike `pip`, `conda` can install non-Python dependencies such as `libc`, `OpenBLAS`, or other compiled libraries.
+- **Robust dependency resolution**: `conda` provides more sophisticated dependency resolution, reducing the risk of package conflicts.
+- **Environment management**: `conda` simplifies creating isolated environments, allowing you to easily manage multiple versions of Python, or other libraries, on the same system.
 
 **Cons of Using `conda`**
 
 - **Limited packages**: Although conda has its own package repository, it doesn't have access to all Python packages in PyPI. Sometimes, you might need to fall back on `pip`.
 - **Slower**: Conda can be slower and heavier than pip, especially when solving complex package dependencies.
 - **Larger installation**: The Anaconda distribution is large, as it comes with many pre-installed libraries. This might be unnecessary if you only need specific packages.
-- **Multiple environments use more space**: Having multiple different environments with different software versions can take up a lot of space (though unfortunately itis often necessary)
+- **Multiple environments use more space**: Having multiple different environments with different software versions can take up a lot of space (though unfortunately it is often necessary)
 
 Overview of using conda:
 
@@ -107,7 +107,7 @@ Overview of using conda:
 | **Removing an Environment**   | `conda env remove --name myenv` – Deletes an environment                                              |
 
 **Note that conda and other environment and package managers DO NOT isolate files on the filesystem.**
-You can access and work with files irrespective of the conda environment it was created or worked with in.
+You can access and work with files irrespective of the `conda` environment it was created in.
 
 ## Combining `pip` and `conda`
 
@@ -176,7 +176,7 @@ To install a package (e.g., `numpy`), you can run:
 ::: {.callout-exercise}
 #### Install `pandas` and `numpy`
 
-try to install pandas and numpy using `mamba` , `conda` or `pip`
+Try to install pandas and numpy using `mamba` , `conda` or `pip`
 You should have already installed mamba using the setup instructions
 
 :::
@@ -187,13 +187,14 @@ You should have already installed mamba using the setup instructions
 
 Using Package managers can be very useful to enable you to easily install, update, and manage software packages (libraries or programs) on your computer. 
 They automate the process, saving you time and effort. 
-virtual environments are isolated environments that allow you to manage dependencies and packages for different projects separately. 
+Virtual environments are isolated environments that allow you to manage dependencies and packages for different projects separately. 
 They can be used to create specific setups for each project without interference from global installations.
 
 ::: {.callout-tip}
 #### Key Points
 
 Package and environment managers like Conda enable:
+
 - Easy Installation: Quickly install software with simple commands instead of downloading and configuring manually.
 - Dependency Management: Automatically handle and install any additional software that your main software needs to run (dependencies).
 - Version Control: Manage different versions of packages to ensure compatibility and avoid conflicts.
