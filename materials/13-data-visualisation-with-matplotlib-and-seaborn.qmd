@@ -114,7 +114,7 @@ Tomorrow we will use all you have learnt so far
 ::: {.callout-tip}
 #### Key Points
 
-- Plotting and visualisation is key to undestanding and working with data
+- Plotting and visualisation is key to understanding and working with data
 - 'matplotlib' and 'seaborn' can be used to plot your data in Python
 
 :::
