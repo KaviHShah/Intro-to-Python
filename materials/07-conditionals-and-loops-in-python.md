@@ -16,16 +16,16 @@ title: Conditionals and Loops in Python
 Conditionals in Python allow you to execute different blocks of code based on conditions with boolean outputs. This is mainly done using `if`, `elif`, and `else` statements.
 
 
-**`if` Statement**
+**`if` Statement:**
 
 The `if` statement evaluates a condition which has returned a boolean (`True` or `False`). If the condition is `True`, the block of code inside the `if` statement is executed.
 
-**`elif` Statement**
+**`elif` Statement:**
 
 The `elif` (short for "else if") statement allows you to check multiple conditions.
 It follows an `if` statement and is executed if the previous conditions were `False` and its own condition is `True`.
 
-**`else` Statement**
+**`else` Statement:**
 
 The `else` statement is used to execute a block of code if none of the preceding `if` or `elif` conditions were `True`.
 
@@ -172,7 +172,7 @@ finally:
 
 In this case I might not use the `else` or `finally`
 
-**Benefits of Using `try` and `except`**
+**Benefits of Using `try` and `except`:**
 
 - **Prevents Crashes:** By handling exceptions, you can prevent your program from crashing due to unforeseen errors.
 - **Cleaner Code:** It allows for clearer separation of normal code and error handling.
@@ -180,7 +180,7 @@ In this case I might not use the `else` or `finally`
 
 ## `for` Loops in Python
 
-`for` loops iterate over a sequence (list, tuple, string, dictionary, set or range) and perform processes. The syntax of a `for` loop is simple but must be carefully followed, especially with respect to the colon (`:`) and indentation.
+`for` loops iterate over a sequence (list, tuple, string, dictionary, set, or range) and perform processes. The syntax of a `for` loop is simple but must be carefully followed, especially with respect to the colon (`:`) and indentation.
 
 **Syntax**
 
@@ -192,8 +192,8 @@ In this case I might not use the `else` or `finally`
 
 ```
 for item in sequence:
-    # Code block to execute
-`````
+    print(x) # Code block to execute
+```
 Example:
 
 ```
@@ -333,7 +333,7 @@ What exceptions might be generated?
 {{< level 2 >}}
 
 Exercise: Create your own `for` loop example with a dictionary, using the `enumerate()` function, `try` and `except`, and `if` statements. Explain what your code does?
-Discuss in groups how you might improve eachothers code?
+Discuss in groups how you might improve each other's code?
 
 ::: {.callout-answer}
 Example answer:
@@ -360,7 +360,7 @@ for index, (animal, speed) in enumerate(animal_speeds.items()):
         # Handle the case where speed is not a numeric value
         print(f"{index + 1}. {animal} has an invalid speed value: {speed}")
 ```
-For this code some improvements are:
+For this code, some improvements are:
 
 ```
 animal_speeds = {
@@ -439,7 +439,7 @@ maybe add a if Statement?
 | Deconstruction                | Requires explicit unpacking             | Automatically deconstructs data structures            |
 | Type Matching                 | Needs `isinstance()` checks             | Can match types directly                              |
 | Readability                   | Becomes verbose with complex logic      | More concise for complex scenarios                    |
-| Flexibility                   | Can use `if-elif-else` chains for conditions | Can handle advanced pattern matching with custom conditions |
+| Flexibility                   | Can use `if`-`elif`-`else` chains for conditions | Can handle advanced pattern matching with custom conditions |
 
 
 Example:
@@ -538,7 +538,7 @@ NO! - match statements can reduce the errors and deal with edge casees, but erro
 :::
 :::
 
-**Automatic Unpacking with match statements:**
+**Automatic Unpacking with `match` statements:**
 
 ```
 dna_data = {
@@ -547,7 +547,7 @@ dna_data = {
     "type": "coding"
 }
 
-# Match statement to unpack DNA information
+# match statement to unpack DNA information
 match dna_data:
     case {"sequence": sequence, "length": length, "type": type}:
         print(f"The DNA sequence is {sequence}, it has a length of {length} bases, and it is of type '{type}'.")
@@ -563,11 +563,11 @@ Output:
 The DNA sequence is AGCTAGCCTAAGT, it has a length of 12 bases, and it is of type 'coding'.
 ```
 
-**This Can be incredibly useful when writing functions which we will get on to shortly**
+**This can be incredibly useful when writing functions which we will get on to shortly**
 
 ## List Comprehensions
 
-List comprehensions in python enable you to write shorter and sometimes faster code than standard loops. A simple example to demonstrate the syntax is:
+List comprehensions in python enable you to write shorter and sometimes faster code than standard loops. The syntax is:
 
 [expression for item in iterable if condition]
 
@@ -595,7 +595,7 @@ output:
 :::
 :::
 
-## Explanation of While Loops in Python
+## `while` Loops in Python
 
 A `while` loop in Python is a control flow statement that allows code to be executed repeatedly based on a boolean condition. The loop continues to execute as long as the condition remains `True`. Here's a breakdown of how `while` loops work:
 
@@ -695,7 +695,7 @@ while infected < population:
 ```
 
 ::: {.callout-exercise}
-#### Code Legiblity
+#### Code Legibility
 {{< level 2 >}}
 
 Discussion:
@@ -771,6 +771,7 @@ It is key for these statements to be written concisely, while catching edge case
 #### Key Points
 
 By this point you should be comfortable with:
+
 - `if`, `elif`, `else` statements
 - `match` , `case` statements
 - `for` loops with `range() len() enumerate()
