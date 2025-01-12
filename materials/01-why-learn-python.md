@@ -105,7 +105,7 @@ While Python is a widely used and popular programming language, it does have som
 Python's ease of use, broad library support, and strong community, make it a top choice for data science. Python is ideal for data analysis, machine learning, and visualization, allowing data scientists to work efficiently and effectively. However, there are downsides to using python as mentioned above. Overall, choosing a specific programming language for a computational task is a mixture of how good it is at addressing the task, and how familiar you are with the language. 
 
 ::: {.callout-exercise}
-#### Discussion 1: Deciding to use Python
+#### Discussion: Deciding to use Python
 
 What are some examples of when you would use Python and why?
 What are examples of when you wouldn't use Python and why?

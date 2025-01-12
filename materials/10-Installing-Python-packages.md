@@ -30,13 +30,13 @@ To update a package to the latest version:
 
 `pip install --upgrade package_name`
 
-**Pros of Using `pip`**
+**Pros of Using `pip`:**
 
 - **Wide range of packages**: Since `pip` installs from PyPI, it gives access to a vast collection of Python libraries.
 - **Lightweight**: Pip is small and fast, suitable for installing Python-only packages.
 - **Flexible**: Pip works well with virtual environments (e.g., `venv` or `virtualenv`) to isolate dependencies.
 
-**Cons of Using `pip`**
+**Cons of Using `pip`:**
 
 - **Dependency management**: Pip doesn't handle package dependencies as robustly as `conda`. This can result in conflicts or missing dependencies.
 - **Python-only**: Pip is mainly designed for Python packages. If a package has non-Python dependencies, you may have to install them manually.
@@ -76,14 +76,14 @@ conda install -c conda-forge package_name
 conda deactivate
 ```
 
-**Pros of Using `conda`**
+**Pros of Using `conda`:**
 
 - **Cross-language package management**: `conda` can install packages, libraries, and software, that are written in Python, C, C++, R, or other languages.
 - **Handles non-Python dependencies**: Unlike `pip`, `conda` can install non-Python dependencies such as `libc`, `OpenBLAS`, or other compiled libraries.
 - **Robust dependency resolution**: `conda` provides more sophisticated dependency resolution, reducing the risk of package conflicts.
 - **Environment management**: `conda` simplifies creating isolated environments, allowing you to easily manage multiple versions of Python, or other libraries, on the same system.
 
-**Cons of Using `conda`**
+**Cons of Using `conda`:**
 
 - **Limited packages**: Although conda has its own package repository, it doesn't have access to all Python packages in PyPI. Sometimes, you might need to fall back on `pip`.
 - **Slower**: Conda can be slower and heavier than pip, especially when solving complex package dependencies.

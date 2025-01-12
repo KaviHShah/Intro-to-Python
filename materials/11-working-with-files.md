@@ -11,7 +11,7 @@ title: Working with Files in Python
 
 :::
 
-Working with files is simple in python. Many packages have their own built in file reading and writing functions including for example 'pandas' which we will look at next.
+Working with files is simple in python. Many packages have their own built-in file reading and writing functions including for example 'pandas' which we will look at next.
 Here we use the built-in `open` function.   
 
 ## Working Directory
@@ -20,7 +20,7 @@ A **working directory** is the directory within the file system where your progr
 
 When running python scripts from the console, the working directory is the one where you launched the script from. 
 
-The **`os`** module can be used in jupyterlab notebooks to check the working directory and change it.
+The **`os`** module can be used in Jupyter Notebooks to check the working directory and change it.
 
 Get working Directory:
 
@@ -35,18 +35,18 @@ Change working Directory:
 os.chdir('/path/to/directory')
 ```
 
-You can also use the majic command:
+You can also use the magic command:
 
 ```
 %cd /path/to/directory
 ```
 
-Magic commands in jupyterlab notebooks can be super useful. We will not look at them further here, but also note that they cannot be used ouside the iPython Kernel
+Magic commands in Jupyter Notebooks can be super useful. We will not look at them further here, but also note that they cannot be used ouside the iPython Kernel
 
 
-You can also set default working directory in the config file. We will not go over this here (and I myself tend not to work this way - although I also don't often use jupyter notebooks).
+You can also set default working directory in the config file. We will not go over this here (and I myself tend not to work this way - although I also don't often use Jupyter Notebooks).
 
-I recommend having scripts and data in the same directory or a subdirectory of the one for a project. My common setup might be:
+I recommend having scripts and data in the same directory, or a subdirectory of the project directory. My common setup might be:
 
 ```
 /home/user/project/
@@ -108,19 +108,24 @@ file.close()
 ```
 This method is memory-efficient, especially for large files, since it doesn't load the entire file into memory at once.
 
-Problems with working with files this way:
+Consider the problems with working with files this way:
 
-Discussion:
+::: {.callout-exercise}
+#### Discussion: Exceptions after `open()`
 
-if an exception occurs after open() what will happen? what have you already learnt as a method to stop this
+If an exception occurs after `open()` what will happen? What have you already learnt as a method to stop this?
 
-Answer:
-The file will never close properly - you could use `try` ,`except` , `finally`. The `with` statement is a better way to deal with this
+::: {.callout-answer}
+
+The file will never close properly - you could use `try` ,`except` , `finally`. The `with` statement presented in the next section is a better way to deal with this.
+
+:::
+:::
 
 
 ## Using `with` when working with files:
 
-Using the `with` statetement is a better way to work with files in pytho as it ensures that files are properly opened and closed. 
+Using the `with` statement is a better way to work with files in Python as it ensures that files are properly opened and closed. 
 
 Example:
 
@@ -136,7 +141,7 @@ with open('dna_sequence.txt', 'r') as file:
 Note it uses the same kind of syntax as for loops and conditionals
 
 
-`with` does this by working with a context manager. The open() function returns a fileobject which has the `.__enter___()` and `.__exit__()` methods. You can read more about this after.  
+`with` does this by working with a context manager. The open() function returns a fileobject which has the `.__enter___()` and `.__exit__()` methods. You can read more about this in your own time.  
 
 ## Aside: Garbage collection
 
@@ -144,7 +149,7 @@ Garbage collection frees memory by cleaning up objects and variables that are no
 
 Python does this automatically through reference counting and generational garbage collection. 
 
-You can interact with this using the `gc` module
+You can interact with this using the `gc` module.
 
 ## Writing to a file
 
@@ -159,9 +164,9 @@ with open('sequences.txt', 'w') as file:
     file.write("ACGTGCTTCCAAACGTA\n")
 
 ```
-`file.writelines():` Takes an iterable (like a list) and writes each item to the file. you can also use for loops
+`file.writelines():` Takes an iterable (like a list) and writes each item to the file. You can also use `for` loops.
 
-- the \n is needed when manually adding lines
+- the `\n` is needed when manually adding lines.
 
 **Appending to an existing file**
 
@@ -175,7 +180,7 @@ Use the `'wb'` for writing binaries for example.
 #### Reading and writing files
 {{< level 2 >}}
 
-Use the above to first write to a file something. Then read and append to the file.
+Use the above to first write something to a file. Then read and append to the file.
 
 :::
 
@@ -183,7 +188,7 @@ Use the above to first write to a file something. Then read and append to the fi
 
 ## Moving files
 
-The `shutil` module can be used to move files in python. (I do not commonly do this)
+The `shutil` module can be used to move files in python.
 
 ```
 import shutil
@@ -213,8 +218,8 @@ See the following file types and modules to work with them:
 | **File Type**      | **Extension(s)**       | **Description**                                                      | **Modules**                         |
 |---------------------|-----------------------|----------------------------------------------------------------------|-------------------------------------|
 | **Text File**       | `.txt`                | Plain text files that contain unformatted text.                     | Built-in `open()`, `io`            |
-| **CSV File**        | `.csv`                | Comma-separated values files used to store tabular data.            | `csv`, `pandas`                    |
-| **TSV File**        | `.tsv`                | Tab-separated values files used to store tabular data, similar to CSV. | `csv`, `pandas`                    |
+| **CSV File**        | `.csv`                | Comma-separated values, files used to store tabular data.            | `csv`, `pandas`                    |
+| **TSV File**        | `.tsv`                | Tab-separated values, files used to store tabular data, similar to CSV. | `csv`, `pandas`                    |
 | **JSON File**       | `.json`               | JavaScript Object Notation, a lightweight data interchange format.  | `json`, `pandas`                   |
 | **XML File**        | `.xml`                | Extensible Markup Language, used to store structured data.           | `xml.etree.ElementTree`, `lxml`    |
 | **Excel File**      | `.xls`, `.xlsx`       | Microsoft Excel files for storing spreadsheet data.                  | `pandas`, `openpyxl`, `xlrd`       |
@@ -241,6 +246,6 @@ See the following file types and modules to work with them:
 
 - It is essential to be able to work with different file types
 - It is better to use the `with` method when working with files to handle opening and closing files
-- Many modules can be used to work with different fily types
+- Many modules can be used to work with different file types
  
 :::
