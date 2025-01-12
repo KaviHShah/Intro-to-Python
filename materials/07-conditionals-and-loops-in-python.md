@@ -105,20 +105,25 @@ How might the second example be clearer if I was writing it again?
 In Python, `try` and `except` blocks are used for handling exceptions, which are errors that can occur during program execution. This mechanism allows developers to anticipate potential errors, provide alternate code to handle them, and prevent the program from crashing. Here's how it works:
 
 **`try` Block:**
+
 - The code that might raise an exception is placed inside the `try` block.
 - If an exception occurs during execution of this block, the rest of the block is skipped, and control is passed to the `except` block.
 
 **`except` Block:**
-- This block contains code that handles the exception. You can specify which exception to catch or leave it blank to catch any exception.
+
+- This block contains code that handles the exception. You can specify which exception to catch, or leave it blank to catch any exception.
 - If the exception type matches the one specified in the `except` block, the code inside it is executed.
 
 **Multiple `except` Blocks:**
+
 - You can have multiple `except` blocks to handle different types of exceptions.
 
 **`else` Block:**
+
 - You can add an `else` block after the `except` block. This block runs if the `try` block executes without raising an exception.
 
 **`finally` Block:**
+
 - The `finally` block runs regardless of whether an exception was raised or not. It is often used for cleanup actions, like closing files or releasing resources.
 
 **Example**
