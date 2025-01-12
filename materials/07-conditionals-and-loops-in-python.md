@@ -17,15 +17,17 @@ Conditionals in Python allow you to execute different blocks of code based on co
 
 
 **`if` Statement**
-- The `if` statement evaluates a condition which has returned a boolean (`True` or `False`).
-- If the condition is `True`, the block of code inside the `if` statement is executed.
+
+The `if` statement evaluates a condition which has returned a boolean (`True` or `False`). If the condition is `True`, the block of code inside the `if` statement is executed.
 
 **`elif` Statement**
-- The `elif` (short for "else if") statement allows you to check multiple conditions.
-- It follows an `if` statement and is executed if the previous conditions were `False` and its own condition is `True`.
+
+The `elif` (short for "else if") statement allows you to check multiple conditions.
+It follows an `if` statement and is executed if the previous conditions were `False` and its own condition is `True`.
 
 **`else` Statement**
-- The `else` statement is used to execute a block of code if none of the preceding `if` or `elif` conditions were `True`.
+
+The `else` statement is used to execute a block of code if none of the preceding `if` or `elif` conditions were `True`.
 
 **Syntax**
 
@@ -106,25 +108,25 @@ In Python, `try` and `except` blocks are used for handling exceptions, which are
 
 **`try` Block:**
 
-- The code that might raise an exception is placed inside the `try` block.
-- If an exception occurs during execution of this block, the rest of the block is skipped, and control is passed to the `except` block.
+The code that might raise an exception is placed inside the `try` block.
+If an exception occurs during execution of this block, the rest of the block is skipped, and control is passed to the `except` block.
 
 **`except` Block:**
 
-- This block contains code that handles the exception. You can specify which exception to catch, or leave it blank to catch any exception.
-- If the exception type matches the one specified in the `except` block, the code inside it is executed.
+This block contains code that handles the exception. You can specify which exception to catch, or leave it blank to catch any exception.
+If the exception type matches the one specified in the `except` block, the code inside it is executed.
 
 **Multiple `except` Blocks:**
 
-- You can have multiple `except` blocks to handle different types of exceptions.
+You can have multiple `except` blocks to handle different types of exceptions.
 
 **`else` Block:**
 
-- You can add an `else` block after the `except` block. This block runs if the `try` block executes without raising an exception.
+You can add an `else` block after the `except` block. This block runs if the `try` block executes without raising an exception.
 
 **`finally` Block:**
 
-- The `finally` block runs regardless of whether an exception was raised or not. It is often used for cleanup actions, like closing files or releasing resources.
+The `finally` block runs regardless of whether an exception was raised or not. It is often used for cleanup actions, like closing files or releasing resources.
 
 **Example**
 
@@ -171,6 +173,7 @@ finally:
 In this case I might not use the `else` or `finally`
 
 **Benefits of Using `try` and `except`**
+
 - **Prevents Crashes:** By handling exceptions, you can prevent your program from crashing due to unforeseen errors.
 - **Cleaner Code:** It allows for clearer separation of normal code and error handling.
 - **More Robust Programs:** By anticipating and handling potential errors, your programs can handle unexpected situations better.
@@ -427,7 +430,7 @@ maybe add a if Statement?
 
 ### A newer way of working with conditionals!
 
-Match statements (Python 3.10 onwards) allow for structural pattern matching, which is a more powerful and flexible version of if-elif chains. With match, you can compare variables to patterns and handle complex matching scenarios in a clear, concise way, and also directly deconstruct variables!
+`match` statements (Python 3.10 onwards) allow for structural pattern matching, which is a more powerful and flexible version of if-elif chains. With `match`, you can compare variables to patterns and handle complex matching scenarios in a clear, concise way, and also directly deconstruct variables!
 
 | Feature                      | if Statements                          | match Statements                                      |
 |------------------------------|-----------------------------------------|-------------------------------------------------------|
@@ -478,7 +481,7 @@ Output:
 #### Short Description
 {{< level 1 >}}
 
-How would you do this if you had to use if statements?
+How would you do the above if you had to use `if` statements?
 
 :::
 
