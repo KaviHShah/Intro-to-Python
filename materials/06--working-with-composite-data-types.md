@@ -32,7 +32,7 @@ In Python, composite data types allow you to store multiple values in a single v
 
 - **Definition**: Unordered collections of key-value pairs, where each key is unique and must be immutable.
 
-- **Syntax**: Defined using curly braces `{}` and use a colon `:` to separate keys from values.
+- **Syntax**: Defined using curly braces `{}` and using a colon `:` to separate keys from values.
 
 **Sets**
 

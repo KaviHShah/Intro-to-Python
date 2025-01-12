@@ -78,7 +78,7 @@ print(type(f))
 print(sys.getsizeof(f))
 
 print("g:")
-g = 100
+g = 10000000000
 print(type(g))
 print(sys.getsizeof(g))
 ```
@@ -105,10 +105,10 @@ f:
 24
 g:
 <class 'int'>
-28
+32
 ```
 
-A key point is that integers vary in size, and can be larger than floats which are always 24 bytes. (Try finding the size of a very very large integer and the corresponding float). Complex numbers are not used commonly, but in this case it is 32 bytes. You can look up more information about this if you are interested. 
+A key point is that integers vary in size, and can be larger than floats which are always 24 bytes. (Try finding the size of a very very large integer and the corresponding float). You can look up how integers and floats in python are stored in memory. Complex numbers are not used commonly, but in this case it is 32 bytes. You can look up more information about this if you are interested. 
 
 :::
 :::

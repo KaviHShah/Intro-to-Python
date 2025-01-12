@@ -8,7 +8,7 @@ title: Conditionals and Loops in Python
 - Be able to code conditional statements and loops in Python 
 - Understand how to handle errors (exceptions) and edge cases in programs
 - Compare different Python methods and their pros and cons
-When coding we want to minimise memory use, including by not making needless duplications.
+
 :::
 
 ## Conditionals
@@ -16,31 +16,31 @@ When coding we want to minimise memory use, including by not making needless dup
 Conditionals in Python allow you to execute different blocks of code based on conditions with boolean outputs. This is mainly done using `if`, `elif`, and `else` statements.
 
 
-**If Statement**
+**`if` Statement**
 - The `if` statement evaluates a condition which has returned a boolean (`True` or `False`).
 - If the condition is `True`, the block of code inside the `if` statement is executed.
 
-**Elif Statement**
+**`elif` Statement**
 - The `elif` (short for "else if") statement allows you to check multiple conditions.
 - It follows an `if` statement and is executed if the previous conditions were `False` and its own condition is `True`.
 
-**Else Statement**
+**`else` Statement**
 - The `else` statement is used to execute a block of code if none of the preceding `if` or `elif` conditions were `True`.
 
 **Syntax**
 
 ```
 if condition:
-    # Code to execute if condition is True
+    print(x) # Code to execute if condition is True
 elif another_condition:
-    # Code to execute if another_condition is True
+    print(y) # Code to execute if first condition is False and another_condition is True
 else:
-    # Code to execute if all conditions are False
+    print(z) # Code to execute if all conditions are False
 
 ```
 Note the colon and indentation used in the above example
 
-- Indentation is used to nest conditionals and loop in python, and incorrect indentation is a common cause for errors.
+- Indentation is also used to nest conditionals and loops in python, and incorrect indentation is a common cause for errors.
 
 Here is a very simple example of using conditionals:
 
@@ -58,7 +58,7 @@ else:
     #If both conditions are False, the else block executes and prints "It's a pleasant day."
 ```
 
-With very simple conditions python has a shorthand that is useful. You can do things like:
+With very simple conditions, python has a shorthand that is useful. You can do things like:
 
 ```
 print("it's a hotday") if temperature > 30 else (print("it's a cold day") if temperature < 10 else print("it's a pleasent day"))
@@ -78,7 +78,7 @@ Which types of operators are most useful when using conditional statements in Py
 :::
 
 ::: {.callout-exercise}
-#### examining contitional statements
+#### examining conditional statements
 {{< level 2 >}}
 
 - What do the following `if` statements do?
@@ -236,7 +236,7 @@ for i in range(0,len(animals),2):        #start, stop, step
 
 ```
 
-## Using `enumerate()` in For Loops
+## Using `enumerate()` in `for` Loops
 
 The `enumerate()` function in Python adds a counter to an iterable and returns it as an `enumerate` object. This is particularly useful when you want to loop through a sequence and keep track of the index of each item without using `range()`.
 
@@ -321,7 +321,7 @@ What exceptions might be generated?
 :::
 
 ::: {.callout-exercise}
-#### Make your own for loop
+#### Make your own `for` loop
 {{< level 2 >}}
 
 Exercise: Create your own `for` loop example with a dictionary, using the `enumerate()` function, `try` and `except`, and `if` statements. Explain what your code does?
