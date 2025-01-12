@@ -29,7 +29,7 @@ Only then will you be able to investigate the secret files.
 [84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110]
 ```
 
-Use the password and the `decrypt()` function to open the file `secret_file_1.txt.enc`. This will decrypt the secret file and return a decrpted copy in your working directory. Use the `help()` function to investigate use of the module and function.
+Use the password and the `decrypt()` function to open the file `secret_file_1.txt.enc`. This will decrypt the secret file and return a decrypted copy in your working directory. Use the `help()` function to investigate use of the module and function.
 
 <!--
 :::{.callout-hint}

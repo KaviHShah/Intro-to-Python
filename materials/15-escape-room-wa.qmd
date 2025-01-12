@@ -16,7 +16,7 @@ I was advised to get you to compete in three to four teams. A different person m
 :::
 
 ::: {.callout-exercise}
-#### Mad Doctor's Instructionsa
+#### Mad Doctor's Instructions
 
 First install the `cryptography` module.
 
@@ -43,7 +43,7 @@ from decryptor import decrypt
 [84, 104, 101, 32, 121, 101, 97, 114, 32, 116, 104, 97, 116, 32, 68, 78, 65, 32, 119, 97, 115, 32, 100, 105, 115, 99, 111, 118, 101, 114, 101, 100, 32, 105, 110]
 ```
 
-Use the password and the `decrypt()` function to open the file `secret_file_1.txt.enc`. This will decrypt the secret file and return a decrpted copy in your working directory. Use the `help()` function to investigate use of the module and function.
+Use the password and the `decrypt()` function to open the file `secret_file_1.txt.enc`. This will decrypt the secret file and return a decrypted copy in your working directory. Use the `help()` function to investigate use of the module and function.
 
 :::{.callout-hint}
 
@@ -136,7 +136,7 @@ Password = "fatalillnessoraeppa"
 
 :::
 
-3. To find the clue in the second file, read the `secret_file_2.csv`.Multiply the animal_weight by 4, and log transform the madness_index using the natural log. Plot the output as a scatter plot.
+3. To find the clue in the second file, read the `secret_file_2.csv`. Multiply the animal_weight by 4, and log transform the madness_index using the natural log. Plot the output as a scatter plot.
 
 The password to decrypt `secret_file_3.txt.enc` is the first 5 letters of the cell type represented - all in Upper case
 
@@ -678,13 +678,13 @@ Hopefully that was a fun exercise! Please see the key takeaways from this course
 - Python is defined by the syntax, and is an easy to use high level language commonly used in data science
 - Python has many packages and modules for data science and AI
 - There are both advantages and disadvantages to programming in python, so choose a programming language suited to the task
-- choosing the best data types and operators is key good concise and fast code
-- Understanding the basics of depp and shallow copies and how objects are stored in memory can help prevent errors in code
-- Memory management and and speed of code can be important so benchmarking is useful
-- Using conditionals, match statements, for loops and while loops enable one to build more complex programs
-- functions and classes in python help structure code and reflect the object oriented programming approach
-- Package and environment managers like conda are helpful to manage software dependencies
-- Packages like pandas, numpy, matplotlib and seaborn, enable data analysis and are well documented
+- choosing the best data types and operators is key to good concise and fast code
+- Understanding the basics of deep and shallow copies and how objects are stored in memory can help prevent errors in code
+- Memory management and speed of code can be important so benchmarking is useful
+- Using conditionals, match statements, `for` loops and `while` loops enable one to build more complex programs
+- functions and classes in python help structure code and reflect the object-oriented programming approach
+- Package and environment managers like Conda are helpful to manage software dependencies
+- Packages like 'pandas', 'NumPy', 'matplotlib' and 'seaborn', enable data analysis and are well documented
 - And most importantly always document your code!
 
 :::
