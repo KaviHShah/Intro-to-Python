@@ -10,16 +10,16 @@ title: NumPy Arrays and pandas Dataframes
 :::
 
 
-'pandas' dataframes and 'NumPy' arrays are widely used in data science in python. The documentation for both modules and online resources available are very good. Rather than explaining every single feature, I will instead compare the two modules and when to use them. You will then explore the documentation and find out how to do some common operations in 'pandas' and 'NumPy', with some test data.
+'pandas' dataframes and 'NumPy' arrays are widely used in data science in Python. The documentation for both modules and online resources available are very good. Rather than explaining every single feature, I will instead compare the two modules and when to use them. You will then explore the documentation and find out how to do some common operations in 'pandas' and 'NumPy', with some test data.
 
 ## Comparison of 'NumPy' and 'pandas'
 
 
 | Feature                       | **pandas**                               | **NumPy**                                 |
 |-------------------------------|------------------------------------------|-------------------------------------------|
-| **Data Structure**            | DataFrame (2D, labeled) and Series (1D) | ndarray (N-dimensional array)             |
+| **Data Structure**            | DataFrame (2D, labelled) and Series (1D) | ndarray (N-dimensional array)             |
 | **Data Types**                | Supports mixed data types in columns     | Homogeneous data types in columns                |
-| **Indexing**                  | Labeled indexing (row/column labels)     | Integer-based indexing                     |
+| **Indexing**                  | Labelled indexing (row/column labels)     | Integer-based indexing                     |
 | **Memory Usage**              | Generally more memory overhead; can be managed by chunking and changing column dtypes | More memory efficient due to contiguous memory; optimized over time |
 | **Speed**                     | Slower for numerical operations due to overhead; performance has improved with updates | Faster for numerical operations; optimized for speed in core calculations |
 | **Data Manipulation**         | Rich functionality for data manipulation; has expanded over time | Primarily for numerical computation; core functionality remains stable |
@@ -27,7 +27,7 @@ title: NumPy Arrays and pandas Dataframes
 | **Aggregation**               | Built-in functions for grouping and aggregating | Requires custom functions                  |
 | **Data Visualization**        | Built-in integration with visualization libraries | Not designed for direct visualization     |
 | **Use Case**                  | Ideal for data analysis with mixed types | Ideal for numerical and scientific computing |
-| **Overhead Changes**          | Increased overhead with more features (e.g., complex indexing and groupby operations) | Focus on minimizing overhead while maintaining performance |
+| **Overhead Changes**          | Increased overhead with more features (e.g., complex indexing and grouping operations) | Focus on minimizing overhead while maintaining performance |
 | **Chunking Data**            | Supports chunking with functions like `pd.read_csv()` for large datasets | Requires manual implementation; typically works with whole arrays |
 
 Generally speaking 'NumPy' arrays and 'pandas' dataframes are used for very different things, but there is cross functionality. Ultimately it depends on the data and what kinds of operations you want to use it for. 
@@ -89,7 +89,7 @@ How would you encode all the above in a single data type so that it can be held 
 
 **e.g. machine learning**:
 
-Preparing data for is crucial for building effective machine learning models. Encoding is when you convert categorical and other data into numerical formats, which algorithms can easily interpret. Common encoding techniques include:
+Preparing data is crucial for building effective machine learning models. Encoding is when you convert categorical and other data into numerical formats, which algorithms can easily interpret. Common encoding techniques include:
 
 **One-Hot Encoding:** Converts categorical variables into a binary matrix representation, where each category is represented by a unique binary vector.
 
@@ -121,14 +121,14 @@ Look through the docs and discuss the functions of 'pandas' and 'NumPy'.
 
 Give two biological examples of types of data analysis when you would use 'NumPy' arrays and two when you would use 'pandas' dataframes.
 
-For your use cases what would the most important functions be?
+For your use cases, what would the most important functions be?
 
 :::
 
 ::: {.callout-exercise}
 #### Encoding and memory usage
 
-Create the 'pandas' dataframe and 'NumPy' array shown in the above example
+Create the 'pandas' dataframe and 'NumPy' array shown in the above example.
 
 Implement encoding for the 'NumPy' array and 'pandas' dataframe.
 
@@ -350,7 +350,7 @@ This should output the same answer
 ::: {.callout-exercise}
 #### Working with data in 'pandas'
 
-Find the dataset of human genes I generated from the humanmine database `humanmine_results_2024.tsv` . 
+Find the dataset of human genes I generated from the 'humanmine' database `humanmine_results_2024.tsv` . 
 
 In reality you should almost ALWAYS plot your dataset to see what it looks like before doing any analysis. In the next section we will explore plotting, however for this exercise:
 
