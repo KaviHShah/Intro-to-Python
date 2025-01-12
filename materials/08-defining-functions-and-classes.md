@@ -6,13 +6,13 @@ title: Defining Functions and Classes
 #### Learning Objectives
 
 - Be able to define your own functions and classes
-- Be aware of the object oriented programming paradigm
+- Be aware of the object-oriented programming paradigm
 - Understand local and global variables
 :::
 
 ## Defining Functions in Python
 
-Functions in Python are blocks of reusable code designed to perform a specific task. They help organize code, promote reusability, and make programs more readable.
+Functions in Python are blocks of reusable code designed to perform a specific task. They help organise code, promote reusability, and make programs more readable.
 
 **Syntax of a Function**
 
@@ -22,6 +22,7 @@ The basic syntax for defining a function in Python is:
 def function_name(parameters):
     """Docstring explaining the function"""
     # Function body
+    value = 1
     return value
 ```
 - **`def`**: This keyword is used to define a function.
@@ -129,13 +130,13 @@ Functions can have default parameters, accept multiple arguments, and return mul
 
 ## Classes in Python
 
-In Python, a class is a standard way of creating objects (instances). It allows you to bundle data (attributes) and functions (methods) into a single unit. Classes define the structure and behavior of objects in an object-oriented programming style.
+In Python, a class is a standard way of creating objects (instances). It allows you to bundle data (attributes) and functions (methods) into a single unit. Classes define the structure and behaviour of objects in an object-oriented programming style.
 
 ::: {.callout-exercise}
 #### Discussion
 {{< level 2 >}}
 
-Where have we seen this already in this course?
+Where have we seen this already in the course material?
 
 :::
 
@@ -197,7 +198,7 @@ class Gene(BioComponent):
 
 # Example Usage
 # Create an instance of BioComponent
-component = BioComponent(name="ProteinX", id=101, sequence="MKTFFY", function="Signaling")
+component = BioComponent(name="ProteinX", id=101, sequence="MKTFFY", function="Signalling")
 print(f"Initial sequence: {component.sequence}, Length: {component.length}")
 
 # Use the pad method
@@ -247,7 +248,7 @@ How `super()` Works in This Case:
 #### Add class function and inherited class
 {{< level 2 >}}
 
-Exercise add your own function to the biocomponent class. Add protein as a class inherited from the biocomponent class and decide if you want to overide the functions
+Add your own function to the biocomponent class. Add protein as a class inherited from the biocomponent class and decide if you want to overide the functions
 
 :::
 
@@ -255,7 +256,7 @@ Exercise add your own function to the biocomponent class. Add protein as a class
 #### Discussion
 {{< level 2 >}}
 
-What have I not added in many of these examples including the syntax note that I should have?
+What have I not added in many of these examples (including the syntax note), that I should have?
 
 :::{.callout-hint}
 
@@ -432,7 +433,7 @@ if __name__ == "__main__":
 **Purpose of `__main__`:**
 
 - **Testing and Debugging**: It allows you to write test code in the same file without it running when the file is imported elsewhere.
-- **Modular Code**: It helps keep code modular, where functions and classes are defined for reuse, but certain behaviors (like running a function) are executed only when the file is executed directly.
+- **Modular Code**: It helps keep code modular, where functions and classes are defined for reuse, but certain behaviours (like running a function) are executed only when the file is executed directly.
 
 <br>
 
@@ -477,7 +478,7 @@ print(obj2.value)           # 20
 
 - **Class attributes** are shared among all instances of a class.
 
-- Generally speaking I think it is always a good idea to clearly add inputs and outputs to a function in any complex function. This includes if they are global variables as you may want to use those functions in other scripts that do not have the same global variables.
+- Generally speaking, I think it is always a good idea to clearly add inputs and outputs to a function in any complex function. This includes global variables, as you may want to use those functions in other scripts that do not have the same global variables.
 
 
 ## Summary
@@ -491,7 +492,7 @@ Imagine living in a world without being able to define and call functions in pyt
  
 - **Functions**: Reusable blocks of code that perform a specific task. They help you concisely repeat different kinds of tasks.
   
-- **Classes**: Blueprints for creating objects (instances) that bundle data (attributes) and behavior (methods). They are part of the Object-Oriented Programming paradigm.
+- **Classes**: Blueprints for creating objects (instances) that bundle data (attributes) and behaviour (methods). They are part of the Object-Oriented Programming paradigm.
 Both are useful for improving code structure, making it more modular, maintainable, and easier to debug.
 
 - **Variables**: Local and global variables, and instance and class attributes are important to manage. Being explicit with input and output variables in functions is often better.
