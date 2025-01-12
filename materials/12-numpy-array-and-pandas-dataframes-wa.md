@@ -354,7 +354,7 @@ Find the dataset of human genes I generated from the 'humanmine' database `human
 
 In reality you should almost ALWAYS plot your dataset to see what it looks like before doing any analysis. In the next section we will explore plotting, however for this exercise:
 
-* Load in the data in the CSV into a 'pandas' dataframe
+* Load the data in the CSV into a 'pandas' dataframe
 
 * What does the dataset show?
 
