@@ -580,7 +580,7 @@ Now you should be able to choose which to use and be comfortable attempting to m
 ::: {.callout-tip}
 #### Key Points
 
-- 'pandasp is better for data manipulation and analysis where data is in multiple types. 
+- 'pandas' is better for data manipulation and analysis where data is in multiple types. 
 - 'NumPy' is better for numerical and array operations and is generally quicker.
 - The documentation is a good tool to use to learn 'pandas' and 'NumPy'
 
