@@ -5,7 +5,7 @@ title: API's and Biopython
 ::: {.callout-tip}
 #### Learning Objectives
 
-- Introduce briefly API's and biopython - both useful tools for bioinformaticians.
+- Introduce briefly API's and Biopython - both useful tools for bioinformaticians.
 :::
 
 
@@ -13,9 +13,9 @@ title: API's and Biopython
 
 An **API** (Application Programming Interface) allows different software applications to communicate with each other.
 
-In the context of Python and biological data, APIs enable bioinformaticians to access various functionalities and data from externally managed services, libraries and databases through Python code. APIs are availble in python for NCBI Entrez(including Genbank and pubmed), Uniprot, Ensembl, KEGG and Intermine HumanMine , FlyMine etc.) databases to name a few.
+In the context of Python and biological data, APIs enable bioinformaticians to access various functionalities and data from externally managed services, libraries, and databases, through Python code. APIs are available in python for NCBI Entrez (including Genbank and Pubmed), Uniprot, Ensembl, KEGG, and Intermine (HumanMine , FlyMine etc.) databases to name a few.
 
-APIs allow you to automate queries to biological databases and retrieve data in a rapid and simple way. This can be particularly useful if submitting multiple queries. APIs can also enable you to access analsis software tools through code (e.g. python code). Furthermore the code used to submit the query often gives greater clarity of what the information was retrieved, than sometimes reported in the web interface, supporting clearer documentation.
+APIs allow you to automate queries to biological databases and retrieve data in a rapid and simple way. This can be particularly useful if submitting multiple queries. APIs can also enable you to access analysis software tools through code (e.g. python code). Furthermore, the code used to submit the query often gives greater clarity concerning what information was retrieved, than is sometimes reported in the web interface. This supports clearer documentation.
 
 ## Example from HumanMine
 
@@ -76,7 +76,7 @@ https://www.humanmine.org/humanmine
 ## Biopython
 
 Biopython is a widely used python package for working with biological data. 
-It includes functions for working with biological data files including fasta files, and data structures (classes) for biological data for example `SeqRecord`. Modules include: `Bio.Seq`, `Bio.Align`, `Bio.PDB`. It is managed by a team of Bioinformatitions. You can also query some of biological database API's using Biopython functions, for example you can query the KEGG database.
+It includes functions for working with biological data files including 'fasta' files, and data structures (classes) for biological data, for example `SeqRecord`. Modules include: `Bio.Seq`, `Bio.Align`, `Bio.PDB`. It is managed by a team of Bioinformatitions. You can also query some of biological database API's using Biopython functions, for example you can query the KEGG database.
 https://biopython.org/docs/latest/Tutorial/chapter_kegg.html
 
 **Documentation**
@@ -150,12 +150,12 @@ AAAAAAACCACCGCTACCAGCGGTGGTTTGTTTGCCGGATCAAGAGCTACCAACTCTTTTTCCGAGGTAACTGGCTTCAG
 
 ## Summary
 
-Bioinformaticians have built a range of tools to aid bioinformatics analysis in Python. This active community and support is one of the great benefitis of working with python!
+Bioinformaticians have built a range of tools to aid bioinformatics analysis in Python. This active community and support is one of the great benefits of working with python!
 
 ::: {.callout-tip}
 #### Key Points
 
 - API's can be used to interface softwares with Python, and can be used to access common biological databases.
-- Biopython is a commonly used package to work wiht biological data
+- Biopython is a commonly used package to work with biological data
 
 :::
