@@ -774,7 +774,7 @@ By this point you should be comfortable with:
 
 - `if`, `elif`, `else` statements
 - `match` , `case` statements
-- `for` loops with `range() len() enumerate()
+- `for` loops with `range()`, `len()`, and `enumerate()`
 - Working with different composite data types
 - `try` and `except` for error handling
 - `while` loops
