@@ -30,8 +30,6 @@ Some participants may have completed the introductory Python practical in the Pa
 - An understanding of biological terms (GCSE level Biology) would be beneficial.
 
 
-<!-- **Course Developers**: see our [guidelines page](https://cambiotraining.github.io/quarto-course-template/materials.html) if contributing materials.
--->
 ### To access the course website, please use: https://kavihshah.github.io/Intro-to-Python/
 
 ### These materials are released under a [CC BY 4.0](LICENSE.md) license.
@@ -44,11 +42,10 @@ Please cite these materials if for example:
 - You adapted or used any of them in your own teaching.
 - These materials were useful for your research work.
 
-<!--
 
 {{< citation CITATION.cff >}}
 
--->
+
 
 
 ## Acknowledgements
