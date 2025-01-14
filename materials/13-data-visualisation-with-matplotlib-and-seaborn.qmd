@@ -79,6 +79,7 @@ plt.show()
 ```
 ::: {.callout-exercise}
 #### Visualising humanmine data
+{{< level 3 >}}
 
 Use 'matplotlib' and 'seaborn' to plot the humanmine data. Decide what analysis and plots you would like to use.
 

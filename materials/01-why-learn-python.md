@@ -29,10 +29,14 @@ CPython is the most widely used implementation of Python. Jupyter Notebooks use 
 
 We won't go into further detail here, but for more information, see:
 
+Qiang Zhang, Lei Xu, Baowen Xu 2023 , Python meets JIT compilers: A simple implementation and a comparative evaluation
+https://doi.org/10.1002/spe.3267 
 https://onlinelibrary.wiley.com/doi/full/10.1002/spe.3267
 
+GeeksforGeeks 2023, Difference between various Implementations of Python
 https://www.geeksforgeeks.org/difference-various-implementations-python/
 
+IPython Interactive Computing
 https://ipython.org/
 
 ## Why Python is Great for Data Science
@@ -106,6 +110,7 @@ Python's ease of use, broad library support, and strong community, make it a top
 
 ::: {.callout-exercise}
 #### Discussion: Deciding to use Python
+{{< level 1 >}}
 
 What are some examples of when you would use Python and why?
 What are examples of when you wouldn't use Python and why?

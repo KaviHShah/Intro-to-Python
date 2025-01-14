@@ -174,6 +174,7 @@ To install a package (e.g., `numpy`), you can run:
 ```
 
 ::: {.callout-exercise}
+{{< level 1 >}}
 #### Install `pandas` and `numpy`
 
 Try to install pandas and numpy using `mamba` , `conda` or `pip`

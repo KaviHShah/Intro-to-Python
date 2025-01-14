@@ -116,6 +116,7 @@ https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
 ::: {.callout-exercise}
 #### Uses of 'pandas' and 'NumPy'
+{{< level 1 >}}
 
 Look through the docs and discuss the functions of 'pandas' and 'NumPy'.
 
@@ -127,6 +128,7 @@ For your use cases, what would the most important functions be?
 
 ::: {.callout-exercise}
 #### Encoding and memory usage
+{{< level 2 >}}
 
 Create a 'pandas' dataframe and 'NumPy' array with the same data, taken from in the above example.
 
@@ -150,6 +152,7 @@ numpy_memory = numpy_array.nbytes
 
 ::: {.callout-exercise}
 #### 'NumPy' Array Task
+{{< level 3 >}}
 
 Load the two DNA sequences in the dataset named DNA-seq.txt into python.
 
@@ -169,6 +172,7 @@ Answers will be provided after you complete the exercise
 
 ::: {.callout-exercise}
 #### Working with data in 'pandas'
+{{< level 3 >}}
 
 Find the dataset of human genes I generated from the 'humanmine' database `humanmine_results_2024.tsv` . 
 

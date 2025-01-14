@@ -112,6 +112,7 @@ Consider the problems with working with files this way:
 
 ::: {.callout-exercise}
 #### Discussion: Exceptions after `open()`
+{{< level 2 >}}
 
 If an exception occurs after `open()` what will happen? What have you already learnt as a method to stop this?
 

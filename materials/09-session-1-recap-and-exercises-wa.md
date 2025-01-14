@@ -25,6 +25,7 @@ Answers will be uploaded after the session
 
 ::: {.callout-exercise}
 #### Phenotypes and Genes
+{{< level 2 >}}
 
 Write a global variable which has the DNA to RNA transitions as a dictionary, and a global variable that has the DNA to amino acid transitions as a dictionary. 
 

@@ -707,7 +707,7 @@ What can be done to improve this?
 
 ```
 
-# Commenting the code appropriately i important!
+# Commenting the code appropriately is important!
 import random
 
 # Parameters of the simulation

@@ -45,8 +45,8 @@ Exercises in these materials are labelled according to their level of difficulty
 | Level | Description |
 | ----: | :---------- |
 | {{< fa solid star >}} {{< fa regular star >}} {{< fa regular star >}} | Exercises in level 1 are simpler and designed to get you familiar with the concepts and syntax covered in the course. |
-| {{< fa solid star >}} {{< fa solid star >}} {{< fa regular star >}} | Exercises in level 2 combine different concepts together and apply it to a given task. |
-| {{< fa solid star >}} {{< fa solid star >}} {{< fa solid star >}} | Exercises in level 3 require going beyond the concepts and syntax introduced to solve new problems. |
+| {{< fa solid star >}} {{< fa solid star >}} {{< fa regular star >}} | Exercises in level 2 are more complex and may combine different concepts together and apply it to a given task. |
+| {{< fa solid star >}} {{< fa solid star >}} {{< fa solid star >}} | Exercises in level 3 may be challenging and require going beyond the concepts and syntax introduced to solve new problems. |
 
 
 ## Citation

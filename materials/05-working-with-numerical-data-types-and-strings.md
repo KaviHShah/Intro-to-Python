@@ -247,7 +247,7 @@ ans_5: True
 
 ::: {.callout-exercise}
 #### Assignment Operations on Variable a
-{{< level 2 >}}
+{{< level 1 >}}
 
 Use assignment operators to modify the value of `a`, and then find the new results:
 
@@ -377,7 +377,7 @@ Other mathods can be found at: https://www.w3schools.com/python/python_ref_strin
 
 ::: {.callout-exercise}
 #### String Exercise: DNA Sequence Manipulation
-{{< level 2 >}}
+{{< level 1 >}}
 
 1. **Create a DNA Sequence**: Start by creating a string that represents a DNA sequence. For this exercise, use the sequence `atcgtagc`.
 
