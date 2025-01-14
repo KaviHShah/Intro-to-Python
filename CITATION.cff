@@ -30,8 +30,8 @@ authors:
     affiliation: X
     orcid: ''
     alias: ''
-repository-code: ''
-url: ''
+repository-code: 'https://github.com/KaviHShah/Intro-to-Python'
+url: 'https://kavihshah.github.io/Intro-to-Python/'
 license: CC-BY-4.0
 commit: 3c8234e82c7315cfb4d869d9635433bf62baf17f
 date-released: '2024-08-23'
