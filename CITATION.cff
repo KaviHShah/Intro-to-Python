@@ -14,22 +14,12 @@ message: >-
   the information in your own work.
 type: dataset
 authors:
-  - given-names: Kavi
+  - given-names: Kavi Haria
     family-names: Shah
     affiliation: Department of Genetics
     website: 'https://'
     orcid: 'https://'
     alias: 'writing; conceptualisation; software'
-  - given-names: X
-    family-names: X
-    affiliation: X
-    orcid: ''
-    alias: ''
-  - given-names: X
-    family-names: X
-    affiliation: X
-    orcid: ''
-    alias: ''
 repository-code: 'https://github.com/KaviHShah/Intro-to-Python'
 url: 'https://kavihshah.github.io/Intro-to-Python/'
 license: CC-BY-4.0

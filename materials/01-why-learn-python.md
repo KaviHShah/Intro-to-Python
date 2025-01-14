@@ -75,7 +75,7 @@ https://ipython.org/
 
 - Python’s libraries like Scikit-learn, TensorFlow, PyTorch and Keras simplify complex machine learning and AI tasks.
 
-## What are the disadvantages of Python
+## What are the Disadvantages of Python
 
 While Python is a widely used and popular programming language, it does have some disadvantages. Here are some of them:
 
@@ -88,11 +88,11 @@ While Python is a widely used and popular programming language, it does have som
 - Python tends to use more memory than some other languages due to its data types, and the overhead of its dynamic typing. This can be a drawback in memory-constrained environments.
 
 
-**Errors as a result of flexibility**
+**Errors as a Result of Flexibility**
 
 - While dynamic typing makes Python easy to use, it can lead to runtime errors that are hard to track down and debug. The flexibility in coding styles and lack of need to strictly specify data types etc., can sometimes lead to less readable and maintainable code if developers don’t adhere to best practices.
 
-**Limited Packages for Certain use cases**
+**Limited Packages for Certain Use Cases**
 
 - While Python has many packages and modules, there are still areas, especially niche or specialized fields, where these may be limited compared to languages like R or Java.
 

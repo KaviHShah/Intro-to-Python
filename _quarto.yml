@@ -50,12 +50,12 @@ book:
       - icon: github
         href: https://github.com/KaviHShah/Intro-to-Python
         aria-label: Bioinformatics Training Facility GitHub
-      - icon: twitter
-        href: https://twitter.com/bioinfocambs
-        aria-label: Bioinformatics Training Facility Twitter
-      - icon: mastodon
-        href: https://genomic.social/@BioInfoCambs
-        aria-label: Bioinformatics Training Facility Mastodon
+      #- icon: twitter
+      #  href: https://twitter.com/bioinfocambs
+      #  aria-label: Bioinformatics Training Facility Twitter
+      #- icon: mastodon
+      #  href: https://genomic.social/@BioInfoCambs
+      #  aria-label: Bioinformatics Training Facility Mastodon
     title: "Intro to Python"
   chapters:
     - part: "Welcome"
