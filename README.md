@@ -82,7 +82,7 @@ Cock, P.J.A. et al. Biopython: freely available Python tools for computational m
 The cryptography developers <cryptography-dev@python.org> cryptography 43.0.1 https://pypi.org/project/cryptography/ https://cryptography.io/en/latest/
 
 ### Images/Data Sources
-Note: The data has been manipulated/modified to create exercises and therefore not representative of the source:
+Note: The data has been manipulated/modified to create exercises and therefore not representative of the source
 
 maricuchi_reina; Dog, Animal, Mammal image. Free for use.; via Pixabay; https://pixabay.com/photos/dog-animal-mammal-canine-domestic-8946829/
 
