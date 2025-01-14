@@ -45,11 +45,8 @@ Please cite these materials if for example:
 - You adapted or used any of them in your own teaching.
 - These materials were useful for your research work.
 
-
-{{< citation CITATION.cff >}}
-
-
-
+Shah, K. H. (2025). Intro to Python, Part III Systems Biology, University of Cambridge. https://github.com/KaviHShah/Intro-to-Python
+doi
 
 ## Acknowledgements
 
