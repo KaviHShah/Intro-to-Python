@@ -143,7 +143,7 @@ i.e.
 a = 10
 b = a
 ```
-what are the unique memory identifiers returned for a and b?
+what are the unique memory identifiers returned for a and b? If you changed variable 'a' what would happen?
 
 ::: {.callout-answer}
 
@@ -151,7 +151,11 @@ what are the unique memory identifiers returned for a and b?
 id(a)
 id(b)
 ```
-As you can see if you run the above code, the two variable names point to the same object in memory. Therefore change in a will also change the value of b.
+As you can see if you run the above code, the two variable names 'a' and 'b' point to the same object in memory.
+As integers are immutable, if you change 'a', this will be assigned a new object in memory. 
+The variable 'b' will remain the same and point to the original memory object. 
+
+As we will see below, with mutable composite data types like lists, things can become more complex.
 :::
 :::
 

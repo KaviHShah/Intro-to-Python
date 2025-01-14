@@ -2,9 +2,9 @@
 
 This repository contains the materials for the course Intro-to-Python.
 
-# "Intro to Python
+# Intro to Python
 # Part III Systems Biology, University of Cambridge
-author: "Kavi Shah"
+author: Kavi Haria Shah
 date: 2024-10-08
 
 ## Overview 
@@ -35,6 +35,56 @@ Some participants may have completed the introductory Python practical in the Pa
 
 <!-- **Course Developers**: see our [guidelines page](https://cambiotraining.github.io/quarto-course-template/materials.html) if contributing materials.
 -->
+## To access the course website, please use: https://kavihshah.github.io/Intro-to-Python/
 
-These materials are released under a [CC BY 4.0](LICENSE.md) license.
+
+## These materials are released under a [CC BY 4.0](LICENSE.md) license.
+
+
+## Citation & Authors
+
+Please cite these materials if for example:
+
+- You adapted or used any of them in your own teaching.
+- These materials were useful for your research work.
+
+{{< citation CITATION.cff >}}
+
+
+## Acknowledgements
+
+### References
+
+Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/
+
+Python Programming, NST Part IB Mathematical and Computational Biology, ac812.github.io/mcb-python/
+
+W3Schools, Python Operators, https://www.w3schools.com/python/python_operators.asp 
+
+Python Documentation, https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+
+Waskom, M. L., (2021). seaborn: statistical data visualization. Journal of Open Source Software, 6(60), 3021, https://doi.org/10.21105/joss.03021. https://seaborn.pydata.org/
+
+J. D. Hunter, “Matplotlib: A 2D Graphics Environment”, Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, 2007. https://matplotlib.org/stable/index.html
+
+NumPy Documentation https://numpy.org/doc/
+
+Pandas Documentation https://pandas.pydata.org/docs/
+
+Rachel Lyne et al. 2022, HumanMine: advanced data searching, analysis and cross-species comparison, https://doi.org/10.1093/database/baac054
+
+Cock, P.J.A. et al. Biopython: freely available Python tools for computational molecular biology and bioinformatics. Bioinformatics 2009 Jun 1; 25(11) 1422-3 https://doi.org/10.1093/bioinformatics/btp163 pmid:19304878
+
+The cryptography developers <cryptography-dev@python.org> cryptography 43.0.1 https://pypi.org/project/cryptography/ https://cryptography.io/en/latest/
+
+### Images/Data Sources
+Note: The data has been manipulated/modified to create exercises and therefore not representative of the source:
+
+maricuchi_reina; Dog, Animal, Mammal image. Free for use.; via Pixabay; https://pixabay.com/photos/dog-animal-mammal-canine-domestic-8946829/
+
+OpenClipart-Vectors; Brain Neuron Nerves royalty-free vector graphic. Free for use & download.; via Pixabay; https://pixabay.com/vectors/brain-neuron-nerves-cell-science-2022398/
+
+Humanmine https://humanmine.org/humanmine
+
+UK HSA infectious diesease data https://www.gov.uk/government/publications/
 

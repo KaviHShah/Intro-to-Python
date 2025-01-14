@@ -4,8 +4,8 @@
 # Note: we use the author alias to record author contributions
 # This is a known limitation of CFF files: https://github.com/citation-file-format/citation-file-format/issues/112
 
-cff-version: 1.2.0
-title: Course Development Guidelines
+cff-version: 1.1.0
+title: Intro to Python; Part III Systems Biology, University of Cambridge
 message: >-
   You may cite these materials using the metadata in this
   file. Please cite our materials if you publish materials
@@ -13,24 +13,18 @@ message: >-
   the information in your own work.
 type: dataset
 authors:
-  - given-names: Kavi
+  - given-names: Kavi Haria
     family-names: Shah
     affiliation: Department of Genetics, University of Cambridge
-    website: ''
     orcid: ''
-    alias: 'writing - original draft; conceptualisation; software'
-  - given-names: X
-    family-names: X
-    affiliation: 
-    orcid: ''
-    alias: 'writing - review & editing; conceptualisation; software'
-  - given-names: 
-    family-names: 
-    affiliation: 
-    orcid: ''
-    alias: 'conceptualisation'
+    alias: 'writing; conceptualisation; software'
+
 repository-code: 'https://github.com/KaviHShah/Intro-to-Python'
 url: 'https://kavihshah.github.io/Intro-to-Python/'
+identifiers:
+  - type: doi
+    value: e.g. 10.5281/zenodo.1234
+date-released: 
 license: CC-BY-4.0
 commit: 3c8234e82c7315cfb4d869d9635433bf62baf17f
 date-released: '2024-10-08'
