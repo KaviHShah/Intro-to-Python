@@ -226,55 +226,32 @@ dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
 #### Dictionary syntax
 {{< level 1 >}}
 
-Fill in the blanks with the correct data type:
+State the best data type to use in Python:
 
 1. You want to store a sequence of names that may change (e.g., adding or removing names).
 
-Best data type: __________
-
 2. You need to check if certain items (e.g., unique user IDs) exist in a collection and don't care about the order.
-
-Best data type: __________
 
 3. You need to store an unchanging sequence of geographic coordinates (latitude, longitude).
 
-Best data type: __________
-
 4. You are counting the number of items in stock in an inventory system (whole numbers only).
-
-Best data type: __________
 
 5. You are dealing with financial calculations and need decimal values for prices and quantities.
 
-Best data type: __________
-
 6. You need to store data about a person (e.g., name, age, occupation) and retrieve the data by key.
-
-Best data type: __________
 
 7. You are processing binary data from an image file and need to modify the data.
 
-Best data type: __________
-
 8. You want to represent a logical condition (True or False) to check user login status.
-
-Best data type: __________
 
 9. You want to ensure a set of elements stays constant and cannot be modified after creation.
 
-Best data type: __________
-
 10. A function you are writing returns nothing (i.e., no meaningful value to return).
-
-Best data type: __________
 
 11. You need to handle a collection of scientific data points with floating-point precision (e.g. temperature readings).
 
-Best data type: __________
-
 12. You are working with text that may need to be split, joined, or manipulated.
 
-Best data type: __________
 
 ::: {.callout-answer}
 1. list — Ordered and mutable collection of names.
