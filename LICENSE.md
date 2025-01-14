@@ -1,4 +1,4 @@
-The University of Cambridge Bioinformatics Training Facility releases these training materials under the Creative Commons Attribution license.
+These training materials are released under a under the Creative Commons Attribution license. CC BY 4.0
 
 ----
 
