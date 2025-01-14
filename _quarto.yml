@@ -42,20 +42,14 @@ book:
     center: |
       Licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 
       ![](https://creativecommons.org/images/deed/cc_icon_black_x2.png){width=25px} 
-      Kavi Haria Shah Bioinformatics Training Facility
+      Kavi Haria Shah
   navbar:
     pinned: true
     logo: "_extensions/cambiotraining/courseformat/img/university_crest_reversed.png"
     right:
       - icon: github
         href: https://github.com/KaviHShah/Intro-to-Python
-        aria-label: Bioinformatics Training Facility GitHub
-      #- icon: twitter
-      #  href: https://twitter.com/bioinfocambs
-      #  aria-label: Bioinformatics Training Facility Twitter
-      #- icon: mastodon
-      #  href: https://genomic.social/@BioInfoCambs
-      #  aria-label: Bioinformatics Training Facility Mastodon
+        aria-label: GitHub
     title: "Intro to Python"
   chapters:
     - part: "Welcome"
