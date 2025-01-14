@@ -1,11 +1,8 @@
-# Course Name
-
-This repository contains the materials for the course Intro-to-Python.
-
 # Intro to Python
 # Part III Systems Biology, University of Cambridge
 author: Kavi Haria Shah
 date: 2024-10-08
+This repository contains the materials for the Intro-to-Python course.
 
 ## Overview 
 
