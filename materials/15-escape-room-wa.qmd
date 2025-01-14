@@ -17,6 +17,7 @@ I was advised to get you to compete in three to four teams. A different person m
 
 ::: {.callout-exercise}
 #### Mad Doctor's Instructions
+{{< level 3 >}}
 
 First install the `cryptography` module.
 
