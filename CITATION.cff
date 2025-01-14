@@ -16,7 +16,7 @@ type: dataset
 authors:
   - given-names: Kavi Haria
     family-names: Shah
-    affiliation: Department of Genetics
+    affiliation: Department of Genetics, University of Cambridge
     website: 'https://www.engbio.cam.ac.uk/staff/kavi-shah'
     orcid: 'https://orcid.org/0009-0006-7678-7622'
     alias: 'writing; conceptualisation; software'
