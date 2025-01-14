@@ -49,7 +49,7 @@ Exercises in these materials are labelled according to their level of difficulty
 | {{< fa solid star >}} {{< fa solid star >}} {{< fa solid star >}} | Exercises in level 3 require going beyond the concepts and syntax introduced to solve new problems. |
 
 
-## Citation & Authors
+## Citation
 
 Please cite these materials if for example:
 

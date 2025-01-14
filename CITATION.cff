@@ -17,11 +17,14 @@ authors:
   - given-names: Kavi Haria
     family-names: Shah
     affiliation: Department of Genetics
-    website: 'https://'
-    orcid: 'https://'
+    website: 'https://www.engbio.cam.ac.uk/staff/kavi-shah'
+    orcid: 'https://orcid.org/0009-0006-7678-7622'
     alias: 'writing; conceptualisation; software'
 repository-code: 'https://github.com/KaviHShah/Intro-to-Python'
 url: 'https://kavihshah.github.io/Intro-to-Python/'
+identifiers:
+  - type: doi
+    value: e.g. 10.5281/zenodo.1234
 license: CC-BY-4.0
 commit: 
 date-released: '2024-08-23'

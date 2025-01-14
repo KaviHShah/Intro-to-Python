@@ -35,13 +35,12 @@ Some participants may have completed the introductory Python practical in the Pa
 
 <!-- **Course Developers**: see our [guidelines page](https://cambiotraining.github.io/quarto-course-template/materials.html) if contributing materials.
 -->
-## To access the course website, please use: https://kavihshah.github.io/Intro-to-Python/
+### To access the course website, please use: https://kavihshah.github.io/Intro-to-Python/
+
+### These materials are released under a [CC BY 4.0](LICENSE.md) license.
 
 
-## These materials are released under a [CC BY 4.0](LICENSE.md) license.
-
-
-## Citation & Authors
+## Citation
 
 Please cite these materials if for example:
 
