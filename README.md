@@ -48,7 +48,11 @@ Please cite these materials if for example:
 - You adapted or used any of them in your own teaching.
 - These materials were useful for your research work.
 
+<!--
+
 {{< citation CITATION.cff >}}
+
+-->
 
 
 ## Acknowledgements
