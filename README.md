@@ -3,7 +3,7 @@
 
 author: Kavi Haria Shah
 
-date: 2024-01-14
+date: 2024-01-15
 
 This repository contains the materials for the Intro-to-Python course, originally run in October 2024.
 
@@ -46,7 +46,7 @@ Please cite these materials if for example:
 - These materials were useful for your research work.
 
 Shah, K. H. (2025). Intro to Python, Part III Systems Biology, University of Cambridge. https://github.com/KaviHShah/Intro-to-Python
-doi
+Please cite with doi
 
 ## Acknowledgements
 
