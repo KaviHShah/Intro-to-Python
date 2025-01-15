@@ -20,7 +20,7 @@ authors:
     website: 'https://www.engbio.cam.ac.uk/staff/kavi-shah'
     orcid: 'https://orcid.org/0009-0006-7678-7622'
     alias: 'writing; conceptualisation; software'
-repository-code: 'https://github.com/KaviHShah/Intro-to-Python'
-url: 'https://kavihshah.github.io/Intro-to-Python/ , Please cite with doi'
+repository-code: 'https://doi.org/10.5281/zenodo.14651795'
+url: 'https://doi.org/10.5281/zenodo.14651795'
 license: CC-BY-4.0
 date-released: '2025-01-15'
