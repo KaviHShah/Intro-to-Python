@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; NumPy Arrays and pandas Dataframes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" rel="next">
+<link href="../materials/11-working-with-files.html" rel="prev">
+<link href="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university-of-cambridge-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3260b04b9e4b0b78e87a33b4873df225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university_crest_reversed.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro to Python</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/KaviHShah/Intro-to-Python"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Welcome</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data &amp; Setup</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01-why-learn-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Why Learn Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-starting-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Starting in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03-data-types-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Types in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04-python-operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Operators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05-working-with-numerical-data-types-and-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Working with Numerical Data Types and Strings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06--working-with-composite-data-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Composite Data Types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07-conditionals-and-loops-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/08-defining-functions-and-classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/09-session-1-recap-and-exercises-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/10-Installing-Python-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Python Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11-working-with-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Working with Files in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-numpy-array-and-pandas-dataframes-wa.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Visualisation with matplotlib and seaborn</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/14-apis-and-biopython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">API’s and Biopython</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Answers for Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#comparison-of-numpy-and-pandas" id="toc-comparison-of-numpy-and-pandas" class="nav-link active" data-scroll-target="#comparison-of-numpy-and-pandas"><span class="header-section-number">14.1</span> Comparison of ‘NumPy’ and ‘pandas’</a></li>
+  <li><a href="#the-same-data-in-pandas-and-numpy" id="toc-the-same-data-in-pandas-and-numpy" class="nav-link" data-scroll-target="#the-same-data-in-pandas-and-numpy"><span class="header-section-number">14.2</span> The Same Data in ‘pandas’ and ‘NumPy’</a></li>
+  <li><a href="#numpy-and-pandas-documentation" id="toc-numpy-and-pandas-documentation" class="nav-link" data-scroll-target="#numpy-and-pandas-documentation"><span class="header-section-number">14.3</span> ‘NumPy’ and ‘pandas’ Documentation</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">14.4</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Be able to work with ‘pandas’ dataframes and ‘NumPy’ arrays</li>
+<li>Start to be independent learners</li>
+</ul>
+</div>
+</div>
+<p>‘pandas’ dataframes and ‘NumPy’ arrays are widely used in data science in Python. The documentation for both modules and online resources available are very good. Rather than explaining every single feature, I will instead compare the two modules and when to use them. You will then explore the documentation and find out how to do some common operations in ‘pandas’ and ‘NumPy’, with some test data.</p>
+<section id="comparison-of-numpy-and-pandas" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="comparison-of-numpy-and-pandas"><span class="header-section-number">14.1</span> Comparison of ‘NumPy’ and ‘pandas’</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 36%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th><strong>pandas</strong></th>
+<th><strong>NumPy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Data Structure</strong></td>
+<td>DataFrame (2D, labelled) and Series (1D)</td>
+<td>ndarray (N-dimensional array)</td>
+</tr>
+<tr class="even">
+<td><strong>Data Types</strong></td>
+<td>Supports mixed data types in columns</td>
+<td>Homogeneous data types in columns</td>
+</tr>
+<tr class="odd">
+<td><strong>Indexing</strong></td>
+<td>Labelled indexing (row/column labels)</td>
+<td>Integer-based indexing</td>
+</tr>
+<tr class="even">
+<td><strong>Memory Usage</strong></td>
+<td>Generally more memory overhead; can be managed by chunking and changing column dtypes</td>
+<td>More memory efficient due to contiguous memory; optimized over time</td>
+</tr>
+<tr class="odd">
+<td><strong>Speed</strong></td>
+<td>Slower for numerical operations due to overhead; performance has improved with updates</td>
+<td>Faster for numerical operations; optimized for speed in core calculations</td>
+</tr>
+<tr class="even">
+<td><strong>Data Manipulation</strong></td>
+<td>Rich functionality for data manipulation; has expanded over time</td>
+<td>Primarily for numerical computation; core functionality remains stable</td>
+</tr>
+<tr class="odd">
+<td><strong>Handling Missing Data</strong></td>
+<td>Built-in support for NaN values</td>
+<td>Limited support; must handle manually</td>
+</tr>
+<tr class="even">
+<td><strong>Aggregation</strong></td>
+<td>Built-in functions for grouping and aggregating</td>
+<td>Requires custom functions</td>
+</tr>
+<tr class="odd">
+<td><strong>Data Visualization</strong></td>
+<td>Built-in integration with visualization libraries</td>
+<td>Not designed for direct visualization</td>
+</tr>
+<tr class="even">
+<td><strong>Use Case</strong></td>
+<td>Ideal for data analysis with mixed types</td>
+<td>Ideal for numerical and scientific computing</td>
+</tr>
+<tr class="odd">
+<td><strong>Overhead Changes</strong></td>
+<td>Increased overhead with more features (e.g., complex indexing and grouping operations)</td>
+<td>Focus on minimizing overhead while maintaining performance</td>
+</tr>
+<tr class="even">
+<td><strong>Chunking Data</strong></td>
+<td>Supports chunking with functions like <code>pd.read_csv()</code> for large datasets</td>
+<td>Requires manual implementation; typically works with whole arrays</td>
+</tr>
+</tbody>
+</table>
+<p>Generally speaking ‘NumPy’ arrays and ‘pandas’ dataframes are used for very different things, but there is cross functionality. Ultimately it depends on the data and what kinds of operations you want to use it for.</p>
+</section>
+<section id="the-same-data-in-pandas-and-numpy" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="the-same-data-in-pandas-and-numpy"><span class="header-section-number">14.2</span> The Same Data in ‘pandas’ and ‘NumPy’</h2>
+<p><strong>Gene Sequence Length Data (Different Data Types)</strong></p>
+<p><strong>Using ‘pandas’</strong></p>
+<pre><code>import pandas as pd
+
+# Example data
+data = {
+    'Gene Name': ['Gene1', 'Gene2', 'Gene3'],  # Strings
+    'Sequence Length': [1200, 1500, 2000],      # Integers
+    'Description': ['Long gene', 'Medium gene', 'Short gene']  # Strings
+}
+
+df_genes = pd.DataFrame(data)
+print("Pandas DataFrame:")
+print(df_genes)</code></pre>
+<p><strong>Using ‘NumPy’ Structured Array</strong></p>
+<pre><code>
+import numpy as np
+
+# Define a structured data type
+dtype = [('Gene Name', 'U10'), ('Sequence Length', 'i4'), ('Description', 'U15')]
+
+# Create an array with mixed data types
+np_genes = np.array([
+    ('Gene1', 1200, 'Long gene'),
+    ('Gene2', 1500, 'Medium gene'),
+    ('Gene3', 2000, 'Short gene')
+], dtype=dtype)
+
+print("\nNumPy Structured Array:")
+print(np_genes)
+</code></pre>
+<p><strong>converting data to a single type</strong></p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1 - Encoding
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Why might you want to convert all the data to the same data type?</p>
+<p>How would you encode all the above in a single data type so that it can be held as a standard ‘NumPy’ array?</p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>e.g.&nbsp;machine learning</strong>:</p>
+<p>Preparing data is crucial for building effective machine learning models. Encoding is when you convert categorical and other data into numerical formats, which algorithms can easily interpret. Common encoding techniques include:</p>
+<p><strong>One-Hot Encoding:</strong> Converts categorical variables into a binary matrix representation, where each category is represented by a unique binary vector.</p>
+<p><strong>Label Encoding:</strong> Assigns each unique category an integer label, which is suitable for ordinal data but can introduce unintended ordinal relationships in nominal data.</p>
+<p><strong>Changing Data Types</strong> involves converting data into formats that are more suitable for analysis.</p>
+</section>
+<section id="numpy-and-pandas-documentation" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="numpy-and-pandas-documentation"><span class="header-section-number">14.3</span> ‘NumPy’ and ‘pandas’ Documentation</h2>
+<p>The ‘NumPy’ and ‘pandas’ documentation is very good and both modules are very widely used! For this reason I have not given any more examples here. When you start coding more, you must use the resources and documentation to solve your own challenges.</p>
+<p><strong>Numpy Documentation:</strong></p>
+<p>https://numpy.org/doc/</p>
+<p><strong>Pandas Documentation:</strong></p>
+<p>https://pandas.pydata.org/docs/</p>
+<p>https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2 - Uses of pandas and numpy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Look through the docs and discuss the functions of ‘pandas’ and ‘NumPy’.</p>
+<p>Give two biological examples of types of data analysis when you would use ‘NumPy’ arrays and two when you would use ‘pandas’ dataframes.</p>
+<p>For your use cases, what would the most important functions be?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 3 - Encoding and memory usage
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Create the ‘pandas’ dataframe and ‘NumPy’ array shown in the above example.</p>
+<p>Implement encoding for the ‘NumPy’ array and ‘pandas’ dataframe.</p>
+<p>Compare the deep size of the arrays and dataframes using functions found in the documentation.</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code># Find the size (memory usage) of the DataFrame
+df_memory = df.memory_usage(deep=True).sum()  # deep=True gives a more accurate estimate
+print(f"Size of Pandas DataFrame: {df_memory} bytes")
+
+# Find the size (memory usage) of the NumPy array
+numpy_memory = numpy_array.nbytes</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 4 - Numpy Array Task
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br></p>
+<p>Load the two DNA sequences in the dataset named DNA-seq.txt into python.</p>
+<p>Implement the dot plot in a ‘NumPy’ array. i.e.&nbsp;place one sequence along the top of a grid and the other along the side and put a 1 in the grid wherever the characters match.</p>
+<p>Find the number of non-overlapping matching sequences on sequence1 where there are more than 5 bases matching sequence2 in a row.</p>
+<p>Find the number of independent matching sequences where there are more than 10 bases matching in a row. What about more than 20? i.e.&nbsp;if seq1(i) = seq2(j) and seq1(i+1) = seq2(j+1) then it is part of the same matching sequence. Please ask if this is unclear.</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>Answer code:</p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+with open('DNA-seq.txt', 'r') as file:
+    sequences = file.readlines()
+    # Assuming the first two lines are the sequences
+seq1 = sequences[0]
+seq2 = sequences[1]
+
+print(seq1)
+print(seq2)
+print(len(seq1))
+print(len(seq2))
+
+#seq1 = "TAGCTAGCTTGACGCTGATCGGACGCGTTGGTTCGAAG"
+#seq2 = "AGTCGGACTTCGCTAGGACTTCGGTCGACCGGACGTGCC"
+
+def create_dot_plot(seq1, seq2):
+    try:
+        rows = len(seq1)
+        cols = len(seq2)
+        dot_plot = np.zeros((rows, cols), dtype=int)
+
+        for i in range(rows):
+            for j in range(cols):
+                if seq1[i] == seq2[j]:
+                    dot_plot[i][j] = 1
+
+        return dot_plot
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+dot_plot = create_dot_plot(seq1, seq2)
+print(dot_plot)
+#plt.imshow(dot_plot)
+#plt.show()
+
+
+def count_matching_regions(seq1, seq2, min_length):
+    count = 0
+    match_length = 0
+    dot_plot = create_dot_plot(seq1, seq2)
+
+# I have purposely not commented this code very well - try to figure out what I am doing - the prints commented out may help you
+    try:
+
+      for i in range(len(seq1)):
+        j = 0
+        #print(i)
+        while j &lt;= (len(seq2)-1) and i &lt;= (len(seq1)-1):
+                #print(i,j)
+                if dot_plot[i,j] == 1:
+                  match_length += 1
+                  i += 1
+                  j += 1
+                else:
+                  i += 1
+                  j += 1
+
+                # Check if we are at the end of the sequences or next characters don't match
+                  if (match_length &gt; 0) or i == len(seq1) or j == len(seq2):
+                      if match_length &gt;= min_length:
+                          count += 1
+                          #print(count)
+                          match_length = 0  # Reset match length after counting
+                      else:
+                          match_length = 0  # Reset if there is no match
+
+      for j in range(1,len(seq2)):
+        i = 0
+        while j &lt;= (len(seq2)-1) and i &lt;= (len(seq1)-1):
+                #print(i,j)
+                if dot_plot[i,j] == 1:
+                  match_length += 1
+                  i += 1
+                  j += 1
+                else:
+                  i += 1
+                  j += 1
+
+                # Check if we are at the end of the sequences or next characters don't match
+                  if (match_length &gt; 0) or i == len(seq1) or j == len(seq2):
+                      if match_length &gt;= min_length:
+                          count += 1
+                          #print(count)
+                          match_length = 0  # Reset match length after counting
+                      else:
+                          match_length = 0  # Reset if there is no match
+
+      return count
+
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+        return None
+
+matching_20 = count_matching_regions(seq1, seq2, 20)
+matching_10 = count_matching_regions(seq1, seq2, 10)
+print(f"Number of matching regions with length &gt;= 20: {matching_20}")
+print(f"Number of matching regions with length &gt;= 10: {matching_10}")
+
+</code></pre>
+<p>Answer output:</p>
+<pre><code>
+TAGCTAGCTTGACGCTGATCGGACGCGTTGGTTCGAAGCTTGAGATTCATAGCTGGGCGTACCTTACCCGTTGAAGACGACTTCCGAAAGGTTTAGGAACGTGCTACGAGTGTATCGGGACGTAACGGGATGACTGTAGACTATGGTTTCGGGGTGTAGGCGGCTTTGAACTCCGAGAAACCTGAGTGGCGACTTAGCCCGCCGTGTCGAATAGGAGCTCAGTTCATTCAGGATCGTCTTGGCGTTGGCAGTACGGCTCCCGGGGTCCGTCGAGGGTCACGTCGGTCCGAGCTGCTTTCCCGATATGCTACTTCGCCCGTCACTAGGTGTTTCGACCGATCGCTGGTACGCTCAGTGAGGTTGCCAGGCGTGAAACTACGCTTAGGCTTGCCGAGTGCTCCTTAGAGGTGCACCAGTAGGCGCGCGTATTGACTTACGACTTCTGTGTGACGCGAGCGACATAGCGCGCGTGGACTACAGCCTGGATCGGGCTGCGACTTGGTTGTGCAGTCGACGTGGCAGGATTGTGATCGACGATTCTTACCCGGGGTTCGACTAGGACTTTGACTGCGGTAGCCCTTGGGGAGGTTGCGGAGAGGACGACTTGGTGAGCCCGATTGATGCTGAGTCGCCAGGCTTGGGGACTTGATCGGACTTCGTAGCCGACTTGCGAGCTCGGTGCTGAGGCGGATGCTCGACTCGAGTAGGGGGTCGATCCGAGCGGTTAGGCGACCGACGTACGTGTTGGGTCGCGATGGCAGAGTGGGGCGACAGTACCGCTGTTGGCACGGACGTTAGTCGATGGGTGACCCGGCTCAGTCTTGTGATCGACTGATGCGGGTAGTACCTTGGACTACGATCGCGGGTGCGTGACTTCCGACGACCGCTTAGGCCGAGTACGTTGTGCTTCACGTCAGCGGTGCTGGGGACCGTCAGCGGACTTACGTTGAGTTGCGGTAGTTTGCACGGTGCTGAGTCCGGACTTCGACTGAGTAGGTTGGTCAGCGACTCGATGACGTCGGTTGCGGTTCGAGGTCGCGTGGGACTGCGCTGTAGCCGACTTGCTTGCTGCGTGTGGTGAGTAGCCGATTCGGTGACGTCGTACGAGTTCAGCGTCTTGCGCGTAGGTTGGACTGAGTGCACCGGAGGTTCGGCTAGCGTTGCGTTGCCGTAGGTTCGAGGACTTGGACCGCGCTGAGGTTACGGACGTTGACTTACGGACCGGTGACTGACGAGGACCGGTTCGCTGGAGTCGAGTACCGACGCTGAGTGCAGCGGCTGCGTACGGACTTGCGCGGCGACTGTGGACGTGACTAGCTAGCGTCAGCTTGAGTAGCGGTGCAGCTAGCGGCGACGACTTGCGTAGGTCGTTGGGTGCTGCTGCGCTTACGGACCGGTTGTAGGACTTGCGGTACGACTGCGCGTGAGTTGGACTTCGGTCGTGCGTGACTTGCGGGACTTGGGCTTGCCGTAGTTCGACTGCTGACTGGACGTAGGTCTTGACTGAGCGGACTTGACCGGCGTAGGCGGCTTGCGACTAGCTTGAGGCTTGACTGGACTTAGCGCGGACTTGCGTCAGTCGGACTTGGTTGCGACCTGACCTGGACGTAGGTCGACGTTGACCGCGTGGACTTCGATAGCGAAGCTTGACTCGAGCGGACTTGGCAGGACTGCGTAGGTTGAGTGGACTTGGGCGTGTGGCGTGGACTTGGGTGGACTTGGGCTCGACTTGGCAGGTTCGACGTCAGGTCGCGGTCGATCAGCGGACTGTTGAGCTGACTTGCTGACGTGAGTGGACTTGGTCGACTCGCGTGACTGCGGTAGGCTTCGACTGCGCGTAGTCGTAGGCGTGGTTACGGGTTCGCTGCGTGTTGGTCGACGTGCTGGACTTCGCGGACTCGCTCGATGCGTGGTCGTGGCGTCGGTCGAGTGGACTCGTCGGTAGGTGTGGTGGCTGCGTAGCGGACTTGCGTGTAGTTGACTGCGGTAGGTGACCGTAGCTGTAGTGGGTCTGAGCTTGAGGTTCGCGAGTTCGTGTGGTTGGCTAGGACTTGGCTTAGGTGCGACTGCGTCGATCGACTGGGTTCGCTGCGTAGTTGGGTTGACGTGTACGACGCGACTAGCTTGGGACTTGTGACGAGCGGTAGCGTCAGACTCGGAGTTCGACGCTGAGCTGAGCGGACTTTGACTGCGCGTGGCTCGGCTCGACCGTGCGGGACTTACGTACAGTTGTAGCTGGTTGGGACTTGGACTCGGTTTCGCGACTTACGTCGGACTTTGACTTGCGACTCGCTTAGTGGTCGACTGCGTCGGCTTGGAGCGGACTTAGCTCGGACTTTGGTGCGGCTTGCGTAGTTGGTCGTAGCGGATGTCGGACTCGTGGTTTGGGACTTTAGCGGACTTTAGCGGACTCGTGTGGTTTACGCTCGTGTGGTGTCGGTGGACTGTCGGTGCGGTCTGACTCGGCTTGCTCGGCTTGGTGACGTAGCGTCGTGTTCGTGACGTCGGTAGTAGCTGCTGAGTACGTTCGGGACGATGACGTTGGCTAGTTGACGTGGACTTGGAGGTTCGGTAGCGTGGGCGACTTGAGGTCGAGGCTCGTACGGGTTAGCGCTCGATTCGGTGTACGGGCTCGACTTGACTTACCGTGGGTGTGCGCTGTTGTGTGGCTTGTGACGGTTGTGGAGTTGCTGCTTGAGTGCGCGACGTGGCGTTGACTCGGACGTGGACGTGGCTCGAGTGGCGTAGTGTGGACTGGGCTTGACTCGCGCGTGGACTTGGTGCGTCGTAGTCTGACTGCGCGACTGAGCGACTTGAGTTGGTCGTAGCTTGGTGGCTTGAGCGGTGGACTTGACGTGGCTTGAGTGCGACTTGGTGGCTTGCT
+
+AGCTGCGTAGCTGACGGACGTCGCTTAGGGTGCGACGTAGTCGGACTTCGCTAGGACTTCGGTCGACCGGACGTGCTGACTGCGACCGACTCGGACGTAGCTCGCTAGTCGCTAGTCGGGACGACTGCGGACTAGTCGTGACTTGCGCGACTTGACTGCTCGGACCGACTTAGCTGTCGTAGCTGCGTAGGACCGTCGCGACTTCGGACTTCGTCGACGGACTCGACTGGGCTCGACTCGGTCGACCTGGTGGCGGACTGCGCGTAGGACTGCGCGTGGACTTGGACTGCGCTCGACGTACGACCGTTGAGGTCGCGACTGCGCGTGGTTGACCGGTTGTAGGACCGTTTGCGACCGTACGGTGCTAGCTTGGCTCGGCTAGGACTTGCGACTCGTCGTGCTGCGCTGGTCGACCGTAGCTGACCGACTCGTAGTTCGACGACTTGAGGTCGACTCGCGCGGACGTTCGACCGGCGACTGGACTTGGACTCGGCTCGACTGACGTGGCGGACTTGACTTCGCTGGTAGCGTGACTGCGCGACTCGGACTTAGCTCGTAGTACGTACGGTAGTCGCTGGTGGTCGACGGCGTAGTTCGACTGCGCTGGTCGGTTCGACCGTACGCTGCTCGTAGACTTCGACGGGTTACGTAGTGGTCGACTTGCGCGCTGCGTAGTCGCGTAGCTCGACGTACGAC
+
+2885
+697
+[[0 0 0 ... 0 0 0]
+ [1 0 0 ... 1 0 0]
+ [0 1 0 ... 0 0 0]
+ ...
+ [0 0 1 ... 0 1 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 1]]
+Number of matching regions with length &gt;= 20: 0
+Number of matching regions with length &gt;= 10: 62
+</code></pre>
+<p>alternatively another possibly better approach is:</p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+with open('DNA-seq.txt', 'r') as file:
+    sequences = file.readlines()
+    # The first two lines are the sequences
+seq1 = sequences[0].strip()
+seq2 = sequences[1].strip()
+
+def count_matching_regions_2(seq1, seq2, min_length):
+  try: 
+    rows = len(seq1)
+    cols = len(seq2)
+    dot_plot = np.zeros((rows, cols), dtype=int)
+
+    #Make the dot plot
+    for i in range(rows):
+        for j in range(cols):
+            if seq1[i] == seq2[j]:
+                dot_plot[i][j] = 1
+
+    unique_strings_plot = dot_plot.copy()
+    #print(unique_strings_plot)
+
+    for i in range(1,rows):
+        for j in range(1,cols):
+          if unique_strings_plot[i][j] == 1:
+            unique_strings_plot[i][j] = 1 + unique_strings_plot[i-1][j-1]
+          else:
+            continue
+
+    count = np.sum(unique_strings_plot == min_length)
+
+    return dot_plot, count
+
+  except Exception as e:
+        print(f"An error occurred: {e}")
+        return None, None
+
+dot_plot, count_20 = count_matching_regions_2(seq1, seq2, 20)
+dot_plot, count_10 = count_matching_regions_2(seq1, seq2, 10)
+dot_plot, count_5 = count_matching_regions_2(seq1, seq2, 5)
+
+print(f"Number of matching regions with length &gt;= 20: {count_20}")
+print(f"Number of matching regions with length &gt;= 10: {count_10}")</code></pre>
+<p>This should output the same answer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 5 - Working with data in ‘pandas’
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br></p>
+<p>Find the dataset of human genes I generated from the ‘humanmine’ database <code>humanmine_results_2024.tsv</code> .</p>
+<p>In reality you should almost ALWAYS plot your dataset to see what it looks like before doing any analysis. In the next section we will explore plotting, however for this exercise:</p>
+<ul>
+<li><p>Load the data in the CSV into a ‘pandas’ dataframe</p></li>
+<li><p>What does the dataset show?</p></li>
+<li><p>Inspect the data - what might you need to do to clean up the data?</p></li>
+<li><p>Clean up the data</p></li>
+<li><p>What is the average gene length?</p></li>
+<li><p>What is the standard deviation around the mean?</p></li>
+<li><p>What is the most common ontology term name?</p></li>
+<li><p>How many unique genes are there?</p></li>
+<li><p>Make a list ordered by gene size</p></li>
+<li><p>How many cytoplasmic genes are there?</p></li>
+<li><p>How many nuclear genes are there?</p></li>
+<li><p>How many genes are both nuclear and cytoplasmic?</p></li>
+<li><p>How many membrane proteins are there?</p></li>
+</ul>
+<p>Extra task: Mess up this dataset to make it a bit closer to what you might see in real life. Now try to work with it in python.</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code>import pandas as pd
+
+# Step 1: Load the data (TSV file)
+file_path = 'humanmine_results_2024.tsv'  # replace with the actual file path
+df = pd.read_csv(file_path, sep='\t')  # Read as a TSV (tab-separated values)
+
+# Step 2: Inspect the data
+print("First 5 rows of the dataframe:\n", df.head())
+print("\nDataFrame Info:\n", df.info())
+print("len df",len(df))
+
+# Step 3: Clean the data
+# 1. Drop any columns with entirely irrelevant data (e.g., "NO VALUE")
+print("cleaning data")
+df = df.drop_duplicates()
+print(len(df)) # no rows are dropped
+
+
+# Drop columns with only NaN values
+df = df.dropna(axis=1, how='all')
+
+#also drop unwanted columns
+
+df = df.drop(columns=['Gene.secondaryIdentifier'])
+
+df.style.set_table_attributes('style="width:100%; border: 1px solid black;"')
+
+# you could process this more but for now I'll move onto the second step which is to find the average gene length
+# I will make a deepcopy
+df_meanlen = df.copy(deep=True)
+#we can remove the unnecessary columns 
+df_meanlen = df_meanlen.drop(columns=['Gene.goAnnotation.ontologyTerm.identifier', 'Gene.goAnnotation.ontologyTerm.name'])
+# we can drop all the duplicates where the primary identifier is the same
+df_meanlen = df_meanlen.drop_duplicates(subset=['Gene.primaryIdentifier'])
+# we can drop all the rows where there is a NaN in the Gene.length column
+df_meanlen = df_meanlen.dropna(subset=['Gene.length'])
+# drop any rows with zero values in genelength
+df_meanlen = df_meanlen[df_meanlen['Gene.length'] != 0]
+# we might now check to see how many NaN values there are in gene description
+print('empty brief description rows',df_meanlen['Gene.briefDescription'].isna().sum())
+# we can calculate mean now. 
+#As a biologist - I know that some of these are possibly alternate isoforms of the same protein.
+#make sure all the types in the gene.length column are the same:
+print('unique types in length column',df['Gene.length'].apply(type).unique())
+#all floats
+
+
+# What is the average gene length?
+average_gene_length = df_meanlen['Gene.length'].mean()
+print(f"Average gene length: {average_gene_length}")
+
+# What is the standard deviation around the mean gene length?
+std_dev_gene_length = df_meanlen['Gene.length'].std()
+print(f"Standard deviation of gene length: {std_dev_gene_length}")
+# If you had plotted the dataset you might use these to figure out the bounds to exclude outliers
+
+#What is the most common ontology term name?
+most_common_ontology = df['Gene.goAnnotation.ontologyTerm.name'].mode()[0]
+print(f"Most common ontology term name: {most_common_ontology}")
+
+#How many unique genes are there?
+#for this one I am going to enforce that both the primary identifier and cytolocation must be unique. (just because I can) 
+#We will therefore also drop the ones with no cytolocation 
+df_unique = df.copy(deep=True)
+df_unique_id = df_unique.drop_duplicates(subset=['Gene.primaryIdentifier'])
+print('unique-genes by primary identifier =', len(df_unique_id))
+df_unique_cyt = df_unique_id.drop_duplicates(subset=['Gene.cytoLocation'])
+print('unique-genes by dropping those with the same cytolocation by keeping those with none =', len(df_unique_cyt))
+df_unique_cyt = df_unique_cyt.dropna(subset=['Gene.cytoLocation'])
+unique_genes = len(df_unique_cyt)
+print(f"Number of unique genes: {unique_genes}")
+
+#Make a list ordered by gene size
+sorted_by_size = df_unique.sort_values(by='Gene.length', ascending=False)
+print("List of genes ordered by size:\n", sorted_by_size[['Gene.primaryIdentifier', 'Gene.length']])
+
+
+#How many cytoplasmic genes are there? 
+cytoplasmic_genes = df[df['Gene.goAnnotation.ontologyTerm.name'].str.contains('cyto', case=False, na=False)] #note the difference when cytoplasm is used
+cytoplasmic_count = cytoplasmic_genes['Gene.primaryIdentifier'].nunique()
+print(f"Number of cytoplasmic genes: {cytoplasmic_count}")
+
+#How many cytoplasmic genes are there? 
+nuclear_genes = df[df['Gene.goAnnotation.ontologyTerm.name'].str.contains('nucle', case=False, na=False)] #note the difference when nucleus is used
+nuclear_count = nuclear_genes['Gene.primaryIdentifier'].nunique()
+print(f"Number of nuclear genes: {nuclear_count}")
+
+#How many genes are both nuclear and cytoplasmic?
+cyto_nuclear_genes = pd.merge(cytoplasmic_genes, nuclear_genes, on='Gene.primaryIdentifier')
+cyto_nuclear_count = cyto_nuclear_genes['Gene.primaryIdentifier'].nunique()
+print(f"Number of genes that are both nuclear and cytoplasmic: {cyto_nuclear_count}")
+
+#How many membrane proteins are there?
+membrane_proteins = df[df['Gene.goAnnotation.ontologyTerm.name'].str.contains('membrane', case=False, na=False)]
+membrane_protein_count = membrane_proteins['Gene.primaryIdentifier'].nunique()
+print(f"Number of membrane proteins: {membrane_protein_count}")</code></pre>
+<p>output</p>
+<pre><code>First 5 rows of the dataframe:
+                  Gene.briefDescription Gene.cytoLocation  Gene.description  \
+0  1,4-alpha-glucan branching enzyme 1            3p12.2               NaN   
+1  1,4-alpha-glucan branching enzyme 1            3p12.2               NaN   
+2  1,4-alpha-glucan branching enzyme 1            3p12.2               NaN   
+3  1,4-alpha-glucan branching enzyme 1            3p12.2               NaN   
+4  1,4-alpha-glucan branching enzyme 1            3p12.2               NaN   
+
+   Gene.length  Gene.primaryIdentifier  Gene.score Gene.secondaryIdentifier  \
+0     271943.0                    2632         NaN          ENSG00000114480   
+1     271943.0                    2632         NaN          ENSG00000114480   
+2     271943.0                    2632         NaN          ENSG00000114480   
+3     271943.0                    2632         NaN          ENSG00000114480   
+4     271943.0                    2632         NaN          ENSG00000114480   
+
+  Gene.symbol Gene.goAnnotation.ontologyTerm.identifier  \
+0        GBE1                                GO:0003844   
+1        GBE1                                GO:0004553   
+2        GBE1                                GO:0005515   
+3        GBE1                                GO:0005737   
+4        GBE1                                GO:0005829   
+
+                 Gene.goAnnotation.ontologyTerm.name  
+0         1,4-alpha-glucan branching enzyme activity  
+1  hydrolase activity, hydrolyzing O-glycosyl com...  
+2                                    protein binding  
+3                                          cytoplasm  
+4                                            cytosol  
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 277531 entries, 0 to 277530
+Data columns (total 10 columns):
+ #   Column                                     Non-Null Count   Dtype  
+---  ------                                     --------------   -----  
+ 0   Gene.briefDescription                      276807 non-null  object 
+ 1   Gene.cytoLocation                          277301 non-null  object 
+ 2   Gene.description                           0 non-null       float64
+ 3   Gene.length                                276835 non-null  float64
+ 4   Gene.primaryIdentifier                     277531 non-null  int64  
+ 5   Gene.score                                 0 non-null       float64
+ 6   Gene.secondaryIdentifier                   277334 non-null  object 
+ 7   Gene.symbol                                277531 non-null  object 
+ 8   Gene.goAnnotation.ontologyTerm.identifier  277531 non-null  object 
+ 9   Gene.goAnnotation.ontologyTerm.name        277525 non-null  object 
+dtypes: float64(3), int64(1), object(6)
+memory usage: 21.2+ MB
+
+DataFrame Info:
+ None
+len df 277531
+cleaning data
+277531
+empty brief description rows 5
+unique types in length column [&lt;class 'float'&gt;]
+Average gene length: 67511.68010812004
+Standard deviation of gene length: 132916.7867771459
+Most common ontology term name: protein binding
+unique-genes by primary identifier = 18221
+unique-genes by dropping those with the same cytolocation by keeping those with none = 1221
+Number of unique genes: 1220
+List of genes ordered by size:
+         Gene.primaryIdentifier  Gene.length
+55205                    54715    2473592.0
+55207                    54715    2473592.0
+55216                    54715    2473592.0
+55215                    54715    2473592.0
+55214                    54715    2473592.0
+...                        ...          ...
+277526                    4541          NaN
+277527                    4541          NaN
+277528                    4541          NaN
+277529                    4541          NaN
+277530                    4541          NaN
+
+[277531 rows x 2 columns]
+Number of cytoplasmic genes: 9283
+Number of nuclear genes: 8343
+Number of genes that are both nuclear and cytoplasmic: 5249
+Number of membrane proteins: 9445
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">14.4</span> Summary</h2>
+<p>‘NumPy’ and ‘pandas’ are both useful packages for working with different types of biological data. Now you should be able to choose which to use and be comfortable attempting to manipulate data with them</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>‘pandas’ is better for data manipulation and analysis where data is in multiple types.</li>
+<li>‘NumPy’ is better for numerical and array operations and is generally quicker.</li>
+<li>The documentation is a good tool to use to learn ‘pandas’ and ‘NumPy’</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../materials/11-working-with-files.html" class="pagination-link" aria-label="Working with Files in Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Working with Files in Python</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" class="pagination-link" aria-label="Data Visualisation with matplotlib and seaborn">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Visualisation with matplotlib and seaborn</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> <img src="https://creativecommons.org/images/deed/cc_icon_black_x2.png" class="img-fluid" width="25"> Kavi Haria Shah</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

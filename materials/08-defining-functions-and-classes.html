@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Defining Functions and Classes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../materials/09-session-1-recap-and-exercises-wa.html" rel="next">
+<link href="../materials/07-conditionals-and-loops-in-python.html" rel="prev">
+<link href="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university-of-cambridge-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3260b04b9e4b0b78e87a33b4873df225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university_crest_reversed.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro to Python</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/KaviHShah/Intro-to-Python"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Welcome</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data &amp; Setup</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01-why-learn-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Why Learn Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-starting-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Starting in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03-data-types-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Types in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04-python-operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Operators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05-working-with-numerical-data-types-and-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Working with Numerical Data Types and Strings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06--working-with-composite-data-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Composite Data Types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07-conditionals-and-loops-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/08-defining-functions-and-classes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/09-session-1-recap-and-exercises-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/10-Installing-Python-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Python Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11-working-with-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Working with Files in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-numpy-array-and-pandas-dataframes-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Visualisation with matplotlib and seaborn</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/14-apis-and-biopython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">API’s and Biopython</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Answers for Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#defining-functions-in-python" id="toc-defining-functions-in-python" class="nav-link active" data-scroll-target="#defining-functions-in-python"><span class="header-section-number">10.1</span> Defining Functions in Python</a></li>
+  <li><a href="#classes-in-python" id="toc-classes-in-python" class="nav-link" data-scroll-target="#classes-in-python"><span class="header-section-number">10.2</span> Classes in Python</a></li>
+  <li><a href="#local-and-global-variables-instance-and-class-attributes" id="toc-local-and-global-variables-instance-and-class-attributes" class="nav-link" data-scroll-target="#local-and-global-variables-instance-and-class-attributes"><span class="header-section-number">10.3</span> Local and Global Variables, instance and class attributes</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.4</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Be able to define your own functions and classes</li>
+<li>Be aware of the object-oriented programming paradigm</li>
+<li>Understand local and global variables</li>
+</ul>
+</div>
+</div>
+<section id="defining-functions-in-python" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="defining-functions-in-python"><span class="header-section-number">10.1</span> Defining Functions in Python</h2>
+<p>Functions in Python are blocks of reusable code designed to perform a specific task. They help organise code, promote reusability, and make programs more readable.</p>
+<p><strong>Syntax of a Function</strong></p>
+<p>The basic syntax for defining a function in Python is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Docstring explaining the function"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function body</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong><code>def</code></strong>: This keyword is used to define a function.</li>
+<li><strong><code>function_name</code></strong>: The name you choose for the function.</li>
+<li><strong><code>parameters</code></strong>: Optional. Values that the function accepts as inputs. If there are multiple, they are separated by commas.</li>
+<li><strong><code>return</code></strong>: Optional. The function can return a value using the <code>return</code> statement.</li>
+</ul>
+<p><strong>Example 1: Function with No Parameters</strong></p>
+<pre><code>def welcome():
+    print("Hello, World!")</code></pre>
+<p><strong>Example 2: Function with Parameters</strong></p>
+<pre><code>def welcome_person(name):
+    print(f"Hello, {name}!")
+This function accepts a single parameter, name.</code></pre>
+<p>It uses that parameter to personalize the greeting. Calling the function:</p>
+<pre><code>welcome_person("Kavi")</code></pre>
+<p>Output:</p>
+<pre><code>Hello, Kavi!</code></pre>
+<p><strong>Example 3: Function with Multiple Parameters and a Return Value</strong></p>
+<pre><code>def add_numbers(a, b):
+    return a + b</code></pre>
+<p>This function takes two parameters, a and b. It returns the sum of the two numbers. Calling the function:</p>
+<pre><code>result = add_numbers(5, 10)
+print(result)</code></pre>
+<p>Output:</p>
+<pre><code>15</code></pre>
+<p><strong>Example 4: Function with Default Parameters</strong></p>
+<p>You can set default values for parameters so that a function can be called with fewer arguments than defined.</p>
+<pre><code>def welcome_person(name="Guest"):
+    print(f"Hello {name}, nice to meet you!")
+</code></pre>
+<p>Calling the function with and without the parameter:</p>
+<pre><code>
+welcome_person("Tom")  # Uses the provided argument
+welcome_person()         # Uses the default value
+</code></pre>
+<p>output</p>
+<pre><code>Hello Tom, nice to meet you!
+Hello Guest, nice to meet you!</code></pre>
+<p><strong>Example 5: Function with Multiple Outputs</strong></p>
+<p>A function can return more than one value using tuples or other data structures.</p>
+<pre><code>def calculate(a, b):
+    sum_val = a + b
+    product_val = a * b
+    return sum_val, product_val</code></pre>
+<p>Calling the function and unpacking values:</p>
+<pre><code>sum_1, product_1 = calculate(3, 4)
+print(sum_1, product_1)</code></pre>
+<p>Output:</p>
+<pre><code>7 12</code></pre>
+<p><br></p>
+<p><strong>Functions Summary</strong></p>
+<p>Functions in Python are defined using the def keyword. Inputs (parameters) can be passed into functions, and outputs can be returned using the return statement. Functions can have default parameters, accept multiple arguments, and return multiple values.</p>
+</section>
+<section id="classes-in-python" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="classes-in-python"><span class="header-section-number">10.2</span> Classes in Python</h2>
+<p>In Python, a class is a standard way of creating objects (instances). It allows you to bundle data (attributes) and functions (methods) into a single unit. Classes define the structure and behaviour of objects in an object-oriented programming style.</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1 - Discussion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Where have we seen this already in the course material?</p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Basic Syntax of a Python Class:</strong></p>
+<pre><code>class MyClass:
+    # Constructor to initialize the object
+    def __init__(self, attribute1, attribute2):
+        self.attribute1 = attribute1  # Instance variable
+        self.attribute2 = attribute2  # Instance variable
+
+    # Method (function) within the class
+    def my_method(self):
+        print(f"Attribute 1: {self.attribute1}")
+        print(f"Attribute 2: {self.attribute2}")</code></pre>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><code>__init__()</code> Method: This is the constructor method that gets called when a new object of the class is created. It initializes the object’s attributes.</li>
+<li><strong>Attributes</strong>: Variables that belong to an object, defined by <code>self.attribute_name</code>.</li>
+<li><strong>Methods</strong>: Functions defined inside a class that operate on the object’s attributes.</li>
+<li><strong>Instance</strong>: An individual object created from the class.</li>
+</ul>
+<p><strong>Example for biologists:</strong></p>
+<pre><code>class BioComponent:
+    def __init__(self, name, id, sequence, function):
+        self.name = name
+        self.id = id
+        self.sequence = sequence
+        self.length = len(sequence)
+        self.function = function
+
+    # Method to pad the sequence with user input on either side
+    def pad(self, left_pad, right_pad):
+        self.sequence = left_pad + self.sequence + right_pad
+        self.length = len(self.sequence)  # Update the length
+        print(f"Padded sequence: {self.sequence}, New length: {self.length}")
+
+    # Method to perform a point mutation (replace a character at a specified position)
+    def point_mutate(self, position, new_char):
+        if position &lt; 0 or position &gt;= self.length:
+            print("Position out of bounds.")
+            return
+        self.sequence = self.sequence[:position] + new_char + self.sequence[position + 1:]
+        print(f"Mutated sequence: {self.sequence}")
+
+# Inherited class Gene that restricts mutations to A, T, C, G only
+class Gene(BioComponent):
+    def point_mutate(self, position, new_char):
+        if new_char not in "ATCG":
+            print("Error: Invalid base. Must be one of A, T, C, G.")
+            return
+        super().point_mutate(position, new_char)  # Call parent class method
+
+# Example Usage
+# Create an instance of BioComponent
+component = BioComponent(name="ProteinX", id=101, sequence="MKTFFY", function="Signalling")
+print(f"Initial sequence: {component.sequence}, Length: {component.length}")
+
+# Use the pad method
+component.pad("AAA", "BBB")
+
+# Perform a point mutation at position 2 (index starts at 0)
+component.point_mutate(2, "Q")
+
+# Create an instance of Gene (inherits from BioComponent)
+gene = Gene(name="GeneX", id=202, sequence="ATGCGT", function="Coding for protein")
+print(f"Initial gene sequence: {gene.sequence}, Length: {gene.length}")
+
+# Perform a valid point mutation with a valid base (A, T, C, G)
+gene.point_mutate(3, "A")
+
+# Attempt an invalid point mutation with an invalid base (not A, T, C, G)
+gene.point_mutate(2, "X")
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<p>BioComponent Class:</p>
+<ul>
+<li>The <code>__init__</code> method initializes the <code>name</code>, <code>id</code>, <code>sequence</code>, <code>length</code> (calculated automatically), and <code>function</code> of the component.</li>
+<li>The <code>pad</code> method adds user-inputted strings (<code>left_pad</code>, <code>right_pad</code>) on either side of the sequence and updates the sequence’s length accordingly.</li>
+<li>The <code>point_mutate</code> method allows any character to replace one at a specific position in the sequence, updating the sequence accordingly.</li>
+</ul>
+<p>Gene Class:</p>
+<ul>
+<li>Inherits from <code>BioComponent</code> and overrides the <code>point_mutate</code> method to ensure that only valid DNA bases (A, T, C, G) can be used for mutation.</li>
+<li>Calls the parent class’s <code>point_mutate</code> method if the mutation is valid.</li>
+</ul>
+<p>Example Usage:</p>
+<ul>
+<li>A <strong>BioComponent</strong> (e.g., a protein) can be padded and mutated freely with any character.</li>
+<li>A <strong>Gene</strong> restricts mutations to valid DNA bases and throws an error if any invalid base is provided.</li>
+<li>The <code>super().point_mutate(position, new_char)</code> call in the <strong>Gene</strong> class refers to invoking the <code>point_mutate</code> method from its parent class (<strong>BioComponent</strong>). The <code>super()</code> function is used to give access to methods of the parent class from within a child class.</li>
+<li>When the <strong>Gene</strong> class overrides the <code>point_mutate</code> method, it restricts the mutations to DNA bases (A, T, C, G). After checking that the new character (<code>new_char</code>) is valid, the <code>super().point_mutate(position, new_char)</code> call allows the <strong>Gene</strong> class to reuse the logic of <code>point_mutate</code> from <strong>BioComponent</strong> to actually mutate the sequence.</li>
+</ul>
+<p>How <code>super()</code> Works in This Case:</p>
+<ul>
+<li><code>super()</code> looks up the parent class of <strong>Gene</strong> (which is <strong>BioComponent</strong>).</li>
+<li><code>super().point_mutate(position, new_char)</code> calls the <code>point_mutate</code> method of <strong>BioComponent</strong> with the <code>position</code> and <code>new_char</code> arguments.</li>
+<li>This lets <strong>Gene</strong> use the existing logic of <code>point_mutate</code> defined in <strong>BioComponent</strong> for sequence mutation, without having to reimplement it.</li>
+</ul>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2 - Add class function and inherited class
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Add your own function to the biocomponent class. Add protein as a class inherited from the biocomponent class and decide if you want to overide the functions</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 3 - Discussion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>What have I not added in many of these examples (including the syntax note), that I should have?</p>
+<div class="callout callout-style-default callout-hint no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-hint">
+<p>try run the <code>help()</code> function on MyClass and function_name()</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>Docstring comments. While this may not be super important here, when you start using your own written functions as modules they are important!</p>
+<pre><code>
+class BioComponent:
+    """
+    A class to represent a biological component (like a protein or gene).
+    
+    Attributes:
+    -----------
+    name : str
+        Name of the component.
+    id : str
+        Unique identifier for the component.
+    sequence : str
+        The biological sequence (e.g., amino acids or nucleotides).
+    length : int
+        Length of the sequence (calculated automatically).
+    function : str
+        Description of the component's biological function.
+    """
+    
+    def __init__(self, name, id, sequence, function):
+        """
+        Initialize a BioComponent with name, id, sequence, and function.
+        
+        Parameters:
+        -----------
+        name : str
+            The name of the component.
+        id : str
+            The unique identifier for the component.
+        sequence : str
+            The biological sequence of the component.
+        function : str
+            The biological function of the component.
+        """
+        self.name = name
+        self.id = id
+        self.sequence = sequence
+        self.length = len(sequence)
+        self.function = function
+    
+    def pad(self, left_pad, right_pad):
+        """
+        Pads the sequence with the given left and right strings.
+        
+        Parameters:
+        -----------
+        left_pad : str
+            The string to add to the left of the sequence.
+        right_pad : str
+            The string to add to the right of the sequence.
+        """
+        self.sequence = left_pad + self.sequence + right_pad
+        self.length = len(self.sequence)  # Update the length
+        
+    def point_mutate(self, position, new_char):
+        """
+        Mutates the sequence by replacing a character at the specified position.
+        
+        Parameters:
+        -----------
+        position : int
+            The index at which to replace the character.
+        new_char : str
+            The new character to insert into the sequence.
+        """
+        if 0 &lt;= position &lt; self.length:
+            self.sequence = self.sequence[:position] + new_char + self.sequence[position + 1:]
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 4 - Define Your own Data Type
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>I mentioned in python that it is easy to define your own data types. Now you have all the tools to do it!</p>
+<p>Define your own composite data type with unique attributes and write some functions for it!</p>
+<p>What is it useful for?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="local-and-global-variables-instance-and-class-attributes" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="local-and-global-variables-instance-and-class-attributes"><span class="header-section-number">10.3</span> Local and Global Variables, instance and class attributes</h2>
+<p>In Python, variables can be classified into two main categories based on their <strong>scope</strong>: <strong>local</strong> and <strong>global</strong> variables.</p>
+<p><strong>Local Variables</strong></p>
+<ul>
+<li>A <strong>local variable</strong> is a variable that is defined inside a function and is only accessible within that function. Once the function exits, the local variable is destroyed, and its value cannot be accessed from outside the function.</li>
+</ul>
+<p>Example</p>
+<pre><code>def my_name():
+    name = "Kavi"  # Local variable
+    print("Inside the function my name is:", x)
+
+my_name()
+print(name)  # This would raise an error because x is not accessible outside the function.</code></pre>
+<p><strong>Global Variables</strong></p>
+<ul>
+<li>A <strong>global variable</strong> is a variable that is defined outside of any function and is accessible throughout the program, including within functions (unless specifically overridden within a function). Global variables maintain their values until the program terminates.</li>
+</ul>
+<p>Eaxample:</p>
+<pre><code>
+number = 1  # Global variable
+
+def my_number():
+    print("Inside the function the number is:", number)
+
+my_number()  # Can access the global variable
+print("Outside the function:", number)  # Global variable accessible here as well
+</code></pre>
+<p><strong>Modifying Global Variables Inside a Function</strong></p>
+<ul>
+<li>If you want to modify a global variable within a function, you need to explicitly declare it as <code>global</code> using the <code>global</code> keyword. Without the <code>global</code> keyword, Python would treat the variable as a new local variable inside the function, and the global variable would remain unchanged.</li>
+</ul>
+<p>Example:</p>
+<pre><code>age = 30  # Global variable
+
+def my_age():
+    global age
+    age += 1  # Modifying the global variable
+    print("Inside the function:", age)
+
+my_age()
+print("Outside the function:", age)  # Global variable now changed
+</code></pre>
+<p><strong><code>__main__</code> in Python</strong></p>
+<ul>
+<li>In Python, <code>__main__</code> refers to the environment where the top-level code is being executed. When a Python script is run directly, Python assigns the special name <code>"__main__"</code> to the <code>__name__</code> variable in that script.</li>
+</ul>
+<p><strong><code>if __name__ == "__main__":</code></strong></p>
+<ul>
+<li>This construct is used to check if a script is being run directly or being imported as a module in another script. The code under this condition will only be executed if the script is run directly.</li>
+</ul>
+<p>Example:</p>
+<pre><code># script.py
+def welcome():
+    print("Hello, world!")
+
+if __name__ == "__main__":
+    welcome()
+</code></pre>
+<p><strong>Purpose of <code>__main__</code>:</strong></p>
+<ul>
+<li><strong>Testing and Debugging</strong>: It allows you to write test code in the same file without it running when the file is imported elsewhere.</li>
+<li><strong>Modular Code</strong>: It helps keep code modular, where functions and classes are defined for reuse, but certain behaviours (like running a function) are executed only when the file is executed directly.</li>
+</ul>
+<p><br></p>
+<p><strong>Local and Global Variables in Classes</strong></p>
+<p>When dealing with <strong>classes</strong> in Python, the concept of <strong>local</strong> and <strong>global</strong> variables applies similarly, but there are additional layers related to <strong>instance</strong> and <strong>class attributes</strong>.</p>
+<p><strong>Instance and Class Attributes</strong> In addition to local and global variables, classes introduce two other types of variables: <strong>instance attributes</strong> and <strong>class attributes</strong>.</p>
+<ul>
+<li><p><strong>Instance Attributes</strong>: These are specific to an instance (object) of a class. Each object has its own separate copy of these attributes.</p></li>
+<li><p><strong>Class Attributes</strong>: These are shared among all instances of a class and are declared <strong>outside</strong> the <code>__init__()</code> method.</p></li>
+</ul>
+<p>Example</p>
+<pre><code>class MyClass:
+    class_variable = 5  # Class attribute, shared by all instances
+
+    def __init__(self, value):
+        self.value = value  # Instance attribute
+
+obj1 = MyClass(10)
+obj2 = MyClass(20)
+
+print(obj1.class_variable)  # 5
+print(obj2.class_variable)  # 5
+print(obj1.value)           # 10
+print(obj2.value)           # 20
+</code></pre>
+<p><strong>Summary of variables:</strong></p>
+<ul>
+<li><p><strong>Local variables</strong> are declared inside a function and only exist within that function.</p></li>
+<li><p><strong>Global variables</strong> are declared outside of functions and can be accessed anywhere in the script unless shadowed by a local variable.</p></li>
+<li><p>The <code>__name__ == "__main__"</code> construct is used to determine if a script is being run directly or imported, allowing control over code execution in different contexts.</p></li>
+<li><p><strong>Instance attributes</strong> are tied to specific objects of a class.</p></li>
+<li><p><strong>Class attributes</strong> are shared among all instances of a class.</p></li>
+<li><p>Generally speaking, I think it is always a good idea to clearly add inputs and outputs to a function in any complex function. This includes global variables, as you may want to use those functions in other scripts that do not have the same global variables.</p></li>
+</ul>
+</section>
+<section id="summary" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.4</span> Summary</h2>
+<p>Now you have had a look at building functions and classes. They are key parts of programming in python. Imagine living in a world without being able to define and call functions in python. Just think of the amount of code you would have to write and sift through!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Functions</strong>: Reusable blocks of code that perform a specific task. They help you concisely repeat different kinds of tasks.</p></li>
+<li><p><strong>Classes</strong>: Blueprints for creating objects (instances) that bundle data (attributes) and behaviour (methods). They are part of the Object-Oriented Programming paradigm. Both are useful for improving code structure, making it more modular, maintainable, and easier to debug.</p></li>
+<li><p><strong>Variables</strong>: Local and global variables, and instance and class attributes are important to manage. Being explicit with input and output variables in functions is often better.</p></li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../materials/07-conditionals-and-loops-in-python.html" class="pagination-link" aria-label="Conditionals and Loops in Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../materials/09-session-1-recap-and-exercises-wa.html" class="pagination-link" aria-label="Recap Exercise">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> <img src="https://creativecommons.org/images/deed/cc_icon_black_x2.png" class="img-fluid" width="25"> Kavi Haria Shah</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

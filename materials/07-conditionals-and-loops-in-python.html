@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Conditionals and Loops in Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../materials/08-defining-functions-and-classes.html" rel="next">
+<link href="../materials/06--working-with-composite-data-types.html" rel="prev">
+<link href="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university-of-cambridge-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3260b04b9e4b0b78e87a33b4873df225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university_crest_reversed.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro to Python</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/KaviHShah/Intro-to-Python"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Welcome</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data &amp; Setup</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01-why-learn-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Why Learn Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-starting-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Starting in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03-data-types-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Types in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04-python-operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Operators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05-working-with-numerical-data-types-and-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Working with Numerical Data Types and Strings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06--working-with-composite-data-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Composite Data Types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07-conditionals-and-loops-in-python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/08-defining-functions-and-classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/09-session-1-recap-and-exercises-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/10-Installing-Python-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Python Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11-working-with-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Working with Files in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-numpy-array-and-pandas-dataframes-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Visualisation with matplotlib and seaborn</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/14-apis-and-biopython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">API’s and Biopython</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Answers for Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link active" data-scroll-target="#conditionals"><span class="header-section-number">9.1</span> Conditionals</a></li>
+  <li><a href="#try-and-except-in-python" id="toc-try-and-except-in-python" class="nav-link" data-scroll-target="#try-and-except-in-python"><span class="header-section-number">9.2</span> <code>try</code> and <code>except</code> in Python</a></li>
+  <li><a href="#for-loops-in-python" id="toc-for-loops-in-python" class="nav-link" data-scroll-target="#for-loops-in-python"><span class="header-section-number">9.3</span> <code>for</code> Loops in Python</a></li>
+  <li><a href="#using-len-and-range-in-for-loops" id="toc-using-len-and-range-in-for-loops" class="nav-link" data-scroll-target="#using-len-and-range-in-for-loops"><span class="header-section-number">9.4</span> Using <code>len()</code> and <code>range()</code> in <code>for</code> loops</a></li>
+  <li><a href="#using-enumerate-in-for-loops" id="toc-using-enumerate-in-for-loops" class="nav-link" data-scroll-target="#using-enumerate-in-for-loops"><span class="header-section-number">9.5</span> Using <code>enumerate()</code> in <code>for</code> Loops</a></li>
+  <li><a href="#match-statements" id="toc-match-statements" class="nav-link" data-scroll-target="#match-statements"><span class="header-section-number">9.6</span> <code>match</code> Statements</a>
+  <ul class="collapse">
+  <li><a href="#a-newer-way-of-working-with-conditionals" id="toc-a-newer-way-of-working-with-conditionals" class="nav-link" data-scroll-target="#a-newer-way-of-working-with-conditionals"><span class="header-section-number">9.6.1</span> A newer way of working with conditionals!</a></li>
+  </ul></li>
+  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions"><span class="header-section-number">9.7</span> List Comprehensions</a></li>
+  <li><a href="#while-loops-in-python" id="toc-while-loops-in-python" class="nav-link" data-scroll-target="#while-loops-in-python"><span class="header-section-number">9.8</span> <code>while</code> Loops in Python</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.9</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Be able to code conditional statements and loops in Python</li>
+<li>Understand how to handle errors (exceptions) and edge cases in programs</li>
+<li>Compare different Python methods and their pros and cons</li>
+</ul>
+</div>
+</div>
+<section id="conditionals" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">9.1</span> Conditionals</h2>
+<p>Conditionals in Python allow you to execute different blocks of code based on conditions with boolean outputs. This is mainly done using <code>if</code>, <code>elif</code>, and <code>else</code> statements.</p>
+<p><strong><code>if</code> Statement:</strong></p>
+<p>The <code>if</code> statement evaluates a condition which has returned a boolean (<code>True</code> or <code>False</code>). If the condition is <code>True</code>, the block of code inside the <code>if</code> statement is executed.</p>
+<p><strong><code>elif</code> Statement:</strong></p>
+<p>The <code>elif</code> (short for “else if”) statement allows you to check multiple conditions. It follows an <code>if</code> statement and is executed if the previous conditions were <code>False</code> and its own condition is <code>True</code>.</p>
+<p><strong><code>else</code> Statement:</strong></p>
+<p>The <code>else</code> statement is used to execute a block of code if none of the preceding <code>if</code> or <code>elif</code> conditions were <code>True</code>.</p>
+<p><strong>Syntax</strong></p>
+<pre><code>if condition:
+    print(x) # Code to execute if condition is True
+elif another_condition:
+    print(y) # Code to execute if first condition is False and another_condition is True
+else:
+    print(z) # Code to execute if all conditions are False
+</code></pre>
+<p>Note the colon and indentation used in the above example</p>
+<ul>
+<li>Indentation is also used to nest conditionals and loops in python, and incorrect indentation is a common cause for errors.</li>
+</ul>
+<p>Here is a very simple example of using conditionals:</p>
+<pre><code>temperature = 25
+
+if temperature &gt; 30:
+    print("It's a hot day.")
+    #The program checks if the temperature is greater than 30. If it is, it prints "It's a hot day."
+elif temperature &lt; 10:
+    print("It's a cold day.")
+    #If the first condition is False, it checks if the temperature is less than 10. If this condition is True, it prints "It's a cold day."
+else:
+    print("It's a pleasant day.")
+    #If both conditions are False, the else block executes and prints "It's a pleasant day."</code></pre>
+<p>With very simple conditions, python has a shorthand that is useful. You can do things like:</p>
+<pre><code>print("it's a hotday") if temperature &gt; 30 else (print("it's a cold day") if temperature &lt; 10 else print("it's a pleasent day"))
+# these are known as ternary operators - there is no elif</code></pre>
+<p><strong>Operators</strong></p>
+<p>The operators are a key tool when using conditional statements in python. Remind yourself about them and their order of precedence.</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1 - Discussion: Operators
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Which types of operators are most useful when using conditional statements in Python?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2 - examining conditional statements
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<ul>
+<li>What do the following <code>if</code> statements do?</li>
+<li>How can you write complex conditions and make your code legible?</li>
+</ul>
+<p>Some actual examples from my (not perfect) code:</p>
+<pre><code>if (len(x[0]) == 2) and not any(x % 10 in {0, 9} for x in x[0]):</code></pre>
+<pre><code>    if (
+        (coordcolumnchoice[0] == (1,1) and coordinateM[0,0] in x[0] and coordinateM[1,1] in x[0]) or
+        (coordcolumnchoice[0] == (1,1) and coordinateM[1,0] in x[0] and coordinateM[0,1] in x[0]) or
+        (coordcolumnchoice[0] == (1,0) and coordinateM[1,0] in x[0] and coordinateM[0,0] in x[0]) or
+        (coordcolumnchoice[0] == (1,0) and coordinateM[1,1] in x[0] and coordinateM[0,1] in x[0])
+      ):</code></pre>
+<p>How might the second example be clearer if I was writing it again?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-and-except-in-python" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="try-and-except-in-python"><span class="header-section-number">9.2</span> <code>try</code> and <code>except</code> in Python</h2>
+<p>In Python, <code>try</code> and <code>except</code> blocks are used for handling exceptions, which are errors that can occur during program execution. This mechanism allows developers to anticipate potential errors, provide alternate code to handle them, and prevent the program from crashing. Here’s how it works:</p>
+<p><strong><code>try</code> Block:</strong></p>
+<p>The code that might raise an exception is placed inside the <code>try</code> block. If an exception occurs during execution of this block, the rest of the block is skipped, and control is passed to the <code>except</code> block.</p>
+<p><strong><code>except</code> Block:</strong></p>
+<p>This block contains code that handles the exception. You can specify which exception to catch, or leave it blank to catch any exception. If the exception type matches the one specified in the <code>except</code> block, the code inside it is executed.</p>
+<p><strong>Multiple <code>except</code> Blocks:</strong></p>
+<p>You can have multiple <code>except</code> blocks to handle different types of exceptions.</p>
+<p><strong><code>else</code> Block:</strong></p>
+<p>You can add an <code>else</code> block after the <code>except</code> block. This block runs if the <code>try</code> block executes without raising an exception.</p>
+<p><strong><code>finally</code> Block:</strong></p>
+<p>The <code>finally</code> block runs regardless of whether an exception was raised or not. It is often used for cleanup actions, like closing files or releasing resources.</p>
+<p><strong>Example</strong></p>
+<p>Here’s a simple example demonstrating the use of <code>try</code> and <code>except</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code that may raise an exception</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handling a specific exception</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: You cannot divide by zero."</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handling any other exception</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"An unexpected error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Executes if no exception occurred</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The result is:"</span>, result)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This block runs no matter what</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Execution completed."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Explanation of the Example:</em></p>
+<p><code>try</code>:</p>
+<ul>
+<li>Attempts to divide <code>numerator</code> by <code>denominator</code>. Since <code>denominator</code> is zero, this raises a <code>ZeroDivisionError</code>.</li>
+</ul>
+<p><code>except</code>:</p>
+<ul>
+<li>The first <code>except</code> catches the <code>ZeroDivisionError</code> and prints an error message.</li>
+<li>The second <code>except</code> would catch any other unexpected exceptions, but it won’t run in this case because the first <code>except</code> handles the error.</li>
+</ul>
+<p><code>else</code>:</p>
+<ul>
+<li>If there were no exceptions, the <code>else</code> block would print the result.</li>
+</ul>
+<p><code>finally</code>:</p>
+<ul>
+<li>This block runs at the end of the <code>try/except</code> structure, regardless of whether an exception occurred or not. It’s useful for cleanup actions.</li>
+</ul>
+<p>In this case I might not use the <code>else</code> or <code>finally</code></p>
+<p><strong>Benefits of Using <code>try</code> and <code>except</code>:</strong></p>
+<ul>
+<li><strong>Prevents Crashes:</strong> By handling exceptions, you can prevent your program from crashing due to unforeseen errors.</li>
+<li><strong>Cleaner Code:</strong> It allows for clearer separation of normal code and error handling.</li>
+<li><strong>More Robust Programs:</strong> By anticipating and handling potential errors, your programs can handle unexpected situations better.</li>
+</ul>
+</section>
+<section id="for-loops-in-python" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="for-loops-in-python"><span class="header-section-number">9.3</span> <code>for</code> Loops in Python</h2>
+<p><code>for</code> loops iterate over a sequence (list, tuple, string, dictionary, set, or range) and perform processes. The syntax of a <code>for</code> loop is simple but must be carefully followed, especially with respect to the colon (<code>:</code>) and indentation.</p>
+<p><strong>Syntax</strong></p>
+<ul>
+<li>The <code>for</code> keyword is followed by a variable name (e.g., <code>item</code>) that will take on the value of each element in the sequence.<br>
+</li>
+<li>The sequence can be a list, tuple, string, or any iterable object.<br>
+</li>
+<li>The colon (<code>:</code>) indicates the start of the loop block.<br>
+</li>
+<li>The indented lines that follow the colon are the code that will be executed.</li>
+</ul>
+<pre><code>for item in sequence:
+    print(x) # Code block to execute</code></pre>
+<p>Example:</p>
+<pre><code>animals = ["dog", "cat", "rabbit", "elephant", "tiger"]
+
+for animal in animals:
+    print(f'I have a {animal}.')</code></pre>
+<p>Output</p>
+<pre><code>I have a dog.
+I have a cat.
+I have a rabbit.
+I have an elephant.
+I have a tiger.</code></pre>
+</section>
+<section id="using-len-and-range-in-for-loops" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="using-len-and-range-in-for-loops"><span class="header-section-number">9.4</span> Using <code>len()</code> and <code>range()</code> in <code>for</code> loops</h2>
+<p>In Python, <code>len()</code> and <code>range()</code> are often used with for loops to control iterations and access elements by their index.</p>
+<p><strong>Using <code>len()</code></strong></p>
+<p>The <code>len()</code> function returns the number of items in an iterable (like a list, tuple, or string). This is useful when you need to loop through each element of a sequence without manually specifying the length.</p>
+<p><strong>Using <code>range</code></strong></p>
+<p>The range() function generates a sequence of numbers, which can be useful for iterating over a sequence with a specified start and end. The syntax is range(start, stop[, step])</p>
+<pre><code># Loop through the first five integers
+for num in range(5):
+    print(num)
+</code></pre>
+<p><strong>Examples:</strong></p>
+<pre><code>animals = ["dog", "cat", "rabbit", "elephant"]
+
+for i in range(len(animals)):            # only 1 value - stop
+    print(f"Animal at index {i}: {animals[i]}")
+
+for i in range(0,len(animals),2):        #start, stop, step
+    print(f"Animal at index {i}: {animals[i]}")
+
+</code></pre>
+</section>
+<section id="using-enumerate-in-for-loops" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="using-enumerate-in-for-loops"><span class="header-section-number">9.5</span> Using <code>enumerate()</code> in <code>for</code> Loops</h2>
+<p>The <code>enumerate()</code> function in Python adds a counter to an iterable and returns it as an <code>enumerate</code> object. This is particularly useful when you want to loop through a sequence and keep track of the index of each item without using <code>range()</code>.</p>
+<p><strong>Syntax</strong></p>
+<p>The syntax of <code>enumerate()</code> is as follows:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">enumerate</span>(iterable, start<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>iterable: The sequence (like a list, tuple, or string) you want to iterate over.</li>
+<li>start: The starting index (default is 0).</li>
+</ul>
+<p><strong>Example of <code>enumerate()</code></strong> Here’s a simple example demonstrating how to use enumerate() with a list of animals:</p>
+<pre><code>animals = ["dog", "cat", "rabbit", "elephant"]
+
+for index, animal in enumerate(animals):
+    print(f"Animal {index}: {animal}")</code></pre>
+<p>output:</p>
+<pre><code>Animal 0: dog
+Animal 1: cat
+Animal 2: rabbit
+Animal 3: elephant</code></pre>
+<p><strong>Benefits of Using <code>enumerate()</code></strong></p>
+<ul>
+<li><strong>Clarity:</strong> It makes the code cleaner and more readable by eliminating the need to manually manage the index.</li>
+<li><strong>Convenience:</strong> Automatically handles the index tracking for you, reducing the risk of errors.</li>
+</ul>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 3 - Count Nucleotide Occurrences
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Given a DNA sequence, write a loop to count the occurrences of each nucleotide (A, T, C, G).</p>
+<p><strong>DNA Sequence:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dna_sequence <span class="op">=</span> <span class="st">"ATCGATCGATCGATCG"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code># Given DNA sequence
+dna_sequence = "ATCGATCGATCGATCG"
+</code></pre>
+<p>Initial Answer</p>
+<pre><code># Initialize counts
+count_A = 0
+count_T = 0
+count_C = 0
+count_G = 0
+
+# Count nucleotides
+for nucleotide in dna_sequence:
+    if nucleotide == 'A':
+        count_A += 1
+    elif nucleotide == 'T':
+        count_T += 1
+    elif nucleotide == 'C':
+        count_C += 1
+    elif nucleotide == 'G':
+        count_G += 1
+
+print(f"A: {count_A}, T: {count_T}, C: {count_C}, G: {count_G}")</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>What exceptions might be generated? - Add an else statement to deal with other characters - Use try and except - what exception cases would this allow you to handle? Remember to follow the indentation pattern</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 4 - Make your own for loop
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Exercise: Create your own <code>for</code> loop example with a dictionary, using the <code>enumerate()</code> function, <code>try</code> and <code>except</code>, and <code>if</code> statements. Explain what your code does? Discuss in groups how you might improve each other’s code?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>Example answer:</p>
+<pre><code># Define a dictionary of animals and their respective speeds in km/h
+animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40
+}
+
+# Loop through the dictionary using enumerate
+for index, (animal, speed) in enumerate(animal_speeds.items()):
+    try:
+        # Check if speed is numeric, and if the animal is faster than 50 km/h
+        if speed &gt; 50:
+            print(f"{index + 1}. {animal} is fast with a maximum speed of {speed} km/h!")
+        else:
+            print(f"{index + 1}. {animal} is slow with a maximum speed of {speed} km/h.")
+    except TypeError:
+        # Handle the case where speed is not a numeric value
+        print(f"{index + 1}. {animal} has an invalid speed value: {speed}")</code></pre>
+<p>For this code, some improvements are:</p>
+<pre><code>animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+}
+
+for index, (animal, speed) in enumerate(animal_speeds.items(), start=1):
+    try:
+        # Check if speed is numeric, and if the animal is faster than 50 km/h
+        if speed &gt; 50:
+            print(f"{index}. {animal} is fast with a maximum speed of {speed} km/h!")
+        else:
+            print(f"{index}. {animal} is slow with a maximum speed of {speed} km/h.")
+    except TypeError:
+        # Handle the case where speed is not a numeric value
+        print(f"{index}. {animal} has an invalid speed value: {speed}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")</code></pre>
+<p>output:</p>
+<pre><code>
+1. Cheetah is fast with a maximum speed of 120 km/h!
+2. Tortoise is slow with a maximum speed of 0.3 km/h.
+3. Falcon has an invalid speed value: fast
+4. Horse is fast with a maximum speed of 88 km/h!
+5. Elephant is slow with a maximum speed of 40 km/h.
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 5 - Edge Cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>How would you deal with the following edge case?</p>
+<pre><code>animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+    (20,3): 0.5
+}</code></pre>
+<p>This would run as if there is no problem in the code.</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>maybe add a if Statement?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="match-statements" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="match-statements"><span class="header-section-number">9.6</span> <code>match</code> Statements</h2>
+<section id="a-newer-way-of-working-with-conditionals" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="a-newer-way-of-working-with-conditionals"><span class="header-section-number">9.6.1</span> A newer way of working with conditionals!</h3>
+<p><code>match</code> statements (Python 3.10 onwards) allow for structural pattern matching, which is a more powerful and flexible version of if-elif chains. With <code>match</code>, you can compare variables to patterns and handle complex matching scenarios in a clear, concise way, and also directly deconstruct variables!</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 32%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>if Statements</th>
+<th>match Statements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Simplicity for Basic Cases</td>
+<td>Easy for simple comparisons</td>
+<td>Similar simplicity for simple matches</td>
+</tr>
+<tr class="even">
+<td>Handling Complex Structures</td>
+<td>Requires manual decomposition</td>
+<td>Can match directly on structures</td>
+</tr>
+<tr class="odd">
+<td>Deconstruction</td>
+<td>Requires explicit unpacking</td>
+<td>Automatically deconstructs data structures</td>
+</tr>
+<tr class="even">
+<td>Type Matching</td>
+<td>Needs <code>isinstance()</code> checks</td>
+<td>Can match types directly</td>
+</tr>
+<tr class="odd">
+<td>Readability</td>
+<td>Becomes verbose with complex logic</td>
+<td>More concise for complex scenarios</td>
+</tr>
+<tr class="even">
+<td>Flexibility</td>
+<td>Can use <code>if</code>-<code>elif</code>-<code>else</code> chains for conditions</td>
+<td>Can handle advanced pattern matching with custom conditions</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>filtered_sequences = []
+dna_sequences = [
+    "ATCGTAGCTAGCTAGCTAGCTA",
+    "ATCG",
+    "ATGCGTAGCTAGCTAGCTAGCTAGCTAG",
+    12345,
+    "ATCGTAGCTAGCTAGCTAGCTAGC"
+]
+
+for sequence in dna_sequences:
+    match sequence:
+        case str():
+          print(f' reported DNA is {sequence}')
+          filtered_sequences.append(sequence)
+        case int():
+          print(f'{sequence} is not DNA')
+        case _:
+          print(f'{sequence} is not DNA')
+
+print(filtered_sequences)
+</code></pre>
+<p>Output:</p>
+<pre><code> reported DNA is ATCGTAGCTAGCTAGCTAGCTA
+ reported DNA is ATCG
+ reported DNA is ATGCGTAGCTAGCTAGCTAGCTAGCTAG
+12345 is not DNA
+ reported DNA is ATCGTAGCTAGCTAGCTAGCTAGC
+['ATCGTAGCTAGCTAGCTAGCTA', 'ATCG', 'ATGCGTAGCTAGCTAGCTAGCTAGCTAG', 'ATCGTAGCTAGCTAGCTAGCTAGC']
+</code></pre>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 6 - Short Description
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>How would you do the above if you had to use <code>if</code> statements?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 7 - Short Description
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Use the animal_speeds dictionary in the previous exercise and write a match statement which would give the desired output</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code>animal_speeds = {
+    "Cheetah": 120,
+    "Tortoise": 0.3,
+    "Falcon": "fast",  # Intentional error: speed should be a number
+    "Horse": 88,
+    "Elephant": 40,
+}
+
+for index, (animal, speed) in enumerate(animal_speeds.items(), start=1):
+    match (animal, speed):
+        case (str(), int()|float()):
+            if s &gt; 50:
+                print(f"{index}. {animal} is fast with a maximum speed of {speed} km/h!")
+            else:
+                print(f"{index}. {animal} is slow with a maximum speed of {speed} km/h.")
+        case (animal,int()|float()):
+            print(f"{index}. Invalid animal name: {animal}")
+        case (str(),speed):
+            print(f"{index}. {animal} has an invalid speed value: {speed}")
+        case _:
+            print("Unknown error")
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 8 - Short Description
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Discussion: Can match statements replace try except?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>NO! - match statements can reduce the errors and deal with edge casees, but errors can arise within the cases that cannot be handled.</p>
+<ul>
+<li><p>Edge cases can be different to errors - the code runs without throwing errors but the output does not behave as expected</p></li>
+<li><p>You should always inspect data first and check things make sense.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Automatic Unpacking with <code>match</code> statements:</strong></p>
+<pre><code>dna_data = {
+    "sequence": "AGCTAGCCTAAGT",
+    "length": 12,
+    "type": "coding"
+}
+
+# match statement to unpack DNA information
+match dna_data:
+    case {"sequence": sequence, "length": length, "type": type}:
+        print(f"The DNA sequence is {sequence}, it has a length of {length} bases, and it is of type '{type}'.")
+    case {"sequence": sequence, "length": length}:
+        print(f"The DNA sequence is {sequence} and has a length of {length} bases, but type information is missing.")
+    case {"sequence": sequence}:
+        print(f"The DNA sequence is {sequence}, but length and type information are missing.")
+    case _:
+        print("Unknown DNA data.")</code></pre>
+<p>Output:</p>
+<pre><code>The DNA sequence is AGCTAGCCTAAGT, it has a length of 12 bases, and it is of type 'coding'.</code></pre>
+<p><strong>This can be incredibly useful when writing functions which we will get on to shortly</strong></p>
+</section>
+</section>
+<section id="list-comprehensions" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">9.7</span> List Comprehensions</h2>
+<p>List comprehensions in python enable you to write shorter and sometimes faster code than standard loops. The syntax is:</p>
+<p>[expression for item in iterable if condition]</p>
+<p>Similar tools occur for dictionaries (Dictionary comprehension)</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 9 - Use list Comprehensions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>print the animals list in upper case using list comprehensions</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>Answer:</p>
+<pre><code>animals = ["dog", "cat", "rabbit", "elephant"]
+print([animal.upper() for animal in animals])</code></pre>
+<p>output:</p>
+<pre><code>['DOG', 'CAT', 'RABBIT', 'ELEPHANT']</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="while-loops-in-python" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="while-loops-in-python"><span class="header-section-number">9.8</span> <code>while</code> Loops in Python</h2>
+<p>A <code>while</code> loop in Python is a control flow statement that allows code to be executed repeatedly based on a boolean condition. The loop continues to execute as long as the condition remains <code>True</code>. Here’s a breakdown of how <code>while</code> loops work:</p>
+<p><strong>Key Components</strong></p>
+<ol type="1">
+<li><p><strong>Condition:</strong> The loop starts with a condition that is evaluated before each iteration. If the condition is <code>True</code>, the code block within the loop is executed.</p></li>
+<li><p><strong>Code Block:</strong> The statements inside the loop are indented, and these will run repeatedly as long as the condition remains <code>True</code>.</p></li>
+<li><p><strong>Increment/Decrement:</strong> It’s crucial to modify the variable used in the condition within the loop; otherwise, you may create an infinite loop.</p></li>
+<li><p><strong>Exit:</strong> Once the condition evaluates to <code>False</code>, the loop stops, and the program continues with the next line of code following the loop.</p></li>
+</ol>
+<p><strong>Syntax</strong></p>
+<pre><code>while condition:
+    # Code block to execute
+    # Update condition variable</code></pre>
+<p><strong>Example</strong></p>
+<p>Here’s a simple example to illustrate how a while loop works:</p>
+<pre><code>count = 0
+
+while count &lt; 5:
+    print("Count is:", count)
+    count += 1  # Increment count</code></pre>
+<p><strong>Explanation of the Example</strong></p>
+<ul>
+<li><p><strong>Initialization:</strong> The variable <code>count</code> is initialized to <code>0</code>.</p></li>
+<li><p><strong>Condition:</strong> The <code>while</code> loop checks if <code>count</code> is less than <code>5</code>.</p></li>
+<li><p><strong>Code Execution:</strong> If the condition is <code>True</code>, it prints the current value of <code>count</code>.</p></li>
+<li><p><strong>Increment:</strong> The line <code>count += 1</code> increments the value of <code>count</code> by <code>1</code> after each iteration.</p></li>
+<li><p><strong>Termination:</strong> Once <code>count</code> reaches <code>5</code>, the condition becomes <code>False</code>, and the loop exits.</p></li>
+</ul>
+<p>This can be incredibly useful in simulations. Or when interacting in the environment. Here the number of iterations is not known beforehand and depend on a certain condition being met. They provide a way to repeat actions and process data dynamically within a program.</p>
+<p><strong>However</strong></p>
+<ul>
+<li><p><strong>Infinite Loops:</strong> Ensure the condition will eventually evaluate to <code>False</code> to avoid infinite loops.</p></li>
+<li><p><strong>Break Statement:</strong> You can use the <code>break</code> statement to exit a loop prematurely if needed.</p></li>
+<li><p><strong>Continue Statement:</strong> The <code>continue</code> statement can skip the current iteration and proceed to the next one based on a condition.</p></li>
+</ul>
+<p>An example is:</p>
+<pre><code>import random
+
+population = 1000
+infected = 1
+days = 0
+infection_rate = 1.5
+max_days = 30
+
+while infected &lt; population:
+    days += 1
+
+    if random.random() &gt; 0.9:
+        print(f"Day {days}: Lockdown in effect, no new infections today.")
+        continue
+    
+    new_infections = int(infected * infection_rate)
+
+    if new_infections + infected &gt; population:
+        new_infections = population - infected
+    
+    infected += new_infections
+
+    print(f"Day {days}: {infected} infected.")
+
+    if infected &gt;= population:
+        print(f"Day {days}: The entire population is infected.")
+        break
+
+    if random.random() &gt; 0.8:
+        print(f"Day {days}: Health measures implemented, slowing infection.")
+        infection_rate -= 0.3
+    
+    if infection_rate &lt;= 0.1:
+        print(f"Day {days}: The infection has nearly stopped spreading.")
+        break
+    
+    if days &gt;= max_days:
+        print("The simulation has reached its time limit.")
+        break
+</code></pre>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 10 - Code Legibility
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Discussion: What does the above code do? Is it legibly written? What can be done to improve this?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code>
+# Commenting the code appropriately is important!
+import random
+
+# Parameters of the simulation
+population = 1000       # Total population
+infected = 1            # Initially 1 person is infected
+days = 0                # Start at day 0
+infection_rate = 1.5    # Rate of infection: how many people one infected person can infect per day
+max_days = 30           # Maximum number of days to simulate
+
+while infected &lt; population:
+    days += 1
+
+    # Simulate random events like lockdown or vaccines
+    if random.random() &gt; 0.9:  # 10% chance of stopping the spread for the day
+        print(f"Day {days}: Lockdown in effect, no new infections today.")
+        continue  # Skip the infection calculation for this day and move to the next
+
+    # Simulate daily infections
+    new_infections = int(infected * infection_rate)
+
+    # If new infections exceed the remaining healthy population, adjust them
+    if new_infections + infected &gt; population:
+        new_infections = population - infected
+
+    infected += new_infections
+
+    # Display day-by-day status
+    print(f"Day {days}: {infected} infected.")
+
+    # Continue if there are still people to infect
+    if infected &gt;= population:
+        print(f"Day {days}: The entire population is infected.")
+        break
+
+    # Random chance to reduce the infection rate due to interventions
+    if random.random() &gt; 0.8:  # 20% chance to reduce infection rate
+        print(f"Day {days}: Health measures implemented, slowing infection.")
+        infection_rate -= 0.3  # Decrease the infection rate
+
+    # If the infection rate gets too low, break out of the loop (end of epidemic)
+    if infection_rate &lt;= 0.1:
+        print(f"Day {days}: The infection has nearly stopped spreading.")
+        break
+
+    # Stop the simulation after a max number of days to avoid infinite loops
+    if days &gt;= max_days:
+        print("The simulation has reached its time limit.")
+        break</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.9</span> Summary</h2>
+<p>Python has many ways to work with conditions and loops. It is key for these statements to be written concisely, while catching edge cases and dealing with errors.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By this point you should be comfortable with:</p>
+<ul>
+<li><code>if</code>, <code>elif</code>, <code>else</code> statements</li>
+<li><code>match</code> , <code>case</code> statements</li>
+<li><code>for</code> loops with <code>range()</code>, <code>len()</code>, and <code>enumerate()</code></li>
+<li>Working with different composite data types</li>
+<li><code>try</code> and <code>except</code> for error handling</li>
+<li><code>while</code> loops</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../materials/06--working-with-composite-data-types.html" class="pagination-link" aria-label="Working with Composite Data Types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Composite Data Types</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../materials/08-defining-functions-and-classes.html" class="pagination-link" aria-label="Defining Functions and Classes">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> <img src="https://creativecommons.org/images/deed/cc_icon_black_x2.png" class="img-fluid" width="25"> Kavi Haria Shah</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

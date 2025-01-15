@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Recap Exercise</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../materials/10-Installing-Python-packages.html" rel="next">
+<link href="../materials/08-defining-functions-and-classes.html" rel="prev">
+<link href="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university-of-cambridge-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3260b04b9e4b0b78e87a33b4873df225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../site_libs/quarto-contrib/quarto-project/cambiotraining/courseformat/img/university_crest_reversed.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro to Python</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/KaviHShah/Intro-to-Python"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Welcome</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data &amp; Setup</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01-why-learn-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Why Learn Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-starting-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Starting in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03-data-types-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Types in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04-python-operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Operators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05-working-with-numerical-data-types-and-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Working with Numerical Data Types and Strings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06--working-with-composite-data-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Composite Data Types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07-conditionals-and-loops-in-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conditionals and Loops in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/08-defining-functions-and-classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/09-session-1-recap-and-exercises-wa.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/10-Installing-Python-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Python Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11-working-with-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Working with Files in Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-numpy-array-and-pandas-dataframes-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">NumPy Arrays and pandas Dataframes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/13-data-visualisation-with-matplotlib-and-seaborn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Visualisation with matplotlib and seaborn</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Session-3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/14-apis-and-biopython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">API’s and Biopython</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/15-escape-room-wa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Answers for Escape Room - You are locked in!</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">11.1</span> Overview</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.2</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Recap Exercise</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aims
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Refresh the topics covered yesterday including: - Data types - Conditionals and loops - Errors and edge cases - Defining functions and classes</p>
+</div>
+</div>
+<section id="overview" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">11.1</span> Overview</h2>
+<p>Today we have a range of exciting topics to cover, however the style of teaching will be a little different from the first day. There will be fewer notes, and you will use the documentation pages and other resources to help you. There will be much more self-learning involved. This is a little closer to how things will be when you are undertaking projects on your own.</p>
+<p>Before we go on to the new parts, have a try at this exercise to test how familiar you are with the content from the last session:</p>
+<p>Answers will be uploaded after the session</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1 - Phenotypes and Genes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><font style="font-variant: small-caps">Level:</font> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><br></p>
+<p>Write a global variable which has the DNA to RNA transitions as a dictionary, and a global variable that has the DNA to amino acid transitions as a dictionary.</p>
+<p><strong>1.</strong> Initiaise a class gene which</p>
+<p>has the class variables:</p>
+<ul>
+<li>tpye = protein_coding</li>
+</ul>
+<p>Has the attributes:</p>
+<ul>
+<li>name</li>
+<li>id</li>
+<li>length</li>
+<li>coding sequence</li>
+<li>rna sequence</li>
+<li>protein sequence</li>
+</ul>
+<p>And has functions:</p>
+<ul>
+<li>add_length: to add length based on the coding sequence (deal with invalid characters)</li>
+<li>add_RNA to turn it into an RNA sequence (deal with invalid characters)</li>
+<li>add_protein_seq: to turn it into a protein sequence if it has a dna sequence</li>
+<li>modify_sequence: to alter a base of the DNA sequence at ‘x’ position and update the length, RNA and protein sequence</li>
+<li>print the attributes</li>
+</ul>
+<p><strong>2.</strong> Write a list of 10 made-up gene names</p>
+<p><strong>3.</strong> Using a ‘for loop’/‘list comprehension’, and a random number generator, generate a dictionary of the 10 DNA sequences of 100 bases associated with the gene_names. note:</p>
+<pre><code>import random
+random.choices(options_list) #will make random choices on an options list
+random.choices(options_list, k=100) # can be used to generate 100 outputs in one go</code></pre>
+<p><strong>4.</strong> Use the dictionary to initialise 10 gene objects.</p>
+<p><strong>5.</strong> Initialise a class phenotype which is made up of:</p>
+<p>attributes:</p>
+<ul>
+<li>name</li>
+<li>description (a string description”)</li>
+<li>contributing genes (a list of gene objects)</li>
+</ul>
+<p>functions:</p>
+<ul>
+<li>add multiple genes to the list</li>
+<li>remove genes from list</li>
+<li>append extra lines to the description</li>
+<li>replace the description.</li>
+<li>print the attributes , and the attributes of the genes held.</li>
+</ul>
+<p>Use ‘try’, ‘except’, and ‘match’ to deal with errors.</p>
+<p><strong>6.</strong> Use a ‘for loop’ to initialise three phenotypes.</p>
+<p><strong>7.</strong> What is the size of the gene objects and phenotype objects using <code>sys.getsizeof()</code>?</p>
+<p><strong>8.</strong> What does this tell you about the sys.getsizeof() function?</p>
+<p><strong>9.</strong> Modify the sequence of one of the geneobjects - does the phenotype object change as seen when you print all the attributes.</p>
+<p><strong>10.</strong> Make a deep copy of a gene object and show that it is a deep copy.</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<pre><code># Global variable for DNA to RNA transitions
+DNA_TO_RNA_TRANSITIONS = {
+    'A': 'U',
+    'T': 'A',
+    'C': 'G',
+    'G': 'C'
+}
+
+# Global variable for DNA to Amino Acid transitions
+DNA_TO_AMINO_ACID_TRANSITIONS = {
+    # DNA codon to single-letter amino acid code dictionary (sorted)
+    "TTT":"F",
+    "TTC":"F",
+    "TTA":"L",
+    "TTG":"L",
+    "TCT":"S",
+    "TCC":"S",
+    "TCA":"S",
+    "TCG":"S",
+    "TAT":"Y",
+    "TAC":"Y",
+    "TAA":"X",
+    "TAG":"X",
+    "TGT":"C",
+    "TGC":"C",
+    "TGA":"X",
+    "TGG":"W",
+    "CTT":"L",
+    "CTC":"L",
+    "CTA":"L",
+    "CTG":"L",
+    "CCT":"P",
+    "CCC":"P",
+    "CCA":"P",
+    "CCG":"P",
+    "CAT":"H",
+    "CAC":"H",
+    "CAA":"Q",
+    "CAG":"Q",
+    "CGT":"R",
+    "CGC":"R",
+    "CGA":"R",
+    "CGG":"R",
+    "ATT":"I",
+    "ATC":"I",
+    "ATA":"I",
+    "ATG":"M",
+    "ACT":"T",
+    "ACC":"T",
+    "ACA":"T",
+    "ACG":"T",
+    "AAT":"N",
+    "AAC":"N",
+    "AAA":"K",
+    "AAG":"K",
+    "AGT":"S",
+    "AGC":"S",
+    "AGA":"R",
+    "AGG":"R",
+    "GTT":"V",
+    "GTC":"V",
+    "GTA":"V",
+    "GTG":"V",
+    "GCT":"A",
+    "GCC":"A",
+    "GCA":"A",
+    "GCG":"A",
+    "GAT":"D",
+    "GAC":"D",
+    "GAA":"E",
+    "GAG":"E",
+    "GGT":"G",
+    "GGC":"G",
+    "GGA":"G",
+    "GGG":"G",
+}
+
+class Gene:
+    # Class variable
+    type = "protein_coding"
+    
+    def __init__(self, name, gene_id, coding_sequence):
+        self.name = name
+        self.gene_id = gene_id
+        self.length = None  # Initialize length to None
+        self.coding_sequence = coding_sequence.upper()  # Ensure sequence is uppercase
+        self.rna_sequence = ""
+        self.protein_sequence = ""
+
+    def add_length(self):
+        """
+        Calculate the length of the coding sequence, ignoring invalid characters.
+        """
+        valid_bases = {'A', 'T', 'C', 'G'}
+        self.length = sum(1 for base in self.coding_sequence if base in valid_bases)
+        print(f"Length updated: {self.length}")
+
+    def add_RNA(self):
+        """
+        Convert the DNA sequence to an RNA sequence.
+        """
+        try:
+            rna_sequence = []
+            for base in self.coding_sequence:
+                if base in DNA_TO_RNA_TRANSITIONS:
+                    rna_sequence.append(DNA_TO_RNA_TRANSITIONS[base])
+                else:
+                    raise ValueError(f"Invalid base '{base}' in DNA sequence.")
+            self.rna_sequence = ''.join(rna_sequence)
+            print(f"RNA sequence added: {self.rna_sequence}")
+        except ValueError as e:
+            print(f"Error: {e}")
+
+    def add_protein_seq(self):
+        """
+        Convert DNA sequence to a protein sequence if exists.
+        """
+        if self.coding_sequence:
+            protein_sequence = []
+            for i in range(0, len(self.coding_sequence) - 2, 3):  # Iterate in steps of 3
+                codon = self.coding_sequence[i:i + 3]
+                if codon in DNA_TO_AMINO_ACID_TRANSITIONS:
+                    amino_acid = DNA_TO_AMINO_ACID_TRANSITIONS[codon]
+                    if amino_acid == 'STOP':
+                        break
+                    protein_sequence.append(amino_acid)
+                else:
+                    print(f"Warning: Codon '{codon}' not recognized.")
+            self.protein_sequence = ''.join(protein_sequence)
+            print(f"Protein sequence added: {self.protein_sequence}")
+        else:
+            print("DNA sequence not available. Cannot generate protein sequence.")
+
+    def modify_sequence(self, position, new_base):
+        """
+        Modify a base of the DNA sequence at position and update length, RNA, and protein sequences.
+        """
+        try:
+            if position &lt; 0 or position &gt;= len(self.coding_sequence):
+                raise IndexError("Position out of range.")
+            valid_bases = {'A', 'T', 'C', 'G'}
+            if new_base not in valid_bases:
+                raise ValueError("Invalid base. Must be A, T, C, or G.")
+            
+            # Modify the base
+            self.coding_sequence = self.coding_sequence[:position] + new_base + self.coding_sequence[position + 1:]
+            print(f"Modified DNA sequence: {self.coding_sequence}")
+
+            # Update length, RNA, and protein sequences
+            self.add_length()
+            self.add_RNA()
+            self.add_protein_seq()
+        except (IndexError, ValueError) as e:
+            print(f"Error: {e}")
+
+    def print_attributes(self):
+        """
+        Print the attributes of the gene.
+        """
+        print(f"Gene Name: {self.name}")
+        print(f"Gene ID: {self.id}")
+        print(f"Length: {self.length}")
+        print(f"Coding Sequence: {self.coding_sequence}")
+        print(f"RNA Sequence: {self.rna_sequence}")
+        print(f"Protein Sequence: {self.protein_sequence}")
+
+# Example usage:
+#gene1 = Gene(name="Gene1", id="G001", coding_sequence="ATGCTGAAATAG")
+#gene1.add_length()  # Calculate and set the length
+#gene1.add_RNA()     # Convert to RNA
+#gene1.add_protein_seq()  # Convert to protein sequence
+#gene1.modify_sequence(3, 'A')  # Modify a base
+#gene1.print_attributes()  # Print the attributes of the gene
+</code></pre>
+<p>now generate the dictionary of gene_name gene_sequence pairs</p>
+<pre><code>
+import random
+
+# Step 1: List of 10 made-up gene names
+gene_names = [
+    "GeneA1",
+    "GeneB2",
+    "GeneC3",
+    "GeneD4",
+    "GeneE5",
+    "GeneF6",
+    "GeneG7",
+    "GeneH8",
+    "GeneI9",
+    "GeneJ0"
+]
+
+# Step 2: Generate a dictionary of 10 DNA sequences of 100 bases each
+bases = ['A', 'T', 'C', 'G']  # Possible DNA bases
+#using dictionary comprehension, string methods 
+gene_sequences = {gene: ''.join(random.choices(bases, k=100)) for gene in gene_names}
+
+# Output the dictionary of gene sequences
+print(gene_sequences)
+</code></pre>
+<p>Output:</p>
+<pre><code>
+{'GeneA1': 'GTTGAGATCCTCTAACTATGGCTGTACGGACTTCAATTAGTCGCGACTTCGGCAAGCTCCCCCATCTTTACCCAGACATCTATCCAATTGCATCACATCC', 'GeneB2': 'GTTCGGACCCGTCTGTGCCGCTGAACGTCTACTGCCCGATAAGTCTTAGCCTCAAATATATACAGAAGAAAACATCATACTGCTGTTCGTGAAGTTCTGG', 'GeneC3': 'TTCTACACTTATACTAGAACATGATTTCATTTCACCCAATAGATATACCGGGTGACTCATTTGGTAGGGTGGGATTGTAGAACGGTTACAACGGGTATGA', 'GeneD4': 'GACGGTGGCACATGACTCTGGGCTGTGCCATATAAAGGGGATAGCTCGCTGCCTTTGTTGCCGATTTGTCGTGGCGCTGCAGCTTGTCGGTGTTGTAATC', 'GeneE5': 'TAGTTGCAAGCGAGCGGGGTGGGTGCAGCTGTGTTAGCGATTCCGTTTCTGCCCACAACACTCCATGTCGAGCCATTATAAGATGAACGAGAAAAGCGGA', 'GeneF6': 'TCCCATTGTTGCACTCCGGACCTCAGATGCGGGGACCCCTAAAACGCTGTCCTTGTCACCCGTTTACAATGATGCTAACGTTGCGCAAATCTTTCACCTG', 'GeneG7': 'AGGTGAACTAATCAGTTACCTTTCTTCTAACTGTTACCCCAAGTAGCAGACAAACAGTCGTGGAATCCGCAGCGATCCGTTGTCCGTCCATCTTACCCTG', 'GeneH8': 'ACGGATTCAACAGGGCACACGTAACTACCTGATCGTGGTTAGGATCTTATTGGACGGGGTAATCGAGATGCTCTTATGTAGGCTCGAGTGTTGTCCATGG', 'GeneI9': 'TTTGTCACGCAGCGGCAACTCCACCGCCGGCTCTAGGCATGCCACGTTTCTGAACCATCTGACCACAGCTCGGACTGGATAAGGTCAGGTACGGATTCCC', 'GeneJ0': 'ATGTTCGGACACGGTGGCAATTACAACTCAAAGCCTCCAGACTGCTAGCTTGACAATTGGATCTTCCAGGCCACTAGACATGTACGTGATCCGCTTCAAC'}
+</code></pre>
+<p>Now generate the gene_objects:</p>
+<pre><code>gene_objects = []
+for gene_name, dna_sequence in gene_sequences.items():
+    gene_id = f"G{gene_names.index(gene_name) + 1:03}"  # Generate a unique gene ID
+    gene = Gene(name=gene_name, id=gene_id, coding_sequence=dna_sequence)
+    gene.add_length()  # Calculate length
+    gene.add_RNA()     # Convert to RNA
+    gene.add_protein_seq()  # Convert to protein sequence
+    gene_objects.append(gene)
+
+# Display the attributes of each gene object
+for gene in gene_objects:
+    gene.print_attributes()
+</code></pre>
+<p>output:</p>
+<pre><code>
+Length: 100
+Coding Sequence: GTTGAGATCCTCTAACTATGGCTGTACGGACTTCAATTAGTCGCGACTTCGGCAAGCTCCCCCATCTTTACCCAGACATCTATCCAATTGCATCACATCC
+RNA Sequence: CAACUCUAGGAGAUUGAUACCGACAUGCCUGAAGUUAAUCAGCGCUGAAGCCGUUCGAGGGGGUAGAAAUGGGUCUGUAGAUAGGUUAACGUAGUGUAGG
+Protein Sequence: VEILXLWLYGLQLVATSASSPIFTQTSIQLHHI
+Gene Name: GeneB2
+Gene ID: G002
+Length: 100
+Coding Sequence: GTTCGGACCCGTCTGTGCCGCTGAACGTCTACTGCCCGATAAGTCTTAGCCTCAAATATATACAGAAGAAAACATCATACTGCTGTTCGTGAAGTTCTGG
+RNA Sequence: CAAGCCUGGGCAGACACGGCGACUUGCAGAUGACGGGCUAUUCAGAAUCGGAGUUUAUAUAUGUCUUCUUUUGUAGUAUGACGACAAGCACUUCAAGACC
+Protein Sequence: VRTRLCRXTSTARXVLASNIYRRKHHTAVREVL
+Gene Name: GeneC3
+Gene ID: G003
+Length: 100
+Coding Sequence: TTCTACACTTATACTAGAACATGATTTCATTTCACCCAATAGATATACCGGGTGACTCATTTGGTAGGGTGGGATTGTAGAACGGTTACAACGGGTATGA
+RNA Sequence: AAGAUGUGAAUAUGAUCUUGUACUAAAGUAAAGUGGGUUAUCUAUAUGGCCCACUGAGUAAACCAUCCCACCCUAACAUCUUGCCAAUGUUGCCCAUACU
+Protein Sequence: FYTYTRTXFHFTQXIYRVTHLVGWDCRTVTTGM
+Gene Name: GeneD4
+Gene ID: G004
+Length: 100
+Coding Sequence: GACGGTGGCACATGACTCTGGGCTGTGCCATATAAAGGGGATAGCTCGCTGCCTTTGTTGCCGATTTGTCGTGGCGCTGCAGCTTGTCGGTGTTGTAATC
+RNA Sequence: CUGCCACCGUGUACUGAGACCCGACACGGUAUAUUUCCCCUAUCGAGCGACGGAAACAACGGCUAAACAGCACCGCGACGUCGAACAGCCACAACAUUAG
+Protein Sequence: DGGTXLWAVPYKGDSSLPLLPICRGAAACRCCN
+Gene Name: GeneE5
+Gene ID: G005
+Length: 100
+Coding Sequence: TAGTTGCAAGCGAGCGGGGTGGGTGCAGCTGTGTTAGCGATTCCGTTTCTGCCCACAACACTCCATGTCGAGCCATTATAAGATGAACGAGAAAAGCGGA
+RNA Sequence: AUCAACGUUCGCUCGCCCCACCCACGUCGACACAAUCGCUAAGGCAAAGACGGGUGUUGUGAGGUACAGCUCGGUAAUAUUCUACUUGCUCUUUUCGCCU
+Protein Sequence: XLQASGVGAAVLAIPFLPTTLHVEPLXDEREKR
+Gene Name: GeneF6
+Gene ID: G006
+Length: 100
+Coding Sequence: TCCCATTGTTGCACTCCGGACCTCAGATGCGGGGACCCCTAAAACGCTGTCCTTGTCACCCGTTTACAATGATGCTAACGTTGCGCAAATCTTTCACCTG
+RNA Sequence: AGGGUAACAACGUGAGGCCUGGAGUCUACGCCCCUGGGGAUUUUGCGACAGGAACAGUGGGCAAAUGUUACUACGAUUGCAACGCGUUUAGAAAGUGGAC
+Protein Sequence: SHCCTPDLRCGDPXNAVLVTRLQXCXRCANLSP
+Gene Name: GeneG7
+Gene ID: G007
+Length: 100
+Coding Sequence: AGGTGAACTAATCAGTTACCTTTCTTCTAACTGTTACCCCAAGTAGCAGACAAACAGTCGTGGAATCCGCAGCGATCCGTTGTCCGTCCATCTTACCCTG
+RNA Sequence: UCCACUUGAUUAGUCAAUGGAAAGAAGAUUGACAAUGGGGUUCAUCGUCUGUUUGUCAGCACCUUAGGCGUCGCUAGGCAACAGGCAGGUAGAAUGGGAC
+Protein Sequence: RXTNQLPFFXLLPQVADKQSWNPQRSVVRPSYP
+Gene Name: GeneH8
+Gene ID: G008
+Length: 100
+Coding Sequence: ACGGATTCAACAGGGCACACGTAACTACCTGATCGTGGTTAGGATCTTATTGGACGGGGTAATCGAGATGCTCTTATGTAGGCTCGAGTGTTGTCCATGG
+RNA Sequence: UGCCUAAGUUGUCCCGUGUGCAUUGAUGGACUAGCACCAAUCCUAGAAUAACCUGCCCCAUUAGCUCUACGAGAAUACAUCCGAGCUCACAACAGGUACC
+Protein Sequence: TDSTGHTXLPDRGXDLIGRGNRDALMXARVLSM
+Gene Name: GeneI9
+Gene ID: G009
+Length: 100
+Coding Sequence: TTTGTCACGCAGCGGCAACTCCACCGCCGGCTCTAGGCATGCCACGTTTCTGAACCATCTGACCACAGCTCGGACTGGATAAGGTCAGGTACGGATTCCC
+RNA Sequence: AAACAGUGCGUCGCCGUUGAGGUGGCGGCCGAGAUCCGUACGGUGCAAAGACUUGGUAGACUGGUGUCGAGCCUGACCUAUUCCAGUCCAUGCCUAAGGG
+Protein Sequence: FVTQRQLHRRLXACHVSEPSDHSSDWIRSGTDS
+Gene Name: GeneJ0
+Gene ID: G010
+Length: 100
+Coding Sequence: ATGTTCGGACACGGTGGCAATTACAACTCAAAGCCTCCAGACTGCTAGCTTGACAATTGGATCTTCCAGGCCACTAGACATGTACGTGATCCGCTTCAAC
+RNA Sequence: UACAAGCCUGUGCCACCGUUAAUGUUGAGUUUCGGAGGUCUGACGAUCGAACUGUUAACCUAGAAGGUCCGGUGAUCUGUACAUGCACUAGGCGAAGUUG
+Protein Sequence: MFGHGGNYNSKPPDCXLDNWIFQATRHVRDPLQ
+</code></pre>
+<p>defining the class phenotype:</p>
+<pre><code>
+class Phenotype:
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description  # A string description
+        self.contributing_genes = []     # A list to hold gene objects
+
+    def add_genes(self, genes):
+        """Add multiple gene objects to the contributing genes list."""
+        try:
+            match genes:
+                case list():
+                    self.contributing_genes.extend(genes)
+                case _:
+                    raise ValueError("Input must be a list of gene objects.")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def remove_genes(self, genes):
+        """Remove gene objects from the contributing genes list."""
+        try:
+            match genes:
+                case list():
+                    for gene in genes:
+                        if gene in self.contributing_genes:
+                            self.contributing_genes.remove(gene)
+                        else:
+                            print(f"Gene {gene} not found in the contributing genes list.")
+                case _:
+                    raise ValueError("Input must be a list of gene objects.")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def append_description(self, extra_description):
+        """Append extra lines to the description."""
+        try:
+            match extra_description:
+                case str():
+                    self.description += "\n" + extra_description
+                case _:
+                    raise ValueError("Extra description must be a string.")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def replace_description(self, new_description):
+        """Replace the current description with a new one."""
+        try:
+            match new_description:
+                case str():
+                    self.description = new_description
+                case _:
+                    raise ValueError("New description must be a string.")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def print_attributes(self):
+        """Print the attributes of the phenotype and the genes."""
+        print(f"Phenotype Name: {self.name}")
+        print(f"Description: {self.description}")
+        print("Contributing Genes:")
+        if self.contributing_genes:
+            for gene in self.contributing_genes:
+                gene.print_attributes()
+        else:
+            print("  No contributing genes.")
+</code></pre>
+<p>make the phenotype objects:</p>
+<pre><code>phenotypes = []
+for i in range(3):
+    # Randomly select 3 genes for each phenotype
+    selected_genes = random.sample(gene_objects, 3)
+    # Create the phenotype object with a name and description
+    phenotype = Phenotype(f"phenotype_{i+1}", f"bad_phenotype_{i+1}")
+    # Add the selected genes to the phenotype
+    phenotype.add_genes(selected_genes)
+    # Add the phenotype to the list of phenotypes
+    phenotypes.append(phenotype)
+
+# Print the attributes of the three phenotypes
+for phenotype in phenotypes:
+    phenotype.print_attributes()
+    print("---")
+</code></pre>
+<p>output:</p>
+<pre><code>
+Protein Sequence: DGGTXLWAVPYKGDSSLPLLPICRGAAACRCCN
+Gene Name: GeneI9
+Gene ID: G009
+Length: 100
+Coding Sequence: TTTGTCACGCAGCGGCAACTCCACCGCCGGCTCTAGGCATGCCACGTTTCTGAACCATCTGACCACAGCTCGGACTGGATAAGGTCAGGTACGGATTCCC
+RNA Sequence: AAACAGUGCGUCGCCGUUGAGGUGGCGGCCGAGAUCCGUACGGUGCAAAGACUUGGUAGACUGGUGUCGAGCCUGACCUAUUCCAGUCCAUGCCUAAGGG
+Protein Sequence: FVTQRQLHRRLXACHVSEPSDHSSDWIRSGTDS
+Gene Name: GeneG7
+Gene ID: G007
+Length: 100
+Coding Sequence: AGGTGAACTAATCAGTTACCTTTCTTCTAACTGTTACCCCAAGTAGCAGACAAACAGTCGTGGAATCCGCAGCGATCCGTTGTCCGTCCATCTTACCCTG
+RNA Sequence: UCCACUUGAUUAGUCAAUGGAAAGAAGAUUGACAAUGGGGUUCAUCGUCUGUUUGUCAGCACCUUAGGCGUCGCUAGGCAACAGGCAGGUAGAAUGGGAC
+Protein Sequence: RXTNQLPFFXLLPQVADKQSWNPQRSVVRPSYP
+---
+Phenotype Name: phenotype_2
+Description: bad_phenotype_2
+Contributing Genes:
+Gene Name: GeneG7
+Gene ID: G007
+Length: 100
+Coding Sequence: AGGTGAACTAATCAGTTACCTTTCTTCTAACTGTTACCCCAAGTAGCAGACAAACAGTCGTGGAATCCGCAGCGATCCGTTGTCCGTCCATCTTACCCTG
+RNA Sequence: UCCACUUGAUUAGUCAAUGGAAAGAAGAUUGACAAUGGGGUUCAUCGUCUGUUUGUCAGCACCUUAGGCGUCGCUAGGCAACAGGCAGGUAGAAUGGGAC
+Protein Sequence: RXTNQLPFFXLLPQVADKQSWNPQRSVVRPSYP
+Gene Name: GeneA1
+Gene ID: G001
+Length: 100
+Coding Sequence: GTTGAGATCCTCTAACTATGGCTGTACGGACTTCAATTAGTCGCGACTTCGGCAAGCTCCCCCATCTTTACCCAGACATCTATCCAATTGCATCACATCC
+RNA Sequence: CAACUCUAGGAGAUUGAUACCGACAUGCCUGAAGUUAAUCAGCGCUGAAGCCGUUCGAGGGGGUAGAAAUGGGUCUGUAGAUAGGUUAACGUAGUGUAGG
+Protein Sequence: VEILXLWLYGLQLVATSASSPIFTQTSIQLHHI
+Gene Name: GeneJ0
+Gene ID: G010
+Length: 100
+Coding Sequence: ATGTTCGGACACGGTGGCAATTACAACTCAAAGCCTCCAGACTGCTAGCTTGACAATTGGATCTTCCAGGCCACTAGACATGTACGTGATCCGCTTCAAC
+RNA Sequence: UACAAGCCUGUGCCACCGUUAAUGUUGAGUUUCGGAGGUCUGACGAUCGAACUGUUAACCUAGAAGGUCCGGUGAUCUGUACAUGCACUAGGCGAAGUUG
+Protein Sequence: MFGHGGNYNSKPPDCXLDNWIFQATRHVRDPLQ
+---
+Phenotype Name: phenotype_3
+Description: bad_phenotype_3
+Contributing Genes:
+Gene Name: GeneE5
+Gene ID: G005
+Length: 100
+Coding Sequence: TAGTTGCAAGCGAGCGGGGTGGGTGCAGCTGTGTTAGCGATTCCGTTTCTGCCCACAACACTCCATGTCGAGCCATTATAAGATGAACGAGAAAAGCGGA
+RNA Sequence: AUCAACGUUCGCUCGCCCCACCCACGUCGACACAAUCGCUAAGGCAAAGACGGGUGUUGUGAGGUACAGCUCGGUAAUAUUCUACUUGCUCUUUUCGCCU
+Protein Sequence: XLQASGVGAAVLAIPFLPTTLHVEPLXDEREKR
+Gene Name: GeneA1
+Gene ID: G001
+Length: 100
+Coding Sequence: GTTGAGATCCTCTAACTATGGCTGTACGGACTTCAATTAGTCGCGACTTCGGCAAGCTCCCCCATCTTTACCCAGACATCTATCCAATTGCATCACATCC
+RNA Sequence: CAACUCUAGGAGAUUGAUACCGACAUGCCUGAAGUUAAUCAGCGCUGAAGCCGUUCGAGGGGGUAGAAAUGGGUCUGUAGAUAGGUUAACGUAGUGUAGG
+Protein Sequence: VEILXLWLYGLQLVATSASSPIFTQTSIQLHHI
+Gene Name: GeneB2
+Gene ID: G002
+Length: 100
+Coding Sequence: GTTCGGACCCGTCTGTGCCGCTGAACGTCTACTGCCCGATAAGTCTTAGCCTCAAATATATACAGAAGAAAACATCATACTGCTGTTCGTGAAGTTCTGG
+RNA Sequence: CAAGCCUGGGCAGACACGGCGACUUGCAGAUGACGGGCUAUUCAGAAUCGGAGUUUAUAUAUGUCUUCUUUUGUAGUAUGACGACAAGCACUUCAAGACC
+Protein Sequence: VRTRLCRXTSTARXVLASNIYRRKHHTAVREVL
+</code></pre>
+<p>check sizes:</p>
+<pre><code>
+import sys
+print(sys.getsizeof(gene_objects[0]))
+
+print(sys.getsizeof(phenotypes[0]))
+</code></pre>
+<p>output:</p>
+<pre><code>48
+48</code></pre>
+<p><code>sys.getsizeof()</code> outputs the shallow size of objects</p>
+<p>In Python, when objects are passed as arguments to functions or assigned to other objects, they are passed by reference. This means that if you modify an object (e.g., a Gene object) that is part of a Phenotype object, the changes will be reflected in the Phenotype object as well, since they both refer to the same object in memory.</p>
+<pre><code>
+import copy
+
+phenotype_1_deepcopy = copy.deepcopy(phenotypes[0])
+phenotype_1_deepcopy.print_attributes()
+
+print('the id of the genes of the deep copy should be different to the original:')
+print(id(phenotypes[0].contributing_genes[0]))
+print(id(phenotype_1_deepcopy.contributing_genes[0]))
+</code></pre>
+<p>output:</p>
+<pre><code>Phenotype Name: phenotype_1
+Description: bad_phenotype_1
+Contributing Genes:
+Gene Name: GeneD4
+Gene ID: G004
+Length: 100
+Coding Sequence: GACGGTGGCACATGACTCTGGGCTGTGCCATATAAAGGGGATAGCTCGCTGCCTTTGTTGCCGATTTGTCGTGGCGCTGCAGCTTGTCGGTGTTGTAATC
+RNA Sequence: CUGCCACCGUGUACUGAGACCCGACACGGUAUAUUUCCCCUAUCGAGCGACGGAAACAACGGCUAAACAGCACCGCGACGUCGAACAGCCACAACAUUAG
+Protein Sequence: DGGTXLWAVPYKGDSSLPLLPICRGAAACRCCN
+Gene Name: GeneI9
+Gene ID: G009
+Length: 100
+Coding Sequence: TTTGTCACGCAGCGGCAACTCCACCGCCGGCTCTAGGCATGCCACGTTTCTGAACCATCTGACCACAGCTCGGACTGGATAAGGTCAGGTACGGATTCCC
+RNA Sequence: AAACAGUGCGUCGCCGUUGAGGUGGCGGCCGAGAUCCGUACGGUGCAAAGACUUGGUAGACUGGUGUCGAGCCUGACCUAUUCCAGUCCAUGCCUAAGGG
+Protein Sequence: FVTQRQLHRRLXACHVSEPSDHSSDWIRSGTDS
+Gene Name: GeneG7
+Gene ID: G007
+Length: 100
+Coding Sequence: AGGTGAACTAATCAGTTACCTTTCTTCTAACTGTTACCCCAAGTAGCAGACAAACAGTCGTGGAATCCGCAGCGATCCGTTGTCCGTCCATCTTACCCTG
+RNA Sequence: UCCACUUGAUUAGUCAAUGGAAAGAAGAUUGACAAUGGGGUUCAUCGUCUGUUUGUCAGCACCUUAGGCGUCGCUAGGCAACAGGCAGGUAGAAUGGGAC
+Protein Sequence: RXTNQLPFFXLLPQVADKQSWNPQRSVVRPSYP
+the id of the genes of the deep copy should be different to the original:
+135961870136992
+135961869732160</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.2</span> Conclusion</h2>
+<p>Hopefully that was a fun exercise to go over everything we have done so far! Let’s now move on to today’s topics.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>By completing the above exercise, you should be able to independently apply the concepts covered yesterday</li>
+<li>If there is anything you found difficult, go back to the relevant sections and recap the material</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../materials/08-defining-functions-and-classes.html" class="pagination-link" aria-label="Defining Functions and Classes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Defining Functions and Classes</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../materials/10-Installing-Python-packages.html" class="pagination-link" aria-label="Installing Python Packages">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Python Packages</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> <img src="https://creativecommons.org/images/deed/cc_icon_black_x2.png" class="img-fluid" width="25"> Kavi Haria Shah</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
